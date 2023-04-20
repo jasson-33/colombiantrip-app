@@ -6,14 +6,19 @@ import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
 
-export default function Home() {
+export default function Home({mainmenu, homedata}) {
   
+  console.log(mainmenu);
+  console.log(homedata);
 
+  const contentHero = homedata.home_data.hero;
+  /*
   const contentHero = {
     type: 'principal',
     title: 'Welcome To Your New “Happy Place”',
     subtitle: 'Custom-Crafted & Private Journeys To Enchanting Colombia',
   };
+  */
 
 
   const imgTextBlocks = [
@@ -53,3 +58,13 @@ export default function Home() {
     </>
   );
 }
+
+export async function getServerSideProps() {
+  const resMenu = await fetch(`https://paperplane.com.co/dev/colombiantrip/wp/wp-json/colombian-app/v1/menu`)
+  const mainmenu = await resMenu.json()
+
+  const resHome = await fetch(`https://paperplane.com.co/dev/colombiantrip/wp/wp-json/colombian-app/v1/home`)
+  const homedata = await resHome.json()
+  return { props: { mainmenu, homedata } }
+}
+

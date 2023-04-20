@@ -11,17 +11,15 @@ const Hero = ({ contentHero }) => {
       className={`${styles.hero} bg-cv ${contentHero.withForm && styles.withForm} ${contentHero.blog && styles.smallHero}`}
       style={{
         backgroundImage: `url(${
-          contentHero.imgHero ? contentHero.imgHero : '/images/home/2.jpg'
+          contentHero.img_banner ? contentHero.img_banner.sizes['super-large'] : '/images/home/2.jpg'
         })`,
       }}>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
         <div className={`${styles.contentHero}`}>
           {contentHero.type === 'principal' ? (
             <>
-              <h2 className={`${styles.principalText} ${Bigola.className}`}>
-                {contentHero.title}
-              </h2>
-              <h3 className={styles.subtitleText}>{contentHero.subtitle}</h3>
+              <h2 className={`${styles.principalText} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:contentHero.title}} />
+              <h3 className={styles.subtitleText} dangerouslySetInnerHTML={{__html:contentHero.subtitle}} />
 
               <div className={`${styles.ctasHero} flex f-s f-ac`}>
                 <div className={styles.ctaHero}>

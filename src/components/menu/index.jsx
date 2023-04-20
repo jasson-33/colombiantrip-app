@@ -70,4 +70,5 @@ const Menu = ({animate, setAnimate}) => {
   );
 };
 
+
 export default Menu;
