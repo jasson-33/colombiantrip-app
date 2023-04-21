@@ -6,9 +6,12 @@ import { ColombianContext } from '@/context/ColombianContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HorizontalSection = ({ horizontalType }) => {
+const HorizontalSection = ({ horizontalType, horizontalData }) => {
   const { Bigola } = useContext(ColombianContext);
   const scroller = useRef();
+
+  //const horizontalBlocks = horizontalData;
+
 
   const horizontalBlocks = [
     {
@@ -49,6 +52,8 @@ const HorizontalSection = ({ horizontalType }) => {
       backgroundColor: '#D23250',
     },
   ];
+
+
   const horizontalBlocksWorks = [
     {
       title: 'Step 1: Connect',

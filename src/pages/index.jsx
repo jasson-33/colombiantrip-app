@@ -6,38 +6,14 @@ import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
 
-export default function Home({mainmenu, homedata}) {
+export default function Home({homedata}) {
   
-  console.log(mainmenu);
   console.log(homedata);
 
   const contentHero = homedata.home_data.hero;
-  /*
-  const contentHero = {
-    type: 'principal',
-    title: 'Welcome To Your New “Happy Place”',
-    subtitle: 'Custom-Crafted & Private Journeys To Enchanting Colombia',
-  };
-  */
-
-
-  const imgTextBlocks = [
-    {
-      content: {
-        img: '/images/home/08.jpg',
-        text: ['With our deep roots in Colombia, our travel designers can craft travel experiences that awe you at every turn, from the colorful colonial architecture of Cartagena to the brilliant blue waters of Colombia`s Caribbean coast.']
-      },
-      invert: false
-    },
-    {
-      content: {
-        img: '/images/home/14-b.jpg',
-        text: ['Venture deep into jungles, forests, mountain-top villages, and cosmopolitan cities, with the help of our expert local guides who’ll pamper you all along the way.']
-      },
-      invert: true
-    }
-  ]
-
+  const aboutHome = homedata.home_data.about;
+  const imgTextBlocks = homedata.home_data.blockimages;
+  const horizontalBlocks = homedata.home_data.horizontal_blocks;
 
   return (
     <>
@@ -49,22 +25,19 @@ export default function Home({mainmenu, homedata}) {
       </Head>
 
       <Hero contentHero={contentHero} />
-      <AboutHome />
+      <AboutHome aboutHome={aboutHome} />
       {imgTextBlocks.map((data, i) => (
         <ImgText key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i} data={data}/>        
       ))}
-      <HorizontalSection horizontalType={'home'}/>
+      <HorizontalSection horizontalType={'home'} horizontalData={horizontalBlocks}/>
       <MeetHome />
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const resMenu = await fetch(`https://paperplane.com.co/dev/colombiantrip/wp/wp-json/colombian-app/v1/menu`)
-  const mainmenu = await resMenu.json()
-
   const resHome = await fetch(`https://paperplane.com.co/dev/colombiantrip/wp/wp-json/colombian-app/v1/home`)
   const homedata = await resHome.json()
-  return { props: { mainmenu, homedata } }
+  return { props: { homedata } }
 }
 

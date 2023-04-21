@@ -5,13 +5,22 @@ import { useContext } from 'react';
 import { ColombianContext } from '@/context/ColombianContext';
 import Footer from '../footer';
 import { useRouter } from 'next/router';
+import useSWR from "swr";
+const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Layout = ({children}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const { Gotham } = useContext(ColombianContext);
+  const { Gotham, endpoint } = useContext(ColombianContext);
 
   const router = useRouter();
+
+  const { data, error, isLoading } = useSWR(
+    endpoint+"colombian-app/v1/menu",
+    fetcher
+  );
+
+  if (error) return "An error has occurred.";
 
   useEffect(() => {
     let animationTimeout;
@@ -24,10 +33,13 @@ const Layout = ({children}) => {
         }, 600);
       }
   }, [animate]);
+
+  if (isLoading) return "Loading...";
+
   return (
     <main className={`siteMain ${Gotham.className}`}>
       <Header animate={animate} setAnimate={setAnimate}/>
-      {showMenu ? <Menu animate={animate} setAnimate={setAnimate}/> : ''}
+      {showMenu ? <Menu animate={animate} setAnimate={setAnimate} mainmenu={data}/> : ''}
       {children}
       <Footer changeLayout={router.pathname === '/how-it-works'}/>
     </main>

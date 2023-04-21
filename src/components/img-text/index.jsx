@@ -15,17 +15,12 @@ const ImgText = ({ data }) => {
         <div className={styles.imgBlock}>
           <div
             className={`${styles.innerImgBlock} bg-cv`}
-            style={{ backgroundImage: `url(${data.content.img})` }}></div>
+            style={{ backgroundImage: `url(${data.content.img.sizes?data.content.img.sizes.medium_large:''})` }}></div>
         </div>
 
         <div className={styles.textBlock}>
           {data.subtitle ? <h3 className={`${styles.subtitleTextImg} ${Bigola.className}`}>{data.subtitle}</h3> : ''}
-          {
-            data.content.text.map((info, i) => (
-              <p key={i} className={styles.innerTextBlock}>{info}</p>
-            ))
-          }
-          
+            <p className={styles.innerTextBlock} dangerouslySetInnerHTML={{__html:data.content.text}} />
         </div>
       </div>
     </section>
