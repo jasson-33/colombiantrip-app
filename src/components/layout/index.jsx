@@ -11,12 +11,12 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 const Layout = ({children}) => {
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState(false);
-  const { Gotham, endpoint } = useContext(ColombianContext);
+  const { Gotham } = useContext(ColombianContext);
 
   const router = useRouter();
 
   const { data, error, isLoading } = useSWR(
-    endpoint+"colombian-app/v1/menu",
+    process.env.NEXT_PUBLIC_ENDPOINT_CONTENT+"colombian-app/v1/menu",
     fetcher
   );
 
