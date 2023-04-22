@@ -7,7 +7,7 @@ const MeetColombia = () => {
     type: 'secondary',
     title: 'Meet Colombia',
     subtitle: "Going on vacation? Here's what you need to know about Colombia.",
-    imgHero: '/images/how-it-works/29.jpg',
+    img_banner: '/images/how-it-works/29.jpg',
     blog: true,
   };
   const popularPost = {

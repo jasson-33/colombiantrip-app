@@ -32,12 +32,11 @@ const Menu = ({animate, setAnimate, mainmenu}) => {
       <div className={styles.rightMenu}>
         <div className={`${styles.halfFace} bg-ct`}></div>
         <ul className={`${styles.ulMenu} ${Gotham.className}`}>
-          {console.log(menuArr)}
           {
           menuArr.map((item, index)=>(
             <li className={styles.itemMenu} key={typeof window !== 'undefined' ? window.crypto.randomUUID() : index}>
               <Link href={`/${item.link}`} onClick={() => hideMenu()} target={item.target}>
-                <span className={styles.numberItemMenu}>{index<10?'0'+index:index}</span>{item.label}
+                <span className={styles.numberItemMenu}>{index<10?'0'+(index+1):(index+1)}</span>{item.label}
               </Link>
             </li>
           ))

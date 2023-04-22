@@ -11,7 +11,7 @@ const Hero = ({ contentHero }) => {
       className={`${styles.hero} bg-cv ${contentHero.withForm && styles.withForm} ${contentHero.blog && styles.smallHero}`}
       style={{
         backgroundImage: `url(${
-          contentHero.img_banner ? contentHero.img_banner.sizes['super-large'] : '/images/home/2.jpg'
+          contentHero.img_banner.sizes?contentHero.img_banner.sizes['super-large']:'/images/home/2.jpg'
         })`,
       }}>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>

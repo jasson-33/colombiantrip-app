@@ -7,14 +7,11 @@ import MeetHome from '@/components/meet-home';
 
 
 export default function Home({homedata}) {
+
+  console.log(homedata.home_data);
+
+  const { hero, about, blockimages, horizontal_blocks, blogsection } = homedata.home_data;
   
-  console.log(homedata);
-
-  const contentHero = homedata.home_data.hero;
-  const aboutHome = homedata.home_data.about;
-  const imgTextBlocks = homedata.home_data.blockimages;
-  const horizontalBlocks = homedata.home_data.horizontal_blocks;
-
   return (
     <>
       <Head>
@@ -24,19 +21,19 @@ export default function Home({homedata}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Hero contentHero={contentHero} />
-      <AboutHome aboutHome={aboutHome} />
-      {imgTextBlocks.map((data, i) => (
+      <Hero contentHero={hero} />
+      <AboutHome aboutHome={about} />
+      {blockimages.map((data, i) => (
         <ImgText key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i} data={data}/>        
       ))}
-      <HorizontalSection horizontalType={'home'} horizontalData={horizontalBlocks}/>
-      <MeetHome />
+      <HorizontalSection horizontalType={'home'} horizontalData={horizontal_blocks}/>
+      <MeetHome blogdata={blogsection} />
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const resHome = await fetch(`https://paperplane.com.co/dev/colombiantrip/wp/wp-json/colombian-app/v1/home`)
+  const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`)
   const homedata = await resHome.json()
   return { props: { homedata } }
 }

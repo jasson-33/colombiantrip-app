@@ -10,9 +10,9 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
   const { Bigola } = useContext(ColombianContext);
   const scroller = useRef();
 
-  //const horizontalBlocks = horizontalData;
+  const horizontalBlocks = horizontalData;
 
-
+/*
   const horizontalBlocks = [
     {
       title: 'Bogotá , Nariño, Medellín & Cartagena',
@@ -52,7 +52,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
       backgroundColor: '#D23250',
     },
   ];
-
+*/
 
   const horizontalBlocksWorks = [
     {
@@ -345,7 +345,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                   className={`bg-cv imgItem imgItem-${i} ${
                     styles.imgItemHorizontal
                   } ${horizontalType === 'works' && styles.worksImg}`}
-                  style={{ backgroundImage: `url(${block.img})` }}></div>
+                  style={{ backgroundImage: `url(${block.img.sizes?block.img.sizes.large:''})` }}></div>
               </div>
             </div>
           ))}
