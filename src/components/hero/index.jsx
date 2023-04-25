@@ -38,11 +38,9 @@ const Hero = ({ contentHero }) => {
             </>
           ) : (
             <>
-              <h2 className={`${styles.bigTitleHero} ${Bigola.className}`}>
-                {contentHero.title}
-              </h2>
+              <h2 className={`${styles.bigTitleHero} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:contentHero.title}} />
               {contentHero.subtitle && (
-                <h3 className={styles.subtitleHero}>{contentHero.subtitle}</h3>
+                <h3 className={styles.subtitleHero} dangerouslySetInnerHTML={{__html:contentHero.subtitle}} />
               )}
               {contentHero.withForm && (
                 <form className={styles.heroForm}>

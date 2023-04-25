@@ -5,12 +5,17 @@ import ImgText from '@/components/img-text';
 import Team from '@/components/team';
 import React from 'react';
 
-const About = () => {
+const About = ({content}) => {
+  console.log(content);
+  const contentHero = content.about_data.hero;
+
+  /*
   const contentHero = {
     type: 'secondary',
     title: 'About us',
-    imgHero: '/images/about/1.jpg',
+    img_banner: '/images/about/1.jpg',
   };
+  */
   const contentAfterHero = {
     img: '/images/general/icono1.png',
     title: { text: 'Meet Our Team', negative: true },
@@ -84,5 +89,13 @@ const About = () => {
     </>
   );
 };
+
+About.getInitialProps = async (ctx) => {
+
+  const contentAbout = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/about`)
+  const json = await contentAbout.json()
+  return { content: json }
+
+}
 
 export default About;
