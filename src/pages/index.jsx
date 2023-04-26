@@ -6,9 +6,9 @@ import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
 
-export default function Home({homedata}) {
+function Home({homedata}) {
 
-  console.log(homedata.home_data);
+  console.log(homedata);
 
   const { hero, about, blockimages, horizontal_blocks, blogsection } = homedata.home_data;
   
@@ -32,9 +32,10 @@ export default function Home({homedata}) {
   );
 }
 
-export async function getServerSideProps() {
+Home.getInitialProps = async (ctx) => {
   const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`)
-  const homedata = await resHome.json()
-  return { props: { homedata } }
+  const homedata_init = await resHome.json()
+  return { homedata : homedata_init }
 }
 
+export default Home;

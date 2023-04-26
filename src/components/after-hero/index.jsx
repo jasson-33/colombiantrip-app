@@ -30,8 +30,9 @@ const AfterHero = ({ contentAfterHero }) => {
           <h2
             className={`${
               contentAfterHero.title.negative ? styles.negativeMargin : ''
-            } ${styles.titleAfterHero} ${Bigola.className}`}>
-            {contentAfterHero.title.text}
+            } ${styles.titleAfterHero} ${Bigola.className}`}
+            dangerouslySetInnerHTML={{__html:contentAfterHero.title.text}}
+            >
           </h2>
         )}
 
@@ -41,8 +42,7 @@ const AfterHero = ({ contentAfterHero }) => {
               key={i}
               className={`${info.bold ? styles.boldText : ''} ${
                 styles.itemUlAfterHero
-              }`}>
-              {info.text}
+              }`} dangerouslySetInnerHTML={{__html:info.text}}>
             </li>
           ))}
         </ul>
