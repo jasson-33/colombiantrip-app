@@ -3,41 +3,26 @@ import ExperienceDetail from '@/components/experience-detail';
 import Hero from '@/components/hero';
 import React from 'react';
 
-const Experience = () => {
-  const contentHero = {
-    type: 'secondary',
-    title: 'Best Places to Visit?',
-    img_banner: {sizes:{"super-large":'/images/experiences/10.jpg'}},
-  };
-  const contentAfterHero = {
-    img: {sizes:{medium:'/images/general/icono2.png'}},
-    title: { text: 'Experience', negative: false },
-    infoItems: [
-      {
-        text: 'Pack your bags and dust off your passports. Colombia welcomes you with open arms.',
-        bold: false,
-      },
-      {
-        text: 'Immerse yourself in Colombia’s colorful culture and flavorful cuisine. ',
-        bold: false,
-      },
-      {
-        text: 'Enjoy a mix of guided sightseeing, leisure time, archaeological and architectonical treasures, green landscapes, colorful villages, and a unique culture.',
-        bold: false,
-      },
-      {
-        text: ' When the time’s right for you, connect with us to have every detail personally planned.',
-        bold: false,
-      },
-    ],
-  };
+const Experience = ({expdata}) => {
+  const {hero, content, experiences} = expdata.exp_data;
+  const contentHero = hero;
+  const contentAfterHero = content;
+  const contentExp = experiences;
   return (
     <>
       <Hero contentHero={contentHero} />
-      <AfterHero contentAfterHero={contentAfterHero}/>
-      <ExperienceDetail />
+      <AfterHero contentAfterHero={contentAfterHero} />
+      <ExperienceDetail contentExp={contentExp} />
     </>
   );
 };
+
+export async function getStaticProps(context) {
+  const resExp = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience`)
+  const expdata = await resExp.json()
+  return {
+    props: {expdata}
+  }
+}
 
 export default Experience;

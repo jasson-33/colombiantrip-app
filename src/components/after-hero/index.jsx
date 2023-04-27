@@ -9,10 +9,10 @@ const AfterHero = ({ contentAfterHero }) => {
       className={`siteSection ${styles.afterHero} ${
         contentAfterHero.secondLayout ? styles.secondLayout : ''
       } ${contentAfterHero.needPadding ? styles.paddingSection : ''}`}>
-      {contentAfterHero.img && (
+      {contentAfterHero.img.sizes && (
         <div
           className={`${styles.imgAfterHero} bg-ct`}
-          style={{ backgroundImage: `url(${contentAfterHero.img})` }}></div>
+          style={{ backgroundImage: `url(${contentAfterHero.img.sizes.medium_large})` }}></div>
       )}
 
       <div className={`container flex f-js f-as ${styles.containerAfterHero} ${contentAfterHero.blockTitle && styles.wrap}`}>

@@ -20,8 +20,6 @@ const Layout = ({children}) => {
     fetcher
   );
 
-  if (error) return "An error has occurred.";
-
   useEffect(() => {
     let animationTimeout;
       if(animate){
@@ -33,6 +31,8 @@ const Layout = ({children}) => {
         }, 600);
       }
   }, [animate]);
+
+  if (error) return "An error has occurred.";
 
   if (isLoading) return "Loading...";
 

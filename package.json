@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
+    "lint:all": "npm run lint:fix && npm run prettier:silent",
+    "prettier": "prettier --write .",
+    "prettier:silent": "prettier --write . --loglevel silent"
   },
   "dependencies": {
     "eslint": "8.36.0",
@@ -16,5 +20,8 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "swr": "^2.1.3"
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^8.8.0"
   }
 }
