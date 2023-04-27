@@ -15,7 +15,7 @@ const Menu = ({animate, setAnimate, mainmenu}) => {
     }else{
         setShow(false);
     }
-  }, [animate])
+  }, [animate]);
 
   const hideMenu = () => {
     setTimeout(() => {
@@ -36,7 +36,7 @@ const Menu = ({animate, setAnimate, mainmenu}) => {
           menuArr.map((item, index)=>(
             <li className={styles.itemMenu} key={typeof window !== 'undefined' ? window.crypto.randomUUID() : index}>
               <Link href={`/${item.link}`} onClick={() => hideMenu()} target={item.target}>
-                <span className={styles.numberItemMenu}>{index<10?'0'+(index+1):(index+1)}</span>{item.label}
+                <span className={styles.numberItemMenu}>{index<10?`0${index+1}`:(index+1)}</span>{item.label}
               </Link>
             </li>
           ))

@@ -11,7 +11,7 @@ const ExperienceDetail = ({contentExp}) => {
         {experiencesDetail.map(({img,width,title,id}, i) => (
           <div
             key={id}
-            className={`${styles.cardExperience} ${styles['experience-' + i]}`}
+            className={`${styles.cardExperience} ${styles[`experience-${  i}`]}`}
             style={{ width: `calc(${width} - 20px)` }}>
             <Link href={`/experiences/${id}`}>
               <div

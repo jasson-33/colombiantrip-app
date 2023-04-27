@@ -19,8 +19,8 @@ const DetailPost = ({data}) => {
 
 export async function getServerSideProps(req) {
   const id = req.params.id;
-  const resData = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/blog?datablog=${id}`)
-  const data = await resData.json()
+  const resData = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/blog?datablog=${id}`);
+  const data = await resData.json();
 
   return { props: { data } };
 }

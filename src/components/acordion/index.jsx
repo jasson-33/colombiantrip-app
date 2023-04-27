@@ -326,7 +326,7 @@ const Acordion = () => {
         {stepsExperience.map((experience, i) => (
           <li
             key={
-              typeof window !== 'undefined' ? window.crypto.randomUUID() : ''
+              typeof window !== 'undefined' ? window.crypto.randomUUID() : i
             }
             className={styles.itemExperience}>
             <div className={`${styles.topItem} flex f-sb f-ac`}>

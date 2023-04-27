@@ -27,12 +27,12 @@ const About = ({content}) => {
   );
 };
 
-export async function getStaticProps(context) {
-  const contentAbout = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/about`)
-  const content = await contentAbout.json()
+export async function getStaticProps() {
+  const contentAbout = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/about`);
+  const content = await contentAbout.json();
   return {
     props: {content}
-  }
+  };
 }
 
 export default About;

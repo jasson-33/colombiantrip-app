@@ -120,11 +120,11 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             anticipatePin: 1,
             // snap: 1 / (blocks.length - 1),
 
-            end: () => '+=' + window.innerWidth,
+            end: () => `+=${  window.innerWidth}`,
           },
         });
 
-        let changeBackground = (bg, parent) => {
+        const changeBackground = (bg, parent) => {
           parent.classList.remove(styles.hide);
           gsap.to(scroller.current, {
             backgroundColor: bg,
@@ -208,7 +208,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         //   },
         // });
 
-        let changeBackground = (bg, parent) => {
+        const changeBackground = (bg, parent) => {
           parent.classList.remove(styles.hide);
           gsap.to(scroller.current, {
             backgroundColor: bg,

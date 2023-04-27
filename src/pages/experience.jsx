@@ -17,12 +17,12 @@ const Experience = ({expdata}) => {
   );
 };
 
-export async function getStaticProps(context) {
-  const resExp = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience`)
-  const expdata = await resExp.json()
+export async function getStaticProps() {
+  const resExp = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience`);
+  const expdata = await resExp.json();
   return {
     props: {expdata}
-  }
+  };
 }
 
 export default Experience;

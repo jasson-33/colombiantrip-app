@@ -64,7 +64,7 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
             {allCategoryPost.map((post, i) => (
               <PostCard
                 key={
-                  typeof window !== 'undefined' && window.crypto.randomUUID()
+                  typeof window !== 'undefined' ? window.crypto.randomUUID() : i
                 }
                 popularPost={post}
               />

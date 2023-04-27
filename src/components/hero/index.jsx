@@ -4,8 +4,8 @@ import React, { useContext } from 'react';
 import styles from './hero.module.css';
 
 const Hero = ({ contentHero }) => {
-  const { Bigola } = useContext(ColombianContext);
-
+  const { Bigola, expdata } = useContext(ColombianContext);
+  console.log(expdata);
   return (
     <div
       className={`${styles.hero} bg-cv ${contentHero.withForm && styles.withForm} ${contentHero.blog && styles.smallHero}`}

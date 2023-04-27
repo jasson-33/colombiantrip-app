@@ -20,7 +20,7 @@ function Home({homedata}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
+      
       <Hero contentHero={hero} />
       <AboutHome aboutHome={about} />
       {blockimages.map((data, i) => (
@@ -32,12 +32,12 @@ function Home({homedata}) {
   );
 }
 
-export async function getStaticProps(context) {
-  const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`)
-  const homedata = await resHome.json()
+export async function getStaticProps() {
+  const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`);
+  const homedata = await resHome.json();
   return {
     props: {homedata}
-  }
+  };
 }
 
 export default Home;
