@@ -27,12 +27,12 @@ const About = ({content}) => {
   );
 };
 
-About.getInitialProps = async (ctx) => {
-
+export async function getStaticProps(context) {
   const contentAbout = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/about`)
-  const json = await contentAbout.json()
-  return { content: json }
-
+  const content = await contentAbout.json()
+  return {
+    props: {content}
+  }
 }
 
 export default About;

@@ -7,10 +7,10 @@ const Experience = () => {
   const contentHero = {
     type: 'secondary',
     title: 'Best Places to Visit?',
-    imgHero: '/images/experiences/10.jpg',
+    img_banner: {sizes:{"super-large":'/images/experiences/10.jpg'}},
   };
   const contentAfterHero = {
-    img: '/images/general/icono2.png',
+    img: {sizes:{medium:'/images/general/icono2.png'}},
     title: { text: 'Experience', negative: false },
     infoItems: [
       {

@@ -32,10 +32,12 @@ function Home({homedata}) {
   );
 }
 
-Home.getInitialProps = async (ctx) => {
+export async function getStaticProps(context) {
   const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`)
-  const homedata_init = await resHome.json()
-  return { homedata : homedata_init }
+  const homedata = await resHome.json()
+  return {
+    props: {homedata}
+  }
 }
 
 export default Home;
