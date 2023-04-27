@@ -305,4 +305,9 @@
   .number{
     font-size: 110px;
   }
+  
+  .lineSubtitle{
+    width: 15%;
+  }
+
 }

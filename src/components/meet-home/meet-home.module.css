@@ -207,4 +207,12 @@
   .meetHomeTitle{
     font-size: 55px;
   }
+
+  .meetSection{
+    padding: 40px 0;
+  }
+
+  .blogsContainer{
+    margin-top: 40px;
+  }
 }

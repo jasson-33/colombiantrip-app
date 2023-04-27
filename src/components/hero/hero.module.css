@@ -201,11 +201,13 @@
   .ctaHero a {
     font-size: 17px;
   }
+
   .iconCtaHero {
     width: 35px;
     height: 35px;
     min-width: 35px;
   }
+
   .bigTitleHero {
     font-size: 90px;
     line-height: 95px;
@@ -241,10 +243,12 @@
   .principalText {
     font-size: 45px;
   }
+
   .subtitleText {
     font-size: 18px;
     line-height: 34px;
   }
+  
   .ctasHero.ctasHero {
     flex-wrap: wrap;
     align-items: flex-start;
@@ -256,6 +260,7 @@
     width: 100%;
     margin-bottom: 20px;
   }
+
   .ctaHero a {
     width: 100%;
     align-items: center;
@@ -265,4 +270,11 @@
   }
 }
 @media only screen and (max-width: 520px) {
+  .secondaryHero {
+    height: 50vh;
+  }
+
+ .bigTitleHero {
+    font-size: 60px;
+  }
 }

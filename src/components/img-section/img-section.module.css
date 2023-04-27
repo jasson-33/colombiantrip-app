@@ -8,3 +8,9 @@
     height: 100vh;
     margin-bottom: 100px;
 }
+
+@media only screen and (max-width: 520px){
+    .imgSection{
+        height: 40vh;
+    }
+}

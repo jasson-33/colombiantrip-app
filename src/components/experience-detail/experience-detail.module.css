@@ -6,6 +6,7 @@
   flex-wrap: wrap;
   gap: 40px 20px;
 }
+
 .cardExperience {
   height: 40vh;
   position: relative;
@@ -41,4 +42,17 @@
   .titleCard{
     font-size: 50px;
   }
+}
+
+@media only screen and (max-width: 520px){
+  .titleCard{
+    font-size: 33px;
+    line-height: 45px;
+  }
+
+  .cardExperience {
+    width: 100%!important;
+    height: 70vh;
+  }
+
 }
