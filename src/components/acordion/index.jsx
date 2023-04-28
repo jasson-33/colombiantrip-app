@@ -325,9 +325,7 @@ const Acordion = () => {
       <ul className={`container ${styles.acordionContainer}`}>
         {stepsExperience.map((experience, i) => (
           <li
-            key={
-              typeof window !== 'undefined' ? window.crypto.randomUUID() : i
-            }
+            key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i}
             className={styles.itemExperience}>
             <div className={`${styles.topItem} flex f-sb f-ac`}>
               <div className="captureClick" onClick={toggleAccordion}></div>

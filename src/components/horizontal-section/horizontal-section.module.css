@@ -167,8 +167,8 @@
   border-radius: 50%;
 }
 
-.invertColors .arrowIcon{
-  background-color: #D23250;
+.invertColors .arrowIcon {
+  background-color: #d23250;
   background-image: url(/images/general/arrow-white-cta.png);
 }
 
@@ -179,41 +179,40 @@
   letter-spacing: 0.16em;
 }
 
-
-@media only screen and (max-width: 1350px){
-  .titleBlock{
+@media only screen and (max-width: 1350px) {
+  .titleBlock {
     max-width: 60%;
     font-size: 70px;
   }
-  .wrapperSubtitle{
+  .wrapperSubtitle {
     width: 67.5%;
   }
 
-  .subtitleBlock{
+  .subtitleBlock {
     font-size: 25px;
   }
 
-  .number{
+  .number {
     font-size: 140px;
   }
 
-  .detailItemHorizontal{
+  .detailItemHorizontal {
     font-size: 17px;
     line-height: 23px;
   }
 
-  .contentItemHorizontalWork{
+  .contentItemHorizontalWork {
     padding-top: 20vh;
   }
 
-  .imgItemHorizontal{
+  .imgItemHorizontal {
     width: 80vw;
     height: 85vh;
   }
 }
 
-@media only screen and (max-width: 1024px){
-  .wrapperScroller{
+@media only screen and (max-width: 1024px) {
+  .wrapperScroller {
     height: auto;
     flex-direction: column;
     width: 100% !important;
@@ -221,50 +220,48 @@
   .wrapperBlock {
     transform: translateX(0%) scale(1);
   }
-  
+
   .wrapperBlock:last-of-type {
     transform: translateX(0%) scale(1);
   }
 
-  .block[data-bg]{
+  .block[data-bg] {
     background-color: attr(data-bg);
   }
-  .contentItemHorizontalWork{
+  .contentItemHorizontalWork {
     padding-top: 5vh;
   }
-  .titleBlock{
+  .titleBlock {
     max-width: 70%;
     font-size: 60px;
   }
 
-  .wrapperSubtitle{
+  .wrapperSubtitle {
     width: 100%;
   }
 
-  .lineSubtitle{
+  .lineSubtitle {
     width: 35%;
   }
 }
 
-
-@media only screen and (max-width: 768px){
-
-  .wrapperBlock{
+@media only screen and (max-width: 768px) {
+  .wrapperBlock {
     position: relative;
   }
 
-  .imgItemHorizontal{
+  .imgItemHorizontal {
     position: relative;
     margin-top: -5%;
     margin-left: auto;
   }
 
-  .contentItemHorizontal{
+  .contentItemHorizontal {
     padding-bottom: 0;
     z-index: 1;
   }
 
-  .infoItemHorizontal{
+  .infoItemHorizontal {
     position: absolute;
     bottom: -75vh;
     right: 0;
@@ -277,32 +274,32 @@
     z-index: 1;
   }
 
-  .subtitleBlock{
+  .subtitleBlock {
     width: 70%;
   }
 }
 
-@media only screen and (max-width: 520px){
-  .titleBlock{
+@media only screen and (max-width: 520px) {
+  .titleBlock {
     font-size: 50px;
     max-width: 75%;
   }
 
-  .imgItemHorizontal{
+  .imgItemHorizontal {
     width: 90vw;
   }
 
-  .infoItemHorizontal{
+  .infoItemHorizontal {
     width: 80%;
   }
 
-  .subtitleBlock{
+  .subtitleBlock {
     width: 80%;
     font-size: 20px;
     line-height: 1.5;
   }
 
-  .number{
+  .number {
     font-size: 110px;
   }
 }

@@ -16,15 +16,15 @@
   text-align: center;
 }
 
-.titleItemGrid {  
+.titleItemGrid {
   font-weight: 400;
   font-size: 40px;
   line-height: 41px;
   margin-bottom: 30px;
 }
 
-.infoGridItem{
-    margin: 0px 0 50px;
-    font-size: 18px;
-    line-height: 29px;
+.infoGridItem {
+  margin: 0px 0 50px;
+  font-size: 18px;
+  line-height: 29px;
 }

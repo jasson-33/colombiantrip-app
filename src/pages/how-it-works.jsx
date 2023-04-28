@@ -14,15 +14,15 @@ const HowItWorks = () => {
     title: { text: 'About your trip', negative: true },
     infoItems: [
       {
-        text: 'Start your enchanting journey—click below to fill out our brief travel inquiry form to get started:'
-      }
+        text: 'Start your enchanting journey—click below to fill out our brief travel inquiry form to get started:',
+      },
     ],
-    needPadding: true
+    needPadding: true,
   };
   return (
     <>
       <Hero contentHero={contentHero} />
-      <HorizontalSection horizontalType={'works'}/>
+      <HorizontalSection horizontalType={'works'} />
       <AfterHero contentAfterHero={contentAfterHero} />
     </>
   );

@@ -6,7 +6,7 @@ const MeetColombia = () => {
   const contentHero = {
     type: 'secondary',
     title: 'Meet Colombia',
-    subtitle: 'Going on vacation? Here\'s what you need to know about Colombia.',
+    subtitle: "Going on vacation? Here's what you need to know about Colombia.",
     img_banner: '/images/how-it-works/29.jpg',
     blog: true,
   };
@@ -19,7 +19,7 @@ const MeetColombia = () => {
     width: '58%',
     colorText: '#fff',
     bgColor: '#D23250',
-    href: 'medellin'
+    href: 'medellin',
   };
 
   const citiesPost = {
@@ -33,7 +33,7 @@ const MeetColombia = () => {
         width: '100%',
         colorText: '#7A5D0C',
         bgColor: '#FCBE15',
-        href: 'medellin'
+        href: 'medellin',
       },
       {
         img: '/images/meet/06.jpg',
@@ -45,7 +45,7 @@ const MeetColombia = () => {
         height: '35vh',
         colorText: '#576409',
         bgColor: '#AFCA0C',
-        href: 'medellin'
+        href: 'medellin',
       },
       {
         img: '/images/meet/29.jpg',
@@ -57,11 +57,11 @@ const MeetColombia = () => {
         height: '40vh',
         colorText: '#124F5E',
         bgColor: '#34BBDB',
-        href: 'medellin'
+        href: 'medellin',
       },
     ],
     layout: 'A',
-    categoryType: 'Cities'
+    categoryType: 'Cities',
   };
 
   const naturePost = {
@@ -76,7 +76,7 @@ const MeetColombia = () => {
         height: '40vh',
         colorText: '#fff',
         bgColor: '#D23250',
-        href: 'medellin'
+        href: 'medellin',
       },
       {
         img: '/images/meet/06.jpg',
@@ -87,7 +87,7 @@ const MeetColombia = () => {
         width: 'calc(60% - 25px)',
         colorText: '#576409',
         bgColor: '#AFCA0C',
-        href: 'medellin'
+        href: 'medellin',
       },
       {
         img: '/images/meet/29.jpg',
@@ -99,11 +99,11 @@ const MeetColombia = () => {
         height: '40vh',
         colorText: '#124F5E',
         bgColor: '#34BBDB',
-        href: 'medellin'
+        href: 'medellin',
       },
     ],
     layout: 'B',
-    categoryType: 'Nature'
+    categoryType: 'Nature',
   };
   return (
     <>

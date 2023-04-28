@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 
-.postCard a{
+.postCard a {
   position: absolute;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@
   position: relative;
 }
 
-.containerImg img{
+.containerImg img {
   object-fit: cover;
 }
 
@@ -49,12 +49,12 @@
   /* color: rgba(255, 255, 255, 0.6); */
 }
 
-
-@media only screen and (max-width: 1350px){
-  .datePost, .typePost{
+@media only screen and (max-width: 1350px) {
+  .datePost,
+  .typePost {
     font-size: 16px;
   }
-  .titlePost{
+  .titlePost {
     font-size: 25px;
   }
 }

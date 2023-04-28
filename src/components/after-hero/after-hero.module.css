@@ -2,7 +2,7 @@
   padding: 30px 0 150px;
 }
 
-.paddingSection.afterHero{
+.paddingSection.afterHero {
   padding: 300px 0 50px;
 }
 
@@ -12,7 +12,7 @@
   margin-left: auto;
 }
 
-.secondLayout .imgAfterHero{
+.secondLayout .imgAfterHero {
   width: calc(70%);
   background-position: center right;
 }
@@ -21,26 +21,26 @@
   gap: 50px;
 }
 
-.wrap.containerAfterHero{
+.wrap.containerAfterHero {
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
-.secondLayout .containerAfterHero{
+.secondLayout .containerAfterHero {
   align-items: flex-end;
   flex-wrap: wrap;
 }
 
-.wrapperTitleAfterHero{
+.wrapperTitleAfterHero {
   width: 100%;
 }
 
-.wrapperTitleAfterHero .titleAfterHero{
+.wrapperTitleAfterHero .titleAfterHero {
   max-width: initial;
   width: 60%;
 }
 
-.secondLayout .titleAfterHero{
+.secondLayout .titleAfterHero {
   width: 60%;
   max-width: initial;
   margin-top: -100%;
@@ -55,8 +55,8 @@
   margin-top: -30px;
 }
 
-.negativeMargin{
-    margin-top: -120px;
+.negativeMargin {
+  margin-top: -120px;
 }
 
 .ulAfterHero {
@@ -65,7 +65,7 @@
   position: relative;
 }
 
-.secondLayout .ulAfterHero{
+.secondLayout .ulAfterHero {
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -75,21 +75,21 @@
   margin-top: 70px;
 }
 
-.wrapperTitleAfterHero ~ .ulAfterHero:before{
+.wrapperTitleAfterHero ~ .ulAfterHero:before {
   display: none;
 }
 
-.ulAfterHero::before{
-    content: '';
-    position: absolute;
-    top: 10px;
-    left: -30px;
-    width: 300px;
-    height: 4px;
-    background-color: #D23250;
+.ulAfterHero::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: -30px;
+  width: 300px;
+  height: 4px;
+  background-color: #d23250;
 }
 
-.secondLayout .ulAfterHero:before{
+.secondLayout .ulAfterHero:before {
   display: none;
 }
 
@@ -97,120 +97,118 @@
   font-size: 25px;
   line-height: 28px;
   margin-bottom: 70px;
-  color: #3E3E3E;
+  color: #3e3e3e;
 }
 
-.boldText{
-    font-weight: 700;
+.boldText {
+  font-weight: 700;
 }
 
-
-@media only screen and (max-width: 1350px){
-  .titleAfterHero{
+@media only screen and (max-width: 1350px) {
+  .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
     line-height: 70px;
   }
 
-  .ulAfterHero{
+  .ulAfterHero {
     padding-left: 200px;
     width: calc(100% - 320px);
   }
 
-  .ulAfterHero::before{
+  .ulAfterHero::before {
     width: 200px;
   }
 
-  .itemUlAfterHero{
+  .itemUlAfterHero {
     font-size: 24px;
     margin-bottom: 40px;
   }
 }
-@media only screen and (max-width: 1024px){
-  .titleAfterHero{
+@media only screen and (max-width: 1024px) {
+  .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
     line-height: 70px;
   }
 
-  .ulAfterHero{
+  .ulAfterHero {
     padding-left: 200px;
     width: calc(100% - 320px);
   }
 
-  .ulAfterHero::before{
+  .ulAfterHero::before {
     width: 200px;
   }
 
-  .itemUlAfterHero{
+  .itemUlAfterHero {
     font-size: 24px;
     margin-bottom: 40px;
   }
 }
-@media only screen and (max-width: 768px){
-  .titleAfterHero{
+@media only screen and (max-width: 768px) {
+  .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
     line-height: 70px;
   }
 
-  .ulAfterHero{
+  .ulAfterHero {
     padding-left: 200px;
     width: calc(100% - 320px);
   }
 
-  .ulAfterHero::before{
+  .ulAfterHero::before {
     width: 200px;
   }
 
-  .itemUlAfterHero{
+  .itemUlAfterHero {
     font-size: 24px;
     margin-bottom: 40px;
   }
 
-  .imgAfterHero{
+  .imgAfterHero {
     width: 65%;
   }
-  .negativeMargin{
+  .negativeMargin {
     margin: 0;
   }
-  .containerAfterHero{
+  .containerAfterHero {
     flex-direction: column;
   }
-  .ulAfterHero{
+  .ulAfterHero {
     width: 100%;
   }
-  
 }
-@media only screen and (max-width: 520px){
-  .titleAfterHero{
+@media only screen and (max-width: 520px) {
+  .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
     line-height: 70px;
   }
 
-  .ulAfterHero::before{
+  .ulAfterHero::before {
     width: 200px;
   }
 
-  .itemUlAfterHero{
+  .itemUlAfterHero {
     font-size: 24px;
     margin-bottom: 40px;
   }
 
-  .titleAfterHero{
+  .titleAfterHero {
     font-size: 50px;
     line-height: 50px;
   }
 
-  .ulAfterHero{
-    padding-left:  40px;
+  .ulAfterHero {
+    padding-left: 40px;
   }
-  .ulAfterHero::before{
+  .ulAfterHero::before {
     width: 60px;
   }
 
-  .itemUlAfterHero{
+  .itemUlAfterHero {
     font-size: 20px;
     margin-bottom: 25px;
   }

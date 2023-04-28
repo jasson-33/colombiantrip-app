@@ -5,16 +5,19 @@ import styles from './header.module.css';
 
 const Header = ({ animate, setAnimate }) => {
   const toggleMenu = () => {
-    
     setAnimate(!animate);
   };
   return (
     <header className={styles.siteHeader}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>
         <div className={`${styles.logo} bg-ct`}>
-          <Link href='/' onClick={() => setTimeout(() => {
-            setAnimate(false);
-          }, 500)}>
+          <Link
+            href="/"
+            onClick={() =>
+              setTimeout(() => {
+                setAnimate(false);
+              }, 500)
+            }>
             <Image
               width={170}
               height={35}

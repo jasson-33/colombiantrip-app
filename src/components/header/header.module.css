@@ -1,26 +1,26 @@
-.siteHeader{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 3;
-    padding-top: 30px;
+.siteHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  padding-top: 30px;
 }
 
-.containerHeader{
-    width: 90%;
-    max-width: 1600px;
+.containerHeader {
+  width: 90%;
+  max-width: 1600px;
 }
 
-.burgerMenu{
-    width: 35px;
-    height: 25px;
-    background-image: url(/images/general/menu.png);
-    cursor: pointer;
-    transition: all .5s ease-in-out;
+.burgerMenu {
+  width: 35px;
+  height: 25px;
+  background-image: url(/images/general/menu.png);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
-.burgerMenu.opened{
-    background-image: url(/images/general/close.png);
-    transition: all .5s ease-in-out, 0.7s;
+.burgerMenu.opened {
+  background-image: url(/images/general/close.png);
+  transition: all 0.5s ease-in-out, 0.7s;
 }

@@ -8,18 +8,28 @@ const Hero = ({ contentHero }) => {
   console.log(expdata);
   return (
     <div
-      className={`${styles.hero} bg-cv ${contentHero.withForm && styles.withForm} ${contentHero.blog && styles.smallHero}`}
+      className={`${styles.hero} bg-cv ${
+        contentHero.withForm && styles.withForm
+      } ${contentHero.blog && styles.smallHero}`}
       style={{
         backgroundImage: `url(${
-          contentHero.img_banner.sizes?contentHero.img_banner.sizes['super-large']:'/images/home/2.jpg'
+          contentHero.img_banner.sizes
+            ? contentHero.img_banner.sizes['super-large']
+            : '/images/home/2.jpg'
         })`,
       }}>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
         <div className={`${styles.contentHero}`}>
           {contentHero.type === 'principal' ? (
             <>
-              <h2 className={`${styles.principalText} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:contentHero.title}} />
-              <h3 className={styles.subtitleText} dangerouslySetInnerHTML={{__html:contentHero.subtitle}} />
+              <h2
+                className={`${styles.principalText} ${Bigola.className}`}
+                dangerouslySetInnerHTML={{ __html: contentHero.title }}
+              />
+              <h3
+                className={styles.subtitleText}
+                dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
+              />
 
               <div className={`${styles.ctasHero} flex f-s f-ac`}>
                 <div className={styles.ctaHero}>
@@ -38,13 +48,21 @@ const Hero = ({ contentHero }) => {
             </>
           ) : (
             <>
-              <h2 className={`${styles.bigTitleHero} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:contentHero.title}} />
+              <h2
+                className={`${styles.bigTitleHero} ${Bigola.className}`}
+                dangerouslySetInnerHTML={{ __html: contentHero.title }}
+              />
               {contentHero.subtitle && (
-                <h3 className={styles.subtitleHero} dangerouslySetInnerHTML={{__html:contentHero.subtitle}} />
+                <h3
+                  className={styles.subtitleHero}
+                  dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
+                />
               )}
               {contentHero.withForm && (
                 <form className={styles.heroForm}>
-                  <h3 className={`${styles.titleFormHero} ${Bigola.className}`}>Contact us</h3>
+                  <h3 className={`${styles.titleFormHero} ${Bigola.className}`}>
+                    Contact us
+                  </h3>
 
                   <p className={styles.textHeroForm}>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -53,9 +71,25 @@ const Hero = ({ contentHero }) => {
                     ullamco laboris nisi ut aliquip ex ea commodo consequat.
                   </p>
 
-                  <input type="text" name="" id="" className={`${styles.inputHeroForm}`} placeholder='Full name' />
-                  <input type="email" name="" id="" className={`${styles.inputHeroForm}`} placeholder='Email address' />
-                  <textarea name="" id="" placeholder='Message' className={`${styles.inputHeroForm} ${styles.messageHero}`}></textarea>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    className={`${styles.inputHeroForm}`}
+                    placeholder="Full name"
+                  />
+                  <input
+                    type="email"
+                    name=""
+                    id=""
+                    className={`${styles.inputHeroForm}`}
+                    placeholder="Email address"
+                  />
+                  <textarea
+                    name=""
+                    id=""
+                    placeholder="Message"
+                    className={`${styles.inputHeroForm} ${styles.messageHero}`}></textarea>
 
                   <button className={styles.submitHeroForm}>
                     <div className={`${styles.arrowForm} bg-ct`}></div>

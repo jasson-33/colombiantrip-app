@@ -15,7 +15,10 @@ const DetailExperience = ({ id }) => {
 
   const contentAfterHero = {
     img: '/images/experiences/10.png',
-    title: { text: 'Colombia: Discover Treasures Trough Magical Lodging Spots', negative: false },
+    title: {
+      text: 'Colombia: Discover Treasures Trough Magical Lodging Spots',
+      negative: false,
+    },
     infoItems: [
       {
         text: 'Natgeo says: "If Earth\'s biodiversity were a country, it could be called Colombia."',
@@ -28,15 +31,15 @@ const DetailExperience = ({ id }) => {
       {
         text: 'This experience will allow you to sumerge yourself in the most known Colombian treasures. Do not hesitate to enjoy a great time and make your time worth it.',
         bold: false,
-      }
+      },
     ],
-    secondLayout: true
+    secondLayout: true,
   };
   return (
     <>
       <Hero contentHero={contentHero} />
-      <AfterHero contentAfterHero={contentAfterHero}/>
-      <ImgSection imgSection="/images/experiences/6.jpg"/>
+      <AfterHero contentAfterHero={contentAfterHero} />
+      <ImgSection imgSection="/images/experiences/6.jpg" />
       <Acordion />
       <InfoRecomendations />
     </>
@@ -53,4 +56,3 @@ export async function getServerSideProps(req) {
 }
 
 export default DetailExperience;
-

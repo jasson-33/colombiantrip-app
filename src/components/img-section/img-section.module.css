@@ -1,10 +1,10 @@
-.imgSection{
-    width: 100%;
-    height: 70vh;
-    background-attachment: fixed;
+.imgSection {
+  width: 100%;
+  height: 70vh;
+  background-attachment: fixed;
 }
 
-.imgSection.bigImgSection{
-    height: 100vh;
-    margin-bottom: 100px;
+.imgSection.bigImgSection {
+  height: 100vh;
+  margin-bottom: 100px;
 }

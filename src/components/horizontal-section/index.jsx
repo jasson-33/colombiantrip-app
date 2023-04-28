@@ -12,7 +12,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   const horizontalBlocks = horizontalData;
 
-/*
+  /*
   const horizontalBlocks = [
     {
       title: 'Bogotá , Nariño, Medellín & Cartagena',
@@ -120,7 +120,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             anticipatePin: 1,
             // snap: 1 / (blocks.length - 1),
 
-            end: () => `+=${  window.innerWidth}`,
+            end: () => `+=${window.innerWidth}`,
           },
         });
 
@@ -227,8 +227,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               // containerAnimation: to,
-              start:'top 80%',
-              end:'100% 0%',
+              start: 'top 80%',
+              end: '100% 0%',
               scrub: 3,
               onEnter: (e) => {
                 changeBackground(
@@ -349,7 +349,11 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                   className={`bg-cv imgItem imgItem-${i} ${
                     styles.imgItemHorizontal
                   } ${horizontalType === 'works' && styles.worksImg}`}
-                  style={{ backgroundImage: `url(${block.img.sizes?block.img.sizes.large:''})` }}></div>
+                  style={{
+                    backgroundImage: `url(${
+                      block.img.sizes ? block.img.sizes.large : ''
+                    })`,
+                  }}></div>
               </div>
             </div>
           ))}

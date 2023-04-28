@@ -3,8 +3,8 @@ import ExperienceDetail from '@/components/experience-detail';
 import Hero from '@/components/hero';
 import React from 'react';
 
-const Experience = ({expdata}) => {
-  const {hero, content, experiences} = expdata.exp_data;
+const Experience = ({ expdata }) => {
+  const { hero, content, experiences } = expdata.exp_data;
   const contentHero = hero;
   const contentAfterHero = content;
   const contentExp = experiences;
@@ -18,10 +18,12 @@ const Experience = ({expdata}) => {
 };
 
 export async function getStaticProps() {
-  const resExp = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience`);
+  const resExp = await fetch(
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience`
+  );
   const expdata = await resExp.json();
   return {
-    props: {expdata}
+    props: { expdata },
   };
 }
 
