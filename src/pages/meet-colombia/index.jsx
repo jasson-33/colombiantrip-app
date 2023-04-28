@@ -6,7 +6,8 @@ const MeetColombia = () => {
   const contentHero = {
     type: 'secondary',
     title: 'Meet Colombia',
-    subtitle: 'Going on vacation? Here&apos;s what you need to know about Colombia.',
+    subtitle:
+      'Going on vacation? Here&apos;s what you need to know about Colombia.',
     img_banner: '/images/how-it-works/29.jpg',
     blog: true,
   };
