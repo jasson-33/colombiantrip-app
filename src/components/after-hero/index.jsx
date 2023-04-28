@@ -9,7 +9,7 @@ const AfterHero = ({ contentAfterHero }) => {
       className={`siteSection ${styles.afterHero} ${
         contentAfterHero.secondLayout ? styles.secondLayout : ''
       } ${contentAfterHero.needPadding ? styles.paddingSection : ''}`}>
-      {contentAfterHero.img.sizes && (
+      {contentAfterHero.img && (
         <div
           className={`${styles.imgAfterHero} bg-ct`}
           style={{
