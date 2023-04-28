@@ -9,7 +9,7 @@ const b2b = () => {
   const contentHero = {
     type: 'secondary',
     title: 'B2B',
-    imgHero: '/images/b2b/1.jpg',
+    img_banner: {sizes:{'super-large':'/images/b2b/1.jpg'}},
     withForm: true,
   };
   const contentAfterHero = {
@@ -35,7 +35,7 @@ const b2b = () => {
   };
   const data = {
     content: {
-      img: '/images/b2b/4.jpg',
+      img: {sizes:{medium_large:'/images/b2b/4.jpg'}},
       text: [
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
