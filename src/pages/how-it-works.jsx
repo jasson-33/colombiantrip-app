@@ -8,7 +8,7 @@ const HowItWorks = () => {
     type: 'secondary',
     title: 'How It Works',
     subtitle: 'Our signature planning process',
-    img_banner: {sizes:{'super-large':'/images/how-it-works/29.jpg'}},
+    img_banner: { sizes: { 'super-large': '/images/how-it-works/29.jpg' } },
   };
   const contentAfterHero = {
     title: { text: 'About your trip', negative: true },
