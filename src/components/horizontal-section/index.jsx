@@ -184,6 +184,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         return () => {
           to.kill();
           blocks.forEach((block, i) => {
+            console.log(block);
+            console.log(i);
             blockTl.kill();
           });
         };
@@ -246,6 +248,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         return () => {
           blocks.forEach((block, i) => {
+            console.log(block);
+            console.log(i);
             blockTl.kill();
           });
         };

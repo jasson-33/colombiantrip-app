@@ -34,7 +34,7 @@ const Layout = ({children}) => {
 
   if (error) {return 'An error has occurred.';}
 
-  //if (isLoading) {return 'Loading...';}
+  // if (isLoading) {return 'Loading...';}
   return (
     <main className={`siteMain ${Gotham.className}`}>
       <Header animate={animate} setAnimate={setAnimate}/>

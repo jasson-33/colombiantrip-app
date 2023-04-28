@@ -6,6 +6,7 @@ import InfoRecomendations from '@/components/info-recomendations';
 import React from 'react';
 
 const DetailExperience = ({ id }) => {
+  console.log(id);
   const contentHero = {
     type: 'secondary',
     title: 'Medellín, Coffee Region, Tayrona & Cartagena',
@@ -42,8 +43,6 @@ const DetailExperience = ({ id }) => {
   );
 };
 
-export default DetailExperience;
-
 export async function getServerSideProps(req) {
   const id = req.params.id;
   return {
@@ -52,3 +51,6 @@ export async function getServerSideProps(req) {
     },
   };
 }
+
+export default DetailExperience;
+

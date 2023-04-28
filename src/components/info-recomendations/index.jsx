@@ -85,11 +85,6 @@ const InfoRecomendations = () => {
               {typeInfo !== 'docs' &&
                 recomendationsExperience.notes.map((note) => (
                   <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
                     className={styles.itemInnerInfo}>
                     {note}
                   </li>
@@ -114,11 +109,6 @@ const InfoRecomendations = () => {
               {typeInfo !== 'docs' &&
                 recomendationsExperience.inlcuded.map((item) => (
                   <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
                     className={styles.itemInnerInfo}>
                     {item}
                   </li>

@@ -4,6 +4,7 @@ import styles from './grid.module.css';
 
 const Grid = () => {
   const { Bigola } = useContext(ColombianContext);
+  /*
   const chooseUsGrid = [
     { img: '' },
     { title: '', text: ['', ''], bgColor: '' },
@@ -12,6 +13,7 @@ const Grid = () => {
     { img: '' },
     { title: '', text: ['', ''], bgColor: '' },
   ];
+  */
   return (
     <section className={`${styles.gridSection}`}>
       <div className={`container ${styles.gridContainer}`}>
