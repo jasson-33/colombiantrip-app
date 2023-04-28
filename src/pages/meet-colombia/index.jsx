@@ -6,7 +6,7 @@ const MeetColombia = () => {
   const contentHero = {
     type: 'secondary',
     title: 'Meet Colombia',
-    subtitle: "Going on vacation? Here's what you need to know about Colombia.",
+    subtitle: 'Going on vacation? Here\'s what you need to know about Colombia.',
     img_banner: '/images/how-it-works/29.jpg',
     blog: true,
   };
@@ -69,8 +69,7 @@ const MeetColombia = () => {
       {
         img: '/images/meet/05.jpg',
         date: '02/13/23',
-        title:
-          'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
+        title: 'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
         type: 'Cities',
         width: '100%',
         height: '40vh',
@@ -81,8 +80,7 @@ const MeetColombia = () => {
       {
         img: '/images/meet/06.jpg',
         date: '02/13/23',
-        title:
-          'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
+        title: 'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
         type: 'Cities',
         width: 'calc(60% - 25px)',
         colorText: '#576409',
@@ -92,8 +90,7 @@ const MeetColombia = () => {
       {
         img: '/images/meet/29.jpg',
         date: '02/13/23',
-        title:
-          'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
+        title: 'Lorem ipsum dolor sit, consectetur adipiscing elit ipsum dolor sit, consectetur adipiscing elit',
         type: 'Cities',
         width: 'calc(40% - 25px)',
         height: '40vh',
