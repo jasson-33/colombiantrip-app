@@ -25,9 +25,9 @@ const AfterHero = ({ contentAfterHero }) => {
           <div className={styles.wrapperTitleAfterHero}>
             <h2
               className={`${
-                contentAfterHero.title.negative ? styles.negativeMargin : ''
+                contentAfterHero.blockTitle.negative ? styles.negativeMargin : ''
               } ${styles.titleAfterHero} ${Bigola.className}`}>
-              {contentAfterHero.title.text}
+              {contentAfterHero.blockTitle.text}
             </h2>
           </div>
         )}

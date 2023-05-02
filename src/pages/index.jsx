@@ -38,9 +38,7 @@ function Home({ homedata }) {
 }
 
 export async function getStaticProps() {
-  const resHome = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`
-  );
+  const resHome = await fetch( `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home` );
   const homedata = await resHome.json();
   return {
     props: { homedata },
