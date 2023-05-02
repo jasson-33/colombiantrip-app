@@ -305,45 +305,43 @@
   font-weight: bold;
 }
 
-
-@media only screen and (max-width: 1350px){
-  .contactTitle{
+@media only screen and (max-width: 1350px) {
+  .contactTitle {
     font-size: 80px;
     line-height: 75px;
   }
-  .infoContactGroup{
+  .infoContactGroup {
     font-size: 16px;
   }
 
-  .yellowLine{
+  .yellowLine {
     width: calc(50% - 130px);
   }
 
-  .logoFooter{
+  .logoFooter {
     width: 250px;
     height: 55px;
   }
 
-  .itemFooterNav{
+  .itemFooterNav {
     font-size: 18px;
   }
 
-  .copyrightText{
+  .copyrightText {
     font-size: 18px;
   }
 }
 
-
-@media only screen and (max-width: 768px){
-  .contactContainer{
+@media only screen and (max-width: 768px) {
+  .contactContainer {
     flex-wrap: wrap;
   }
 
-  .infoContact{
+  .infoContact {
     width: 100%;
   }
 
-  .infoContactGroup{
+  .infoContactGroup {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
@@ -354,26 +352,26 @@
     align-items: flex-start;
   }
 
-  .phoneGroup{
+  .phoneGroup {
     align-self: flex-start;
   }
 
-  .formFooter{
+  .formFooter {
     width: 100%;
   }
 
-  .footerNav{
+  .footerNav {
     gap: 40px 0;
     flex-wrap: wrap;
   }
 
-  .itemFooterNav{
+  .itemFooterNav {
     width: 45%;
     text-align: center;
     font-size: 16px;
   }
 
-  .itemFooterNav:nth-child(even) .divisorPoint{
+  .itemFooterNav:nth-child(even) .divisorPoint {
     display: none;
   }
 }

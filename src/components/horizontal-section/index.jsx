@@ -12,7 +12,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   const horizontalBlocks = horizontalData;
 
-/*
+  /*
   const horizontalBlocks = [
     {
       title: 'Bogotá , Nariño, Medellín & Cartagena',
@@ -108,6 +108,9 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
     const blocks = gsap.utils.toArray('.itemHorizontal');
     ScrollTrigger.matchMedia({
       '(min-width: 1025px)': () => {
+        if (blocks.length === 0) {
+          return;
+        }
         const to = gsap.to(blocks, {
           xPercent: () => -100 * (blocks.length - 1),
           ease: 'none',
@@ -120,11 +123,11 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             anticipatePin: 1,
             // snap: 1 / (blocks.length - 1),
 
-            end: () => '+=' + window.innerWidth,
+            end: () => `+=${window.innerWidth}`,
           },
         });
 
-        let changeBackground = (bg, parent) => {
+        const changeBackground = (bg, parent) => {
           parent.classList.remove(styles.hide);
           gsap.to(scroller.current, {
             backgroundColor: bg,
@@ -184,6 +187,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         return () => {
           to.kill();
           blocks.forEach((block, i) => {
+            console.log(block);
+            console.log(i);
             blockTl.kill();
           });
         };
@@ -208,7 +213,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         //   },
         // });
 
-        let changeBackground = (bg, parent) => {
+        const changeBackground = (bg, parent) => {
           parent.classList.remove(styles.hide);
           gsap.to(scroller.current, {
             backgroundColor: bg,
@@ -225,8 +230,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               // containerAnimation: to,
-              start:'top 80%',
-              end:'100% 0%',
+              start: 'top 80%',
+              end: '100% 0%',
               scrub: 3,
               onEnter: (e) => {
                 changeBackground(
@@ -246,6 +251,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         return () => {
           blocks.forEach((block, i) => {
+            console.log(block);
+            console.log(i);
             blockTl.kill();
           });
         };
@@ -256,100 +263,108 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
   return (
     <div className={`siteSection ${styles.horizontalSection}`}>
       <div className={`${styles.containerHorizontal}`}>
-        <div
-          id="block"
-          className={`${styles.wrapperScroller} wrapperScroller`}
-          style={{
-            width: `${horizontalBlocks.length * 100}vw`,
-            backgroundColor: '#34BBDB',
-          }}
-          ref={scroller}>
-          {objectToIterate.map((block, i) => (
-            <div
-              key={
-                typeof window !== 'undefined' ? window.crypto.randomUUID() : i
-              }
-              className={`${styles.block} itemHorizontal itemHorizontal-${i}`}
-              data-bg={block.backgroundColor}>
-              <div className={`${styles.wrapperBlock} wrapperBlock`}>
-                <div
-                  className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
-                  {horizontalType === 'home' && (
-                    <>
-                      <h2
-                        className={`${styles.titleBlock} ${Bigola.className}`}>
-                        {block.title}
-                      </h2>
-                      <div className={styles.wrapperSubtitle}>
-                        {block.colorLine && (
-                          <div
-                            className={styles.lineSubtitle}
-                            style={{ backgroundColor: block.colorLine }}></div>
-                        )}
-
-                        <h3 className={styles.subtitleBlock}>
-                          {block.subtitle}
-                        </h3>
-                      </div>
-
-                      <div
-                        className={styles.infoItemHorizontal}
-                        style={{ backgroundColor: block.backgroundColor }}>
-                        <p className={`${styles.number}`}>0{i + 1}</p>
-                        <p className={styles.detailItemHorizontal}>
-                          {block.content}
-                        </p>
-                      </div>
-                    </>
-                  )}
-
-                  {horizontalType === 'works' && (
-                    <>
-                      <div className={styles.infoWork}>
+        {horizontalBlocks && (
+          <div
+            id="block"
+            className={`${styles.wrapperScroller} wrapperScroller`}
+            style={{
+              width: `${horizontalBlocks.length * 100}vw`,
+              backgroundColor: '#34BBDB',
+            }}
+            ref={scroller}>
+            {objectToIterate.map((block, i) => (
+              <div
+                key={
+                  typeof window !== 'undefined' ? window.crypto.randomUUID() : i
+                }
+                className={`${styles.block} itemHorizontal itemHorizontal-${i}`}
+                data-bg={block.backgroundColor}>
+                <div className={`${styles.wrapperBlock} wrapperBlock`}>
+                  <div
+                    className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
+                    {horizontalType === 'home' && (
+                      <>
                         <h2
-                          className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}>
+                          className={`${styles.titleBlock} ${Bigola.className}`}>
                           {block.title}
                         </h2>
+                        <div className={styles.wrapperSubtitle}>
+                          {block.colorLine && (
+                            <div
+                              className={styles.lineSubtitle}
+                              style={{
+                                backgroundColor: block.colorLine,
+                              }}></div>
+                          )}
 
-                        <div className={styles.innerInfoWork}>
-                          {block.content.map((text, i) => (
-                            <p
-                              key={
-                                typeof window !== 'undefined'
-                                  ? window.crypto.randomUUID()
-                                  : i
-                              }
-                              className={styles.textWork}
-                              style={{ color: block.colorText }}>
-                              {text}
-                            </p>
-                          ))}
+                          <h3 className={styles.subtitleBlock}>
+                            {block.subtitle}
+                          </h3>
                         </div>
 
                         <div
-                          className={`${styles.goTrip} ${
-                            block.invertBtn ? styles.invertColors : ''
-                          }`}>
-                          <div className={`${styles.arrowIcon} bg-ct`}></div>
-                          <p
-                            className={styles.textBtn}
-                            style={{ color: block.colorText }}>
-                            YOUR TRIP
+                          className={styles.infoItemHorizontal}
+                          style={{ backgroundColor: block.backgroundColor }}>
+                          <p className={`${styles.number}`}>0{i + 1}</p>
+                          <p className={styles.detailItemHorizontal}>
+                            {block.content}
                           </p>
                         </div>
-                      </div>
-                    </>
-                  )}
+                      </>
+                    )}
+
+                    {horizontalType === 'works' && (
+                      <>
+                        <div className={styles.infoWork}>
+                          <h2
+                            className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}>
+                            {block.title}
+                          </h2>
+
+                          <div className={styles.innerInfoWork}>
+                            {block.content.map((text, i) => (
+                              <p
+                                key={
+                                  typeof window !== 'undefined'
+                                    ? window.crypto.randomUUID()
+                                    : i
+                                }
+                                className={styles.textWork}
+                                style={{ color: block.colorText }}>
+                                {text}
+                              </p>
+                            ))}
+                          </div>
+
+                          <div
+                            className={`${styles.goTrip} ${
+                              block.invertBtn ? styles.invertColors : ''
+                            }`}>
+                            <div className={`${styles.arrowIcon} bg-ct`}></div>
+                            <p
+                              className={styles.textBtn}
+                              style={{ color: block.colorText }}>
+                              YOUR TRIP
+                            </p>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </div>
+                  <div
+                    className={`bg-cv imgItem imgItem-${i} ${
+                      styles.imgItemHorizontal
+                    } ${horizontalType === 'works' && styles.worksImg}`}
+                    style={{
+                      backgroundImage: `url(${
+                        block.img.sizes ? block.img.sizes.large : ''
+                      })`,
+                    }}></div>
                 </div>
-                <div
-                  className={`bg-cv imgItem imgItem-${i} ${
-                    styles.imgItemHorizontal
-                  } ${horizontalType === 'works' && styles.worksImg}`}
-                  style={{ backgroundImage: `url(${block.img.sizes?block.img.sizes.large:''})` }}></div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

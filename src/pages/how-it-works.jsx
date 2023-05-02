@@ -8,21 +8,21 @@ const HowItWorks = () => {
     type: 'secondary',
     title: 'How It Works',
     subtitle: 'Our signature planning process',
-    imgHero: '/images/how-it-works/29.jpg',
+    img_banner: { sizes: { 'super-large': '/images/how-it-works/29.jpg' } },
   };
   const contentAfterHero = {
     title: { text: 'About your trip', negative: true },
     infoItems: [
       {
-        text: 'Start your enchanting journey—click below to fill out our brief travel inquiry form to get started:'
-      }
+        text: 'Start your enchanting journey—click below to fill out our brief travel inquiry form to get started:',
+      },
     ],
-    needPadding: true
+    needPadding: true,
   };
   return (
     <>
       <Hero contentHero={contentHero} />
-      <HorizontalSection horizontalType={'works'}/>
+      <HorizontalSection horizontalType={'works'} />
       <AfterHero contentAfterHero={contentAfterHero} />
     </>
   );

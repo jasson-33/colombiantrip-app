@@ -33,27 +33,27 @@
   color: #fff;
 }
 
-.iconController{
-    width: 35px;
-    height: 35px;
-    margin: 0 auto 10px;
-    transition: all .5s ease-in-out;
+.iconController {
+  width: 35px;
+  height: 35px;
+  margin: 0 auto 10px;
+  transition: all 0.5s ease-in-out;
 }
 
-.infoIcon {  
+.infoIcon {
   background-image: url(/images/general/information-gray.png);
 }
 
-.controller.active .infoIcon{
-    background-image: url(/images/general/information-white.png);
+.controller.active .infoIcon {
+  background-image: url(/images/general/information-white.png);
 }
 
 .recomendIcon {
   background-image: url(/images/general/recommendation-gray.png);
 }
 
-.controller.active .recomendIcon{
-    background-image: url(/images/general/recommendation-white.png);
+.controller.active .recomendIcon {
+  background-image: url(/images/general/recommendation-white.png);
 }
 
 .innerInfo {
@@ -87,17 +87,17 @@
   padding-left: 25px;
 }
 
-.itemInnerInfo{
-    list-style: disc;
+.itemInnerInfo {
+  list-style: disc;
 }
 
-@media only screen and (max-width: 1350px){
-  .subtitleInnerInfo{
+@media only screen and (max-width: 1350px) {
+  .subtitleInnerInfo {
     font-size: 25px;
     margin-bottom: 20px;
   }
 
-  .ulInnerInfo{
+  .ulInnerInfo {
     font-size: 16px;
     line-height: 25px;
   }

@@ -72,21 +72,21 @@
   color: #3e3e3e;
 }
 
-@media only screen and (max-width: 1350px){
-  .teamMemberName{
+@media only screen and (max-width: 1350px) {
+  .teamMemberName {
     font-size: 30px;
     margin: 10px 0;
   }
 
-  .teamMemberRol{
+  .teamMemberRol {
     font-size: 23px;
   }
 
-  .hideInfo{
+  .hideInfo {
     padding: 30px;
   }
 
-  .infoTeamMember{
+  .infoTeamMember {
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 20px;

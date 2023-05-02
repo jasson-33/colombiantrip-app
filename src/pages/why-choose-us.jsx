@@ -7,11 +7,14 @@ const WhyChoosUs = () => {
   const contentHero = {
     type: 'secondary',
     title: 'Why Choose Us',
-    imgHero: '/images/why-choose/45.jpg',
+    img_banner: { sizes: { 'super-large': '/images/why-choose/45.jpg' } },
   };
   const contentAfterHero = {
-    img: '/images/general/icono2.png',
-    title: { text: 'Let Us Reveal the Heart and Soul of Colombia', negative: false },
+    img: { sizes: { medium_large: '/images/general/icono2.png' } },
+    title: {
+      text: 'Let Us Reveal the Heart and Soul of Colombia',
+      negative: false,
+    },
     infoItems: [
       {
         text: 'Feel the rhythm of Colombia move you on your own custom-crafted journey, designed by The Colombian Trip.',
@@ -26,12 +29,12 @@ const WhyChoosUs = () => {
         bold: false,
       },
     ],
-    blockTitle: true
+    blockTitle: true,
   };
   return (
     <>
-      <Hero contentHero={contentHero}/>
-      <AfterHero contentAfterHero={contentAfterHero}/>
+      <Hero contentHero={contentHero} />
+      <AfterHero contentAfterHero={contentAfterHero} />
       <Grid />
     </>
   );

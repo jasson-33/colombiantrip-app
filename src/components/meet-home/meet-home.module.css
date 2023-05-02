@@ -97,7 +97,7 @@
   display: block;
 }
 
-.allArticles{
+.allArticles {
   position: relative;
   bottom: initial;
   left: initial;
@@ -107,104 +107,102 @@
   width: 100%;
 }
 
-
-@media only screen and (max-width: 1350px){
-  .meetHomeTitle{
+@media only screen and (max-width: 1350px) {
+  .meetHomeTitle {
     font-size: 80px;
   }
 
-  .subtitleMeetHome{
+  .subtitleMeetHome {
     font-size: 17px;
     margin-top: 10px;
   }
 
-  .blogsContainer{
+  .blogsContainer {
     margin-top: 70px;
     gap: 30px;
   }
 
-  .cardBlog{
+  .cardBlog {
     width: calc(33.33333% - 30px);
   }
 
-  .dateCardBlog{
+  .dateCardBlog {
     font-size: 17px;
   }
 
-  .titleCardBlog{
+  .titleCardBlog {
     font-size: 25px;
     line-height: 35px;
   }
 
-  .summaryCardBlog{
+  .summaryCardBlog {
     font-size: 17px;
     line-height: 25px;
   }
 
-  .readMoreAnchor{
+  .readMoreAnchor {
     font-size: 17px;
   }
 
-  .arrowRight{
+  .arrowRight {
     width: 35px;
     height: 35px;
   }
 }
 
-@media only screen and (max-width: 1350px){
-  .meetSection{
+@media only screen and (max-width: 1350px) {
+  .meetSection {
     padding: 100px 0;
   }
 
-  .meetHomeTitle{
+  .meetHomeTitle {
     font-size: 70px;
   }
 
-  .blogsContainer{
+  .blogsContainer {
     gap: 15px;
   }
 
-  .cardBlog{
+  .cardBlog {
     width: calc(33.3333% - 15px);
   }
 
-  .dateCardBlog{
+  .dateCardBlog {
     margin: 10px auto;
   }
 
-  .titleCardBlog{
+  .titleCardBlog {
     font-size: 23px;
     line-height: 25px;
     margin-bottom: 10px;
   }
 
-  .summaryCardBlog{
+  .summaryCardBlog {
     font-size: 16px;
     line-height: 22px;
   }
 
-  .readMoreAnchor{
+  .readMoreAnchor {
     margin-top: 70px;
   }
-
 }
 
-@media only screen and (max-width: 768px){
-  .blogsContainer{
+@media only screen and (max-width: 768px) {
+  .blogsContainer {
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
   }
-  .cardBlog{
+  .cardBlog {
     width: calc(50% - 30px);
   }
 }
-@media only screen and (max-width: 520px){
-  .cardBlog{
+@media only screen and (max-width: 520px) {
+  .cardBlog {
     width: 100%;
   }
 
-  .meetHomeTitle{
+  .meetHomeTitle {
     font-size: 55px;
   }
 

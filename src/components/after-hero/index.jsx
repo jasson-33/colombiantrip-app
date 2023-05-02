@@ -12,10 +12,15 @@ const AfterHero = ({ contentAfterHero }) => {
       {contentAfterHero.img && (
         <div
           className={`${styles.imgAfterHero} bg-ct`}
-          style={{ backgroundImage: `url(${contentAfterHero.img})` }}></div>
+          style={{
+            backgroundImage: `url(${contentAfterHero.img.sizes.medium_large})`,
+          }}></div>
       )}
 
-      <div className={`container flex f-js f-as ${styles.containerAfterHero} ${contentAfterHero.blockTitle && styles.wrap}`}>
+      <div
+        className={`container flex f-js f-as ${styles.containerAfterHero} ${
+          contentAfterHero.blockTitle && styles.wrap
+        }`}>
         {contentAfterHero.blockTitle && (
           <div className={styles.wrapperTitleAfterHero}>
             <h2
@@ -31,9 +36,9 @@ const AfterHero = ({ contentAfterHero }) => {
             className={`${
               contentAfterHero.title.negative ? styles.negativeMargin : ''
             } ${styles.titleAfterHero} ${Bigola.className}`}
-            dangerouslySetInnerHTML={{__html:contentAfterHero.title.text}}
-            >
-          </h2>
+            dangerouslySetInnerHTML={{
+              __html: contentAfterHero.title.text,
+            }}></h2>
         )}
 
         <ul className={styles.ulAfterHero}>
@@ -42,8 +47,8 @@ const AfterHero = ({ contentAfterHero }) => {
               key={i}
               className={`${info.bold ? styles.boldText : ''} ${
                 styles.itemUlAfterHero
-              }`} dangerouslySetInnerHTML={{__html:info.text}}>
-            </li>
+              }`}
+              dangerouslySetInnerHTML={{ __html: info.text }}></li>
           ))}
         </ul>
       </div>

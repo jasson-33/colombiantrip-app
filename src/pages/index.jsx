@@ -5,13 +5,12 @@ import ImgText from '@/components/img-text';
 import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
-
-function Home({homedata}) {
-
+function Home({ homedata }) {
   console.log(homedata);
 
-  const { hero, about, blockimages, horizontal_blocks, blogsection } = homedata.home_data;
-  
+  const { hero, about, blockimages, horizontal_blocks, blogsection } =
+    homedata.home_data;
+
   return (
     <>
       <Head>
@@ -24,20 +23,28 @@ function Home({homedata}) {
       <Hero contentHero={hero} />
       <AboutHome aboutHome={about} />
       {blockimages.map((data, i) => (
-        <ImgText key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i} data={data}/>        
+        <ImgText
+          key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i}
+          data={data}
+        />
       ))}
-      <HorizontalSection horizontalType={'home'} horizontalData={horizontal_blocks}/>
+      <HorizontalSection
+        horizontalType={'home'}
+        horizontalData={horizontal_blocks}
+      />
       <MeetHome blogdata={blogsection} />
     </>
   );
 }
 
-export async function getStaticProps(context) {
-  const resHome = await fetch(`${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`)
-  const homedata = await resHome.json()
+export async function getStaticProps() {
+  const resHome = await fetch(
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`
+  );
+  const homedata = await resHome.json();
   return {
-    props: {homedata}
-  }
+    props: { homedata },
+  };
 }
 
 export default Home;

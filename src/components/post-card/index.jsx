@@ -9,7 +9,10 @@ const PostCard = ({ popularPost }) => {
   return (
     <div
       className={`${styles.postCard}`}
-      style={{ width: popularPost && popularPost.width, gridArea: popularPost && popularPost.gridArea }}>
+      style={{
+        width: popularPost && popularPost.width,
+        gridArea: popularPost && popularPost.gridArea,
+      }}>
       <Link href={`/meet-colombia/detail/${popularPost.href}`}></Link>
       <div
         className={`${styles.containerImg}`}

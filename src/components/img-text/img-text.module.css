@@ -58,62 +58,61 @@
   margin-bottom: 70px;
 }
 
-
-@media only screen and (max-width: 1350px){
-  .imgTextSection{
+@media only screen and (max-width: 1350px) {
+  .imgTextSection {
     padding-bottom: 150px;
   }
-  .imgBlock{
+  .imgBlock {
     width: 40%;
   }
-  .textBlock{
+  .textBlock {
     font-size: 17px;
     width: 35%;
   }
 
-  .titleBlockIMgtext{
+  .titleBlockIMgtext {
     font-size: 75px;
     margin: 150px auto 100px;
   }
 
-  .subtitleTextImg{
+  .subtitleTextImg {
     font-size: 50px;
     margin-bottom: 50px;
   }
 
-  .innerTextBlock{
+  .innerTextBlock {
     margin-bottom: 35px;
   }
 }
 
-@media only screen and (max-width: 1024px){
-  .containerImgText{
+@media only screen and (max-width: 1024px) {
+  .containerImgText {
     gap: 70px;
   }
-  
-  .imgBlock{
+
+  .imgBlock {
     width: 45%;
   }
-  
-  .textBlock{
+
+  .textBlock {
     width: 40%;
-  }  
+  }
 }
 
-@media only screen and (max-width: 768px){
-  .imgTextSection{
+@media only screen and (max-width: 768px) {
+  .imgTextSection {
     padding-bottom: 50px;
   }
-  .containerImgText{
+  .containerImgText {
     flex-wrap: wrap;
     gap: 40px;
   }
 
-  .imgBlock{
+  .imgBlock {
     width: 100%;
   }
 
-  .textBlock{
+  .textBlock {
     width: 100%;
   }
 }

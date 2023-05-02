@@ -5,10 +5,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'paperplane.com.co'
+        hostname: 'paperplane.com.co',
       },
     ],
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

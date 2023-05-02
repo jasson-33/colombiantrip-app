@@ -4,6 +4,7 @@ import styles from './grid.module.css';
 
 const Grid = () => {
   const { Bigola } = useContext(ColombianContext);
+  /*
   const chooseUsGrid = [
     { img: '' },
     { title: '', text: ['', ''], bgColor: '' },
@@ -12,16 +13,17 @@ const Grid = () => {
     { img: '' },
     { title: '', text: ['', ''], bgColor: '' },
   ];
+  */
   return (
     <section className={`${styles.gridSection}`}>
       <div className={`container ${styles.gridContainer}`}>
         <div
           className={`${styles.gridItem} bg-cv`}
-          style={{ backgroundImage: `url(/images/why-choose/42.jpg)` }}></div>
+          style={{ backgroundImage: 'url(/images/why-choose/42.jpg)' }}></div>
 
         <div
           className={`${styles.gridItem}`}
-          style={{ backgroundColor: `#D23250`, color: '#fff' }}>
+          style={{ backgroundColor: '#D23250', color: '#fff' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             Flexibility to Explore on Your Own Terms
           </h3>
@@ -42,11 +44,11 @@ const Grid = () => {
 
         <div
           className={`${styles.gridItem} bg-cv`}
-          style={{ backgroundImage: `url(/images/why-choose/44.jpg)` }}></div>
+          style={{ backgroundImage: 'url(/images/why-choose/44.jpg)' }}></div>
 
         <div
           className={`${styles.gridItem}`}
-          style={{ backgroundColor: `#FCBE15`, color: '#7A5D0C' }}>
+          style={{ backgroundColor: '#FCBE15', color: '#7A5D0C' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             Comfort, Confidence, and Peace of Mind
           </h3>
@@ -70,10 +72,10 @@ const Grid = () => {
         </div>
         <div
           className={`${styles.gridItem} bg-cv`}
-          style={{ backgroundImage: `url(/images/why-choose/43.jpg)` }}></div>
+          style={{ backgroundImage: 'url(/images/why-choose/43.jpg)' }}></div>
         <div
           className={`${styles.gridItem}`}
-          style={{ backgroundColor: `#AFCA0C`, color: '#576409' }}>
+          style={{ backgroundColor: '#AFCA0C', color: '#576409' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             In-Destination Expertise, from a U.S.-Based Company
           </h3>

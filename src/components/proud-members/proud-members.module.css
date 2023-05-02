@@ -1,5 +1,5 @@
-.proudSection{
-    overflow: hidden;
+.proudSection {
+  overflow: hidden;
 }
 
 .titleProud {
@@ -18,46 +18,46 @@
   color: #3e3e3e;
 }
 
-.wrapperMembers{
-    position: relative;
-    margin-top: 70px;
+.wrapperMembers {
+  position: relative;
+  margin-top: 70px;
 }
 
-.containerMembers{
-    width: 100%;
-    margin-bottom: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0 5%;
-    animation: translateMembers 15s infinite linear 0s forwards;
+.containerMembers {
+  width: 100%;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0 5%;
+  animation: translateMembers 15s infinite linear 0s forwards;
 }
 
-.containerMembers:last-of-type{
-    position: absolute;
-    top: 0;
-    left: 100%;
-    animation: translateMembersB 15s infinite linear 7.5s forwards;
+.containerMembers:last-of-type {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  animation: translateMembersB 15s infinite linear 7.5s forwards;
 }
 
-.memberIcon{
-    width: 180px;
-    height: 180px;
+.memberIcon {
+  width: 180px;
+  height: 180px;
 }
 
-@keyframes translateMembers{
-    0%{
-        transform: translateX(100%);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
+@keyframes translateMembers {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
-@keyframes translateMembersB{
-    0%{
-        transform: translateX(0%);
-    }
-    100%{
-        transform: translateX(-200%);
-    }
+@keyframes translateMembersB {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
 }
