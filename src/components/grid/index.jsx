@@ -22,7 +22,7 @@ const Grid = () => {
           style={{ backgroundImage: 'url(/images/why-choose/42.jpg)' }}></div>
 
         <div
-          className={`${styles.gridItem}`}
+          className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#D23250', color: '#fff' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             Flexibility to Explore on Your Own Terms
@@ -47,7 +47,7 @@ const Grid = () => {
           style={{ backgroundImage: 'url(/images/why-choose/44.jpg)' }}></div>
 
         <div
-          className={`${styles.gridItem}`}
+          className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#FCBE15', color: '#7A5D0C' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             Comfort, Confidence, and Peace of Mind
@@ -74,7 +74,7 @@ const Grid = () => {
           className={`${styles.gridItem} bg-cv`}
           style={{ backgroundImage: 'url(/images/why-choose/43.jpg)' }}></div>
         <div
-          className={`${styles.gridItem}`}
+          className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#AFCA0C', color: '#576409' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
             In-Destination Expertise, from a U.S.-Based Company

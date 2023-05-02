@@ -7,6 +7,11 @@ const LatestPost = () => {
   const { Bigola } = useContext(ColombianContext);
   return (
     <div className={styles.containerLatest}>
+      <div className={styles.mobileTitle}>
+        <h3 className={`${styles.titlePostType} ${Bigola.className}`}>
+          Latest Post
+        </h3>
+      </div>
       <div className={styles.lastPost}>
         <div className={styles.containerImageLatest}>
           <Image alt="" src="/images/meet/06.jpg" fill />

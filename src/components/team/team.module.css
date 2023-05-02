@@ -94,6 +94,10 @@
 }
 
 @media only screen and (max-width: 520px){
+  .teamSection {
+    padding-bottom: 0;
+  }
+
   .containerTeam {
     flex-direction: column;
   }

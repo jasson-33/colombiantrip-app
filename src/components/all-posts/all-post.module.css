@@ -112,8 +112,26 @@
   .allpost {
     padding: 50px 0;
   }
-
   .titlePostType {
     font-size: 35px;
+  }
+}
+
+
+@media only screen and (max-width: 520px) {   
+  .allpost {
+    padding: 0;
+  } 
+  .containerByType {
+    display: block;
+  }
+  .containerLayoutB .otherPostContainer {
+    flex-direction: column;
+  }
+  .titlePostType {
+    padding: 20px 0 0;
+  }
+  .titlePostType:last-of-type {
+    display: none;
   }
 }

@@ -58,3 +58,13 @@
     font-size: 25px;
   }
 }
+
+@media only screen and (max-width: 520px) {
+  .postCard {
+    display: block;
+    width: 100%!important;
+  }
+  .containerImg {
+    height: 300px;
+  }
+}

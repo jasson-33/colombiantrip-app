@@ -45,6 +45,10 @@
   color: rgba(62, 62, 62, 0.5);
 }
 
+.mobileTitle {
+  display: none;
+}
+
 @media only screen and (max-width: 1350px) {
   .lastPost {
     padding-bottom: 20px;
@@ -52,5 +56,30 @@
   }
   .titleLatestPost {
     font-size: 16px;
+  }
+}
+
+
+@media only screen and (max-width: 520px) {  
+  .containerLatest {
+    width: 100%;
+    margin-top: 20px;
+  }  
+  .containerImageLatest {
+    width: 40%;
+  }
+  .infoLatestPost {
+    width: 53%;
+  }
+  .titlePostType {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 35px;
+    color: #3e3e3e;
+  }
+  .mobileTitle{
+    display: block;
+    border-bottom: 3px solid #000;
+    margin-bottom: 20px;
   }
 }

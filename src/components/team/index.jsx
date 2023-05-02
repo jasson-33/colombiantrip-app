@@ -25,14 +25,16 @@ const Team = ({ teamData }) => {
                 />
               </div>
             </div>
-            <h2
-              className={` ${Bigola.className} ${styles.teamMemberName}`}
-              dangerouslySetInnerHTML={{ __html: member.name }}
-            />
-            <h3
-              className={`${styles.teamMemberRol}`}
-              dangerouslySetInnerHTML={{ __html: member.rol }}
-            />
+            <div className={styles.contNameTeam}>            
+              <h2
+                className={` ${Bigola.className} ${styles.teamMemberName}`}
+                dangerouslySetInnerHTML={{ __html: member.name }}
+              />
+              <h3
+                className={`${styles.teamMemberRol}`}
+                dangerouslySetInnerHTML={{ __html: member.rol }}
+              />
+            </div>
           </div>
         ))}
       </div>
