@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import styles from './info-recomendations.module.css';
 
-const InfoRecomendations = () => {
+const InfoRecomendations = ({ datainfo }) => {
   const [typeInfo, setTypeInfo] = useState('docs');
 
+  const { documents, recomendations } = datainfo;
+
+  /*
   const docsExperience = {
     notes: [
       'The yellow fever vaccine is suggested , please bring a valid card. The vaccine has to be placed at least 10 days in advance of arrival to the Amazon.',
@@ -23,6 +26,7 @@ const InfoRecomendations = () => {
       'Domestic flights',
     ],
   };
+  
   const recomendationsExperience = {
     notes: [
       'Flights departing from Leticia must be programmed after noon.',
@@ -38,7 +42,8 @@ const InfoRecomendations = () => {
       'Transfer Leticia&apos;s Airport – Pier of Leticia – Leticia&apos;s Airport in Private service',
     ],
   };
-
+  */
+  const htmlInner = typeInfo === 'docs' ? documents : recomendations;
   return (
     <section className={`${styles.infoRecomendation} siteSection`}>
       <div className={`container ${styles.infoRecomendContainer}`}>
@@ -66,86 +71,9 @@ const InfoRecomendations = () => {
         </div>
 
         <div className={`${styles.innerInfo}`}>
-          <div className={styles.containerInnerInfo}>
-            <h2 className={styles.subtitleInnerInfo}>Important Notes:</h2>
-
-            <ul className={styles.ulInnerInfo}>
-              {typeInfo === 'docs' &&
-                docsExperience.notes.map((note, i) => (
-                  <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
-                    className={styles.itemInnerInfo}>
-                    {note}
-                  </li>
-                ))}
-              {typeInfo !== 'docs' &&
-                recomendationsExperience.notes.map((note, i) => (
-                  <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
-                    className={styles.itemInnerInfo}>
-                    {note}
-                  </li>
-                ))}
-            </ul>
-
-            <h2 className={styles.subtitleInnerInfo}>Included:</h2>
-
-            <ul className={styles.ulInnerInfo}>
-              {typeInfo === 'docs' &&
-                docsExperience.inlcuded.map((item, i) => (
-                  <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
-                    className={styles.itemInnerInfo}>
-                    {item}
-                  </li>
-                ))}
-              {typeInfo !== 'docs' &&
-                recomendationsExperience.inlcuded.map((item, i) => (
-                  <li
-                    key={
-                      typeof window !== 'undefined'
-                        ? window.crypto.randomUUID()
-                        : i
-                    }
-                    className={styles.itemInnerInfo}>
-                    {item}
-                  </li>
-                ))}
-            </ul>
-
-            {typeInfo === 'docs' && docsExperience.notIncluded && (
-              <>
-                <h2 className={styles.subtitleInnerInfo}>Not Included:</h2>
-
-                <ul className={styles.ulInnerInfo}>
-                  {typeInfo === 'docs' &&
-                    docsExperience.notIncluded.map((item, i) => (
-                      <li
-                        key={
-                          typeof window !== 'undefined'
-                            ? window.crypto.randomUUID()
-                            : i
-                        }
-                        className={styles.itemInnerInfo}>
-                        {item}
-                      </li>
-                    ))}
-                </ul>
-              </>
-            )}
-          </div>
+          <div
+            className={styles.containerInnerInfo}
+            dangerouslySetInnerHTML={{ __html: htmlInner }}></div>
         </div>
       </div>
     </section>
