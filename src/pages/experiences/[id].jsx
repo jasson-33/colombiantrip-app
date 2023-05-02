@@ -8,15 +8,16 @@ import React from 'react';
 const DetailExperience = ({ data }) => {
   console.log(data);
 
-  const { hero, blocks, dropdown  } = data.data;
+  const { hero, blocks, dropdown } = data.data;
 
-/*
+  /*
   const contentHero = {
     type: 'secondary',
     title: 'Medellín, Coffee Region, Tayrona & Cartagena',
     imgHero: '/images/experiences/1.jpg',
   };
 */
+  /* npm
   const contentAfterHero = {
     img: '/images/experiences/10.png',
     title: {
@@ -39,19 +40,23 @@ const DetailExperience = ({ data }) => {
     ],
     secondLayout: true,
   };
+  */
   return (
     <>
       <Hero contentHero={hero} />
-      {
-        blocks.map((block, i) => {
-            switch (block.layout) {
-              case 'list_block':
-                return <AfterHero key={i} contentAfterHero={block.content} />
-              case 'image_block':
-                return <ImgSection key={i} imgSection={block.content.img?block.content.img.url:''} />
-            }
-        })
-      }
+      {blocks.map((block, i) => {
+        switch (block.layout) {
+          case 'list_block':
+            return <AfterHero key={i} contentAfterHero={block.content} />;
+          case 'image_block':
+            return (
+              <ImgSection
+                key={i}
+                imgSection={block.content.img ? block.content.img.url : ''}
+              />
+            );
+        }
+      })}
       <Acordion dropdown={dropdown} />
       <InfoRecomendations />
     </>
@@ -59,11 +64,13 @@ const DetailExperience = ({ data }) => {
 };
 
 export async function getServerSideProps(context) {
-  const datafetch = await fetch( `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience-detail?dataexp=${context.params.id}` );
+  const datafetch = await fetch(
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience-detail?dataexp=${context.params.id}`
+  );
   const data = await datafetch.json();
   return {
-    props: {data}, 
-  }
+    props: { data },
+  };
 }
 
 export default DetailExperience;
