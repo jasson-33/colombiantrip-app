@@ -116,3 +116,25 @@
     width: 100%;
   }
 }
+
+@media only screen and (max-width: 520px){
+  .imgTextSection{
+    padding-bottom: 0;
+  }
+
+  .containerImgText{
+    gap: 20px;
+  }
+
+  .titleBlockIMgtext{
+    font-size: 45px;
+    margin: 50px auto 50px;
+    line-height: 45px;
+  }
+
+  .subtitleTextImg{
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+}
+

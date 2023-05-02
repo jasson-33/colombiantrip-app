@@ -10,7 +10,7 @@ const Hero = ({ contentHero }) => {
     <div
       className={`${styles.hero} bg-cv ${
         contentHero.withForm && styles.withForm
-      } ${contentHero.blog && styles.smallHero}`}
+      } ${contentHero.blog && styles.smallHero} ${contentHero.type === 'principal'?styles.principalHero:styles.secondaryHero } ${contentHero.withForm === true ? styles.heroPageForm : ''}`}
       style={{
         backgroundImage: `url(${
           contentHero.img_banner.sizes

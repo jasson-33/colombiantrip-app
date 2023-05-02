@@ -1,5 +1,6 @@
+import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './experience-detail.module.css';
 
 const ExperienceDetail = ({ contentExp }) => {

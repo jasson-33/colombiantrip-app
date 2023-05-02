@@ -92,3 +92,50 @@
     margin-bottom: 20px;
   }
 }
+
+@media only screen and (max-width: 520px){
+  .teamSection {
+    padding-bottom: 0;
+  }
+
+  .containerTeam {
+    flex-direction: column;
+  }
+
+  .cardTeam {
+    width: 100%;
+    position: relative;
+  }
+
+  .innerImgTeamMember {
+    position: relative;
+    height: 40vh;
+  }
+
+  .hideInfo {
+    opacity: 1;
+    visibility: visible;
+    margin-top: -3px;
+  }
+
+  .contNameTeam {
+    position: absolute;
+    width: 100%;
+    height: 40vh;
+    top: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end;
+  }
+
+  .teamMemberName, 
+  .teamMemberRol {
+    color: #fff;
+  }
+
+  .teamMemberRol {
+    margin-bottom: 20px;
+  }
+
+}
+

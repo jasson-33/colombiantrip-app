@@ -180,8 +180,12 @@
     width: 100%;
   }
 }
-@media only screen and (max-width: 520px) {
-  .titleAfterHero {
+@media only screen and (max-width: 520px){
+  .afterHero {
+    padding: 50px 0 30px;
+  }
+
+  .titleAfterHero{
     font-size: 65px;
     max-width: 320px;
     line-height: 70px;
@@ -204,12 +208,19 @@
   .ulAfterHero {
     padding-left: 40px;
   }
-  .ulAfterHero::before {
+  
+  .ulAfterHero::before{
     width: 60px;
   }
 
   .itemUlAfterHero {
     font-size: 20px;
     margin-bottom: 25px;
+  }
+
+  .imgAfterHero{
+    width: 65%;
+    background-size: 620px;
+    background-position: initial;
   }
 }

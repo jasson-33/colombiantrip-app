@@ -375,3 +375,21 @@
     display: none;
   }
 }
+
+
+@media only screen and (max-width: 520px){
+  .contactTitle{
+    font-size: 50px;
+    line-height: 45px;
+    margin-bottom: 40px;
+  }
+
+  .filedForm {
+    padding: 20px 15px 15px;
+  }
+  .legalItems {
+    flex-direction: column;
+  }
+
+}
+

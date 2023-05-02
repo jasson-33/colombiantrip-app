@@ -28,3 +28,21 @@
   font-size: 18px;
   line-height: 29px;
 }
+
+
+@media only screen and (max-width: 520px) {  
+  .gridContainer {
+    flex-direction: column;
+  }
+  .gridItem {
+    width: 100%;
+    height: 40vh;
+    padding: 50px 5% 0;  
+  }
+  .gridDescItem {
+    height: auto;
+  }
+  .gridSection {
+    margin-bottom: 0;
+  }
+}
