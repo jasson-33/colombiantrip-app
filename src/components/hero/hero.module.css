@@ -286,4 +286,22 @@
  .bigTitleHero {
     font-size: 60px;
   }
+  .heroPageForm {
+    height: auto;
+  }
+  .heroPageForm .contentHero {
+    display: block;
+    margin-top: 30vh;
+  }
+  .heroPageForm .heroForm {
+    width: 100%;
+    padding: 30px 30px;    
+  }
+  .heroPageForm .titleFormHero {
+    width: 100%;
+    font-size: 45px;
+  }
+  .heroPageForm.withForm.hero {
+    margin-bottom: 0;
+  }
 }

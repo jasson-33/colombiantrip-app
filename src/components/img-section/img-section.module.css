@@ -10,7 +10,8 @@
 }
 
 @media only screen and (max-width: 520px){
-    .imgSection{
+    .imgSection,
+    .imgSection.bigImgSection{
         height: 40vh;
     }
 }
