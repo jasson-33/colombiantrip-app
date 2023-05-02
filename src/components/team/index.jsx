@@ -25,7 +25,7 @@ const Team = ({ teamData }) => {
                 />
               </div>
             </div>
-            <div className={styles.contNameTeam}>            
+            <div className={styles.contNameTeam}>
               <h2
                 className={` ${Bigola.className} ${styles.teamMemberName}`}
                 dangerouslySetInnerHTML={{ __html: member.name }}
