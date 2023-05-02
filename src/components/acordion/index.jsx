@@ -2,8 +2,11 @@ import { ColombianContext } from '@/context/ColombianContext';
 import React, { useContext } from 'react';
 import styles from './acordion.module.css';
 
-const Acordion = () => {
+const Acordion = ({ dropdown }) => {
   const { Bigola } = useContext(ColombianContext);
+  const stepsExperience = dropdown;
+
+  /*
   const stepsExperience = [
     {
       nameCity: 'Medellín',
@@ -87,7 +90,7 @@ const Acordion = () => {
       ],
     },
     {
-      nameCity: 'Coffee Region',
+      nameCity: 'RCoffee egion',
       steps: [
         {
           infoDay: 'Day 5',
@@ -288,6 +291,7 @@ const Acordion = () => {
       ],
     },
   ];
+*/
 
   const toggleAccordion = (e) => {
     const stepsContainer =
@@ -353,7 +357,11 @@ const Acordion = () => {
                           <div
                             className={`${styles.iconFeature} bg-ct`}
                             style={{
-                              backgroundImage: `url(${feature.iconFeature})`,
+                              backgroundImage: `url(${
+                                feature.iconFeature.sizes
+                                  ? feature.iconFeature.sizes['super-small']
+                                  : ''
+                              })`,
                             }}></div>
                           <p className={styles.featureText}>
                             {feature.infoFeature}
@@ -362,20 +370,20 @@ const Acordion = () => {
                       ))}
                     </div>
 
-                    <h3 className={`${styles.subtitleDay}`}>
-                      {step.subtitleDayInfo}
-                    </h3>
-
-                    {step.textDayInfo.map((info, i) => (
-                      <p key={i} className={styles.infoTextDay}>
-                        {info}
-                      </p>
-                    ))}
+                    <h3
+                      className={`${styles.subtitleDay}`}
+                      dangerouslySetInnerHTML={{ __html: step.subtitleDayInfo }}
+                    />
+                    <p
+                      className={styles.infoTextDay}
+                      dangerouslySetInnerHTML={{ __html: step.textDayInfo }}
+                    />
                   </div>
-
                   <div
                     className={`${styles.imgStep} bg-cv`}
-                    style={{ backgroundImage: `url(${step.imgDay})` }}></div>
+                    style={{
+                      backgroundImage: `url(${step.imgDay.sizes.medium_large})`,
+                    }}></div>
                 </div>
               ))}
             </div>
