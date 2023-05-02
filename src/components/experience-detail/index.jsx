@@ -1,8 +1,10 @@
+import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './experience-detail.module.css';
 
-const ExperienceDetail = () => {
+const ExperienceDetail = () => {  
+  const { Bigola } = useContext(ColombianContext);
   const experiencesDetail = [
     {
       img: '/images/experiences/8.jpg',
@@ -48,7 +50,7 @@ const ExperienceDetail = () => {
               <div
                 className={`bg-cv ${styles.imgCardExperience}`}
                 style={{ backgroundImage: `url(${experience.img})` }}></div>
-              <h2 className={styles.titleCard}>{experience.title}</h2>
+              <h2 className={`${styles.titleCard} ${Bigola.className}`}>{experience.title}</h2>
             </Link>
           </div>
         ))}
