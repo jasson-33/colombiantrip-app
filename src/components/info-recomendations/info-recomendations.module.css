@@ -78,7 +78,8 @@
   text-transform: uppercase;
 }
 
-.ulInnerInfo {
+.containerInnerInfo ul,
+.containerInnerInfo ol {
   margin-bottom: 30px;
   font-style: normal;
   font-weight: 325;
@@ -87,7 +88,7 @@
   padding-left: 25px;
 }
 
-.itemInnerInfo {
+.containerInnerInfo li {
   list-style: disc;
 }
 
