@@ -9,9 +9,9 @@
   margin-bottom: 100px;
 }
 
-@media only screen and (max-width: 520px){
-    .imgSection,
-    .imgSection.bigImgSection{
-        height: 40vh;
-    }
+@media only screen and (max-width: 520px) {
+  .imgSection,
+  .imgSection.bigImgSection {
+    height: 40vh;
+  }
 }

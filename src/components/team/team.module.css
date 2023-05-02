@@ -93,7 +93,7 @@
   }
 }
 
-@media only screen and (max-width: 520px){
+@media only screen and (max-width: 520px) {
   .teamSection {
     padding-bottom: 0;
   }
@@ -128,7 +128,7 @@
     justify-content: flex-end;
   }
 
-  .teamMemberName, 
+  .teamMemberName,
   .teamMemberRol {
     color: #fff;
   }
@@ -136,6 +136,4 @@
   .teamMemberRol {
     margin-bottom: 20px;
   }
-
 }
-
