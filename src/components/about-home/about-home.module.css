@@ -137,12 +137,14 @@
   .imageAboutHomeMobile {
     width: 80%;
   }
-
   .paragraphsGroup {
     margin-top: 20px;
     width: 80%;
   }
   .aboutHome {
     padding: 80px 0 10px;
+  }  
+  .titleAbout {
+    width: 80%;
   }
 }

@@ -247,6 +247,9 @@
   .ctaHero a {
     font-size: 16px;
   }
+  .titleFormHero {
+    font-size: 55px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .principalText {
@@ -277,6 +280,28 @@
     line-height: 19px;
     letter-spacing: 0.16em;
   }
+  .heroPageForm {
+    height: auto;
+  }
+  .heroPageForm .contentHero {
+    display: block;
+    margin-top: 30vh;
+  }
+  .heroPageForm .heroForm {
+    width: 100%;
+    padding: 30px 30px;
+    margin-bottom: 0;
+  }
+  .heroPageForm .titleFormHero {
+    width: 100%;
+    font-size: 45px;
+  }
+  .heroPageForm.withForm.hero {
+    margin-bottom: 0;
+  }
+  .heroPageForm .imageInnerHero {
+    height: 50vh;
+  }
 }
 @media only screen and (max-width: 520px) {
   .secondaryHero {
@@ -295,6 +320,7 @@
   .bigTitleHero {
     font-size: 60px;
   }
+  
   .heroPageForm {
     height: auto;
   }
@@ -305,6 +331,7 @@
   .heroPageForm .heroForm {
     width: 100%;
     padding: 30px 30px;
+    margin-bottom: 0;
   }
   .heroPageForm .titleFormHero {
     width: 100%;
@@ -315,8 +342,5 @@
   }
   .heroPageForm .imageInnerHero {
     height: 50vh;
-  }
-  .heroPageForm .heroForm {
-    margin-bottom: 0;
   }
 }

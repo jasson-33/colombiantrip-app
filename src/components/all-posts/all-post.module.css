@@ -117,7 +117,12 @@
   }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 1024px) {
+  .titlePostType:last-of-type {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
   .allpost {
     padding: 0;
   }
@@ -134,3 +139,4 @@
     display: none;
   }
 }
+

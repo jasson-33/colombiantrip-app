@@ -374,6 +374,35 @@
   .itemFooterNav:nth-child(even) .divisorPoint {
     display: none;
   }
+
+  .itemFooterNav {
+    width: auto;
+  }
+
+  .formFooterB .inputForm {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .labelTextInputs {
+    margin-left: 0;
+  }
+
+  .inputsGroup {
+    margin: 0;
+  }
+
+  .shortGroup {
+    width: 100%;
+  }
+
+  .formFooterB .dateInput .inputForm {
+    width: 31%;
+  }
+
+  .dateInput {
+    justify-content: space-between;
+  }
 }
 
 @media only screen and (max-width: 520px) {
@@ -382,7 +411,6 @@
     line-height: 45px;
     margin-bottom: 40px;
   }
-
   .filedForm {
     padding: 20px 15px 15px;
   }

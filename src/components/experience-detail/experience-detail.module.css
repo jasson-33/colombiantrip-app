@@ -43,6 +43,21 @@
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .titleCard {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cardExperience {
+    width: 100% !important;
+    height: 70vh;
+  }
+  .titleCard {
+    font-size: 50px;
+  }
+}
 @media only screen and (max-width: 520px) {
   .experienceDetailSection {
     padding: 0;
@@ -51,10 +66,5 @@
   .titleCard {
     font-size: 33px;
     line-height: 45px;
-  }
-
-  .cardExperience {
-    width: 100% !important;
-    height: 70vh;
   }
 }

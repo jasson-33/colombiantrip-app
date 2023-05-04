@@ -28,14 +28,13 @@
   font-size: 18px;
   line-height: 29px;
 }
-
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 768px) {
   .gridContainer {
     flex-direction: column;
   }
   .gridItem {
     width: 100%;
-    height: 40vh;
+    height: 60vh;
     padding: 50px 5% 0;
   }
   .gridDescItem {
@@ -45,3 +44,15 @@
     margin-bottom: 0;
   }
 }
+
+@media only screen and (max-width: 520px) {  
+  .gridItem {
+    width: 100%;
+    height: 40vh;
+    padding: 50px 5% 0;
+  }
+  .gridDescItem {
+    height: auto;
+  }
+}
+

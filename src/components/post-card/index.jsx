@@ -8,7 +8,9 @@ const PostCard = ({ popularPost }) => {
   const { Bigola } = useContext(ColombianContext);
   return (
     <div
-      className={`${styles.postCard}`}
+      className={`${styles.postCard} ${
+        popularPost ? styles.popularViewBlock : ''
+      }`}
       style={{
         width: popularPost && popularPost.width,
         gridArea: popularPost && popularPost.gridArea,

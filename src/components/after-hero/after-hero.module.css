@@ -112,12 +112,12 @@
   }
 
   .ulAfterHero {
-    padding-left: 200px;
+    padding-left: 140px;
     width: calc(100% - 320px);
   }
 
   .ulAfterHero::before {
-    width: 200px;
+    width: 150px;
   }
 
   .itemUlAfterHero {
@@ -132,14 +132,14 @@
     line-height: 70px;
   }
 
-  .ulAfterHero {
+  /* .ulAfterHero {
     padding-left: 200px;
     width: calc(100% - 320px);
   }
 
   .ulAfterHero::before {
     width: 200px;
-  }
+  } */
 
   .itemUlAfterHero {
     font-size: 24px;
