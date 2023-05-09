@@ -37,7 +37,7 @@ function Home({ homedata }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const resHome = await fetch(
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`
   );
