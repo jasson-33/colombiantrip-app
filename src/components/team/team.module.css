@@ -17,6 +17,8 @@
 .imgTeamMember {
   width: 100%;
   position: relative;
+  height: auto;
+  aspect-ratio: 1 / 1.5;
 }
 
 .hideInfo {
@@ -28,10 +30,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 50px 30px;
+  /* padding: 50px 30px; */
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
 }
 
 .cardTeam:hover .hideInfo {
@@ -44,6 +48,12 @@
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 30px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .innerImgTeamMember {
@@ -83,7 +93,7 @@
   }
 
   .hideInfo {
-    padding: 30px;
+    /* padding: 30px; */
   }
 
   .infoTeamMember {
