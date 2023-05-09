@@ -14,16 +14,16 @@ const Hero = ({ contentHero }) => {
         contentHero.type === 'principal'
           ? styles.principalHero
           : styles.secondaryHero
-      } ${contentHero.withForm === true ? styles.heroPageForm : ''}`}
-      >
-      <div className={`${styles.imageInnerHero} bg-cv`}
-      style={{
-        backgroundImage: `url(${
-          contentHero.img_banner.sizes
-            ? contentHero.img_banner.sizes['super-large']
-            : '/images/home/2.jpg'
-        })`,
-      }}></div>      
+      } ${contentHero.withForm === true ? styles.heroPageForm : ''}`}>
+      <div
+        className={`${styles.imageInnerHero} bg-cv`}
+        style={{
+          backgroundImage: `url(${
+            contentHero.img_banner.sizes
+              ? contentHero.img_banner.sizes['super-large']
+              : '/images/home/2.jpg'
+          })`,
+        }}></div>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
         <div className={`${styles.contentHero}`}>
           {contentHero.type === 'principal' ? (
@@ -36,20 +36,23 @@ const Hero = ({ contentHero }) => {
                 className={styles.subtitleText}
                 dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
               />
-              <div className={`${styles.ctasHero} flex f-s f-ac`}>
-                <div className={styles.ctaHero}>
-                  <Link href="/">
-                    <div className={`${styles.iconCtaHero} bg-ct`}></div>
-                    LET&apos;S CREATE YOUR DREAM TRIP
-                  </Link>
+              {contentHero.links && (
+                <div className={`${styles.ctasHero} flex f-s f-ac`}>
+                  {contentHero.links.map((data, i) => (
+                    <div key={i} className={styles.ctaHero}>
+                      <Link
+                        href={
+                          data.type === 'page'
+                            ? data.link
+                            : `/experiences/${data.link}`
+                        }>
+                        <div className={`${styles.iconCtaHero} bg-ct`}></div>
+                        {data.label}
+                      </Link>
+                    </div>
+                  ))}
                 </div>
-                <div className={styles.ctaHero}>
-                  <Link href="/">
-                    <div className={`${styles.iconCtaHero} bg-ct`}></div>
-                    B2B PARTNERSHIP
-                  </Link>
-                </div>
-              </div>
+              )}
             </>
           ) : (
             <>

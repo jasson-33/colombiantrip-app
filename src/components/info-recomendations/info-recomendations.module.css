@@ -109,13 +109,13 @@
     margin-bottom: 0;
   }
   .controller {
-      height: 110px;
-      padding: 0;
-      width: 50%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
+    height: 110px;
+    padding: 0;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
   }
 }
