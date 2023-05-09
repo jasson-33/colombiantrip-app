@@ -155,3 +155,32 @@
     width: 45%;
   }
 }
+
+@media only screen and (max-width: 520px) {
+  .singleStep {    
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .infoStep {
+    width: 100%;
+  }
+  .featuresDay {
+    flex-direction: column;
+  }
+  .feature {
+    width: 100%;
+  }
+  .imgStep {    
+    width: 100%;
+    height: 60vh;
+  }
+  .singleStep.invert {
+    flex-direction: column;
+  }
+  .itemExperience.active {
+    padding-bottom: 30px;
+  }
+  .cityExperience {
+    width: 80%;
+  }
+}

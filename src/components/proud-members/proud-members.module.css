@@ -66,4 +66,21 @@
   .titleProud {
     font-size: 45px;
   }
+  .containerMembers {
+    animation: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 0 40px;
+    column-gap: 0px;
+    row-gap: 50px;
+  }
+  .containerMembers:last-of-type {
+    animation: none;
+    display: none;
+  }
+  .memberIcon {
+    width: auto;
+    height: 120px;
+  }
 }

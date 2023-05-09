@@ -22,7 +22,7 @@
 .controller {
   cursor: pointer;
   padding: 20px 50px 25px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background-color: #fff;
   color: #000;
   transition: all 0.5s ease-in-out;
@@ -75,7 +75,7 @@
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 30px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .containerInnerInfo ul,
@@ -101,5 +101,21 @@
   .ulInnerInfo {
     font-size: 16px;
     line-height: 25px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .infoRecomendation {
+    margin-bottom: 0;
+  }
+  .controller {
+      height: 110px;
+      padding: 0;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      align-items: center;
   }
 }

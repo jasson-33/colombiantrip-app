@@ -59,16 +59,21 @@
   }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 1024px) {
+  /* .containerLatest {    
+    width: 50%;
+  } */
+}
+@media only screen and (max-width: 768px) {
   .containerLatest {
     width: 100%;
     margin-top: 20px;
   }
   .containerImageLatest {
-    width: 40%;
+    width: 25%;
   }
   .infoLatestPost {
-    width: 53%;
+    width: 73%;
   }
   .titlePostType {
     font-weight: 400;
@@ -80,5 +85,14 @@
     display: block;
     border-bottom: 3px solid #000;
     margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .containerImageLatest {
+    width: 40%;
+  }  
+  .infoLatestPost {
+    width: 53%;
   }
 }

@@ -59,7 +59,15 @@
   }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 1024px) {
+  /* .popularViewBlock.postCard{
+    width: 48%!important;
+  }
+  .containerPrincipalPost .postCard {
+    width: 100%!important;
+  } */
+}
+@media only screen and (max-width: 768px) {
   .postCard {
     display: block;
     width: 100% !important;
