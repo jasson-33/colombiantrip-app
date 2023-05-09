@@ -103,7 +103,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   const objectToIterate =
     horizontalType === 'home' ? horizontalBlocks : horizontalBlocksWorks;
-    
+
   // const useWidth = () => {
   //   const [width, setWidth] = useState(0); // default width, detect on server.
 
@@ -269,28 +269,28 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   }, []);
 
-  const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '1920');
-  const imgItems = useRef([]);
-  useEffect(() => {
-    if(typeof window !== 'undefined'){      
-        const handleResize = () => {
-          setScreenWidth(window.innerWidth);
-          console.log(document.querySelectorAll('.imgItem'));
-          if(screenWidth > 768){
-            document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = '80vh';});            
-            imgItems.current.forEach((img, i) => { img.style.height = '80vh'});
-            console.log(imgItems);
-          }else{
-            document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;         
-            imgItems.current.forEach((img, i) => { img.style.height = `${img.offsetWidth}px`});
-            console.log(imgItems);});
-          }
-          console.log(screenWidth);
-        };
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
-    }
-  }, [screenWidth]);
+  // const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '1920');
+  // const imgItems = useRef([]);
+  // useEffect(() => {
+  //   if(typeof window !== 'undefined'){      
+  //       const handleResize = () => {
+  //         setScreenWidth(window.innerWidth);
+  //         console.log(document.querySelectorAll('.imgItem'));
+  //         if(screenWidth > 768){
+  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = '80vh';});            
+  //           imgItems.current.forEach((img, i) => { img.style.height = '80vh';});
+  //           console.log(imgItems);
+  //         }else{
+  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;         
+  //           imgItems.current.forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;});
+  //           console.log(imgItems);});
+  //         }
+  //         console.log(screenWidth);
+  //       };
+  //       window.addEventListener('resize', handleResize);
+  //       return () => window.removeEventListener('resize', handleResize);
+  //   }
+  // }, [screenWidth]);
 
   return (
     <div className={`siteSection ${styles.horizontalSection}`}>
@@ -383,7 +383,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                     )}
                   </div>
                   <div
-                    ref = {(img) => {imgItems.current[i] = img}}
+                    ref = {(img) => {imgItems.current[i] = img;}}
                     className={`bg-cv imgItem imgItem-${i} ${styles.imgItemHorizontal
                       } ${horizontalType === 'works' && styles.worksImg}`}
                     style={{
