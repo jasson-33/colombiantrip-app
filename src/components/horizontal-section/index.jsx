@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext, useState } from 'react';
+import React, { useRef, useEffect, useContext } from 'react';
 import styles from './horizontal-section.module.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -383,7 +383,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                     )}
                   </div>
                   <div
-                    ref = {(img) => {imgItems.current[i] = img;}}
+                    // ref = {(img) => {imgItems.current[i] = img;}}
                     className={`bg-cv imgItem imgItem-${i} ${styles.imgItemHorizontal
                       } ${horizontalType === 'works' && styles.worksImg}`}
                     style={{

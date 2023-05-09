@@ -287,10 +287,14 @@
 
   .imgItemHorizontal {
     width: 90vw;
+    height: auto;
+    aspect-ratio: 1/1.2;
+    margin-top: 20px;
   }
 
   .infoItemHorizontal {
     width: 80%;
+    bottom: -60vh;
   }
 
   .subtitleBlock {
@@ -300,10 +304,15 @@
   }
 
   .number {
-    font-size: 110px;
+    font-size: 70px;
+    line-height: 1;
   }
 
   .lineSubtitle {
     width: 15%;
+  }
+
+  .detailItemHorizontal {
+    font-size: 14px;
   }
 }
