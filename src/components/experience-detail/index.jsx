@@ -1,7 +1,10 @@
 import Link from 'next/link';
+import { ColombianContext } from '@/context/ColombianContext';
+import React, { useContext } from 'react';
 import styles from './experience-detail.module.css';
 
 const ExperienceDetail = ({ contentExp }) => {
+  const { Bigola } = useContext(ColombianContext);
   const experiencesDetail = contentExp;
   return (
     <section className={`siteSection ${styles.experienceDetailSection}`}>
@@ -21,7 +24,7 @@ const ExperienceDetail = ({ contentExp }) => {
                   })`,
                 }}></div>
               <h2
-                className={styles.titleCard}
+                className={`${styles.titleCard} ${Bigola.className}`}
                 dangerouslySetInnerHTML={{ __html: title }}
               />
             </Link>

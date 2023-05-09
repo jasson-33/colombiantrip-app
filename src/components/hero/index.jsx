@@ -38,13 +38,13 @@ const Hero = ({ contentHero }) => {
               />
               <div className={`${styles.ctasHero} flex f-s f-ac`}>
                 <div className={styles.ctaHero}>
-                  <Link href="/">
+                  <Link href="/how-it-works">
                     <div className={`${styles.iconCtaHero} bg-ct`}></div>
                     LET&apos;S CREATE YOUR DREAM TRIP
                   </Link>
                 </div>
                 <div className={styles.ctaHero}>
-                  <Link href="/">
+                  <Link href="/b2b">
                     <div className={`${styles.iconCtaHero} bg-ct`}></div>
                     B2B PARTNERSHIP
                   </Link>

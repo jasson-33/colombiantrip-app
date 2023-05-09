@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useContext } from 'react';
+import React, { useRef, useEffect, useContext, useState } from 'react';
 import styles from './horizontal-section.module.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -103,7 +103,17 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   const objectToIterate =
     horizontalType === 'home' ? horizontalBlocks : horizontalBlocksWorks;
+    
+  // const useWidth = () => {
+  //   const [width, setWidth] = useState(0); // default width, detect on server.
 
+  //   const handleResize = () => setWidth(window.innerWidth);
+  //   useEffect(() => {
+  //     window.addEventListener('resize', handleResize);
+  //     return () => window.removeEventListener('resize', handleResize);
+  //   }, [handleResize]);
+  //   return width;
+  // };
   useEffect(() => {
     const blocks = gsap.utils.toArray('.itemHorizontal');
     ScrollTrigger.matchMedia({
@@ -138,9 +148,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         blocks.forEach((block, i) => {
           blockTl = gsap.to(block.querySelector('.wrapperBlock'), {
-            transform: `translateX(-${
-              i === blocks.length - 1 ? 0 : 0
-            }%) scale(1)`,
+            transform: `translateX(-${i === blocks.length - 1 ? 0 : 0
+              }%) scale(1)`,
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               containerAnimation: to,
@@ -148,14 +157,14 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 i === blocks.length - 1
                   ? '-70% 0%'
                   : i === 0
-                  ? '-40% 0%'
-                  : 'top 80%',
+                    ? '-40% 0%'
+                    : 'top 80%',
               end:
                 i === blocks.length - 1
                   ? '100% 95%'
                   : i === 0
-                  ? '120% 80%'
-                  : 'end -50%',
+                    ? '120% 80%'
+                    : 'end -50%',
               scrub: 3,
               onEnter: (e) => {
                 changeBackground(
@@ -176,8 +185,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 i === blocks.length - 1 || i === 0
                   ? ''
                   : e.trigger._gsap.target.parentElement.classList.add(
-                      styles.hide
-                    );
+                    styles.hide
+                  );
               },
               // markers: i === blocks.length - 1 ? true : false
             },
@@ -224,9 +233,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         blocks.forEach((block, i) => {
           blockTl = gsap.to(block.querySelector('.wrapperBlock'), {
-            transform: `translateX(-${
-              i === blocks.length - 1 ? 0 : 0
-            }%) scale(1)`,
+            transform: `translateX(-${i === blocks.length - 1 ? 0 : 0
+              }%) scale(1)`,
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               // containerAnimation: to,
@@ -258,7 +266,31 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         };
       },
     });
+
   }, []);
+
+  const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '1920');
+  const imgItems = useRef([]);
+  useEffect(() => {
+    if(typeof window !== 'undefined'){      
+        const handleResize = () => {
+          setScreenWidth(window.innerWidth);
+          console.log(document.querySelectorAll('.imgItem'));
+          if(screenWidth > 768){
+            document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = '80vh';});            
+            imgItems.current.forEach((img, i) => { img.style.height = '80vh'});
+            console.log(imgItems);
+          }else{
+            document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;         
+            imgItems.current.forEach((img, i) => { img.style.height = `${img.offsetWidth}px`});
+            console.log(imgItems);});
+          }
+          console.log(screenWidth);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }
+  }, [screenWidth]);
 
   return (
     <div className={`siteSection ${styles.horizontalSection}`}>
@@ -337,9 +369,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                           </div>
 
                           <div
-                            className={`${styles.goTrip} ${
-                              block.invertBtn ? styles.invertColors : ''
-                            }`}>
+                            className={`${styles.goTrip} ${block.invertBtn ? styles.invertColors : ''
+                              }`}>
                             <div className={`${styles.arrowIcon} bg-ct`}></div>
                             <p
                               className={styles.textBtn}
@@ -352,13 +383,12 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                     )}
                   </div>
                   <div
-                    className={`bg-cv imgItem imgItem-${i} ${
-                      styles.imgItemHorizontal
-                    } ${horizontalType === 'works' && styles.worksImg}`}
+                    ref = {(img) => {imgItems.current[i] = img}}
+                    className={`bg-cv imgItem imgItem-${i} ${styles.imgItemHorizontal
+                      } ${horizontalType === 'works' && styles.worksImg}`}
                     style={{
-                      backgroundImage: `url(${
-                        block.img.sizes ? block.img.sizes.large : ''
-                      })`,
+                      backgroundImage: `url(${block.img.sizes ? block.img.sizes.large : ''
+                        })`,
                     }}></div>
                 </div>
               </div>
@@ -369,5 +399,6 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
     </div>
   );
 };
+
 
 export default HorizontalSection;

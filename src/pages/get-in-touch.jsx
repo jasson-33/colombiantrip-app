@@ -16,6 +16,7 @@ const GetInTouch = () => {
     subtitle: '',
     type: 'secondary'
   };
+  
   return (
     <>
       <Hero contentHero={contentHero} />      
