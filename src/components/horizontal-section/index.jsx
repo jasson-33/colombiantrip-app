@@ -107,8 +107,9 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         blocks.forEach((block, i) => {
           blockTl = gsap.to(block.querySelector('.wrapperBlock'), {
-            transform: `translateX(-${i === blocks.length - 1 ? 0 : 0
-              }%) scale(1)`,
+            transform: `translateX(-${
+              i === blocks.length - 1 ? 0 : 0
+            }%) scale(1)`,
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               containerAnimation: to,
@@ -116,14 +117,14 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 i === blocks.length - 1
                   ? '-70% 0%'
                   : i === 0
-                    ? '-40% 0%'
-                    : 'top 80%',
+                  ? '-40% 0%'
+                  : 'top 80%',
               end:
                 i === blocks.length - 1
                   ? '100% 95%'
                   : i === 0
-                    ? '120% 80%'
-                    : 'end -50%',
+                  ? '120% 80%'
+                  : 'end -50%',
               scrub: 3,
               onEnter: (e) => {
                 changeBackground(
@@ -144,8 +145,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 i === blocks.length - 1 || i === 0
                   ? ''
                   : e.trigger._gsap.target.parentElement.classList.add(
-                    styles.hide
-                  );
+                      styles.hide
+                    );
               },
               // markers: i === blocks.length - 1 ? true : false
             },
@@ -175,8 +176,9 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
         blocks.forEach((block, i) => {
           blockTl = gsap.to(block.querySelector('.wrapperBlock'), {
-            transform: `translateX(-${i === blocks.length - 1 ? 0 : 0
-              }%) scale(1)`,
+            transform: `translateX(-${
+              i === blocks.length - 1 ? 0 : 0
+            }%) scale(1)`,
             scrollTrigger: {
               trigger: block.querySelector('.wrapperBlock'),
               // containerAnimation: to,
@@ -208,22 +210,21 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
         };
       },
     });
-
   }, []);
 
   // const [screenWidth, setScreenWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : '1920');
   // const imgItems = useRef([]);
   // useEffect(() => {
-  //   if(typeof window !== 'undefined'){      
+  //   if(typeof window !== 'undefined'){
   //       const handleResize = () => {
   //         setScreenWidth(window.innerWidth);
   //         console.log(document.querySelectorAll('.imgItem'));
   //         if(screenWidth > 768){
-  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = '80vh';});            
+  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = '80vh';});
   //           imgItems.current.forEach((img, i) => { img.style.height = '80vh';});
   //           console.log(imgItems);
   //         }else{
-  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;         
+  //           document.querySelectorAll('.imgItem').forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;
   //           imgItems.current.forEach((img, i) => { img.style.height = `${img.offsetWidth}px`;});
   //           console.log(imgItems);});
   //         }
@@ -274,7 +275,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                                 }}></div>
                             )}
 
-                            <h3 className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
+                            <h3
+                              className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
                               {block.subtitle}
                             </h3>
                           </div>
@@ -313,28 +315,32 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                               ))}
                             </div>
 
-                          <div
-                            className={`${styles.goTrip} ${block.invertBtn ? styles.invertColors : ''
+                            <div
+                              className={`${styles.goTrip} ${
+                                block.invertBtn ? styles.invertColors : ''
                               }`}>
-                            <div className={`${styles.arrowIcon} bg-ct`}></div>
-                            <p
-                              className={styles.textBtn}
-                              style={{ color: block.colorText }}>
-                              YOUR TRIP
-                            </p>
+                              <div
+                                className={`${styles.arrowIcon} bg-ct`}></div>
+                              <p
+                                className={styles.textBtn}
+                                style={{ color: block.colorText }}>
+                                YOUR TRIP
+                              </p>
+                            </div>
                           </div>
-                        </div>
-                      </>
-                    )}
+                        </>
+                      )}
                     </div>
                   </Link>
                   <div
                     // ref = {(img) => {imgItems.current[i] = img;}}
-                    className={`bg-cv imgItem imgItem-${i} ${styles.imgItemHorizontal
-                      } ${horizontalType === 'works' && styles.worksImg}`}
+                    className={`bg-cv imgItem imgItem-${i} ${
+                      styles.imgItemHorizontal
+                    } ${horizontalType === 'works' && styles.worksImg}`}
                     style={{
-                      backgroundImage: `url(${block.img.sizes ? block.img.sizes.large : ''
-                        })`,
+                      backgroundImage: `url(${
+                        block.img.sizes ? block.img.sizes.large : ''
+                      })`,
                     }}></div>
                 </div>
               </div>
@@ -345,6 +351,5 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
     </div>
   );
 };
-
 
 export default HorizontalSection;

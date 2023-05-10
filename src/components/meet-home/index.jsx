@@ -56,8 +56,9 @@ const MeetHome = ({ blogdata }) => {
         <Link
           href="/meet-colombia"
           className={`${styles.allArticles} ${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
-          <span className={`bg-ct ${styles.arrowRight} ${Gotham_Bold.className}`}></span>VIEW ALL
-          ARTICLES
+          <span
+            className={`bg-ct ${styles.arrowRight} ${Gotham_Bold.className}`}></span>
+          VIEW ALL ARTICLES
         </Link>
       </div>
     </section>
