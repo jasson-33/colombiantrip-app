@@ -18,7 +18,7 @@ const Team = ({ teamData }) => {
                 src={member.img.sizes ? member.img.sizes.medium : ''}
                 className={styles.innerImgTeamMember}
               />
-              <div className={styles.hideInfo}>
+              <div className={styles.hideInfo} style={{backgroundColor:`${member.color}`}}>
                 <p
                   className={styles.infoTeamMember}
                   dangerouslySetInnerHTML={{ __html: member.info }}
