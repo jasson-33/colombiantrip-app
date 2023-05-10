@@ -18,7 +18,6 @@
   margin-bottom: 50vh;
 }
 
-
 .containerHero {
   height: 100%;
   padding-bottom: 70px;
@@ -320,7 +319,7 @@
   .bigTitleHero {
     font-size: 60px;
   }
-  
+
   .heroPageForm {
     height: auto;
   }

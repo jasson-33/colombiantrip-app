@@ -3,6 +3,7 @@ import styles from './horizontal-section.module.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ColombianContext } from '@/context/ColombianContext';
+import Link from 'next/link';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,48 +12,6 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
   const scroller = useRef();
 
   const horizontalBlocks = horizontalData;
-
-  /*
-  const horizontalBlocks = [
-    {
-      title: 'Bogotá , Nariño, Medellín & Cartagena',
-      subtitle:
-        'Colombia: Experience Our Enchanted Origins, Landscapes, Architecture, and Cultural Treasures',
-      content:
-        'One of the biggest exporters of flowers in the world, thanks to the millions of plants blooming across the country in every color of rainbow.',
-      img: '/images/home/40.jpg',
-      colorLine: '#FCBE15',
-      backgroundColor: '#34BBDB',
-    },
-    {
-      title: 'Cartagena',
-      subtitle: 'The Queen of the Caribbean Coast',
-      content:
-        'Natgeo says: "If Earth\'s biodiversity were a country, it could be called Colombia."',
-      img: '/images/home/14-a.jpg',
-      colorLine: '#D23250',
-      backgroundColor: '#FCBE15',
-    },
-    {
-      title: 'Amazon Adventure',
-      subtitle: 'The Amazon Rainforest is the Perfect Place for Nature Lovers.',
-      content:
-        'Amazonian wildlife puts on a spectacular show every day, starting with the pink river dolphins that populate its waters.',
-      img: '/images/home/19.jpg',
-      colorLine: '#D23250',
-      backgroundColor: '#AFCA0C',
-    },
-    {
-      title: 'Caño Cristales',
-      subtitle: 'The Most Beautiful River in the World',
-      content:
-        'Amazonian wildlife puts on a spectacular show every day, starting with the pink river dolphins that populate its waters.',
-      img: '/images/home/20.jpg',
-      colorLine: '#FCBE15',
-      backgroundColor: '#D23250',
-    },
-  ];
-*/
 
   const horizontalBlocksWorks = [
     {
@@ -205,23 +164,6 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
     });
     ScrollTrigger.matchMedia({
       '(max-width: 1024px)': () => {
-        // const to = gsap.to(blocks, {
-        //   xPercent: () => -100 * (blocks.length - 1),
-        //   ease: 'none',
-        //   scrollTrigger: {
-        //     trigger: scroller.current,
-        //     markers: false,
-        //     pin: true,
-        //     pinSpacing: true,
-        //     scrub: 1,
-        //     invalidateOnRefresh: true,
-        //     anticipatePin: 1,
-        //     // snap: 1 / (blocks.length - 1),
-
-        //     end: () => '+=' + window.innerWidth,
-        //   },
-        // });
-
         const changeBackground = (bg, parent) => {
           parent.classList.remove(styles.hide);
           gsap.to(scroller.current, {
@@ -312,61 +254,64 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 className={`${styles.block} itemHorizontal itemHorizontal-${i}`}
                 data-bg={block.backgroundColor}>
                 <div className={`${styles.wrapperBlock} wrapperBlock`}>
-                  <div
-                    className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
-                    {horizontalType === 'home' && (
-                      <>
-                        <h2
-                          className={`${styles.titleBlock} ${Bigola.className}`}>
-                          {block.title}
-                        </h2>
-                        <div className={styles.wrapperSubtitle}>
-                          {block.colorLine && (
-                            <div
-                              className={styles.lineSubtitle}
-                              style={{
-                                backgroundColor: block.colorLine,
-                              }}></div>
-                          )}
-
-                          <h3 className={styles.subtitleBlock}>
-                            {block.subtitle}
-                          </h3>
-                        </div>
-
-                        <div
-                          className={styles.infoItemHorizontal}
-                          style={{ backgroundColor: block.backgroundColor }}>
-                          <p className={`${styles.number}`}>0{i + 1}</p>
-                          <p className={styles.detailItemHorizontal}>
-                            {block.content}
-                          </p>
-                        </div>
-                      </>
-                    )}
-
-                    {horizontalType === 'works' && (
-                      <>
-                        <div className={styles.infoWork}>
+                  <Link
+                    rel="stylesheet"
+                    href={block.url ? `/experiences/${block.url}` : ''}>
+                    <div
+                      className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
+                      {horizontalType === 'home' && (
+                        <>
                           <h2
-                            className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}>
+                            className={`${styles.titleBlock} ${Bigola.className}`}>
                             {block.title}
                           </h2>
+                          <div className={styles.wrapperSubtitle}>
+                            {block.colorLine && (
+                              <div
+                                className={styles.lineSubtitle}
+                                style={{
+                                  backgroundColor: block.colorLine,
+                                }}></div>
+                            )}
 
-                          <div className={styles.innerInfoWork}>
-                            {block.content.map((text, i) => (
-                              <p
-                                key={
-                                  typeof window !== 'undefined'
-                                    ? window.crypto.randomUUID()
-                                    : i
-                                }
-                                className={styles.textWork}
-                                style={{ color: block.colorText }}>
-                                {text}
-                              </p>
-                            ))}
+                            <h3 className={styles.subtitleBlock}>
+                              {block.subtitle}
+                            </h3>
                           </div>
+
+                          <div
+                            className={styles.infoItemHorizontal}
+                            style={{ backgroundColor: block.backgroundColor }}>
+                            <p className={`${styles.number}`}>0{i + 1}</p>
+                            <p className={styles.detailItemHorizontal}>
+                              {block.content}
+                            </p>
+                          </div>
+                        </>
+                      )}
+
+                      {horizontalType === 'works' && (
+                        <>
+                          <div className={styles.infoWork}>
+                            <h2
+                              className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}>
+                              {block.title}
+                            </h2>
+
+                            <div className={styles.innerInfoWork}>
+                              {block.content.map((text, i) => (
+                                <p
+                                  key={
+                                    typeof window !== 'undefined'
+                                      ? window.crypto.randomUUID()
+                                      : i
+                                  }
+                                  className={styles.textWork}
+                                  style={{ color: block.colorText }}>
+                                  {text}
+                                </p>
+                              ))}
+                            </div>
 
                           <div
                             className={`${styles.goTrip} ${block.invertBtn ? styles.invertColors : ''
@@ -381,7 +326,8 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                         </div>
                       </>
                     )}
-                  </div>
+                    </div>
+                  </Link>
                   <div
                     // ref = {(img) => {imgItems.current[i] = img;}}
                     className={`bg-cv imgItem imgItem-${i} ${styles.imgItemHorizontal

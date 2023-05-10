@@ -45,7 +45,7 @@
   }
 }
 
-@media only screen and (max-width: 520px) {  
+@media only screen and (max-width: 520px) {
   .gridItem {
     width: 100%;
     height: 40vh;
@@ -55,4 +55,3 @@
     height: auto;
   }
 }
-
