@@ -280,7 +280,7 @@
 .innerSubmitGroup {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   cursor: pointer;
   background-color: transparent;
   border: none;

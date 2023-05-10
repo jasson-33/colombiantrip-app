@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import styles from './about-home.module.css';
 
 const AboutHome = ({ aboutHome }) => {
-  const { Bigola } = useContext(ColombianContext);
+  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
   const [screenWidth, setScreenWidth] = useState(1920);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const AboutHome = ({ aboutHome }) => {
           />
 
           <h3
-            className={styles.subtitleAbout}
+            className={`${styles.subtitleAbout} ${Gotham_Bold.className}`}
             dangerouslySetInnerHTML={{ __html: aboutHome.about_subtitle }}
           />
 

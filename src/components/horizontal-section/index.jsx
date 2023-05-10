@@ -8,7 +8,7 @@ import Link from 'next/link';
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalSection = ({ horizontalType, horizontalData }) => {
-  const { Bigola } = useContext(ColombianContext);
+  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
   const scroller = useRef();
 
   const horizontalBlocks = horizontalData;
@@ -274,7 +274,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                                 }}></div>
                             )}
 
-                            <h3 className={styles.subtitleBlock}>
+                            <h3 className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
                               {block.subtitle}
                             </h3>
                           </div>

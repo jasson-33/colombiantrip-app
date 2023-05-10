@@ -6,7 +6,7 @@ import styles from './meet-home.module.css';
 
 const MeetHome = ({ blogdata }) => {
   const { title, subtitle, blogs } = blogdata;
-  const { Bigola } = useContext(ColombianContext);
+  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
 
   console.log(blogdata);
 
@@ -47,7 +47,7 @@ const MeetHome = ({ blogdata }) => {
 
               <Link
                 href={`/meet-colombia/${blog.url}`}
-                className={styles.readMoreAnchor}>
+                className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
                 <span className={`bg-ct ${styles.arrowRight}`}></span> Read More
               </Link>
             </div>
@@ -55,8 +55,8 @@ const MeetHome = ({ blogdata }) => {
         </div>
         <Link
           href="/meet-colombia"
-          className={`${styles.allArticles} ${styles.readMoreAnchor}`}>
-          <span className={`bg-ct ${styles.arrowRight}`}></span>VIEW ALL
+          className={`${styles.allArticles} ${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
+          <span className={`bg-ct ${styles.arrowRight} ${Gotham_Bold.className}`}></span>VIEW ALL
           ARTICLES
         </Link>
       </div>

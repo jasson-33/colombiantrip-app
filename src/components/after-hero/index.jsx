@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import styles from './after-hero.module.css';
 
 const AfterHero = ({ contentAfterHero }) => {
-  const { Bigola, GothamBold } = useContext(ColombianContext);
+  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
   return (
     <section
       className={`siteSection ${styles.afterHero} ${
@@ -47,7 +47,7 @@ const AfterHero = ({ contentAfterHero }) => {
           {contentAfterHero.infoItems.map((info, i) => (
             <li
               key={i}
-              className={`${info.bold ? GothamBold.className : ''} ${
+              className={`${info.bold ? Gotham_Bold.className : ''} ${
                 styles.itemUlAfterHero
               }`}
               dangerouslySetInnerHTML={{ __html: info.text }}></li>
