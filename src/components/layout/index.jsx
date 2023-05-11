@@ -15,10 +15,7 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-  const { data, error } = useSWR(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/menu`,
-    fetcher
-  );
+  const { data, error } = useSWR('/api/menu', fetcher);
 
   useEffect(() => {
     let animationTimeout;
