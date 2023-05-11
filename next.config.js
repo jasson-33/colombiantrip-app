@@ -4,8 +4,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'paperplane.com.co',
+        hostname: 'colombiantrip-bkt.s3.amazonaws.com',
       },
     ],
   },
