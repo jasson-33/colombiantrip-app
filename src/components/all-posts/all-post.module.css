@@ -108,6 +108,51 @@
   gap: 50px;
 }
 
+.fullwidthPostContainer {
+  position: relative;
+  width: 100%;
+}
+
+.containerSingleLatestPost {
+  grid-template-columns: 53% 43%;
+}
+
+.containerPag {  
+  position: relative;
+  text-align: center;
+  font-size: 22px;
+}
+
+.itemPag {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  line-height: 1.9;
+  margin: 0 5px;
+  position: relative;
+  cursor: pointer;
+}
+.itemPag span {
+  position: relative;
+  z-index: 100;
+}
+
+.itemPag.selectedPag {
+  color: #fff;
+}
+
+.itemPag.selectedPag::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: #d23250;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 @media only screen and (max-width: 1350px) {
   .allpost {
     padding: 50px 0;
