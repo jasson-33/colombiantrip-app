@@ -6,6 +6,7 @@ import PostCard from '../post-card';
 import styles from './all-post.module.css';
 const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
   const { Bigola } = useContext(ColombianContext);
+  console.log(allCategoryPost.curr_posts);
   return (
     <section className={`siteSection ${styles.allpost}`}>
       <div
@@ -59,8 +60,8 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
             </div>
           </>
         )}
-        {allCategoryPost && allCategoryPost.length && (
-          <div className={styles.containerAllPosts}>
+        {allCategoryPost && (
+          <div className={`${styles.containerAllPosts} contAllCatPosts`}>
             {allCategoryPost.curr_posts.map((post, i) => (
               <PostCard
                 key={
