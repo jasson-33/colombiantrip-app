@@ -9,13 +9,17 @@ import useSWR from 'swr';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Layout = ({ children }) => {
+
   const [showMenu, setShowMenu] = useState(false);
   const [animate, setAnimate] = useState(false);
   const { Gotham } = useContext(ColombianContext);
 
   const router = useRouter();
 
-  const { data, error } = useSWR('/api/menu', fetcher);
+  const { data, error } = useSWR(
+    '/api/menu',
+    fetcher
+  );
 
   useEffect(() => {
     let animationTimeout;
@@ -49,3 +53,4 @@ const Layout = ({ children }) => {
 };
 
 export default Layout;
+
