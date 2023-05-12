@@ -26,16 +26,17 @@
   width: 100%;
   background-color: #d23250;
   color: #fff;
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: column; */
   /* padding: 50px 30px; */
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s ease-in-out;
   width: 100%;
   height: 100%;
+  overflow: auto;
 }
 
 .cardTeam:hover .hideInfo {
@@ -47,10 +48,10 @@
   font-weight: 325;
   font-size: 18px;
   line-height: 28px;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   width: 100%;
-  height: 100%;
-  overflow: auto;
+  min-height: 100%;
+  /* overflow: auto; */
   padding: 30px;
   display: flex;
   align-items: center;
@@ -99,11 +100,17 @@
   .infoTeamMember {
     font-size: 16px;
     line-height: 20px;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
   }
 }
 
-@media only screen and (max-width: 520px) {
+@media only screen and (max-width: 1024px) {
+  .cardTeam {
+    width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
   .teamSection {
     padding-bottom: 0;
   }
@@ -126,6 +133,7 @@
     opacity: 1;
     visibility: visible;
     margin-top: -3px;
+    height: auto;
   }
 
   .contNameTeam {
@@ -136,6 +144,10 @@
     display: flex;
     flex-flow: column;
     justify-content: flex-end;
+  }
+
+  .imgTeamMember {
+    aspect-ratio: auto;
   }
 
   .teamMemberName,
