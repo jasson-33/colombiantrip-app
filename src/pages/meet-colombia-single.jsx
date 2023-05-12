@@ -92,7 +92,8 @@ const MeetColombia = () => {
   return (
     <>
       <Hero contentHero={contentHero} />
-      <AllPosts singleCategoryPost={citiesPost} />
+      {/* <AllPosts singleCategoryPost={citiesPost} /> */}
+      <AllPosts allCategoryPost={citiesPost.posts} />
     </>
   );
 };

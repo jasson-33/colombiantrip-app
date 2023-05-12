@@ -68,48 +68,7 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, singleCategoryP
                 }
                 popularPost={post}
               />
-            ))}
-          </div>
-        )}
-        {singleCategoryPost && singleCategoryPost.posts && singleCategoryPost.posts.length && (
-          <>
-            <div className={styles.titlesPosts}>
-              <h3 className={`${styles.titlePostType} ${Bigola.className}`}>
-                {singleCategoryPost.categoryType}
-              </h3>
-            </div>
-            <div
-              className={`${styles.containerPopularLatestPost} ${
-                styles.containerByType
-              } ${singleCategoryPost.layout === 'B' && styles.containerLayoutB}`}>
-              <div className={`${styles.containerPrincipalPost} `}>
-                <PostCard popularPost={singleCategoryPost.posts[0]} />
-              </div>
-              <div className={styles.otherPostContainer}>
-                {singleCategoryPost.posts[1] && (
-                  <PostCard popularPost={singleCategoryPost.posts[1]} />
-                )}
-                {singleCategoryPost.posts[1] && (
-                  <PostCard popularPost={singleCategoryPost.posts[2]} />
-                )}
-              </div>
-            </div> 
-            <div
-              className={`${styles.containerPopularLatestPost} ${
-                styles.containerByType
-              } ${styles.containerLayoutB}`}>
-              <div className={`${styles.containerPrincipalPost} `}>
-                <PostCard popularPost={singleCategoryPost.posts[3]} />
-              </div>
-              <div className={styles.otherPostContainer}>
-                {singleCategoryPost.posts[1] && (
-                  <PostCard popularPost={singleCategoryPost.posts[4]} />
-                )}
-                {singleCategoryPost.posts[1] && (
-                  <PostCard popularPost={singleCategoryPost.posts[5]} />
-                )}
-              </div>
-            </div>            
+            ))}         
             <div className={`${styles.containerPag} ${Bigola.className}`}>
               <ul>
                 <li className={`${styles.itemPag} ${styles.selectedPag}`}><span>1</span></li>
@@ -118,9 +77,8 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, singleCategoryP
                 <li className={styles.itemPag}><span>4</span></li>
               </ul>
             </div>
-          </>
-        )}
-        
+          </div>
+        )}        
       </div>
     </section>
   );
