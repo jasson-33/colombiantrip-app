@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import LatestPost from '../latest-post';
 import PostCard from '../post-card';
 import styles from './all-post.module.css';
-const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, singleCategoryPost }) => {
+const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
   const { Bigola } = useContext(ColombianContext);
   return (
     <section className={`siteSection ${styles.allpost}`}>
