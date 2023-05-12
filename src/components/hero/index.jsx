@@ -1,12 +1,16 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './hero.module.css';
 
 const Hero = ({ contentHero }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
+  const [valueCities, setValueCities] = useState('0');
+  const [valueCat, setValueCat] = useState('0');
   console.log(expdata);
-  return (
+  console.log(contentHero);
+
+  return (    
     <div
       className={`${styles.hero} bg-cv ${
         contentHero.withForm && styles.withForm
@@ -15,6 +19,32 @@ const Hero = ({ contentHero }) => {
           ? styles.principalHero
           : styles.secondaryHero
       } ${contentHero.withForm === true ? styles.heroPageForm : ''}`}>
+      {contentHero.blog && (
+        <div className={styles.contFilter}>
+          <select 
+            value={valueCities} 
+            onChange={(e) => {
+              setValueCities(e.target.value);
+            }}
+            className={`${styles.citiesSelect} ${Bigola.className}`}>
+              <option value="0">Cities</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+          </select>              
+          <select 
+            value={valueCat} 
+            onChange={(e) => {
+              setValueCat(e.target.value);
+            }}
+            className={`${styles.citiesSelect} ${Bigola.className}`}>
+              <option value="0">Categories</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+          </select>   
+        </div>
+      )}
       <div
         className={`${styles.imageInnerHero} bg-cv`}
         style={{
@@ -25,7 +55,7 @@ const Hero = ({ contentHero }) => {
           })`,
         }}></div>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
-        <div className={`${styles.contentHero}`}>
+        <div className={`${styles.contentHero}`}>          
           {contentHero.type === 'principal' ? (
             <>
               <h2

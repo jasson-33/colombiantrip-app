@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import LatestPost from '../latest-post';
 import PostCard from '../post-card';
 import styles from './all-post.module.css';
-const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
+const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, singleCategoryPost }) => {
   const { Bigola } = useContext(ColombianContext);
   return (
     <section className={`siteSection ${styles.allpost}`}>
@@ -71,6 +71,56 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
             ))}
           </div>
         )}
+        {singleCategoryPost && singleCategoryPost.posts && singleCategoryPost.posts.length && (
+          <>
+            <div className={styles.titlesPosts}>
+              <h3 className={`${styles.titlePostType} ${Bigola.className}`}>
+                {singleCategoryPost.categoryType}
+              </h3>
+            </div>
+            <div
+              className={`${styles.containerPopularLatestPost} ${
+                styles.containerByType
+              } ${singleCategoryPost.layout === 'B' && styles.containerLayoutB}`}>
+              <div className={`${styles.containerPrincipalPost} `}>
+                <PostCard popularPost={singleCategoryPost.posts[0]} />
+              </div>
+              <div className={styles.otherPostContainer}>
+                {singleCategoryPost.posts[1] && (
+                  <PostCard popularPost={singleCategoryPost.posts[1]} />
+                )}
+                {singleCategoryPost.posts[1] && (
+                  <PostCard popularPost={singleCategoryPost.posts[2]} />
+                )}
+              </div>
+            </div> 
+            <div
+              className={`${styles.containerPopularLatestPost} ${
+                styles.containerByType
+              } ${styles.containerLayoutB}`}>
+              <div className={`${styles.containerPrincipalPost} `}>
+                <PostCard popularPost={singleCategoryPost.posts[3]} />
+              </div>
+              <div className={styles.otherPostContainer}>
+                {singleCategoryPost.posts[1] && (
+                  <PostCard popularPost={singleCategoryPost.posts[4]} />
+                )}
+                {singleCategoryPost.posts[1] && (
+                  <PostCard popularPost={singleCategoryPost.posts[5]} />
+                )}
+              </div>
+            </div>            
+            <div className={`${styles.containerPag} ${Bigola.className}`}>
+              <ul>
+                <li className={`${styles.itemPag} ${styles.selectedPag}`}><span>1</span></li>
+                <li className={styles.itemPag}><span>2</span></li>
+                <li className={styles.itemPag}><span>3</span></li>
+                <li className={styles.itemPag}><span>4</span></li>
+              </ul>
+            </div>
+          </>
+        )}
+        
       </div>
     </section>
   );
