@@ -23,8 +23,8 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, singleCategoryP
               </h3>
             </div>
             <div className={styles.containerPopularLatestPost}>
-              <PostCard popularPost={popularPost} />
-              <LatestPost />
+              <PostCard popularPost={popularPost.popular} />
+              <LatestPost latestPosts={popularPost.latest}/>
             </div>
           </>
         )}
