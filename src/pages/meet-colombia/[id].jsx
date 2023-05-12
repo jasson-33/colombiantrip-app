@@ -4,17 +4,18 @@ import React from 'react';
 
 const CategorySingle = ({ data }) => {
   console.log(data);
-  const contentHero = {
-    type: 'secondary',
-    title: 'data.data_blog.title',
-    subtitle: 'data.data_blog.subtitle',
-    img_banner: false,
-    blog: true,
+  const {hero, currpage, maxpages, posts} = data.data_blog;
+
+  const allCategory = {
+    curr_page: currpage,
+    max_pages: maxpages,
+    curr_posts: posts,
   };
+
   return (
     <>
-      <Hero contentHero={contentHero} />
-      <AllPosts categoryPosts={false} />
+      <Hero contentHero={hero} />
+      <AllPosts allCategoryPost={allCategory} />
     </>
   );
 };

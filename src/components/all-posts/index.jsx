@@ -61,7 +61,7 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
         )}
         {allCategoryPost && allCategoryPost.length && (
           <div className={styles.containerAllPosts}>
-            {allCategoryPost.map((post, i) => (
+            {allCategoryPost.curr_posts.map((post, i) => (
               <PostCard
                 key={
                   typeof window !== 'undefined' ? window.crypto.randomUUID() : i
@@ -71,10 +71,30 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
             ))}         
             <div className={`${styles.containerPag} ${Bigola.className}`}>
               <ul>
-                <li className={`${styles.itemPag} ${styles.selectedPag}`}><span>1</span></li>
-                <li className={styles.itemPag}><span>2</span></li>
-                <li className={styles.itemPag}><span>3</span></li>
-                <li className={styles.itemPag}><span>4</span></li>
+                <li className={`${styles.itemPag} ${styles.selectedPag}`}>
+                  <Link
+                    href={'meet-colombia/cities/1'}>
+                    1
+                  </Link>
+                </li>
+                <li className={styles.itemPag}>
+                  <Link
+                    href={'meet-colombia/cities/2'}>
+                    2
+                  </Link>
+                </li>
+                <li className={styles.itemPag}>
+                  <Link
+                    href={'meet-colombia/cities/3'}>
+                    3
+                  </Link>
+                </li>
+                <li className={styles.itemPag}>
+                  <Link
+                    href={'meet-colombia/cities/4'}>
+                    4
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
