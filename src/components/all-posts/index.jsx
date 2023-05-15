@@ -6,9 +6,9 @@ import PostCard from '../post-card';
 import styles from './all-post.module.css';
 const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
   const { Bigola } = useContext(ColombianContext);
-  console.log(allCategoryPost.curr_posts);
+  // console.log(allCategoryPost.curr_posts);
   return (
-    <section className={`siteSection ${styles.allpost}`}>
+    <section className={`siteSection ${styles.allpost} ${allCategoryPost && styles.allCatcontainer}`}>
       <div
         className={`container ${styles.containerAllPost} ${
           popularPost ? styles.popularView : ''
@@ -69,8 +69,12 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
                 }
                 popularPost={post}
               />
-            ))}         
-            <div className={`${styles.containerPag} ${Bigola.className}`}>
+            ))}
+          </div>
+          
+        )}        
+      </div>
+      <div className={`${styles.containerPag} ${Bigola.className}`}>
               <ul>
                 <li className={`${styles.itemPag} ${styles.selectedPag}`}>
                   <Link
@@ -98,9 +102,6 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
                 </li>
               </ul>
             </div>
-          </div>
-        )}        
-      </div>
     </section>
   );
 };

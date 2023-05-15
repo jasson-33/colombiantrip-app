@@ -49,6 +49,10 @@
   /* color: rgba(255, 255, 255, 0.6); */
 }
 
+.contParentCatPost {
+  height: 40vh;
+}
+
 @media only screen and (max-width: 1350px) {
   .datePost,
   .typePost {
@@ -74,5 +78,9 @@
   }
   .containerImg {
     height: 300px;
+  }
+  .postCard{
+    display: grid;
+    grid-column: 1;
   }
 }

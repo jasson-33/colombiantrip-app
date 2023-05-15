@@ -227,6 +227,10 @@ table {
   z-index: 1;
 }
 
+.contAllCatPosts .postCard {
+  height: 40vh;
+}
+
 @media only screen and (max-width: 1300px) {
   .iconPhone {
     width: 35px;
