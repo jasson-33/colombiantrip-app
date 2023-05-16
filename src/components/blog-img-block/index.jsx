@@ -1,33 +1,25 @@
-import { ColombianContext } from '@/context/ColombianContext';
+// import { ColombianContext } from '@/context/ColombianContext';
 import Image from 'next/image';
-import React, { useContext, useEffect, useState } from 'react';
-import styles from './blog-img-block.css';
+import React from 'react';
+import styles from './blog-img-block.module.css';
 
-const ImgBlockBlog = ({ imgBlock }) => {
-  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
-  const [screenWidth, setScreenWidth] = useState(1920);
+const ImgBlockBlog = ({ getimgsBlock }) => {
+  // const { Bigola, Gotham_Bold } = useContext(ColombianContext);}
 
-  useEffect(() => {
-    const resizeWindow = () => {
-      setScreenWidth(typeof window !== 'undefined' && window.innerWidth);
-    };
-    window.addEventListener('resize', () => {
-      resizeWindow();
-    });
-    return () => {
-      window.removeEventListener('resize', () => {
-        resizeWindow();
-      });
-    };
-  }, [screenWidth]);
+  console.log(getimgsBlock);
+  console.log(getimgsBlock.imagesBlock.length);
+ 
   return (
-    <div className={`blockTexk ${styles.imgBlock}`}>
-      <Image
-        src={imgBlock.img.sizes ? imgBlock.img.sizes.large : ''}
-        fill
-        alt="img-blog"
-      />
-    </div>
+    <section className="siteSection">
+      <div className={`${styles.innerWidthImg} ${getimgsBlock.imagesBlock.length > 1 ? styles.conthalf : styles.contfull}`}>
+        {getimgsBlock.imagesBlock.map((currimgBlog, i) => (
+          <div  key={i}
+          className={`${getimgsBlock.imagesBlock.length > 1 ? styles.halfWidth : styles.fullWidth} ${styles.currimgBlog}`} 
+          style={{ backgroundImage: `url(${currimgBlog.img})` }}>
+          </div>      
+        ))}
+      </div>
+    </section>
   );
 };
 

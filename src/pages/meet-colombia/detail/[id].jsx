@@ -1,4 +1,5 @@
 import Hero from '@/components/hero';
+import ImgBlockBlog from '@/components/blog-img-block';
 import React from 'react';
 
 const DetailPost = ({ data }) => {
@@ -10,9 +11,30 @@ const DetailPost = ({ data }) => {
     img_banner: data.data_blog.img_banner,
     blog: true,
   };
+  const getimgsBlock = {
+    imagesBlock: [
+      {
+        img: '/images/experiences/9.jpg',
+        alt: 'img-blog'
+      },
+      {
+        img: '/images/experiences/9.jpg',
+        alt: 'img-blog'
+      },
+    ]};
+  const getimgsBlockFull = {
+      imagesBlock: [
+        {
+          img: '/images/experiences/9.jpg',
+          alt: 'img-blog'
+        },
+  ]};
+
   return (
     <>
       <Hero contentHero={contentHero} />
+      <ImgBlockBlog getimgsBlock={getimgsBlock} />      
+      <ImgBlockBlog getimgsBlock={getimgsBlockFull} />      
     </>
   );
 };
