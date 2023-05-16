@@ -1,0 +1,12 @@
+.innerContText {
+  width: 70%;
+  margin: 20px auto;
+}
+.titleTextBlog {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+.descTextBlog {  
+  font-size: 20px;
+  font-weight: normal;
+}

@@ -1,5 +1,6 @@
 import Hero from '@/components/hero';
 import ImgBlockBlog from '@/components/blog-img-block';
+import TextBlog from '@/components/blog-text-block';
 import React from 'react';
 
 const DetailPost = ({ data }) => {
@@ -30,11 +31,23 @@ const DetailPost = ({ data }) => {
         },
   ]};
 
+  const textBlogDesc = {
+    title: '1. The weather in Medellín is amazing.',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  };
+
+  const textBlogDesctwo = {
+    title: '',
+    desc: 'Viverra ipsum nunc aliquet bibendum enim. Urna cursus eget nunc scelerisque viverra mauris. In ante metus dictum at tempor commodo ullamcorper a lacus. Vitae tortor condimentum lacinia quis. Sed cras ornare arcu dui vivamus. Nunc sed blandit libero volutpat sed cras ornare. Placerat in egestas erat imperdiet sed euismod nisi porta lorem.',
+  };
+
   return (
     <>
-      <Hero contentHero={contentHero} />
+      <Hero contentHero={contentHero} />  
+      <TextBlog textBlogBlock={textBlogDesctwo} />         
       <ImgBlockBlog getimgsBlock={getimgsBlock} />      
-      <ImgBlockBlog getimgsBlock={getimgsBlockFull} />      
+      <TextBlog textBlogBlock={textBlogDesc} />      
+      <ImgBlockBlog getimgsBlock={getimgsBlockFull} />   
     </>
   );
 };

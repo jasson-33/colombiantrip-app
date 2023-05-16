@@ -1,68 +1,19 @@
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext, useEffect, useState } from 'react';
-import styles from './about-home.module.css';
+import React, { useContext } from 'react';
+import styles from './blog-text-block.module.css';
 
-const AboutHome = ({ aboutHome }) => {
-  const { Bigola, Gotham_Bold } = useContext(ColombianContext);
-  const [screenWidth, setScreenWidth] = useState(1920);
-
-  useEffect(() => {
-    const resizeWindow = () => {
-      setScreenWidth(typeof window !== 'undefined' && window.innerWidth);
-    };
-    window.addEventListener('resize', () => {
-      resizeWindow();
-    });
-
-    return () => {
-      window.removeEventListener('resize', () => {
-        resizeWindow();
-      });
-    };
-  }, [screenWidth]);
+const TextBlog = ({ textBlogBlock }) => {
+  
+  const { Bigola } = useContext(ColombianContext);
+  
   return (
-    <section className={`siteSection ${styles.aboutHome}`}>
-      <div className={`container ${styles.containerAboutHome} flex f-s f-as`}>
-        <div className={styles.leftAboutHome}>
-          <h2
-            className={`${styles.titleAbout} ${Bigola.className}`}
-            dangerouslySetInnerHTML={{ __html: aboutHome.about_title }}
-          />
-
-          <h3
-            className={`${styles.subtitleAbout} ${Gotham_Bold.className}`}
-            dangerouslySetInnerHTML={{ __html: aboutHome.about_subtitle }}
-          />
-
-          {screenWidth && screenWidth <= 768 && (
-            <div
-              className={`${styles.imageAboutHome} ${styles.imageAboutHomeMobile} bg-cv`}
-              style={{
-                backgroundImage: `url(${aboutHome.about_image.sizes.medium_large})`,
-              }}></div>
-          )}
-
-          <div className={styles.paragraphsGroup}>
-            <p
-              className={styles.paragraphAbout}
-              dangerouslySetInnerHTML={{ __html: aboutHome.about_description }}
-            />
-          </div>
-        </div>
-
-        {screenWidth && screenWidth > 768 && (
-          <div className={styles.rightAboutHome}>
-            <div
-              className={`${styles.imageAboutHome} bg-cv`}
-              style={{
-                backgroundImage: `url(${aboutHome.about_image.sizes.medium_large})`,
-              }}
-            />
-          </div>
-        )}
+    <section className="siteSection">
+      <div className={styles.innerContText}>
+        <div className={`${styles.titleTextBlog} ${Bigola.className}`}>{textBlogBlock.title}</div>
+        <div className={styles.descTextBlog}>{textBlogBlock.desc}</div>
       </div>
     </section>
   );
 };
 
-export default AboutHome;
+export default TextBlog;

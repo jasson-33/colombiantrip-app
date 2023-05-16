@@ -1,10 +1,8 @@
-// import { ColombianContext } from '@/context/ColombianContext';
-import Image from 'next/image';
+
 import React from 'react';
 import styles from './blog-img-block.module.css';
 
 const ImgBlockBlog = ({ getimgsBlock }) => {
-  // const { Bigola, Gotham_Bold } = useContext(ColombianContext);}
 
   console.log(getimgsBlock);
   console.log(getimgsBlock.imagesBlock.length);
