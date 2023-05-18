@@ -4,7 +4,7 @@ import React from 'react';
 
 const CategorySingle = ({ data }) => {
   console.log(data);
-  const {hero, currpage, maxpages, posts} = data.data_blog;
+  const { hero, currpage, maxpages, posts } = data.data_blog;
 
   const allCategory = {
     curr_page: currpage,
@@ -15,14 +15,14 @@ const CategorySingle = ({ data }) => {
   return (
     <>
       <Hero contentHero={hero} />
-      <AllPosts allCategoryPost={allCategory} pageType={'catPageStyle'}/>
+      <AllPosts allCategoryPost={allCategory} pageType={'catPageStyle'} />
     </>
   );
 };
 
 export async function getServerSideProps(context) {
   const id = context.params.id;
-  const page = context.query.hasOwnProperty('page')?context.query.page:1;
+  const page = context.query.page ? context.query.page : 1;
   const resData = await fetch(
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/category?datacat=${id}&pagecat=${page}`
   );
@@ -32,4 +32,3 @@ export async function getServerSideProps(context) {
 }
 
 export default CategorySingle;
-
