@@ -4,11 +4,19 @@ import React, { useContext } from 'react';
 import LatestPost from '../latest-post';
 import PostCard from '../post-card';
 import styles from './all-post.module.css';
-const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, pageType }) => {
+const AllPosts = ({
+  popularPost,
+  categoryPosts,
+  allCategoryPost,
+  pageType,
+}) => {
   const { Bigola } = useContext(ColombianContext);
   // console.log(allCategoryPost.curr_posts);
   return (
-    <section className={`siteSection ${styles.allpost} ${allCategoryPost && styles.allCatcontainer}`}>
+    <section
+      className={`siteSection ${styles.allpost} ${
+        allCategoryPost && styles.allCatcontainer
+      }`}>
       <div
         className={`container ${styles.containerAllPost} ${
           popularPost ? styles.popularView : ''
@@ -25,7 +33,7 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, pageType }) => 
             </div>
             <div className={styles.containerPopularLatestPost}>
               <PostCard popularPost={popularPost.popular} />
-              <LatestPost latestPosts={popularPost.latest}/>
+              <LatestPost latestPosts={popularPost.latest} />
             </div>
           </>
         )}
@@ -67,42 +75,31 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, pageType }) => 
                 key={
                   typeof window !== 'undefined' ? window.crypto.randomUUID() : i
                 }
-                popularPost={post} pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
+                popularPost={post}
+                pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
               />
             ))}
-          </div>          
-        )}        
+          </div>
+        )}
       </div>
       {allCategoryPost && (
-      <div className={`${styles.containerPag} ${Bigola.className}`}>
-              <ul>
-                <li className={`${styles.itemPag} ${styles.selectedPag}`}>
-                  <Link
-                    href={'meet-colombia/cities/1'}>
-                    1
-                  </Link>
-                </li>
-                <li className={styles.itemPag}>
-                  <Link
-                    href={'meet-colombia/cities/2'}>
-                    2
-                  </Link>
-                </li>
-                <li className={styles.itemPag}>
-                  <Link
-                    href={'meet-colombia/cities/3'}>
-                    3
-                  </Link>
-                </li>
-                <li className={styles.itemPag}>
-                  <Link
-                    href={'meet-colombia/cities/4'}>
-                    4
-                  </Link>
-                </li>
-              </ul>
-            </div>
-        )}     
+        <div className={`${styles.containerPag} ${Bigola.className}`}>
+          <ul>
+            <li className={`${styles.itemPag} ${styles.selectedPag}`}>
+              <Link href={'meet-colombia/cities/1'}>1</Link>
+            </li>
+            <li className={styles.itemPag}>
+              <Link href={'meet-colombia/cities/2'}>2</Link>
+            </li>
+            <li className={styles.itemPag}>
+              <Link href={'meet-colombia/cities/3'}>3</Link>
+            </li>
+            <li className={styles.itemPag}>
+              <Link href={'meet-colombia/cities/4'}>4</Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </section>
   );
 };

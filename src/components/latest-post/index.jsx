@@ -4,7 +4,7 @@ import React, { useContext } from 'react';
 import styles from './latest-post.module.css';
 import Link from 'next/link';
 
-const LatestPost = ({latestPosts}) => {
+const LatestPost = ({ latestPosts }) => {
   const { Bigola } = useContext(ColombianContext);
   return (
     <div className={styles.containerLatest}>
@@ -20,7 +20,9 @@ const LatestPost = ({latestPosts}) => {
             <Image alt="" src={data.img.sizes.thumbnail} fill />
           </div>
           <div className={styles.infoLatestPost}>
-            <p className={`${styles.dateLatest} ${Bigola.className}`}>{data.date}</p>
+            <p className={`${styles.dateLatest} ${Bigola.className}`}>
+              {data.date}
+            </p>
             <h2 className={`${styles.titleLatestPost} ${Bigola.className}`}>
               {data.title}
             </h2>

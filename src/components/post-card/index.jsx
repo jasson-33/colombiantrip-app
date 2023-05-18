@@ -20,7 +20,11 @@ const PostCard = ({ popularPost, pageType }) => {
       <div
         className={`${styles.containerImg}`}
         style={{ height: popularPost && popularPost.height }}>
-        <Image fill src={`${popularPost.img.sizes?popularPost.img.sizes.medium:''}`} alt="" />
+        <Image
+          fill
+          src={`${popularPost.img.sizes ? popularPost.img.sizes.medium : ''}`}
+          alt=""
+        />
       </div>
       <div
         className={`${styles.infoPost}`}

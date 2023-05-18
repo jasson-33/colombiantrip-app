@@ -2,20 +2,18 @@ import AllPosts from '@/components/all-posts';
 import Hero from '@/components/hero';
 import React from 'react';
 
-const MeetColombia = ({content}) => {
-
+const MeetColombia = ({ content }) => {
   console.log(content);
 
-  const {hero, featured, categories } = content.meet_data;
+  const { hero, featured, categories } = content.meet_data;
   const contentHero = hero;
   const popularPost = featured;
   return (
     <>
       <Hero contentHero={contentHero} />
       <AllPosts popularPost={popularPost} />
-      {categories && categories.map((cat,i)=>(
-        <AllPosts key={i} categoryPosts={cat} />
-      ))}
+      {categories &&
+        categories.map((cat, i) => <AllPosts key={i} categoryPosts={cat} />)}
     </>
   );
 };

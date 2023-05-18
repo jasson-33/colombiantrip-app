@@ -10,7 +10,7 @@ const Hero = ({ contentHero, pageType }) => {
   console.log(expdata);
   console.log(contentHero);
 
-  return (    
+  return (
     <div
       className={`${styles.hero} bg-cv ${
         contentHero.withForm && styles.withForm
@@ -18,32 +18,34 @@ const Hero = ({ contentHero, pageType }) => {
         contentHero.type === 'principal'
           ? styles.principalHero
           : styles.secondaryHero
-      } ${contentHero.withForm === true ? styles.heroPageForm : ''} ${pageType === 'post' ? styles.postHero : ''}`}>
+      } ${contentHero.withForm === true ? styles.heroPageForm : ''} ${
+        pageType === 'post' ? styles.postHero : ''
+      }`}>
       {contentHero.blog && (
         <div className={styles.contFilter}>
           <div className={styles.innerContFilter}>
-            <select 
-              value={valueCities} 
+            <select
+              value={valueCities}
               onChange={(e) => {
                 setValueCities(e.target.value);
               }}
               className={`${styles.citiesSelect} ${Bigola.className}`}>
-                <option value="0">Cities</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>              
-            <select 
-              value={valueCat} 
+              <option value="0">Cities</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+            <select
+              value={valueCat}
               onChange={(e) => {
                 setValueCat(e.target.value);
               }}
               className={`${styles.citiesSelect} ${Bigola.className}`}>
-                <option value="0">Categories</option>
-                <option value=""></option>
-                <option value=""></option>
-                <option value=""></option>
-            </select>   
+              <option value="0">Categories</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
           </div>
         </div>
       )}
@@ -57,7 +59,7 @@ const Hero = ({ contentHero, pageType }) => {
           })`,
         }}></div>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
-        <div className={`${styles.contentHero}`}>          
+        <div className={`${styles.contentHero}`}>
           {contentHero.type === 'principal' ? (
             <>
               <h2

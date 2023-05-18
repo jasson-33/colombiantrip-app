@@ -48,7 +48,7 @@ const MeetColombia = () => {
         colorText: '#124F5E',
         bgColor: '#34BBDB',
         href: 'medellin',
-      }, 
+      },
       {
         img: '/images/meet/05.jpg',
         date: '02/13/23',
@@ -88,7 +88,7 @@ const MeetColombia = () => {
     layout: 'A',
     categoryType: 'Cities',
   };
- 
+
   return (
     <>
       <Hero contentHero={contentHero} />

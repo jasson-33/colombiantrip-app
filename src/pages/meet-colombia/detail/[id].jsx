@@ -17,27 +17,30 @@ const DetailPost = ({ data }) => {
   const blogAfterHero = {
     autor: 'Andrew Smith',
     date: 'December 20, 2022',
-    subtitle: 'Once tagged as one of the most dangerous cities in the world, Medellín has transformed and become a popular destination. Heres’ why you should visit Medellín.',
+    subtitle:
+      'Once tagged as one of the most dangerous cities in the world, Medellín has transformed and become a popular destination. Heres’ why you should visit Medellín.',
   };
 
   const getimgsBlock = {
     imagesBlock: [
       {
         img: '/images/experiences/9.jpg',
-        alt: 'img-blog'
+        alt: 'img-blog',
       },
       {
         img: '/images/experiences/9.jpg',
-        alt: 'img-blog'
+        alt: 'img-blog',
       },
-    ]};
+    ],
+  };
   const getimgsBlockFull = {
-      imagesBlock: [
-        {
-          img: '/images/experiences/9.jpg',
-          alt: 'img-blog'
-        },
-  ]};
+    imagesBlock: [
+      {
+        img: '/images/experiences/9.jpg',
+        alt: 'img-blog',
+      },
+    ],
+  };
 
   const textBlogDesc = {
     title: '1. The weather in Medellín is amazing.',
@@ -51,12 +54,12 @@ const DetailPost = ({ data }) => {
 
   return (
     <>
-      <Hero contentHero={contentHero} pageType={'post'} />  
-      <BlogArterfHero blogAfterHero={blogAfterHero} />  
-      <TextBlog textBlogBlock={textBlogDesctwo} />         
-      <ImgBlockBlog getimgsBlock={getimgsBlock} />      
-      <TextBlog textBlogBlock={textBlogDesc} />      
-      <ImgBlockBlog getimgsBlock={getimgsBlockFull} />   
+      <Hero contentHero={contentHero} pageType={'post'} />
+      <BlogArterfHero blogAfterHero={blogAfterHero} />
+      <TextBlog textBlogBlock={textBlogDesctwo} />
+      <ImgBlockBlog getimgsBlock={getimgsBlock} />
+      <TextBlog textBlogBlock={textBlogDesc} />
+      <ImgBlockBlog getimgsBlock={getimgsBlockFull} />
     </>
   );
 };

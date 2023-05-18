@@ -227,7 +227,6 @@
   padding-right: 60px;
 }
 
-
 @media only screen and (max-width: 1350px) {
   .containerHero {
     padding-bottom: 40px;
@@ -343,7 +342,7 @@
   }
   .heroPageForm .imageInnerHero {
     height: 50vh;
-  }  
+  }
   .postHero .bigTitleHero {
     font-size: 44px;
     line-height: 1;
