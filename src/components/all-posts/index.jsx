@@ -6,7 +6,7 @@ import PostCard from '../post-card';
 import styles from './all-post.module.css';
 const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, pageType }) => {
   const { Bigola } = useContext(ColombianContext);
-  console.log(allCategoryPost.curr_posts);
+  // console.log(allCategoryPost.curr_posts);
   return (
     <section className={`siteSection ${styles.allpost} ${allCategoryPost && styles.allCatcontainer}`}>
       <div
