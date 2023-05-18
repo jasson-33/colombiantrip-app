@@ -4,9 +4,9 @@ import React, { useContext } from 'react';
 import LatestPost from '../latest-post';
 import PostCard from '../post-card';
 import styles from './all-post.module.css';
-const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
+const AllPosts = ({ popularPost, categoryPosts, allCategoryPost, pageType }) => {
   const { Bigola } = useContext(ColombianContext);
-  // console.log(allCategoryPost.curr_posts);
+  console.log(allCategoryPost.curr_posts);
   return (
     <section className={`siteSection ${styles.allpost} ${allCategoryPost && styles.allCatcontainer}`}>
       <div
@@ -67,13 +67,13 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
                 key={
                   typeof window !== 'undefined' ? window.crypto.randomUUID() : i
                 }
-                popularPost={post}
+                popularPost={post} pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
               />
             ))}
-          </div>
-          
+          </div>          
         )}        
       </div>
+      {allCategoryPost && (
       <div className={`${styles.containerPag} ${Bigola.className}`}>
               <ul>
                 <li className={`${styles.itemPag} ${styles.selectedPag}`}>
@@ -102,6 +102,7 @@ const AllPosts = ({ popularPost, categoryPosts, allCategoryPost }) => {
                 </li>
               </ul>
             </div>
+        )}     
     </section>
   );
 };

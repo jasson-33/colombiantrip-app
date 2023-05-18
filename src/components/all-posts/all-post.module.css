@@ -156,8 +156,8 @@
 .allCatcontainer .containerAllPosts {
   grid-template-columns: 31% 31% 31%;
   gap: 50px;
-  height: 40vh;
   grid-template-areas: none;
+  margin: 50px auto;
 }
 
 @media only screen and (max-width: 1350px) {

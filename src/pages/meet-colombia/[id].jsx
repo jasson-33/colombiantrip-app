@@ -15,7 +15,7 @@ const CategorySingle = ({ data }) => {
   return (
     <>
       <Hero contentHero={hero} />
-      <AllPosts allCategoryPost={allCategory} />
+      <AllPosts allCategoryPost={allCategory} pageType={'catPageStyle'}/>
     </>
   );
 };

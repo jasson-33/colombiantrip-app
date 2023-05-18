@@ -1,4 +1,5 @@
 import Hero from '@/components/hero';
+import BlogArterfHero from '@/components/blog-after-hero';
 import ImgBlockBlog from '@/components/blog-img-block';
 import TextBlog from '@/components/blog-text-block';
 import React from 'react';
@@ -12,6 +13,13 @@ const DetailPost = ({ data }) => {
     img_banner: data.data_blog.img_banner,
     blog: true,
   };
+
+  const blogAfterHero = {
+    autor: 'Andrew Smith',
+    date: 'December 20, 2022',
+    subtitle: 'Once tagged as one of the most dangerous cities in the world, Medellín has transformed and become a popular destination. Heres’ why you should visit Medellín.',
+  };
+
   const getimgsBlock = {
     imagesBlock: [
       {
@@ -43,7 +51,8 @@ const DetailPost = ({ data }) => {
 
   return (
     <>
-      <Hero contentHero={contentHero} />  
+      <Hero contentHero={contentHero} pageType={'post'} />  
+      <BlogArterfHero blogAfterHero={blogAfterHero} />  
       <TextBlog textBlogBlock={textBlogDesctwo} />         
       <ImgBlockBlog getimgsBlock={getimgsBlock} />      
       <TextBlog textBlogBlock={textBlogDesc} />      

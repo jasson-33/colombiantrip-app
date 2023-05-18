@@ -196,8 +196,9 @@
 .smallHero .contFilter {
   position: fixed;
   top: 30px;
-  right: 10%;
+  left: 0;
   z-index: 10000;
+  width: 100%;
 }
 
 .smallHero .citiesSelect {
@@ -210,6 +211,21 @@
   cursor: pointer;
 }
 
+.postHero .bigTitleHero {
+  font-size: 100px;
+}
+.postHero .subtitleHero {
+  font-size: 43px;
+}
+
+.innerContFilter {
+  position: relative;
+  width: 90%;
+  max-width: 1600px;
+  margin: auto;
+  text-align: right;
+  padding-right: 60px;
+}
 
 
 @media only screen and (max-width: 1350px) {
@@ -243,6 +259,14 @@
 
   .subtitleHero {
     font-size: 30px;
+  }
+
+  .postHero .bigTitleHero {
+    font-size: 80px;
+    line-height: 1.2;
+  }
+  .postHero .subtitleHero {
+    font-size: 37px;
   }
 }
 
@@ -319,6 +343,25 @@
   }
   .heroPageForm .imageInnerHero {
     height: 50vh;
+  }  
+  .postHero .bigTitleHero {
+    font-size: 44px;
+    line-height: 1;
+  }
+  .postHero .subtitleHero {
+    font-size: 27px;
+    line-height: 1.1;
+  }
+  .smallHero .contFilter {
+    top: 75px;
+  }
+  .innerContFilter {
+    display: flex;
+    padding: 0;
+    justify-content: space-between;
+  }
+  .smallHero .citiesSelect {
+    margin: 0;
   }
 }
 @media only screen and (max-width: 520px) {

@@ -12,10 +12,24 @@
   grid-template-columns: 1fr 1fr;
   gap: 70px;
   margin: 70px auto;
+  max-width: 1400px;
 }
 .innerWidthImg.contfull {
   grid-template-columns: 1fr;
 }
 .fullWidth {
   aspect-ratio: 2 / 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+@media only screen and (max-width: 768px) {  
+  .innerWidthImg {
+    width: 80%;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 30px auto;
+  }
 }

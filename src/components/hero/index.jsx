@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import styles from './hero.module.css';
 
-const Hero = ({ contentHero }) => {
+const Hero = ({ contentHero, pageType }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
   const [valueCities, setValueCities] = useState('0');
   const [valueCat, setValueCat] = useState('0');
@@ -18,31 +18,33 @@ const Hero = ({ contentHero }) => {
         contentHero.type === 'principal'
           ? styles.principalHero
           : styles.secondaryHero
-      } ${contentHero.withForm === true ? styles.heroPageForm : ''}`}>
+      } ${contentHero.withForm === true ? styles.heroPageForm : ''} ${pageType === 'post' ? styles.postHero : ''}`}>
       {contentHero.blog && (
         <div className={styles.contFilter}>
-          <select 
-            value={valueCities} 
-            onChange={(e) => {
-              setValueCities(e.target.value);
-            }}
-            className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Cities</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-          </select>              
-          <select 
-            value={valueCat} 
-            onChange={(e) => {
-              setValueCat(e.target.value);
-            }}
-            className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Categories</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-          </select>   
+          <div className={styles.innerContFilter}>
+            <select 
+              value={valueCities} 
+              onChange={(e) => {
+                setValueCities(e.target.value);
+              }}
+              className={`${styles.citiesSelect} ${Bigola.className}`}>
+                <option value="0">Cities</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>              
+            <select 
+              value={valueCat} 
+              onChange={(e) => {
+                setValueCat(e.target.value);
+              }}
+              className={`${styles.citiesSelect} ${Bigola.className}`}>
+                <option value="0">Categories</option>
+                <option value=""></option>
+                <option value=""></option>
+                <option value=""></option>
+            </select>   
+          </div>
         </div>
       )}
       <div

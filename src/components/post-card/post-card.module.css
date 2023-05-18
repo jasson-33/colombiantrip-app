@@ -53,6 +53,15 @@
   height: 40vh;
 }
 
+.catPageStyle {
+  height: auto;
+  aspect-ratio: 1 / 1.1;
+}
+.catPageStyle .infoPost {
+  position: absolute;
+  bottom: 0;
+}
+
 @media only screen and (max-width: 1350px) {
   .datePost,
   .typePost {
@@ -82,5 +91,9 @@
   .postCard{
     display: grid;
     grid-column: 1;
+  }
+  .catPageStyle {
+    height: auto;
+    aspect-ratio: 1 / 1;
   }
 }

@@ -4,14 +4,14 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import styles from './post-card.module.css';
 
-const PostCard = ({ popularPost }) => {
+const PostCard = ({ popularPost, pageType }) => {
   const { Bigola } = useContext(ColombianContext);
   console.log(popularPost);
   return (
     <div
       className={`${styles.postCard} ${
         popularPost ? styles.popularViewBlock : ''
-      }`}
+      } ${pageType === 'catPageStyle' ? styles.catPageStyle : ''}`}
       style={{
         width: popularPost && popularPost.width,
         gridArea: popularPost && popularPost.gridArea,
