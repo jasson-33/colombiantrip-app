@@ -11,8 +11,9 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
   const { Bigola, Gotham_Bold } = useContext(ColombianContext);
   const scroller = useRef();
 
-  const horizontalBlocks = horizontalData;
+  // const horizontalBlocks = horizontalData;
 
+  /*
   const horizontalBlocksWorks = [
     {
       title: 'Step 1: Connect',
@@ -59,9 +60,10 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
       colorText: '#124F5E',
     },
   ];
+  */
 
-  const objectToIterate =
-    horizontalType === 'home' ? horizontalBlocks : horizontalBlocksWorks;
+  const objectToIterate = horizontalData;
+  // horizontalType === 'home' ? horizontalBlocks : horizontalBlocksWorks;
 
   // const useWidth = () => {
   //   const [width, setWidth] = useState(0); // default width, detect on server.
@@ -238,12 +240,12 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
   return (
     <div className={`siteSection ${styles.horizontalSection}`}>
       <div className={`${styles.containerHorizontal}`}>
-        {horizontalBlocks && (
+        {objectToIterate && (
           <div
             id="block"
             className={`${styles.wrapperScroller} wrapperScroller`}
             style={{
-              width: `${horizontalBlocks.length * 100}vw`,
+              width: `${objectToIterate.length * 100}vw`,
               backgroundColor: '#34BBDB',
             }}
             ref={scroller}>
@@ -296,23 +298,17 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                         <>
                           <div className={styles.infoWork}>
                             <h2
-                              className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}>
-                              {block.title}
-                            </h2>
-
+                              className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}
+                              dangerouslySetInnerHTML={{ __html: block.title }}
+                            />
                             <div className={styles.innerInfoWork}>
-                              {block.content.map((text, i) => (
-                                <p
-                                  key={
-                                    typeof window !== 'undefined'
-                                      ? window.crypto.randomUUID()
-                                      : i
-                                  }
-                                  className={styles.textWork}
-                                  style={{ color: block.colorText }}>
-                                  {text}
-                                </p>
-                              ))}
+                              <p
+                                className={styles.textWork}
+                                style={{ color: block.colorText }}
+                                dangerouslySetInnerHTML={{
+                                  __html: block.content,
+                                }}
+                              />
                             </div>
 
                             <div

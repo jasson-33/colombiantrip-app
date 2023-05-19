@@ -1,15 +1,12 @@
+import Metas from '@/components/metaDatas';
 import AfterHero from '@/components/after-hero';
 import Hero from '@/components/hero';
 import HorizontalSection from '@/components/horizontal-section';
 import React from 'react';
 
-const HowItWorks = () => {
-  const contentHero = {
-    type: 'secondary',
-    title: 'How It Works',
-    subtitle: 'Our signature planning process',
-    img_banner: { sizes: { 'super-large': '/images/how-it-works/29.jpg' } },
-  };
+const HowItWorks = ({ dataContent }) => {
+  const { metacontent, hero, horizontal } = dataContent.data;
+
   const contentAfterHero = {
     title: { text: 'About your trip', negative: true },
     infoItems: [
@@ -21,11 +18,22 @@ const HowItWorks = () => {
   };
   return (
     <>
-      <Hero contentHero={contentHero} />
-      <HorizontalSection horizontalType={'works'} />
+      <Metas metadata={metacontent} />
+      <Hero contentHero={hero} />
+      <HorizontalSection horizontalType={'works'} horizontalData={horizontal} />
       <AfterHero contentAfterHero={contentAfterHero} />
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const resData = await fetch(
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/howworks`
+  );
+  const dataContent = await resData.json();
+  return {
+    props: { dataContent },
+  };
+}
 
 export default HowItWorks;
