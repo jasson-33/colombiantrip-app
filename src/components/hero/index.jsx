@@ -1,7 +1,9 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './hero.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Hero = ({ contentHero, pageType }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
@@ -9,6 +11,10 @@ const Hero = ({ contentHero, pageType }) => {
   const [valueCat, setValueCat] = useState('0');
   console.log(expdata);
   console.log(contentHero);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div
@@ -63,15 +69,26 @@ const Hero = ({ contentHero, pageType }) => {
           {contentHero.type === 'principal' ? (
             <>
               <h2
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-delay="0"
                 className={`${styles.principalText} ${Bigola.className}`}
                 dangerouslySetInnerHTML={{ __html: contentHero.title }}
               />
               <h3
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-delay="0"
                 className={styles.subtitleText}
                 dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
               />
               {contentHero.links && (
-                <div className={`${styles.ctasHero} flex f-s f-ac`}>
+                <div
+                  className={`${styles.ctasHero} flex f-s f-ac`}
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-offset="-150"
+                  data-aos-delay="0">
                   {contentHero.links.map((data, i) => (
                     <div key={i} className={styles.ctaHero}>
                       <Link
@@ -91,17 +108,28 @@ const Hero = ({ contentHero, pageType }) => {
           ) : (
             <>
               <h2
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-offset="-150"
+                data-aos-delay="0"
                 className={`${styles.bigTitleHero} ${Bigola.className}`}
                 dangerouslySetInnerHTML={{ __html: contentHero.title }}
               />
               {contentHero.subtitle && (
                 <h3
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   className={styles.subtitleHero}
                   dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
                 />
               )}
               {contentHero.withForm && (
-                <form className={styles.heroForm}>
+                <form
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.heroForm}>
                   <h3 className={`${styles.titleFormHero} ${Bigola.className}`}>
                     Contact us
                   </h3>

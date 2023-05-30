@@ -6,7 +6,6 @@ import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
 function Home({ homedata }) {
-  console.log(homedata);
 
   const {
     metacontent,

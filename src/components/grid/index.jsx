@@ -1,6 +1,8 @@
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './grid.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Grid = () => {
   const { Bigola } = useContext(ColombianContext);
@@ -14,14 +16,23 @@ const Grid = () => {
     { title: '', text: ['', ''], bgColor: '' },
   ];
   */
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   return (
     <section className={`${styles.gridSection}`}>
       <div className={`container ${styles.gridContainer}`}>
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           className={`${styles.gridItem} bg-cv`}
           style={{ backgroundImage: 'url(/images/why-choose/42.jpg)' }}></div>
 
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="150"
           className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#D23250', color: '#fff' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
@@ -43,10 +54,16 @@ const Grid = () => {
         </div>
 
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="300"
           className={`${styles.gridItem} bg-cv`}
           style={{ backgroundImage: 'url(/images/why-choose/44.jpg)' }}></div>
 
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#FCBE15', color: '#7A5D0C' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
@@ -71,9 +88,15 @@ const Grid = () => {
           </p>
         </div>
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="150"
           className={`${styles.gridItem} bg-cv`}
           style={{ backgroundImage: 'url(/images/why-choose/43.jpg)' }}></div>
         <div
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="250"
           className={`${styles.gridItem} ${styles.gridDescItem}`}
           style={{ backgroundColor: '#AFCA0C', color: '#576409' }}>
           <h3 className={`${styles.titleItemGrid} ${Bigola.className}`}>
