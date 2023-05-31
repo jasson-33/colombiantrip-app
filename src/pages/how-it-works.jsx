@@ -5,23 +5,13 @@ import HorizontalSection from '@/components/horizontal-section';
 import React from 'react';
 
 const HowItWorks = ({ dataContent }) => {
-  const { metacontent, hero, horizontal } = dataContent.data;
-
-  const contentAfterHero = {
-    title: { text: 'About your trip', negative: true },
-    infoItems: [
-      {
-        text: 'Start your enchanting journey—click below to fill out our brief travel inquiry form to get started:',
-      },
-    ],
-    needPadding: true,
-  };
+  const { metacontent, hero, horizontal, tripdescription } = dataContent.data;
   return (
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       <HorizontalSection horizontalType={'works'} horizontalData={horizontal} />
-      <AfterHero contentAfterHero={contentAfterHero} />
+      <AfterHero contentAfterHero={tripdescription} />
     </>
   );
 };

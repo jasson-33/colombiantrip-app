@@ -39,7 +39,7 @@ const AfterHero = ({ contentAfterHero }) => {
               contentAfterHero.title.negative ? styles.negativeMargin : ''
             } ${styles.titleAfterHero} ${Bigola.className}`}
             dangerouslySetInnerHTML={{
-              __html: contentAfterHero.title.text,
+              __html: contentAfterHero.title.text
             }}></h2>
         )}
 

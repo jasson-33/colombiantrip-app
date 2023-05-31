@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { ColombianContext } from '@/context/ColombianContext';
 import Footer from '../footer';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Layout = ({ children }) => {
@@ -15,7 +14,9 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-  const { data, error } = useSWR('/api/menu', fetcher);
+  const dataMenu = children.props.data.mainmenu;
+  const dataFooter = children.props.data.footerdata;
+  const the_categories = children.props.data.categories;
 
   useEffect(() => {
     let animationTimeout;
@@ -29,21 +30,16 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  if (error) {
-    return 'An error has occurred.';
-  }
-
-  // if (isLoading) {return 'Loading...';}
   return (
     <main className={`siteMain ${Gotham.className}`}>
-      <Header animate={animate} setAnimate={setAnimate} />
+      <Header animate={animate} setAnimate={setAnimate} categories={the_categories} />
       {showMenu ? (
-        <Menu animate={animate} setAnimate={setAnimate} mainmenu={data} />
+        <Menu animate={animate} setAnimate={setAnimate} mainmenu={dataMenu} />
       ) : (
         ''
       )}
       {children}
-      <Footer changeLayout={router.pathname === '/how-it-works'} />
+      <Footer datafooter={dataFooter} changeLayout={router.pathname === '/how-it-works'} />
     </main>
   );
 };

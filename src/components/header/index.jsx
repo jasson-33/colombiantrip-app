@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './header.module.css';
 
-const Header = ({ animate, setAnimate }) => {
+const Header = ({ animate, setAnimate, categories }) => {
   const toggleMenu = () => {
     setAnimate(!animate);
   };

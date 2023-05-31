@@ -16,7 +16,7 @@ const PostCard = ({ popularPost, pageType }) => {
         width: popularPost && popularPost.width,
         gridArea: popularPost && popularPost.gridArea,
       }}>
-      <Link href={`/meet-colombia/detail/${popularPost.href}`}></Link>
+      <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${popularPost.href}`}></Link>
       <div
         className={`${styles.containerImg}`}
         style={{ height: popularPost && popularPost.height }}>
