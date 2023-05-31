@@ -40,7 +40,8 @@ const Footer = ({ datafooter, changeLayout }) => {
                         ))}
                       </div>
                     </div>
-                  </div>
+                  )}
+                  {email.length>0 && (
                   <div className={styles.infoContactGroup}>
                     <div data-aos="fade-right"
                       data-aos-duration="900"
@@ -50,10 +51,11 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-duration="900"
                     data-aos-delay="0"
                       className={styles.contactCta}
-                      href="mailto:customerservice@thecolombiantrio.com">
-                      customerservice@thecolombiantrio.com
+                      href={email.numlink}>
+                      {email.label}
                     </a>
                   </div>
+                  )}
                 </div>
 
                 <form className={styles.formFooter}>
