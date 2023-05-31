@@ -4,8 +4,8 @@ import Hero from '@/components/hero';
 import HorizontalSection from '@/components/horizontal-section';
 import React from 'react';
 
-const HowItWorks = ({ dataContent }) => {
-  const { metacontent, hero, horizontal, tripdescription } = dataContent.data;
+const HowItWorks = ({ data }) => {
+  const { metacontent, hero, horizontal, tripdescription } = data;
   return (
     <>
       <Metas metadata={metacontent} />
@@ -18,11 +18,11 @@ const HowItWorks = ({ dataContent }) => {
 
 export async function getServerSideProps() {
   const resData = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/howworks`
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/howworks`
   );
-  const dataContent = await resData.json();
+  const data = await resData.json();
   return {
-    props: { dataContent },
+    props: { data },
   };
 }
 
