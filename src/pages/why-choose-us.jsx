@@ -4,9 +4,9 @@ import Grid from '@/components/grid';
 import Hero from '@/components/hero';
 import React from 'react';
 
-const WhyChoosUs = ({data}) => {
-  const {metacontent, hero, descriptions} = data.data;
-/*
+const WhyChoosUs = ({ data }) => {
+  const { metacontent, hero, descriptions } = data.data;
+  /*
   const contentHero = {
     type: 'secondary',
     title: 'Why Choose Us',
@@ -45,7 +45,6 @@ const WhyChoosUs = ({data}) => {
     </>
   );
 };
-
 
 export async function getServerSideProps() {
   const content = await fetch(

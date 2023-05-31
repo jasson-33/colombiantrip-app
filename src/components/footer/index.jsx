@@ -6,7 +6,16 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Footer = ({ datafooter, changeLayout }) => {
-  const {footermenu,disclaimer,privacylink,termslink,formtitle,phone,email,copiright} = datafooter;
+  const {
+    footermenu,
+    disclaimer,
+    privacylink,
+    termslink,
+    formtitle,
+    phone,
+    email,
+    copiright,
+  } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
   useEffect(() => {
@@ -22,39 +31,54 @@ const Footer = ({ datafooter, changeLayout }) => {
                 data-aos="fade-right"
                 data-aos-duration="900"
                 data-aos-delay="0"
-                className={`${styles.contactTitle} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:formtitle}} />
+                className={`${styles.contactTitle} ${Bigola.className}`}
+                dangerouslySetInnerHTML={{ __html: formtitle }}
+              />
               <div className={`${styles.contactContainer} flex f-sb f-as`}>
                 <div className={styles.infoContact}>
-                  {phone.length>0 && (
+                  {phone.length > 0 && (
                     <div className={styles.infoContactGroup}>
-                      <div data-aos="fade-right"
-                      data-aos-duration="900"
-                      data-aos-delay="0" className="iconPhone bg-ct"></div>
+                      <div
+                        data-aos="fade-right"
+                        data-aos-duration="900"
+                        data-aos-delay="0"
+                        className="iconPhone bg-ct"></div>
                       <div className={styles.phoneGroup}>
-                        {phone.map((phoneObj,i)=>(
-                          <a key={'phone'+i} data-aos="fade-right"
-                          data-aos-duration="900"
-                          data-aos-delay="0" className={styles.contactCta} href={phoneObj.numlink}>
+                        {phone.map((phoneObj, i) => (
+                          <a
+                            key={`phone${i}`}
+                            data-aos="fade-right"
+                            data-aos-duration="900"
+                            data-aos-delay="0"
+                            className={styles.contactCta}
+                            href={phoneObj.numlink}>
                             {phoneObj.label}
                           </a>
                         ))}
                       </div>
                     </div>
                   )}
-                  {email.length>0 && (
-                  <div className={styles.infoContactGroup}>
-                    <div data-aos="fade-right"
-                      data-aos-duration="900"
-                      data-aos-delay="0" className="iconMail bg-ct"></div>
-                    <a
-                    data-aos="fade-right"
-                    data-aos-duration="900"
-                    data-aos-delay="0"
-                      className={styles.contactCta}
-                      href={email.numlink}>
-                      {email.label}
-                    </a>
-                  </div>
+                  {email.length > 0 && (
+                    <div className={styles.infoContactGroup}>
+                      <div
+                        data-aos="fade-right"
+                        data-aos-duration="900"
+                        data-aos-delay="0"
+                        className="iconMail bg-ct"></div>
+                      <div className={styles.phoneGroup}>
+                        {email.map((mailObj, i) => (
+                          <a
+                            key={`mail${i}`}
+                            data-aos="fade-right"
+                            data-aos-duration="900"
+                            data-aos-delay="0"
+                            className={styles.contactCta}
+                            href={mailObj.numlink}>
+                            {mailObj.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
                   )}
                 </div>
 
@@ -296,30 +320,35 @@ const Footer = ({ datafooter, changeLayout }) => {
             <div className={`${styles.logoFooter} bg-ct`}></div>
             <div className={styles.yellowLine}></div>
           </div>
-          {footermenu.length>0&&(
+          {footermenu.length > 0 && (
             <nav className={styles.footerNav}>
-              {footermenu.map((item,i)=>(
-                 <Link
-                  key={'itemmenu'+i}
+              {footermenu.map((item, i) => (
+                <Link
+                  key={`itemmenu${i}`}
                   target={item.target}
                   href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${item.link}`}
                   className={`${styles.itemFooterNav} ${styles.withPoint}`}>
-                  {item.label} {i<(footermenu.length-1) && (<span className={styles.divisorPoint}></span>)}
+                  {item.label}{' '}
+                  {i < footermenu.length - 1 && (
+                    <span className={styles.divisorPoint}></span>
+                  )}
                 </Link>
               ))}
             </nav>
           )}
-          {disclaimer!==''&&(
-            <p className={styles.infoRegister}>
-              {disclaimer}
-            </p>
+          {disclaimer !== '' && (
+            <p className={styles.infoRegister}>{disclaimer}</p>
           )}
           <div className={styles.legalItems}>
-            <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${privacylink}`} className={styles.copyrightText}>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${privacylink}`}
+              className={styles.copyrightText}>
               Privacy Policy
             </Link>
             <p className={styles.copyrightText}>© {copiright}</p>
-            <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${termslink}`} className={styles.copyrightText}>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${termslink}`}
+              className={styles.copyrightText}>
               Terms & Conditions
             </Link>
           </div>

@@ -66,7 +66,9 @@ const AllPosts = ({
               </h3>
               <h3 className={`${styles.titlePostType} ${styles.viewAll}`}>
                 <Link
-                  href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/${categoryPosts.categoryType.toLowerCase()}`}>
+                  href={`${
+                    process.env.NEXT_PUBLIC_CURR_DOMAIN
+                  }/meet-colombia/${categoryPosts.categoryType.toLowerCase()}`}>
                   VIEW ALL
                 </Link>
               </h3>

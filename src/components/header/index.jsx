@@ -4,6 +4,7 @@ import React from 'react';
 import styles from './header.module.css';
 
 const Header = ({ animate, setAnimate, categories }) => {
+  console.log(categories);
   const toggleMenu = () => {
     setAnimate(!animate);
   };

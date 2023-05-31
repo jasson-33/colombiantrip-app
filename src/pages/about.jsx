@@ -8,7 +8,7 @@ import React from 'react';
 
 const About = ({ data }) => {
   console.log(data);
-  const {metacontent,hero,content,image_section,img_text,team} = data;
+  const { metacontent, hero, content, image_section, img_text, team } = data;
   return (
     <>
       <Metas metadata={metacontent} />

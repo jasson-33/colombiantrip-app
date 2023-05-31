@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { ColombianContext } from '@/context/ColombianContext';
 import Footer from '../footer';
 import { useRouter } from 'next/router';
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -32,14 +31,21 @@ const Layout = ({ children }) => {
 
   return (
     <main className={`siteMain ${Gotham.className}`}>
-      <Header animate={animate} setAnimate={setAnimate} categories={the_categories} />
+      <Header
+        animate={animate}
+        setAnimate={setAnimate}
+        categories={the_categories}
+      />
       {showMenu ? (
         <Menu animate={animate} setAnimate={setAnimate} mainmenu={dataMenu} />
       ) : (
         ''
       )}
       {children}
-      <Footer datafooter={dataFooter} changeLayout={router.pathname === '/how-it-works'} />
+      <Footer
+        datafooter={dataFooter}
+        changeLayout={router.pathname === '/how-it-works'}
+      />
     </main>
   );
 };

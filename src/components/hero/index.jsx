@@ -11,7 +11,8 @@ const Hero = ({ contentHero, pageType }) => {
   const [valueCat, setValueCat] = useState('0');
   console.log(expdata);
   console.log(contentHero);
-  const {img_banner,title,subtitle,type,blog,links,withForm} = contentHero;
+  const { img_banner, title, subtitle, type, blog, links, withForm } =
+    contentHero;
 
   useEffect(() => {
     AOS.init();
@@ -23,15 +24,11 @@ const Hero = ({ contentHero, pageType }) => {
 
   return (
     <div
-      className={`${styles.hero} bg-cv ${
-        withForm && styles.withForm
-      } ${blog && styles.smallHero} ${
-        type === 'principal'
-          ? styles.principalHero
-          : styles.secondaryHero
-      } ${withForm === true ? styles.heroPageForm : ''} ${
-        pageType === 'post' ? styles.postHero : ''
-      }`}>
+      className={`${styles.hero} bg-cv ${withForm && styles.withForm} ${
+        blog && styles.smallHero
+      } ${type === 'principal' ? styles.principalHero : styles.secondaryHero} ${
+        withForm === true ? styles.heroPageForm : ''
+      } ${pageType === 'post' ? styles.postHero : ''}`}>
       {blog && (
         <div className={styles.contFilter}>
           <div className={styles.innerContFilter}>
@@ -73,25 +70,25 @@ const Hero = ({ contentHero, pageType }) => {
         <div className={`${styles.contentHero}`}>
           {type === 'principal' ? (
             <>
-              {title!==''&&(
+              {title !== '' && (
                 <h1
                   data-aos="fade-up"
-                data-aos-duration="900"
-                data-aos-delay="0"
-                className={`${styles.principalText} ${Bigola.className}`}
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={`${styles.principalText} ${Bigola.className}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
-              {subtitle!==''&&(
+              {subtitle !== '' && (
                 <h3
                   data-aos="fade-up"
-                data-aos-duration="900"
-                data-aos-delay="0"
-                className={styles.subtitleText}
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.subtitleText}
                   dangerouslySetInnerHTML={{ __html: subtitle }}
                 />
               )}
-              {links.length>0 && (
+              {links.length > 0 && (
                 <div
                   className={`${styles.ctasHero} flex f-s f-ac`}
                   data-aos="fade-up"
@@ -99,8 +96,9 @@ const Hero = ({ contentHero, pageType }) => {
                   data-aos-offset="-150"
                   data-aos-delay="0">
                   {links.map((data, i) => (
-                    <div key={'linkshero'+i} className={styles.ctaHero}>
-                      <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.link}`}>
+                    <div key={`linkshero${i}`} className={styles.ctaHero}>
+                      <Link
+                        href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.link}`}>
                         <div className={`${styles.iconCtaHero} bg-ct`}></div>
                         {data.label}
                       </Link>
@@ -111,17 +109,17 @@ const Hero = ({ contentHero, pageType }) => {
             </>
           ) : (
             <>
-              {title!==''&&(
+              {title !== '' && (
                 <h1
                   data-aos="fade-up"
-                data-aos-duration="900"
-                data-aos-offset="-150"
-                data-aos-delay="0"
-                className={`${styles.bigTitleHero} ${Bigola.className}`}
+                  data-aos-duration="900"
+                  data-aos-offset="-150"
+                  data-aos-delay="0"
+                  className={`${styles.bigTitleHero} ${Bigola.className}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
-              {subtitle!=='' && (
+              {subtitle !== '' && (
                 <h3
                   data-aos="fade-up"
                   data-aos-duration="900"

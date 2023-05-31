@@ -5,7 +5,7 @@ import Hero from '@/components/hero';
 import React from 'react';
 
 const Experience = ({ data }) => {
-  const {metacontent, hero, content, experiences } = data;
+  const { metacontent, hero, content, experiences } = data;
   return (
     <>
       <Metas metadata={metacontent} />

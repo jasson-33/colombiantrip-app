@@ -19,7 +19,7 @@ const ExperienceDetail = ({ contentExp }) => {
             data-aos="fade-up"
             data-aos-duration="900"
             data-aos-delay="0"
-            key={id+i}
+            key={id + i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
             style={{ width: `calc(${width} - 20px)` }}>
             <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>

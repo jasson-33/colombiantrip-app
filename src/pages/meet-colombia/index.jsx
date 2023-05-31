@@ -4,7 +4,6 @@ import Hero from '@/components/hero';
 import React from 'react';
 
 const MeetColombia = ({ data }) => {
-
   const { metacontent, hero, featured, categories } = data;
 
   return (
@@ -12,8 +11,10 @@ const MeetColombia = ({ data }) => {
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       <AllPosts popularPost={featured} />
-      {categories.length>0 &&
-        categories.map((cat, i) => <AllPosts key={'categories'+i} categoryPosts={cat} />)}
+      {categories.length > 0 &&
+        categories.map((cat, i) => (
+          <AllPosts key={`categories${i}`} categoryPosts={cat} />
+        ))}
     </>
   );
 };
