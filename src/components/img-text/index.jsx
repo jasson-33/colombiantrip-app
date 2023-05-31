@@ -1,13 +1,21 @@
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './img-text.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ImgText = ({ data }) => {
   const { Bigola } = useContext(ColombianContext);
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   return (
     <section className={`siteSection ${styles.imgTextSection}`}>
       {data.title ? (
         <h2
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           className={`${styles.titleBlockIMgtext} ${Bigola.className}`}
           dangerouslySetInnerHTML={{ __html: data.title }}
         />
@@ -21,6 +29,9 @@ const ImgText = ({ data }) => {
         }`}>
         <div className={styles.imgBlock}>
           <div
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="0"
             className={`${styles.innerImgBlock} bg-cv`}
             style={{
               backgroundImage: `url(${
@@ -34,6 +45,9 @@ const ImgText = ({ data }) => {
         <div className={styles.textBlock}>
           {data.subtitle ? (
             <h3
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
               className={`${styles.subtitleTextImg} ${Bigola.className}`}
               dangerouslySetInnerHTML={{ __html: data.subtitle }}
             />
@@ -41,6 +55,9 @@ const ImgText = ({ data }) => {
             ''
           )}
           <p
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="0"
             className={styles.innerTextBlock}
             dangerouslySetInnerHTML={{ __html: data.content.text }}
           />

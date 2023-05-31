@@ -1,6 +1,8 @@
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './proud-members.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ProudMembers = () => {
   const { Bigola } = useContext(ColombianContext);
@@ -14,13 +16,25 @@ const ProudMembers = () => {
     '/images/b2b/8.jpeg',
   ];
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <section className={`siteSection ${styles.proudSection}`}>
       <div className={`container ${styles.containerProudMembers}`}>
-        <h2 className={`${styles.titleProud} ${Bigola.className}`}>
+        <h2
+          className={`${styles.titleProud} ${Bigola.className}`}
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0">
           Proud Members
         </h2>
-        <h3 className={styles.subtitleProudMembers}>
+        <h3
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
+          className={styles.subtitleProudMembers}>
           An independent affiliate of Gifted Travel Network — a Virtuoso®
           Member.
         </h3>

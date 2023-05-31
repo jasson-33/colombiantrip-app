@@ -1,16 +1,24 @@
 import Link from 'next/link';
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './experience-detail.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const ExperienceDetail = ({ contentExp }) => {
   const { Bigola } = useContext(ColombianContext);
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   return (
     <section className={`siteSection ${styles.experienceDetailSection}`}>
       <div
         className={`container flex f-jc f-as ${styles.containerExperiencesDetail}`}>
         {contentExp.map(({ img, width, title, id }, i) => (
           <div
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="0"
             key={id+i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
             style={{ width: `calc(${width} - 20px)` }}>

@@ -13,6 +13,7 @@
     "prettier:silent": "prettier --write . --loglevel silent"
   },
   "dependencies": {
+    "aos": "^2.3.4",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
     "gsap": "^3.11.5",

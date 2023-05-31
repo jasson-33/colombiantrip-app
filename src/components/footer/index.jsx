@@ -1,50 +1,66 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './footer.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Footer = ({ datafooter, changeLayout }) => {
   const {footermenu,disclaimer,privacylink,termslink,formtitle,phone,email,copiright} = datafooter;
   const { Bigola } = useContext(ColombianContext);
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
   return (
     <>
       <section className={`${styles.siteContact} bg-cv`}>
         <div className={`container ${styles.containerContact}`}>
           {!changeLayout && (
             <>
-              <h2 className={`${styles.contactTitle} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:formtitle}} />
+              <h2
+                data-aos="fade-right"
+                data-aos-duration="900"
+                data-aos-delay="0"
+                className={`${styles.contactTitle} ${Bigola.className}`} dangerouslySetInnerHTML={{__html:formtitle}} />
               <div className={`${styles.contactContainer} flex f-sb f-as`}>
                 <div className={styles.infoContact}>
                   {phone.length>0 && (
                     <div className={styles.infoContactGroup}>
-                      <div className="iconPhone bg-ct"></div>
+                      <div data-aos="fade-right"
+                      data-aos-duration="900"
+                      data-aos-delay="0" className="iconPhone bg-ct"></div>
                       <div className={styles.phoneGroup}>
                         {phone.map((phoneObj,i)=>(
-                          <a key={'phone'+i} className={styles.contactCta} href={phoneObj.numlink}>
+                          <a key={'phone'+i} data-aos="fade-right"
+                          data-aos-duration="900"
+                          data-aos-delay="0" className={styles.contactCta} href={phoneObj.numlink}>
                             {phoneObj.label}
                           </a>
                         ))}
                       </div>
                     </div>
-                  )}
-                  {email.length>0 && (
-                    <div className={styles.infoContactGroup}>
-                      <div className="iconMail bg-ct"></div>
-                      <div className={styles.phoneGroup}>
-                        {email.map((emailObj,i)=>(
-                          <a key={'mail'+i}
-                            className={styles.contactCta}
-                            href={emailObj.numlink}>
-                            {emailObj.label}
-                          </a>
-                        ))}
-                      </div>
-                    </div>
-                  )}
+                  </div>
+                  <div className={styles.infoContactGroup}>
+                    <div data-aos="fade-right"
+                      data-aos-duration="900"
+                      data-aos-delay="0" className="iconMail bg-ct"></div>
+                    <a
+                    data-aos="fade-right"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                      className={styles.contactCta}
+                      href="mailto:customerservice@thecolombiantrio.com">
+                      customerservice@thecolombiantrio.com
+                    </a>
+                  </div>
                 </div>
 
                 <form className={styles.formFooter}>
                   <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
                     type="text"
                     name=""
                     id=""
@@ -52,6 +68,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                     placeholder="Full Name"
                   />
                   <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
                     type="text"
                     name=""
                     id=""
@@ -59,6 +78,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                     placeholder="Email Address"
                   />
                   <textarea
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
                     name=""
                     id=""
                     className={`${styles.filedForm} ${styles.textareaForm}`}
@@ -71,8 +93,17 @@ const Footer = ({ datafooter, changeLayout }) => {
           {changeLayout && (
             <form className={styles.formFooterB}>
               <div className={styles.inputsGroup}>
-                <p className={styles.labelTextInputs}>Name*</p>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Name*
+                </p>
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="text"
                   name=""
                   id=""
@@ -80,6 +111,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                   placeholder="First Name"
                 />
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="text"
                   name=""
                   id=""
@@ -88,8 +122,17 @@ const Footer = ({ datafooter, changeLayout }) => {
                 />
               </div>
               <div className={`${styles.inputsGroup} ${styles.longInput}`}>
-                <p className={styles.labelTextInputs}>Email*</p>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Email*
+                </p>
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="text"
                   name=""
                   id=""
@@ -97,10 +140,17 @@ const Footer = ({ datafooter, changeLayout }) => {
                 />
               </div>
               <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p className={styles.labelTextInputs}>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
                   Approximated Duration Days
                 </p>
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="number"
                   name=""
                   id=""
@@ -108,8 +158,17 @@ const Footer = ({ datafooter, changeLayout }) => {
                 />
               </div>
               <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p className={styles.labelTextInputs}>Number of Travelers</p>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Number of Travelers
+                </p>
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="number"
                   name=""
                   id=""
@@ -118,10 +177,17 @@ const Footer = ({ datafooter, changeLayout }) => {
               </div>
               <div
                 className={`${styles.inputsGroup} ${styles.shortGroup} ${styles.dateInput}`}>
-                <p className={styles.labelTextInputs}>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
                   Approximated Start date
                 </p>
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="month"
                   name=""
                   id=""
@@ -129,6 +195,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                   placeholder="MM"
                 />
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="number"
                   name=""
                   id=""
@@ -138,6 +207,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                   min={1}
                 />
                 <input
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   type="number"
                   name=""
                   id=""
@@ -146,22 +218,68 @@ const Footer = ({ datafooter, changeLayout }) => {
                 />
               </div>
               <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p className={styles.labelTextInputs}>Your Travel Style</p>
-                <select className={styles.selectInput} name="" id=""></select>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Your Travel Style
+                </p>
+                <select
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.selectInput}
+                  name=""
+                  id=""></select>
               </div>
               <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p className={styles.labelTextInputs}>Accomodation</p>
-                <select className={styles.selectInput} name="" id=""></select>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Accomodation
+                </p>
+                <select
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.selectInput}
+                  name=""
+                  id=""></select>
               </div>
               <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p className={styles.labelTextInputs}>Your Destination</p>
-                <select className={styles.selectInput} name="" id=""></select>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Your Destination
+                </p>
+                <select
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.selectInput}
+                  name=""
+                  id=""></select>
               </div>
 
               <div className={styles.submitGroup}>
                 <button className={styles.innerSubmitGroup}>
-                  <div className={`${styles.arrowSubmit} bg-ct`}></div>
-                  <p className={styles.submitText}>SUBMIT</p>
+                  <div
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={`${styles.arrowSubmit} bg-ct`}></div>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.submitText}>
+                    SUBMIT
+                  </p>
                 </button>
               </div>
             </form>

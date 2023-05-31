@@ -1,16 +1,25 @@
 import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './team.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Team = ({ teamData }) => {
   const { Bigola } = useContext(ColombianContext);
   const members = teamData;
+
+  useEffect(() => {
+    AOS.init({});
+  }, []);
 
   return (
     <section className={`siteSection ${styles.teamSection}`}>
       <div className={`container flex f-s f-as ${styles.containerTeam}`}>
         {members.map((member, i) => (
           <div
+            data-aos="fade-up"
+            data-aos-duration="900"
+            data-aos-delay="0"
             key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i}
             className={styles.cardTeam}>
             <div className={`${styles.imgTeamMember}`}>

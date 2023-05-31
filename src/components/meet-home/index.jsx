@@ -1,8 +1,10 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './meet-home.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const MeetHome = ({ blogdata }) => {
   const { title, subtitle, blogs } = blogdata;
@@ -10,14 +12,24 @@ const MeetHome = ({ blogdata }) => {
 
   console.log(blogdata);
 
+  useEffect(() => {
+    AOS.init({});
+  }, []);
+
   return (
     <section className={`siteSection ${styles.meetSection}`}>
       <div className={`container ${styles.containerMeetSction}`}>
         <h2
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           className={`${styles.meetHomeTitle} ${Bigola.className}`}
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <h3
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           className={`${styles.subtitleMeetHome}`}
           dangerouslySetInnerHTML={{ __html: subtitle }}
         />
@@ -25,6 +37,9 @@ const MeetHome = ({ blogdata }) => {
         <div className={styles.blogsContainer}>
           {blogs.map((blog, i) => (
             <div
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
@@ -54,6 +69,9 @@ const MeetHome = ({ blogdata }) => {
           ))}
         </div>
         <Link
+          data-aos="fade-up"
+          data-aos-duration="900"
+          data-aos-delay="0"
           href="/meet-colombia"
           className={`${styles.allArticles} ${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
           <span

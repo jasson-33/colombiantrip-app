@@ -1,7 +1,9 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import styles from './hero.module.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Hero = ({ contentHero, pageType }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
@@ -10,6 +12,14 @@ const Hero = ({ contentHero, pageType }) => {
   console.log(expdata);
   console.log(contentHero);
   const {img_banner,title,subtitle,type,blog,links,withForm} = contentHero;
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
 
   return (
     <div
@@ -65,18 +75,29 @@ const Hero = ({ contentHero, pageType }) => {
             <>
               {title!==''&&(
                 <h1
-                  className={`${styles.principalText} ${Bigola.className}`}
+                  data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-delay="0"
+                className={`${styles.principalText} ${Bigola.className}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
               {subtitle!==''&&(
                 <h3
-                  className={styles.subtitleText}
+                  data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-delay="0"
+                className={styles.subtitleText}
                   dangerouslySetInnerHTML={{ __html: subtitle }}
                 />
               )}
               {links.length>0 && (
-                <div className={`${styles.ctasHero} flex f-s f-ac`}>
+                <div
+                  className={`${styles.ctasHero} flex f-s f-ac`}
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-offset="-150"
+                  data-aos-delay="0">
                   {links.map((data, i) => (
                     <div key={'linkshero'+i} className={styles.ctaHero}>
                       <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.link}`}>
@@ -92,18 +113,29 @@ const Hero = ({ contentHero, pageType }) => {
             <>
               {title!==''&&(
                 <h1
-                  className={`${styles.bigTitleHero} ${Bigola.className}`}
+                  data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-offset="-150"
+                data-aos-delay="0"
+                className={`${styles.bigTitleHero} ${Bigola.className}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
               )}
               {subtitle!=='' && (
                 <h3
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
                   className={styles.subtitleHero}
                   dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
                 />
               )}
               {withForm && (
-                <form className={styles.heroForm}>
+                <form
+                  data-aos="fade-up"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.heroForm}>
                   <h3 className={`${styles.titleFormHero} ${Bigola.className}`}>
                     Contact us
                   </h3>
