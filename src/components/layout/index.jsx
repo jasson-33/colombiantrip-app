@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-
   useEffect(() => {
     let animationTimeout;
     if (animate) {
@@ -26,8 +25,8 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  if(!children.props.data){
-    return(<></>);
+  if (!children.props.data) {
+    return <></>;
   }
 
   const dataMenu = children.props.data.mainmenu
@@ -39,7 +38,7 @@ const Layout = ({ children }) => {
   const the_categories = children.props.data.categories
     ? children.props.data.categories
     : false;
-    
+
   return (
     <main className={`siteMain ${Gotham.className}`}>
       <Header

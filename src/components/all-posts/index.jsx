@@ -93,23 +93,27 @@ const AllPosts = ({
             </div>
           </>
         )}
-        {allCategoryPost && allCategoryPost.curr_posts && allCategoryPost.curr_posts.length>0 && (
-          <div
-            data-aos="fade-up"
-            data-aos-duration="900"
-            data-aos-delay="0"
-            className={`${styles.containerAllPosts} contAllCatPosts`}>
-            {allCategoryPost.curr_posts.map((post, i) => (
-              <PostCard
-                key={
-                  typeof window !== 'undefined' ? window.crypto.randomUUID() : i
-                }
-                popularPost={post}
-                pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
-              />
-            ))}
-          </div>
-        )}
+        {allCategoryPost &&
+          allCategoryPost.curr_posts &&
+          allCategoryPost.curr_posts.length > 0 && (
+            <div
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
+              className={`${styles.containerAllPosts} contAllCatPosts`}>
+              {allCategoryPost.curr_posts.map((post, i) => (
+                <PostCard
+                  key={
+                    typeof window !== 'undefined'
+                      ? window.crypto.randomUUID()
+                      : i
+                  }
+                  popularPost={post}
+                  pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
+                />
+              ))}
+            </div>
+          )}
       </div>
       {allCategoryPost && allCategoryPost.max_pages > 1 && (
         <div

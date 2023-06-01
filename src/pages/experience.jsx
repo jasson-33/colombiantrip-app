@@ -16,7 +16,7 @@ const Experience = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const resExp = await fetch(
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/experience`
   );

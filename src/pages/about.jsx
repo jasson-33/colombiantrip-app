@@ -32,7 +32,7 @@ const About = ({ data }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const contentAbout = await fetch(
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/about`
   );
