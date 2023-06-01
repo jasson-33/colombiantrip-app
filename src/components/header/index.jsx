@@ -1,9 +1,13 @@
+import { ColombianContext } from '@/context/ColombianContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import styles from './header.module.css';
 
 const Header = ({ animate, setAnimate }) => {
+  const [valueCities, setValueCities] = useState('0');
+  const [valueCat, setValueCat] = useState('0');
+  const { Bigola } = useContext(ColombianContext);
   const toggleMenu = () => {
     setAnimate(!animate);
   };
@@ -30,6 +34,33 @@ const Header = ({ animate, setAnimate }) => {
               title="Colombian Trip"
             />
           </Link>
+        </div>
+
+        <div className={styles.contFilter}>
+          <div className={styles.innerContFilter}>
+            <select
+              value={valueCities}
+              onChange={(e) => {
+                setValueCities(e.target.value);
+              }}
+              className={`${styles.citiesSelect} ${Bigola.className}`}>
+              <option value="0">Cities</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+            <select
+              value={valueCat}
+              onChange={(e) => {
+                setValueCat(e.target.value);
+              }}
+              className={`${styles.citiesSelect} ${Bigola.className}`}>
+              <option value="0">Categories</option>
+              <option value=""></option>
+              <option value=""></option>
+              <option value=""></option>
+            </select>
+          </div>
         </div>
 
         <div

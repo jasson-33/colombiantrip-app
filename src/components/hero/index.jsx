@@ -1,14 +1,13 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './hero.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Hero = ({ contentHero, pageType }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
-  const [valueCities, setValueCities] = useState('0');
-  const [valueCat, setValueCat] = useState('0');
+  
   console.log(expdata);
   console.log(contentHero);
 
@@ -27,34 +26,7 @@ const Hero = ({ contentHero, pageType }) => {
       } ${contentHero.withForm === true ? styles.heroPageForm : ''} ${
         pageType === 'post' ? styles.postHero : ''
       }`}>
-      {contentHero.blog && (
-        <div className={styles.contFilter}>
-          <div className={styles.innerContFilter}>
-            <select
-              value={valueCities}
-              onChange={(e) => {
-                setValueCities(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Cities</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-            <select
-              value={valueCat}
-              onChange={(e) => {
-                setValueCat(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Categories</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-          </div>
-        </div>
-      )}
+      
       <div
         className={`${styles.imageInnerHero} bg-cv`}
         style={{
