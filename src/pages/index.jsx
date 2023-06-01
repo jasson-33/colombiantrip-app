@@ -5,7 +5,8 @@ import ImgText from '@/components/img-text';
 import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
 
-function Home({ homedata }) {
+function Home({ data }) {
+  console.log(data);
 
   const {
     metacontent,
@@ -14,7 +15,7 @@ function Home({ homedata }) {
     blockimages,
     horizontal_blocks,
     blogsection,
-  } = homedata.home_data;
+  } = data;
 
   return (
     <>
@@ -38,11 +39,11 @@ function Home({ homedata }) {
 
 export async function getServerSideProps() {
   const resHome = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/home`
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/home`
   );
-  const homedata = await resHome.json();
+  const data = await resHome.json();
   return {
-    props: { homedata },
+    props: { data },
   };
 }
 

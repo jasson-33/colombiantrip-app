@@ -7,7 +7,6 @@ import 'aos/dist/aos.css';
 
 const ExperienceDetail = ({ contentExp }) => {
   const { Bigola } = useContext(ColombianContext);
-  const experiencesDetail = contentExp;
   useEffect(() => {
     AOS.init({});
   }, []);
@@ -15,15 +14,15 @@ const ExperienceDetail = ({ contentExp }) => {
     <section className={`siteSection ${styles.experienceDetailSection}`}>
       <div
         className={`container flex f-jc f-as ${styles.containerExperiencesDetail}`}>
-        {experiencesDetail.map(({ img, width, title, id }, i) => (
+        {contentExp.map(({ img, width, title, id }, i) => (
           <div
             data-aos="fade-up"
             data-aos-duration="900"
             data-aos-delay="0"
-            key={id}
+            key={id + i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
             style={{ width: `calc(${width} - 20px)` }}>
-            <Link href={`/experiences/${id}`}>
+            <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>
               <div
                 className={`bg-cv ${styles.imgCardExperience}`}
                 style={{

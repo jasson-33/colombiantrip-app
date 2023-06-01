@@ -1,3 +1,4 @@
+import Metas from '@/components/metaDatas';
 import Acordion from '@/components/acordion';
 import AfterHero from '@/components/after-hero';
 import Hero from '@/components/hero';
@@ -8,10 +9,11 @@ import React from 'react';
 const DetailExperience = ({ data }) => {
   console.log(data);
 
-  const { hero, blocks, dropdown, information } = data.data;
+  const { metacontent, hero, blocks, dropdown, information } = data;
 
   return (
     <>
+      <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       {blocks.map((block, i) => {
         switch (block.layout) {
@@ -34,7 +36,7 @@ const DetailExperience = ({ data }) => {
 
 export async function getServerSideProps(context) {
   const datafetch = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/experience-detail?dataexp=${context.params.id}`
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/experience-detail?dataexp=${context.params.id}`
   );
   const data = await datafetch.json();
   return {

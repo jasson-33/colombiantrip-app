@@ -16,7 +16,6 @@ const AllPosts = ({
   useEffect(() => {
     AOS.init({});
   }, []);
-  // console.log(allCategoryPost.curr_posts);
   return (
     <section
       className={`siteSection ${styles.allpost} ${
@@ -66,7 +65,9 @@ const AllPosts = ({
               </h3>
               <h3 className={`${styles.titlePostType} ${styles.viewAll}`}>
                 <Link
-                  href={`/meet-colombia/${categoryPosts.categoryType.toLowerCase()}`}>
+                  href={`${
+                    process.env.NEXT_PUBLIC_CURR_DOMAIN
+                  }/meet-colombia/${categoryPosts.categoryType.toLowerCase()}`}>
                   VIEW ALL
                 </Link>
               </h3>
@@ -85,50 +86,61 @@ const AllPosts = ({
                 {categoryPosts.posts[1] && (
                   <PostCard popularPost={categoryPosts.posts[1]} />
                 )}
-                {categoryPosts.posts[1] && (
+                {categoryPosts.posts[2] && (
                   <PostCard popularPost={categoryPosts.posts[2]} />
                 )}
               </div>
             </div>
           </>
         )}
-        {allCategoryPost && (
-          <div
-            data-aos="fade-up"
-            data-aos-duration="900"
-            data-aos-delay="0"
-            className={`${styles.containerAllPosts} contAllCatPosts`}>
-            {allCategoryPost.curr_posts.map((post, i) => (
-              <PostCard
-                key={
-                  typeof window !== 'undefined' ? window.crypto.randomUUID() : i
-                }
-                popularPost={post}
-                pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
-              />
-            ))}
-          </div>
-        )}
+        {allCategoryPost &&
+          allCategoryPost.curr_posts &&
+          allCategoryPost.curr_posts.length > 0 && (
+            <div
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
+              className={`${styles.containerAllPosts} contAllCatPosts`}>
+              {allCategoryPost.curr_posts.map((post, i) => (
+                <PostCard
+                  key={
+                    typeof window !== 'undefined'
+                      ? window.crypto.randomUUID()
+                      : i
+                  }
+                  popularPost={post}
+                  pageType={pageType === 'catPageStyle' ? 'catPageStyle' : ''}
+                />
+              ))}
+            </div>
+          )}
       </div>
-      {allCategoryPost && (
+      {allCategoryPost && allCategoryPost.max_pages > 1 && (
         <div
           data-aos="fade-up"
           data-aos-duration="900"
           data-aos-delay="0"
           className={`${styles.containerPag} ${Bigola.className}`}>
           <ul>
-            <li className={`${styles.itemPag} ${styles.selectedPag}`}>
-              <Link href={'meet-colombia/cities/1'}>1</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/2'}>2</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/3'}>3</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/4'}>4</Link>
-            </li>
+            {(function () {
+              const linkPages = [];
+              for (let i = 1; i <= allCategoryPost.max_pages; i++) {
+                linkPages.push(
+                  <li
+                    className={`${styles.itemPag} ${
+                      parseInt(allCategoryPost.curr_page) === i
+                        ? styles.selectedPag
+                        : ''
+                    }`}>
+                    <Link
+                      href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/cities/?page=${i}`}>
+                      {i}
+                    </Link>
+                  </li>
+                );
+              }
+              return linkPages;
+            })()}
           </ul>
         </div>
       )}

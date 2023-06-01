@@ -1,9 +1,12 @@
+import Metas from '@/components/metaDatas';
 import AfterHero from '@/components/after-hero';
 import Grid from '@/components/grid';
 import Hero from '@/components/hero';
 import React from 'react';
 
-const WhyChoosUs = () => {
+const WhyChoosUs = ({ data }) => {
+  const { metacontent, hero, descriptions } = data;
+  /*
   const contentHero = {
     type: 'secondary',
     title: 'Why Choose Us',
@@ -31,13 +34,26 @@ const WhyChoosUs = () => {
     ],
     blockTitle: true,
   };
+*/
+
   return (
     <>
-      <Hero contentHero={contentHero} />
-      <AfterHero contentAfterHero={contentAfterHero} />
+      <Metas metadata={metacontent} />
+      <Hero contentHero={hero} />
+      <AfterHero contentAfterHero={descriptions} />
       <Grid />
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const content = await fetch(
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/whychoose`
+  );
+  const data = await content.json();
+  return {
+    props: { data },
+  };
+}
 
 export default WhyChoosUs;

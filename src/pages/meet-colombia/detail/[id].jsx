@@ -1,3 +1,4 @@
+import Metas from '@/components/metaDatas';
 import Hero from '@/components/hero';
 import BlogArterfHero from '@/components/blog-after-hero';
 import ImgBlockBlog from '@/components/blog-img-block';
@@ -6,13 +7,7 @@ import React from 'react';
 
 const DetailPost = ({ data }) => {
   console.log(data);
-  const contentHero = {
-    type: 'secondary',
-    title: data.data_blog.title,
-    subtitle: data.data_blog.subtitle,
-    img_banner: data.data_blog.img_banner,
-    blog: true,
-  };
+  const { metacontent, hero } = data;
 
   const blogAfterHero = {
     autor: 'Andrew Smith',
@@ -51,10 +46,10 @@ const DetailPost = ({ data }) => {
     title: '',
     desc: 'Viverra ipsum nunc aliquet bibendum enim. Urna cursus eget nunc scelerisque viverra mauris. In ante metus dictum at tempor commodo ullamcorper a lacus. Vitae tortor condimentum lacinia quis. Sed cras ornare arcu dui vivamus. Nunc sed blandit libero volutpat sed cras ornare. Placerat in egestas erat imperdiet sed euismod nisi porta lorem.',
   };
-
   return (
     <>
-      <Hero contentHero={contentHero} pageType={'post'} />
+      <Metas metadata={metacontent} />
+      <Hero contentHero={hero} pageType={'post'} />
       <BlogArterfHero blogAfterHero={blogAfterHero} />
       <TextBlog textBlogBlock={textBlogDesctwo} />
       <ImgBlockBlog getimgsBlock={getimgsBlock} />
@@ -67,7 +62,7 @@ const DetailPost = ({ data }) => {
 export async function getServerSideProps(req) {
   const id = req.params.id;
   const resData = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/blog?datablog=${id}`
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/blog?datablog=${id}`
   );
   const data = await resData.json();
 

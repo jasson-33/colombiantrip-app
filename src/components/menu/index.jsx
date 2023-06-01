@@ -23,7 +23,11 @@ const Menu = ({ animate, setAnimate, mainmenu }) => {
     }, 500);
   };
 
-  const menuArr = mainmenu.main_menu;
+  const menuArr = mainmenu;
+
+  if (!mainmenu) {
+    return <></>;
+  }
 
   return (
     <div
@@ -43,7 +47,7 @@ const Menu = ({ animate, setAnimate, mainmenu }) => {
                   : index
               }>
               <Link
-                href={`/${item.link}`}
+                href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${item.link}`}
                 onClick={() => hideMenu()}
                 target={item.target}>
                 <span className={styles.numberItemMenu}>

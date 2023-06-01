@@ -5,12 +5,27 @@ import styles from './footer.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const Footer = ({ changeLayout }) => {
+const Footer = ({ datafooter, changeLayout }) => {
+  const {
+    footermenu,
+    disclaimer,
+    privacylink,
+    termslink,
+    formtitle,
+    phone,
+    email,
+    copiright,
+  } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
   useEffect(() => {
     AOS.init({});
   }, []);
+
+  if (!datafooter) {
+    return <></>;
+  }
+
   return (
     <>
       <section className={`${styles.siteContact} bg-cv`}>
@@ -21,52 +36,55 @@ const Footer = ({ changeLayout }) => {
                 data-aos="fade-right"
                 data-aos-duration="900"
                 data-aos-delay="0"
-                className={`${styles.contactTitle} ${Bigola.className}`}>
-                Let’s start <br /> your journey
-              </h2>
-
+                className={`${styles.contactTitle} ${Bigola.className}`}
+                dangerouslySetInnerHTML={{ __html: formtitle }}
+              />
               <div className={`${styles.contactContainer} flex f-sb f-as`}>
                 <div className={styles.infoContact}>
-                  <div className={styles.infoContactGroup}>
-                    <div
-                      data-aos="fade-right"
-                      data-aos-duration="900"
-                      data-aos-delay="0"
-                      className="iconPhone bg-ct"></div>
-                    <div className={styles.phoneGroup}>
-                      <a
+                  {phone.length > 0 && (
+                    <div className={styles.infoContactGroup}>
+                      <div
                         data-aos="fade-right"
                         data-aos-duration="900"
                         data-aos-delay="0"
-                        className={styles.contactCta}
-                        href="tel:+13109880887">
-                        +1 (310) 988 0887 US
-                      </a>
-                      <a
-                        data-aos="fade-right"
-                        data-aos-duration="900"
-                        data-aos-delay="0"
-                        className={styles.contactCta}
-                        href="tel:+573142174891">
-                        +57 (314) 217 4891 Colombia
-                      </a>
+                        className="iconPhone bg-ct"></div>
+                      <div className={styles.phoneGroup}>
+                        {phone.map((phoneObj, i) => (
+                          <a
+                            key={`phone${i}`}
+                            data-aos="fade-right"
+                            data-aos-duration="900"
+                            data-aos-delay="0"
+                            className={styles.contactCta}
+                            href={phoneObj.numlink}>
+                            {phoneObj.label}
+                          </a>
+                        ))}
+                      </div>
                     </div>
-                  </div>
-                  <div className={styles.infoContactGroup}>
-                    <div
-                      data-aos="fade-right"
-                      data-aos-duration="900"
-                      data-aos-delay="0"
-                      className="iconMail bg-ct"></div>
-                    <a
-                      data-aos="fade-right"
-                      data-aos-duration="900"
-                      data-aos-delay="0"
-                      className={styles.contactCta}
-                      href="mailto:customerservice@thecolombiantrio.com">
-                      customerservice@thecolombiantrio.com
-                    </a>
-                  </div>
+                  )}
+                  {email.length > 0 && (
+                    <div className={styles.infoContactGroup}>
+                      <div
+                        data-aos="fade-right"
+                        data-aos-duration="900"
+                        data-aos-delay="0"
+                        className="iconMail bg-ct"></div>
+                      <div className={styles.phoneGroup}>
+                        {email.map((mailObj, i) => (
+                          <a
+                            key={`mail${i}`}
+                            data-aos="fade-right"
+                            data-aos-duration="900"
+                            data-aos-delay="0"
+                            className={styles.contactCta}
+                            href={mailObj.numlink}>
+                            {mailObj.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 <form className={styles.formFooter}>
@@ -307,45 +325,35 @@ const Footer = ({ changeLayout }) => {
             <div className={`${styles.logoFooter} bg-ct`}></div>
             <div className={styles.yellowLine}></div>
           </div>
-
-          <nav className={styles.footerNav}>
-            <Link
-              href="/"
-              className={`${styles.itemFooterNav} ${styles.withPoint}`}>
-              About us <span className={styles.divisorPoint}></span>
-            </Link>
-            <Link href="/" className={`${styles.itemFooterNav} `}>
-              Experience <span className={styles.divisorPoint}></span>
-            </Link>
-            <Link
-              href="/"
-              className={`${styles.itemFooterNav} ${styles.withPoint}`}>
-              How it works <span className={styles.divisorPoint}></span>
-            </Link>
-            <Link href="/" className={`${styles.itemFooterNav} `}>
-              Meet Colombia <span className={styles.divisorPoint}></span>
-            </Link>
-            <Link
-              href="/"
-              className={`${styles.itemFooterNav} ${styles.withPoint}`}>
-              Get in touch <span className={styles.divisorPoint}></span>
-            </Link>
-            <Link href="/" className={`${styles.itemFooterNav} `}>
-              B2B
-            </Link>
-          </nav>
-
-          <p className={styles.infoRegister}>
-            Registro Nacional de Turismo Colombia # 96714 / California Sellers
-            of Travel # 2137640-70
-          </p>
-
+          {footermenu.length > 0 && (
+            <nav className={styles.footerNav}>
+              {footermenu.map((item, i) => (
+                <Link
+                  key={`itemmenu${i}`}
+                  target={item.target}
+                  href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${item.link}`}
+                  className={`${styles.itemFooterNav} ${styles.withPoint}`}>
+                  {item.label}{' '}
+                  {i < footermenu.length - 1 && (
+                    <span className={styles.divisorPoint}></span>
+                  )}
+                </Link>
+              ))}
+            </nav>
+          )}
+          {disclaimer !== '' && (
+            <p className={styles.infoRegister}>{disclaimer}</p>
+          )}
           <div className={styles.legalItems}>
-            <Link href="/" className={styles.copyrightText}>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${privacylink}`}
+              className={styles.copyrightText}>
               Privacy Policy
             </Link>
-            <p className={styles.copyrightText}>© 2023 The Colombian Trip</p>
-            <Link href="/" className={styles.copyrightText}>
+            <p className={styles.copyrightText}>© {copiright}</p>
+            <Link
+              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${termslink}`}
+              className={styles.copyrightText}>
               Terms & Conditions
             </Link>
           </div>

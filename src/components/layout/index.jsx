@@ -5,8 +5,6 @@ import { useContext } from 'react';
 import { ColombianContext } from '@/context/ColombianContext';
 import Footer from '../footer';
 import { useRouter } from 'next/router';
-import useSWR from 'swr';
-const fetcher = (url) => fetch(url).then((res) => res.json());
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -14,8 +12,6 @@ const Layout = ({ children }) => {
   const { Gotham } = useContext(ColombianContext);
 
   const router = useRouter();
-
-  const { data, error } = useSWR('/api/menu', fetcher);
 
   useEffect(() => {
     let animationTimeout;
@@ -29,21 +25,37 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  if (error) {
-    return 'An error has occurred.';
+  if (!children.props.data) {
+    return <></>;
   }
 
-  // if (isLoading) {return 'Loading...';}
+  const dataMenu = children.props.data.mainmenu
+    ? children.props.data.mainmenu
+    : false;
+  const dataFooter = children.props.data.footerdata
+    ? children.props.data.footerdata
+    : false;
+  const the_categories = children.props.data.categories
+    ? children.props.data.categories
+    : false;
+
   return (
     <main className={`siteMain ${Gotham.className}`}>
-      <Header animate={animate} setAnimate={setAnimate} />
+      <Header
+        animate={animate}
+        setAnimate={setAnimate}
+        categories={the_categories}
+      />
       {showMenu ? (
-        <Menu animate={animate} setAnimate={setAnimate} mainmenu={data} />
+        <Menu animate={animate} setAnimate={setAnimate} mainmenu={dataMenu} />
       ) : (
         ''
       )}
       {children}
-      <Footer changeLayout={router.pathname === '/how-it-works'} />
+      <Footer
+        datafooter={dataFooter}
+        changeLayout={router.pathname === '/how-it-works'}
+      />
     </main>
   );
 };

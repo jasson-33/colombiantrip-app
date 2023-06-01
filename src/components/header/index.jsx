@@ -4,13 +4,15 @@ import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import styles from './header.module.css';
 
-const Header = ({ animate, setAnimate }) => {
+const Header = ({ animate, setAnimate, categories }) => {
   const [valueCities, setValueCities] = useState('0');
   const [valueCat, setValueCat] = useState('0');
   const { Bigola } = useContext(ColombianContext);
   const toggleMenu = () => {
     setAnimate(!animate);
   };
+
+  console.log(categories);
   return (
     <header className={styles.siteHeader}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>

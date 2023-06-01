@@ -1,3 +1,4 @@
+import Metas from '@/components/metaDatas';
 import AfterHero from '@/components/after-hero';
 import Hero from '@/components/hero';
 import ImgSection from '@/components/img-section';
@@ -5,41 +6,39 @@ import ImgText from '@/components/img-text';
 import Team from '@/components/team';
 import React from 'react';
 
-const About = ({ content }) => {
-  console.log(content);
-  const contentHero = content.about_data.hero;
-  const contentAfterHero = content.about_data.content;
-  const imgTextBlocks = content.about_data.img_text;
-  const teamData = content.about_data.team;
+const About = ({ data }) => {
+  console.log(data);
+  const { metacontent, hero, content, image_section, img_text, team } = data;
   return (
     <>
-      <Hero contentHero={contentHero} />
-      <AfterHero contentAfterHero={contentAfterHero} />
+      <Metas metadata={metacontent} />
+      <Hero contentHero={hero} />
+      <AfterHero contentAfterHero={content} />
       <ImgSection
         imgSection={
-          content.about_data.image_section.sizes
-            ? content.about_data.image_section.sizes['super-large']
+          image_section.sizes
+            ? image_section.sizes['super-large']
             : '/images/experiences/6.jpg'
         }
       />
-      {imgTextBlocks.map((data, i) => (
+      {img_text.map((data, i) => (
         <ImgText
           key={typeof window !== 'undefined' ? window.crypto.randomUUID() : i}
           data={data}
         />
       ))}
-      <Team teamData={teamData} />
+      <Team teamData={team} />
     </>
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const contentAbout = await fetch(
-    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v1/about`
+    `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/about`
   );
-  const content = await contentAbout.json();
+  const data = await contentAbout.json();
   return {
-    props: { content },
+    props: { data },
   };
 }
 
