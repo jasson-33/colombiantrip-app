@@ -61,7 +61,7 @@ const MeetHome = ({ blogdata }) => {
               <p className={styles.summaryCardBlog}>{blog.summary}</p>
 
               <Link
-                href={`/meet-colombia/${blog.url}`}
+                href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/detail/${blog.url}`}
                 className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
                 <span className={`bg-ct ${styles.arrowRight}`}></span> Read More
               </Link>
@@ -72,7 +72,7 @@ const MeetHome = ({ blogdata }) => {
           data-aos="fade-up"
           data-aos-duration="900"
           data-aos-delay="0"
-          href="/meet-colombia"
+          href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia`}
           className={`${styles.allArticles} ${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
           <span
             className={`bg-ct ${styles.arrowRight} ${Gotham_Bold.className}`}></span>

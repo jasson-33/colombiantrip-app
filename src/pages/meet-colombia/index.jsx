@@ -5,7 +5,6 @@ import React from 'react';
 
 const MeetColombia = ({ data }) => {
   const { metacontent, hero, featured, categories } = data;
-
   return (
     <>
       <Metas metadata={metacontent} />

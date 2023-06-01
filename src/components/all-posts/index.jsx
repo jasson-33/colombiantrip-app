@@ -16,7 +16,6 @@ const AllPosts = ({
   useEffect(() => {
     AOS.init({});
   }, []);
-  // console.log(allCategoryPost.curr_posts);
   return (
     <section
       className={`siteSection ${styles.allpost} ${
@@ -87,7 +86,7 @@ const AllPosts = ({
                 {categoryPosts.posts[1] && (
                   <PostCard popularPost={categoryPosts.posts[1]} />
                 )}
-                {categoryPosts.posts[1] && (
+                {categoryPosts.posts[2] && (
                   <PostCard popularPost={categoryPosts.posts[2]} />
                 )}
               </div>
