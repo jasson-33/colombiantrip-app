@@ -46,7 +46,6 @@ const DetailPost = ({ data }) => {
     title: '',
     desc: 'Viverra ipsum nunc aliquet bibendum enim. Urna cursus eget nunc scelerisque viverra mauris. In ante metus dictum at tempor commodo ullamcorper a lacus. Vitae tortor condimentum lacinia quis. Sed cras ornare arcu dui vivamus. Nunc sed blandit libero volutpat sed cras ornare. Placerat in egestas erat imperdiet sed euismod nisi porta lorem.',
   };
-
   return (
     <>
       <Metas metadata={metacontent} />
