@@ -13,9 +13,9 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-  const dataMenu = children.props.data.mainmenu;
-  const dataFooter = children.props.data.footerdata;
-  const the_categories = children.props.data.categories;
+  const dataMenu = children.props.data.mainmenu?children.props.data.mainmenu:false;
+  const dataFooter = children.props.data.footerdata?children.props.data.footerdata:false;
+  const the_categories = children.props.data.categories?children.props.data.categories:false;
 
   useEffect(() => {
     let animationTimeout;
