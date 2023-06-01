@@ -4,11 +4,6 @@ import styles from './menu.module.css';
 import { ColombianContext } from '@/context/ColombianContext';
 
 const Menu = ({ animate, setAnimate, mainmenu }) => {
-
-  if(!mainmenu){
-    return(<></>);
-  }
-
   const { Gotham } = useContext(ColombianContext);
   const [show, setShow] = useState(false);
 
@@ -29,6 +24,10 @@ const Menu = ({ animate, setAnimate, mainmenu }) => {
   };
 
   const menuArr = mainmenu;
+
+  if (!mainmenu) {
+    return <></>;
+  }
 
   return (
     <div

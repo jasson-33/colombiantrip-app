@@ -6,11 +6,6 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Footer = ({ datafooter, changeLayout }) => {
-
-  if(!datafooter){
-    return(<></>);
-  }
-
   const {
     footermenu,
     disclaimer,
@@ -26,6 +21,11 @@ const Footer = ({ datafooter, changeLayout }) => {
   useEffect(() => {
     AOS.init({});
   }, []);
+
+  if (!datafooter) {
+    return <></>;
+  }
+
   return (
     <>
       <section className={`${styles.siteContact} bg-cv`}>
