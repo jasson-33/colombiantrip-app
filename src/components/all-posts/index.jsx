@@ -112,25 +112,32 @@ const AllPosts = ({
           </div>
         )}
       </div>
-      {allCategoryPost && (
+      {allCategoryPost && allCategoryPost.max_pages > 1 && (
         <div
           data-aos="fade-up"
           data-aos-duration="900"
           data-aos-delay="0"
           className={`${styles.containerPag} ${Bigola.className}`}>
           <ul>
-            <li className={`${styles.itemPag} ${styles.selectedPag}`}>
-              <Link href={'meet-colombia/cities/1'}>1</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/2'}>2</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/3'}>3</Link>
-            </li>
-            <li className={styles.itemPag}>
-              <Link href={'meet-colombia/cities/4'}>4</Link>
-            </li>
+            {(function () {
+              const linkPages = [];
+              for (let i = 1; i <= allCategoryPost.max_pages; i++) {
+                linkPages.push(
+                  <li
+                    className={`${styles.itemPag} ${
+                      parseInt(allCategoryPost.curr_page) === i
+                        ? styles.selectedPag
+                        : ''
+                    }`}>
+                    <Link
+                      href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/cities/?page=${i}`}>
+                      {i}
+                    </Link>
+                  </li>
+                );
+              }
+              return linkPages;
+            })()}
           </ul>
         </div>
       )}
