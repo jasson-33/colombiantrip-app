@@ -116,6 +116,22 @@ const Footer = ({ datafooter, changeLayout }) => {
                     id=""
                     className={`${styles.filedForm} ${styles.textareaForm}`}
                     placeholder="Message"></textarea>
+                  <div className={styles.submitGroup}>
+                    <button className={styles.innerSubmitGroup}>
+                      <div
+                        data-aos="fade-left"
+                        data-aos-duration="900"
+                        data-aos-delay="0"
+                        className={`${styles.arrowSubmit} bg-ct`}></div>
+                      <p
+                        data-aos="fade-left"
+                        data-aos-duration="900"
+                        data-aos-delay="0"
+                        className={styles.submitText}>
+                        SUBMIT
+                      </p>
+                    </button>
+                  </div>
                 </form>
               </div>
             </>

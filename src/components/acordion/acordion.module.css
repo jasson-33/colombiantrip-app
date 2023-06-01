@@ -182,5 +182,15 @@
   }
   .cityExperience {
     width: 80%;
+    font-size: 30px;
+  }
+
+  .itemExperience{
+    padding: 0px;
+  }
+
+  .toggleExpand{
+    width: 30px;
+    height: 30px;
   }
 }

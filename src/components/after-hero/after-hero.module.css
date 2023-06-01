@@ -49,7 +49,7 @@
 .titleAfterHero {
   font-weight: 400;
   font-size: 95px;
-  line-height: 82px;
+  line-height: 1.1;
   color: #3e3e3e;
   max-width: 530px;
   margin-top: -30px;
@@ -108,7 +108,6 @@
   .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
-    line-height: 70px;
   }
 
   .ulAfterHero {
@@ -129,7 +128,6 @@
   .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
-    line-height: 70px;
   }
 
   /* .ulAfterHero {
@@ -150,7 +148,7 @@
   .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
-    line-height: 70px;
+    margin-top: 0;
   }
 
   .ulAfterHero {
@@ -179,16 +177,13 @@
   .ulAfterHero {
     width: 100%;
   }
+  .wrapperTitleAfterHero .titleAfterHero{
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 520px) {
   .afterHero {
     padding: 50px 0 30px;
-  }
-
-  .titleAfterHero {
-    font-size: 65px;
-    max-width: 320px;
-    line-height: 70px;
   }
 
   .ulAfterHero::before {
@@ -201,8 +196,7 @@
   }
 
   .titleAfterHero {
-    font-size: 50px;
-    line-height: 50px;
+    font-size: 35px;
   }
 
   .ulAfterHero {
@@ -219,8 +213,8 @@
   }
 
   .imgAfterHero {
-    width: 65%;
-    background-size: 620px;
-    background-position: initial;
+    width: 100%;
+    background-size: contain;
+    background-position: center center;
   }
 }

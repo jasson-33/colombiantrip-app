@@ -252,6 +252,10 @@
     left: 0;
     max-width: initial;
   }
+
+  .imgItemHorizontal{
+    height: 70vh;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -272,7 +276,7 @@
 
   .infoItemHorizontal {
     position: absolute;
-    bottom: -75vh;
+    bottom: -60vh;
     right: 0;
     width: 70%;
     flex-direction: column;

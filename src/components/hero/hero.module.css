@@ -91,8 +91,7 @@
 .bigTitleHero {
   font-weight: 400;
   font-size: 180px;
-  line-height: 90px;
-  line-height: 120px;
+  line-height: 1.1;
   color: #ffffff;
   text-align: center;
   margin-bottom: 50px;
@@ -262,7 +261,7 @@
 
   .postHero .bigTitleHero {
     font-size: 80px;
-    line-height: 1.2;
+    line-height: 1.1;
   }
   .postHero .subtitleHero {
     font-size: 37px;
@@ -271,7 +270,7 @@
 
 @media only screen and (max-width: 1024px) {
   .containerHero {
-    padding-bottom: 35px;
+    padding-bottom: 20px;
   }
 
   .principalText {
@@ -299,7 +298,7 @@
 
   .subtitleText {
     font-size: 18px;
-    line-height: 34px;
+    line-height: 1.1;
   }
 
   .ctasHero.ctasHero {
@@ -369,12 +368,13 @@
   }
 
   .secondaryHero .subtitleHero {
-    font-size: 25px;
+    font-size: 20px;
     line-height: 1.1;
   }
 
   .secondaryHero .bigTitleHero {
     line-height: 1;
+    font-size: 40px;
   }
 
   .bigTitleHero {
