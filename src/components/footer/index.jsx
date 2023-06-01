@@ -6,6 +6,11 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Footer = ({ datafooter, changeLayout }) => {
+
+  if(!datafooter){
+    return(<></>);
+  }
+
   const {
     footermenu,
     disclaimer,
