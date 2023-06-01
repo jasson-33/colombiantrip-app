@@ -7,7 +7,7 @@ import React from 'react';
 
 const DetailPost = ({ data }) => {
   console.log(data);
-  const { metacontent, hero } = data;
+  const { metacontent, hero, blocks } = data;
 
   const blogAfterHero = {
     autor: 'Andrew Smith',
@@ -16,6 +16,7 @@ const DetailPost = ({ data }) => {
       'Once tagged as one of the most dangerous cities in the world, Medellín has transformed and become a popular destination. Heres’ why you should visit Medellín.',
   };
 
+  /*
   const getimgsBlock = {
     imagesBlock: [
       {
@@ -46,15 +47,38 @@ const DetailPost = ({ data }) => {
     title: '',
     desc: 'Viverra ipsum nunc aliquet bibendum enim. Urna cursus eget nunc scelerisque viverra mauris. In ante metus dictum at tempor commodo ullamcorper a lacus. Vitae tortor condimentum lacinia quis. Sed cras ornare arcu dui vivamus. Nunc sed blandit libero volutpat sed cras ornare. Placerat in egestas erat imperdiet sed euismod nisi porta lorem.',
   };
+  */
+
+  function get_block_by_layout(block, index) {
+    switch (block.layout) {
+      case 'text_block':
+        return (
+          <TextBlog key={`text_block${index}`} textBlogBlock={block.content} />
+        );
+      case 'image_grid_block':
+        return (
+          <ImgBlockBlog
+            key={`img_grid_blocknpm run dev${index}`}
+            getimgsBlock={block}
+          />
+        );
+    }
+  }
+
   return (
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} pageType={'post'} />
       <BlogArterfHero blogAfterHero={blogAfterHero} />
+
+      {blocks.length > 0 &&
+        blocks.map((block, i) => get_block_by_layout(block, i))}
+      {/*
       <TextBlog textBlogBlock={textBlogDesctwo} />
       <ImgBlockBlog getimgsBlock={getimgsBlock} />
       <TextBlog textBlogBlock={textBlogDesc} />
       <ImgBlockBlog getimgsBlock={getimgsBlockFull} />
+      */}
     </>
   );
 };
