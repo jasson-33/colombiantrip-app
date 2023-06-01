@@ -93,7 +93,7 @@ const AllPosts = ({
             </div>
           </>
         )}
-        {allCategoryPost && (
+        {allCategoryPost && allCategoryPost.curr_posts && allCategoryPost.curr_posts.length>0 && (
           <div
             data-aos="fade-up"
             data-aos-duration="900"

@@ -61,7 +61,7 @@ const MeetHome = ({ blogdata }) => {
               <p className={styles.summaryCardBlog}>{blog.summary}</p>
 
               <Link
-                href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/detail/${blog.url}`}
+                href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${blog.url}`}
                 className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
                 <span className={`bg-ct ${styles.arrowRight}`}></span> Read More
               </Link>

@@ -13,15 +13,6 @@ const Layout = ({ children }) => {
 
   const router = useRouter();
 
-  const dataMenu = children.props.data.mainmenu
-    ? children.props.data.mainmenu
-    : false;
-  const dataFooter = children.props.data.footerdata
-    ? children.props.data.footerdata
-    : false;
-  const the_categories = children.props.data.categories
-    ? children.props.data.categories
-    : false;
 
   useEffect(() => {
     let animationTimeout;
@@ -35,6 +26,20 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
+  if(!children.props.data){
+    return(<></>);
+  }
+
+  const dataMenu = children.props.data.mainmenu
+    ? children.props.data.mainmenu
+    : false;
+  const dataFooter = children.props.data.footerdata
+    ? children.props.data.footerdata
+    : false;
+  const the_categories = children.props.data.categories
+    ? children.props.data.categories
+    : false;
+    
   return (
     <main className={`siteMain ${Gotham.className}`}>
       <Header

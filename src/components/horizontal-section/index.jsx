@@ -259,7 +259,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 <div className={`${styles.wrapperBlock} wrapperBlock`}>
                   <Link
                     rel="stylesheet"
-                    href={block.url ? `/experiences/${block.url}` : ''}>
+                    href={block.url ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${block.url}` : ''}>
                     <div
                       className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
                       {horizontalType === 'home' && (
