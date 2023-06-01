@@ -1,18 +1,16 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './hero.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Hero = ({ contentHero, pageType }) => {
   const { Bigola, expdata } = useContext(ColombianContext);
-  const [valueCities, setValueCities] = useState('0');
-  const [valueCat, setValueCat] = useState('0');
+
   console.log(expdata);
   console.log(contentHero);
-  const { img_banner, title, subtitle, type, blog, links, withForm } =
-    contentHero;
+  const { img_banner, title, subtitle, type, links, withForm } = contentHero;
 
   useEffect(() => {
     AOS.init();
@@ -24,39 +22,15 @@ const Hero = ({ contentHero, pageType }) => {
 
   return (
     <div
-      className={`${styles.hero} bg-cv ${withForm && styles.withForm} ${
-        blog && styles.smallHero
-      } ${type === 'principal' ? styles.principalHero : styles.secondaryHero} ${
-        withForm === true ? styles.heroPageForm : ''
-      } ${pageType === 'post' ? styles.postHero : ''}`}>
-      {blog && (
-        <div className={styles.contFilter}>
-          <div className={styles.innerContFilter}>
-            <select
-              value={valueCities}
-              onChange={(e) => {
-                setValueCities(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Cities</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-            <select
-              value={valueCat}
-              onChange={(e) => {
-                setValueCat(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Categories</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-          </div>
-        </div>
-      )}
+      className={`${styles.hero} bg-cv ${
+        contentHero.withForm && styles.withForm
+      } ${contentHero.blog && styles.smallHero} ${
+        contentHero.type === 'principal'
+          ? styles.principalHero
+          : styles.secondaryHero
+      } ${contentHero.withForm === true ? styles.heroPageForm : ''} ${
+        pageType === 'post' ? styles.postHero : ''
+      }`}>
       <div
         className={`${styles.imageInnerHero} bg-cv`}
         style={{

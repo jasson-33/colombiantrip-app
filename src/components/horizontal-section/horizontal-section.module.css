@@ -243,6 +243,15 @@
   .lineSubtitle {
     width: 35%;
   }
+
+  .infoWork{
+    width: 95%;
+    margin: 0 auto;
+  }
+  .titleBlockWork{
+    left: 0;
+    max-width: initial;
+  }
 }
 
 @media only screen and (max-width: 768px) {
