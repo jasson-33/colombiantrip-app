@@ -33,14 +33,14 @@ const AllPosts = ({
                 data-aos-duration="900"
                 data-aos-delay="0"
                 className={`${styles.titlePostType} ${Bigola.className}`}>
-                Popular Post
+                Popular Posts
               </h3>
               <h3
                 data-aos="fade-up"
                 data-aos-duration="900"
                 data-aos-delay="0"
                 className={`${styles.titlePostType} ${Bigola.className}`}>
-                Latest Post
+                Latest Posts
               </h3>
             </div>
             <div
