@@ -15,7 +15,7 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
   const router = useRouter();
   console.log(categories);
   console.log(currCategory);
-  //setValueCat(currCategory);
+  // setValueCat(currCategory);
   return (
     <header className={styles.siteHeader}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>
@@ -45,31 +45,37 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
           {categories && (
             <div className={styles.innerContFilter}>
               {categories.Cities && (
-                <select value={valueCities}
-                onChange={(e) => {
-                  setValueCities(e.target.value);
-                  router.push(e.target.value);
-                }}
-                className={`${styles.citiesSelect} ${Bigola.className}`}>
-                <option value="/meet-colombia">Cities</option>
-                  {categories.Cities.length>0 &&
-                    categories.Cities.map((category, i)=>(
-                      <option key={'cities'+i} value={category.link}>{category.name}</option>
-                  ))}
+                <select
+                  value={valueCities}
+                  onChange={(e) => {
+                    setValueCities(e.target.value);
+                    router.push(e.target.value);
+                  }}
+                  className={`${styles.citiesSelect} ${Bigola.className}`}>
+                  <option value="/meet-colombia">Cities</option>
+                  {categories.Cities.length > 0 &&
+                    categories.Cities.map((category, i) => (
+                      <option key={`cities${i}`} value={category.link}>
+                        {category.name}
+                      </option>
+                    ))}
                 </select>
               )}
               {categories.Categories && (
-                <select value={valueCat}
-                onChange={(e) => {
-                  setValueCat(e.target.value);
-                  router.push(e.target.value);
-                }}
-                className={`${styles.citiesSelect} ${Bigola.className}`}>
-                <option value="/meet-colombia">Categories</option>
-                  {categories.Categories.length>0 &&
-                    categories.Categories.map((category, i)=>(
-                    <option key={'categories'+i} value={category.link}>{category.name}</option>
-                  ))}
+                <select
+                  value={valueCat}
+                  onChange={(e) => {
+                    setValueCat(e.target.value);
+                    router.push(e.target.value);
+                  }}
+                  className={`${styles.citiesSelect} ${Bigola.className}`}>
+                  <option value="/meet-colombia">Categories</option>
+                  {categories.Categories.length > 0 &&
+                    categories.Categories.map((category, i) => (
+                      <option key={`categories${i}`} value={category.link}>
+                        {category.name}
+                      </option>
+                    ))}
                 </select>
               )}
             </div>

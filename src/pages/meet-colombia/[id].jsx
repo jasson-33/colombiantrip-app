@@ -10,7 +10,7 @@ const CategorySingle = ({ data }) => {
     curr_page: currpage,
     max_pages: maxpages,
     curr_posts: posts,
-    datacat: datacat
+    datacat,
   };
 
   return (

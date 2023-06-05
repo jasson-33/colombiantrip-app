@@ -38,8 +38,8 @@ const Layout = ({ children }) => {
   const the_categories = children.props.data.categoriesfilter
     ? children.props.data.categoriesfilter
     : false;
-    console.log(children);
-    const currCategory = router.query?router.query.id:'/meet-colombia';
+  console.log(children);
+  const currCategory = router.query ? router.query.id : '/meet-colombia';
 
   return (
     <main className={`siteMain ${Gotham.className}`}>

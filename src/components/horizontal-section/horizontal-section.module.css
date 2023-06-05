@@ -244,16 +244,16 @@
     width: 35%;
   }
 
-  .infoWork{
+  .infoWork {
     width: 95%;
     margin: 0 auto;
   }
-  .titleBlockWork{
+  .titleBlockWork {
     left: 0;
     max-width: initial;
   }
 
-  .imgItemHorizontal{
+  .imgItemHorizontal {
     height: 70vh;
   }
 }

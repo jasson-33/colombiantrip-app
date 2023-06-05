@@ -60,7 +60,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-   .contFilter {
+  .contFilter {
     order: 2;
     margin-top: 10px;
   }
@@ -69,7 +69,6 @@
     padding: 0;
     justify-content: space-between;
     margin-top: 0;
-   
   }
   .smallHero .citiesSelect {
     margin: 0;
@@ -79,7 +78,7 @@
     flex-wrap: wrap;
   }
 
-  .citiesSelect{
+  .citiesSelect {
     margin: 0;
   }
 }

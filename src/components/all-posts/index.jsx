@@ -10,7 +10,7 @@ const AllPosts = ({
   popularPost,
   categoryPosts,
   allCategoryPost,
-  pageType
+  pageType,
 }) => {
   const { Bigola } = useContext(ColombianContext);
   useEffect(() => {
