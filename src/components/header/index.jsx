@@ -3,16 +3,19 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React, { useContext, useState } from 'react';
 import styles from './header.module.css';
+import { useRouter } from 'next/navigation';
 
-const Header = ({ animate, setAnimate, categories }) => {
-  const [valueCities, setValueCities] = useState('0');
+const Header = ({ animate, setAnimate, categories, currCategory }) => {
+  const [valueCities, setValueCities] = useState(currCategory);
   const [valueCat, setValueCat] = useState('0');
   const { Bigola } = useContext(ColombianContext);
   const toggleMenu = () => {
     setAnimate(!animate);
   };
-
+  const router = useRouter();
   console.log(categories);
+  console.log(currCategory);
+  //setValueCat(currCategory);
   return (
     <header className={styles.siteHeader}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>
@@ -39,32 +42,39 @@ const Header = ({ animate, setAnimate, categories }) => {
         </div>
 
         <div className={styles.contFilter}>
-          <div className={styles.innerContFilter}>
-            <select
-              value={valueCities}
-              onChange={(e) => {
-                setValueCities(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Cities</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-            <select
-              value={valueCat}
-              onChange={(e) => {
-                setValueCat(e.target.value);
-              }}
-              className={`${styles.citiesSelect} ${Bigola.className}`}>
-              <option value="0">Categories</option>
-              <option value=""></option>
-              <option value=""></option>
-              <option value=""></option>
-            </select>
-          </div>
+          {categories && (
+            <div className={styles.innerContFilter}>
+              {categories.Cities && (
+                <select value={valueCities}
+                onChange={(e) => {
+                  setValueCities(e.target.value);
+                  router.push(e.target.value);
+                }}
+                className={`${styles.citiesSelect} ${Bigola.className}`}>
+                <option value="/meet-colombia">Cities</option>
+                  {categories.Cities.length>0 &&
+                    categories.Cities.map((category, i)=>(
+                      <option key={'cities'+i} value={category.link}>{category.name}</option>
+                  ))}
+                </select>
+              )}
+              {categories.Categories && (
+                <select value={valueCat}
+                onChange={(e) => {
+                  setValueCat(e.target.value);
+                  router.push(e.target.value);
+                }}
+                className={`${styles.citiesSelect} ${Bigola.className}`}>
+                <option value="/meet-colombia">Categories</option>
+                  {categories.Categories.length>0 &&
+                    categories.Categories.map((category, i)=>(
+                    <option key={'categories'+i} value={category.link}>{category.name}</option>
+                  ))}
+                </select>
+              )}
+            </div>
+          )}
         </div>
-
         <div
           className={`${styles.burgerMenu} bg-ct ${
             animate ? styles.opened : ''

@@ -35,9 +35,11 @@ const Layout = ({ children }) => {
   const dataFooter = children.props.data.footerdata
     ? children.props.data.footerdata
     : false;
-  const the_categories = children.props.data.categories
-    ? children.props.data.categories
+  const the_categories = children.props.data.categoriesfilter
+    ? children.props.data.categoriesfilter
     : false;
+    console.log(children);
+    const currCategory = router.query?router.query.id:'/meet-colombia';
 
   return (
     <main className={`siteMain ${Gotham.className}`}>
@@ -45,6 +47,7 @@ const Layout = ({ children }) => {
         animate={animate}
         setAnimate={setAnimate}
         categories={the_categories}
+        currCategory={currCategory}
       />
       {showMenu ? (
         <Menu animate={animate} setAnimate={setAnimate} mainmenu={dataMenu} />

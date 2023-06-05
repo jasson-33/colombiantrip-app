@@ -4,12 +4,13 @@ import React from 'react';
 
 const CategorySingle = ({ data }) => {
   console.log(data);
-  const { hero, currpage, maxpages, posts } = data;
+  const { hero, currpage, maxpages, posts, datacat } = data;
 
   const allCategory = {
     curr_page: currpage,
     max_pages: maxpages,
     curr_posts: posts,
+    datacat: datacat
   };
 
   return (

@@ -15,7 +15,7 @@ const LatestPost = ({ latestPosts }) => {
       </div>
       {latestPosts.map((data, i) => (
         <div key={i} className={styles.lastPost}>
-          <Link href={`/meet-colombia/detail/${data.href}`}></Link>
+          <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.href}`}></Link>
           <div className={styles.containerImageLatest}>
             <Image alt="" src={data.img.sizes.thumbnail} fill />
           </div>

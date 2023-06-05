@@ -10,7 +10,7 @@ const AllPosts = ({
   popularPost,
   categoryPosts,
   allCategoryPost,
-  pageType,
+  pageType
 }) => {
   const { Bigola } = useContext(ColombianContext);
   useEffect(() => {
@@ -133,7 +133,7 @@ const AllPosts = ({
                         : ''
                     }`}>
                     <Link
-                      href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/cities/?page=${i}`}>
+                      href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/meet-colombia/${allCategoryPost.datacat}/?page=${i}`}>
                       {i}
                     </Link>
                   </li>
