@@ -22,6 +22,55 @@ const Footer = ({ datafooter, changeLayout }) => {
     AOS.init({});
   }, []);
 
+  const sendDataForm = async (event) => {
+    // Stop the form from submitting and refreshing the page.
+    event.preventDefault();
+
+    const name = event.target.querySelector('#f_name').value;
+    const email = event.target.querySelector('#f_email').value;
+    const message = event.target.querySelector('#f_message').value;
+
+    if (!name) {
+      alert('Please enter your name.');
+      return false;
+    }
+
+    if (!email) {
+      alert('Please enter your Email.');
+      return false;
+    }
+
+    if (!message) {
+      alert('Please enter your Message.');
+      return false;
+    }
+
+    const formData = new FormData();
+    formData.append('fname', name);
+    formData.append('femail', email);
+    formData.append('fmessage', message);
+    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer`;
+
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+
+    const response = await fetch(endpoint, options);
+
+    const result = await response.json();
+
+    const errorDiv = event.target.querySelector('#messageForm');
+    errorDiv.dangerouslySetInnerHTML(result);
+
+    setTimeout(() => {
+      errorDiv.dangerouslySetInnerHTML('');
+    }, 3000);
+
+    alert(result.status);
+    console.log('Success:', result.status);
+  };
+
   if (!datafooter) {
     return <></>;
   }
@@ -87,14 +136,14 @@ const Footer = ({ datafooter, changeLayout }) => {
                   )}
                 </div>
 
-                <form className={styles.formFooter}>
+                <form className={styles.formFooter} onSubmit={sendDataForm}>
                   <input
                     data-aos="fade-left"
                     data-aos-duration="900"
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="f_name"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="Full Name"
                   />
@@ -104,7 +153,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="f_email"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="Email Address"
                   />
@@ -113,9 +162,10 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-duration="900"
                     data-aos-delay="0"
                     name=""
-                    id=""
+                    id="f_message"
                     className={`${styles.filedForm} ${styles.textareaForm}`}
                     placeholder="Message"></textarea>
+                  <p id="messageForm"></p>
                   <div className={styles.submitGroup}>
                     <button className={styles.innerSubmitGroup}>
                       <div
