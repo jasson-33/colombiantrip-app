@@ -379,11 +379,13 @@ const Acordion = ({ dropdown }) => {
                       dangerouslySetInnerHTML={{ __html: step.textDayInfo }}
                     />
                   </div>
+                  {step.imgDay && step.imgDay.sizes && (
                   <div
                     className={`${styles.imgStep} bg-cv`}
                     style={{
                       backgroundImage: `url(${step.imgDay.sizes.medium_large})`,
-                    }}></div>
+                    }}></div>)
+                  }
                 </div>
               ))}
             </div>
