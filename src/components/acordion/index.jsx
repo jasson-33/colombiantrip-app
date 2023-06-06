@@ -346,9 +346,10 @@ const Acordion = ({ dropdown }) => {
                     i % 2 === 0 ? '' : styles.invert
                   }`}>
                   <div className={`${styles.infoStep}`}>
-                    <h3 className={`${styles.infoDay} ${Bigola.className}`}>
-                      {step.infoDay}
-                    </h3>
+                    <h3
+                      className={`${styles.infoDay} ${Bigola.className}`}
+                      dangerouslySetInnerHTML={{ __html: step.infoDay }}
+                    />
                     <div className={`${styles.featuresDay} flex f-js f-as`}>
                       {step.featuresDay.map((feature, i) => (
                         <div

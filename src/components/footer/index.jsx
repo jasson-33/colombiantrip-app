@@ -23,9 +23,7 @@ const Footer = ({ datafooter, changeLayout }) => {
   }, []);
 
   const sendDataForm = async (event) => {
-    // Stop the form from submitting and refreshing the page.
     event.preventDefault();
-
     const name = event.target.querySelector('#f_name').value;
     const email = event.target.querySelector('#f_email').value;
     const message = event.target.querySelector('#f_message').value;
@@ -61,13 +59,13 @@ const Footer = ({ datafooter, changeLayout }) => {
     const result = await response.json();
 
     const errorDiv = event.target.querySelector('#messageForm');
-    errorDiv.dangerouslySetInnerHTML(result);
+    errorDiv.innerHTML = result.status;
 
     setTimeout(() => {
-      errorDiv.dangerouslySetInnerHTML('');
+      errorDiv.innerHTML = '';
     }, 3000);
 
-    alert(result.status);
+    // alert(result.status);
     console.log('Success:', result.status);
   };
 
