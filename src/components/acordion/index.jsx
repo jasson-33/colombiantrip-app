@@ -380,12 +380,12 @@ const Acordion = ({ dropdown }) => {
                     />
                   </div>
                   {step.imgDay && step.imgDay.sizes && (
-                  <div
-                    className={`${styles.imgStep} bg-cv`}
-                    style={{
-                      backgroundImage: `url(${step.imgDay.sizes.medium_large})`,
-                    }}></div>)
-                  }
+                    <div
+                      className={`${styles.imgStep} bg-cv`}
+                      style={{
+                        backgroundImage: `url(${step.imgDay.sizes.medium_large})`,
+                      }}></div>
+                  )}
                 </div>
               ))}
             </div>
