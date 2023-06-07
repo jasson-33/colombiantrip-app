@@ -60,7 +60,7 @@ const Footer = ({ datafooter, changeLayout }) => {
 
     const errorDiv = event.target.querySelector('#messageForm');
     errorDiv.innerHTML = result.status;
-
+    event.target.reset();
     setTimeout(() => {
       errorDiv.innerHTML = '';
     }, 3000);
