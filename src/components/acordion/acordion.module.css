@@ -133,6 +133,11 @@
   margin-top: 10px;
 }
 
+
+.singleStep.invert .smallInfoImg{
+  text-align: left;
+}
+
 @media only screen and (max-width: 1350px) {
   .cityExperience {
     font-size: 40px;
