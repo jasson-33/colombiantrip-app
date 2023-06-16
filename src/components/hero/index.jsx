@@ -16,10 +16,6 @@ const Hero = ({ contentHero, pageType }) => {
     AOS.init();
   }, []);
 
-  useEffect(() => {
-    AOS.init();
-  }, []);
-
   return (
     <div
       className={`${styles.hero} bg-cv ${
@@ -40,6 +36,9 @@ const Hero = ({ contentHero, pageType }) => {
               : '/images/home/2.jpg'
           })`,
         }}></div>
+        <video className={styles.videoBanner} autoPlay loop playsInline muted preload>
+          <source src='/images/general/video-1.mp4' />
+        </video>
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
         <div className={`${styles.contentHero}`}>
           {type === 'principal' ? (
