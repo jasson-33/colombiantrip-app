@@ -94,11 +94,16 @@ const Acordion = ({ dropdown }) => {
                     />
                   </div>
                   {step.imgDay && step.imgDay.sizes && (
-                    <div
-                      className={`${styles.imgStep} bg-cv`}
-                      style={{
-                        backgroundImage: `url(${step.imgDay.sizes.large})`,
-                      }}></div>
+                    <div className={styles.outerImgStep}>
+                      <div
+                        className={`${styles.imgStep} bg-cv`}
+                        style={{
+                          backgroundImage: `url(${step.imgDay.sizes.large})`,
+                        }}></div>
+                      <p className={styles.smallInfoImg}>
+                        Descripción miniatura de la imagen
+                      </p>
+                    </div>
                   )}
                 </div>
               ))}
