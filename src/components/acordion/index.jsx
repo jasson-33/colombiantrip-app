@@ -98,7 +98,7 @@ const Acordion = ({ dropdown }) => {
                       <div
                         className={`${styles.imgStep} bg-cv`}
                         style={{
-                          backgroundImage: `url(${step.imgDay.sizes.large})`,
+                          backgroundImage: `url(${step.imgDay.sizes['super-large']})`,
                         }}></div>
                       {step.imgCaption && step.imgCaption !== '' && (
                         <p className={styles.smallInfoImg}>{step.imgCaption}</p>
