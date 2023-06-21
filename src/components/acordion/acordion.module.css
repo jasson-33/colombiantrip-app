@@ -67,7 +67,7 @@
   height: 90vh;
 }
 
-.outerImgStep{
+.outerImgStep {
   width: 40%;
 }
 
@@ -126,15 +126,14 @@
   color: #3e3e3e;
 }
 
-.smallInfoImg{
+.smallInfoImg {
   font-size: 12px;
   width: 100%;
   text-align: right;
   margin-top: 10px;
 }
 
-
-.singleStep.invert .smallInfoImg{
+.singleStep.invert .smallInfoImg {
   text-align: left;
 }
 
@@ -167,7 +166,7 @@
     margin-top: 20px;
   }
 
-  .outerImgStep{
+  .outerImgStep {
     width: 45%;
   }
 }
@@ -186,7 +185,7 @@
   .feature {
     width: 100%;
   }
-  .outerImgStep{
+  .outerImgStep {
     width: 100%;
   }
   .imgStep {
