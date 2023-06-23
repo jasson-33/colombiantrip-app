@@ -24,6 +24,7 @@ const Team = ({ teamData }) => {
             className={styles.cardTeam}>
             <div className={`${styles.imgTeamMember}`}>
               <img
+                alt="team colombian-trip"
                 src={member.img.sizes ? member.img.sizes.medium : ''}
                 className={styles.innerImgTeamMember}
               />
