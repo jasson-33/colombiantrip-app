@@ -14,7 +14,7 @@ const AfterHero = ({ contentAfterHero }) => {
       className={`siteSection ${styles.afterHero} ${
         contentAfterHero.secondLayout ? styles.secondLayout : ''
       } ${contentAfterHero.needPadding ? styles.paddingSection : ''}`}>
-      {contentAfterHero.img && (
+      {contentAfterHero.img && contentAfterHero.img.sizes && (
         <div
           data-aos="fade-up"
           data-aos-duration="900"

@@ -26,6 +26,7 @@ const Team = ({ teamData }) => {
               <img
                 src={member.img.sizes ? member.img.sizes.medium : ''}
                 className={styles.innerImgTeamMember}
+                alt="team-image"
               />
               <div
                 className={styles.hideInfo}
