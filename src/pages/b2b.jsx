@@ -5,6 +5,7 @@ import ImgSection from '@/components/img-section';
 import ImgBlockBlog from '@/components/blog-img-block';
 import TextBlog from '@/components/blog-text-block';
 import ProudMembers from '@/components/proud-members';
+import ImgText from '@/components/img-text';
 import React from 'react';
 
 const b2b = ({ data }) => {
@@ -34,6 +35,8 @@ const b2b = ({ data }) => {
         return (
           <ImgBlockBlog key={`img_grid_block${index}`} getimgsBlock={block} />
         );
+      case 'split_block':
+        return <ImgText key={`imgTextBlock${index}`} data={block.content} />;
     }
   }
 
