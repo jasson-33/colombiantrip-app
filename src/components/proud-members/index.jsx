@@ -41,25 +41,40 @@ const ProudMembers = () => {
       </div>
 
       <div className={`${styles.wrapperMembers}`}>
-        <div className={`${styles.containerMembers} flex f-ac f-c`}>
+        <div
+          className={`${styles.containerMembers} flex f-ac f-c`}
+          style={{
+            width: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
+          }}>
           {members.map((member, i) => (
             <div
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
               className={`${styles.memberIcon} bg-ct`}
-              style={{ backgroundImage: `url(${member})` }}></div>
+              style={{
+                backgroundImage: `url(${member})`,
+                width: `${100 / members.length}%`,
+              }}></div>
           ))}
         </div>
 
-        <div className={`${styles.containerMembers} flex f-ac f-c`}>
+        <div
+          className={`${styles.containerMembers} flex f-ac f-c`}
+          style={{
+            width: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
+            left: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
+          }}>
           {members.map((member, i) => (
             <div
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
               className={`${styles.memberIcon} bg-ct`}
-              style={{ backgroundImage: `url(${member})` }}></div>
+              style={{
+                backgroundImage: `url(${member})`,
+                width: `${100 / members.length}%`,
+              }}></div>
           ))}
         </div>
       </div>
