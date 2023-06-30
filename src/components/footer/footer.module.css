@@ -10,7 +10,20 @@
   background-position: bottom center;
   position: relative;
 }
-
+.titleProud {
+  text-align: center;
+  font-weight: 400;
+  font-size: 95px;
+  line-height: 82px;
+  color: #3e3e3e;
+  margin-bottom: 30px;
+}
+.subtitleProudMembers {
+  text-align: center;
+  font-size: 18px;
+  line-height: 29px;
+  color: #3e3e3e;
+}
 .siteContact::before {
   content: '';
   background: rgb(255, 255, 255);

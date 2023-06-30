@@ -15,6 +15,8 @@ const Footer = ({ datafooter, changeLayout }) => {
     phone,
     email,
     copiright,
+    formtext,
+
   } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
@@ -186,6 +188,21 @@ const Footer = ({ datafooter, changeLayout }) => {
           )}
 
           {changeLayout && (
+            <>
+            <div className={`container`}>
+            <h2
+              className={`${styles.titleProud} ${Bigola.className}`}
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
+              dangerouslySetInnerHTML={{ __html: formtitle }}></h2>
+            <h3
+              data-aos="fade-up"
+              data-aos-duration="900"
+              data-aos-delay="0"
+              className={styles.subtitleProudMembers}
+              dangerouslySetInnerHTML={{ __html: formtext }}></h3>
+          </div>
             <form className={styles.formFooterB}>
               <div className={styles.inputsGroup}>
                 <p
@@ -378,6 +395,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                 </button>
               </div>
             </form>
+            </>
           )}
         </div>
       </section>
