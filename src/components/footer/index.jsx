@@ -77,7 +77,7 @@ const Footer = ({ datafooter, changeLayout }) => {
 
   return (
     <>
-      <section className={`${styles.siteContact} bg-cv`}>
+      <section className={`${styles.siteContact} siteContact bg-cv`}>
         <div className={`container ${styles.containerContact}`}>
           {!changeLayout && (
             <>
@@ -203,7 +203,7 @@ const Footer = ({ datafooter, changeLayout }) => {
               className={styles.subtitleProudMembers}
               dangerouslySetInnerHTML={{ __html: formtext }}></h3>
           </div>
-            <form className={styles.formFooterB}>
+            <form className={`${styles.formFooterB} formB`}>
               <div className={styles.inputsGroup}>
                 <p
                   data-aos="fade-left"
@@ -400,7 +400,7 @@ const Footer = ({ datafooter, changeLayout }) => {
         </div>
       </section>
 
-      <footer className={`${styles.siteFooter}`}>
+      <footer className={`${styles.siteFooter} siteFooter`}>
         <div className={`container ${styles.containerFooter}`}>
           <div className={styles.headerFooter}>
             <div className={styles.yellowLine}></div>

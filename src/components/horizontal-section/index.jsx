@@ -4,12 +4,26 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { ColombianContext } from '@/context/ColombianContext';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HorizontalSection = ({ horizontalType, horizontalData }) => {
   const { Bigola, Gotham_Bold } = useContext(ColombianContext);
   const scroller = useRef();
+
+  const router = useRouter();
+  const { pathname } = router;
+
+  const goToForm = () => {
+    window.scrollTo({
+      top:
+        document.querySelector('body').getBoundingClientRect().height -
+        document.querySelector('.siteFooter').offsetHeight -
+        document.querySelector('.siteContact').offsetHeight,
+      behavior: 'smooth',
+    });
+  };
 
   // const horizontalBlocks = horizontalData;
 
@@ -239,7 +253,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
 
   return (
     <div className={`siteSection ${styles.horizontalSection}`}>
-      <div className={`${styles.containerHorizontal}`}>
+      <div className={`${styles.containerHorizontal} containerHorizontal`}>
         {objectToIterate && (
           <div
             id="block"
@@ -257,81 +271,164 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                 className={`${styles.block} itemHorizontal itemHorizontal-${i}`}
                 data-bg={block.backgroundColor}>
                 <div className={`${styles.wrapperBlock} wrapperBlock`}>
-                  <Link
-                    rel="stylesheet"
-                    href={
-                      block.url
-                        ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${block.url}`
-                        : ''
-                    }>
-                    <div
-                      className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
-                      {horizontalType === 'home' && (
-                        <>
-                          <h2
-                            className={`${styles.titleBlock} ${Bigola.className}`}>
-                            {block.title}
-                          </h2>
-                          <div className={styles.wrapperSubtitle}>
-                            {block.colorLine && (
-                              <div
-                                className={styles.lineSubtitle}
-                                style={{
-                                  backgroundColor: block.colorLine,
-                                }}></div>
-                            )}
-
-                            <h3
-                              className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
-                              {block.subtitle}
-                            </h3>
-                          </div>
-
-                          <div
-                            className={styles.infoItemHorizontal}
-                            style={{ backgroundColor: block.backgroundColor }}>
-                            <p className={`${styles.number}`}>0{i + 1}</p>
-                            <p className={styles.detailItemHorizontal}>
-                              {block.content}
-                            </p>
-                          </div>
-                        </>
-                      )}
-
-                      {horizontalType === 'works' && (
-                        <>
-                          <div className={styles.infoWork}>
+                  {pathname === '/how-it-works' && (
+                    <>
+                      <div
+                        className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
+                        {horizontalType === 'home' && (
+                          <>
                             <h2
-                              className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}
-                              dangerouslySetInnerHTML={{ __html: block.title }}
-                            />
-                            <div className={styles.innerInfoWork}>
-                              <p
-                                className={styles.textWork}
-                                style={{ color: block.colorText }}
-                                dangerouslySetInnerHTML={{
-                                  __html: block.content,
-                                }}
-                              />
+                              className={`${styles.titleBlock} ${Bigola.className}`}>
+                              {block.title}
+                            </h2>
+                            <div className={styles.wrapperSubtitle}>
+                              {block.colorLine && (
+                                <div
+                                  className={styles.lineSubtitle}
+                                  style={{
+                                    backgroundColor: block.colorLine,
+                                  }}></div>
+                              )}
+
+                              <h3
+                                className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
+                                {block.subtitle}
+                              </h3>
                             </div>
 
                             <div
-                              className={`${styles.goTrip} ${
-                                block.invertBtn ? styles.invertColors : ''
-                              }`}>
-                              <div
-                                className={`${styles.arrowIcon} bg-ct`}></div>
-                              <p
-                                className={styles.textBtn}
-                                style={{ color: block.colorText }}>
-                                YOUR TRIP
+                              className={styles.infoItemHorizontal}
+                              style={{
+                                backgroundColor: block.backgroundColor,
+                              }}>
+                              <p className={`${styles.number}`}>0{i + 1}</p>
+                              <p className={styles.detailItemHorizontal}>
+                                {block.content}
                               </p>
                             </div>
-                          </div>
-                        </>
-                      )}
-                    </div>
-                  </Link>
+                          </>
+                        )}
+
+                        {horizontalType === 'works' && (
+                          <>
+                            <div className={styles.infoWork}>
+                              <h2
+                                className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}
+                                dangerouslySetInnerHTML={{
+                                  __html: block.title,
+                                }}
+                              />
+                              <div className={styles.innerInfoWork}>
+                                <p
+                                  className={styles.textWork}
+                                  style={{ color: block.colorText }}
+                                  dangerouslySetInnerHTML={{
+                                    __html: block.content,
+                                  }}
+                                />
+                              </div>
+
+                              <div
+                                className={`${styles.goTrip} ${
+                                  block.invertBtn ? styles.invertColors : ''
+                                }`}
+                                onClick={goToForm}>
+                                <div
+                                  className={`${styles.arrowIcon} bg-ct`}></div>
+                                <p
+                                  className={styles.textBtn}
+                                  style={{ color: block.colorText }}>
+                                  YOUR TRIP
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </>
+                  )}
+                  {pathname !== '/how-it-works' && (
+                    <Link
+                      rel="stylesheet"
+                      href={
+                        block.url
+                          ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${block.url}`
+                          : ''
+                      }>
+                      <div
+                        className={`${styles.contentItemHorizontal} ${styles.contentItemHorizontalWork}`}>
+                        {horizontalType === 'home' && (
+                          <>
+                            <h2
+                              className={`${styles.titleBlock} ${Bigola.className}`}>
+                              {block.title}
+                            </h2>
+                            <div className={styles.wrapperSubtitle}>
+                              {block.colorLine && (
+                                <div
+                                  className={styles.lineSubtitle}
+                                  style={{
+                                    backgroundColor: block.colorLine,
+                                  }}></div>
+                              )}
+
+                              <h3
+                                className={`${styles.subtitleBlock} ${Gotham_Bold.className}`}>
+                                {block.subtitle}
+                              </h3>
+                            </div>
+
+                            <div
+                              className={styles.infoItemHorizontal}
+                              style={{
+                                backgroundColor: block.backgroundColor,
+                              }}>
+                              <p className={`${styles.number}`}>0{i + 1}</p>
+                              <p className={styles.detailItemHorizontal}>
+                                {block.content}
+                              </p>
+                            </div>
+                          </>
+                        )}
+
+                        {horizontalType === 'works' && (
+                          <>
+                            <div className={styles.infoWork}>
+                              <h2
+                                className={`${styles.titleBlock} ${styles.titleBlockWork} ${Bigola.className}`}
+                                dangerouslySetInnerHTML={{
+                                  __html: block.title,
+                                }}
+                              />
+                              <div className={styles.innerInfoWork}>
+                                <p
+                                  className={styles.textWork}
+                                  style={{ color: block.colorText }}
+                                  dangerouslySetInnerHTML={{
+                                    __html: block.content,
+                                  }}
+                                />
+                              </div>
+
+                              <div
+                                className={`${styles.goTrip} ${
+                                  block.invertBtn ? styles.invertColors : ''
+                                }`}>
+                                <div
+                                  className={`${styles.arrowIcon} bg-ct`}></div>
+                                <p
+                                  className={styles.textBtn}
+                                  style={{ color: block.colorText }}>
+                                  YOUR TRIP
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </Link>
+                  )}
+
                   <div
                     // ref = {(img) => {imgItems.current[i] = img;}}
                     className={`bg-cv imgItem imgItem-${i} ${

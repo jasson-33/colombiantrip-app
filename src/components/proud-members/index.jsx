@@ -30,7 +30,11 @@ const ProudMembers = ({ membersData }) => {
       </div>
 
       <div className={`${styles.wrapperMembers}`}>
-        <div className={`${styles.containerMembers} flex f-ac f-c`}>
+        <div
+          className={`${styles.containerMembers} flex f-ac f-c`}
+          style={{
+            width: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
+          }}>
           {logos.map((logo, i) => (
             <div
               key={
@@ -38,12 +42,18 @@ const ProudMembers = ({ membersData }) => {
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${logo.sizes ? logo.sizes.medium : ''})`,
+                backgroundImage: `url(${logo.url})`,
+                width: `${100 / logos.length}%`,
               }}></div>
           ))}
         </div>
 
-        <div className={`${styles.containerMembers} flex f-ac f-c`}>
+        <div
+          className={`${styles.containerMembers} flex f-ac f-c`}
+          style={{
+            width: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
+            left: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
+          }}>
           {logos.map((logo, i) => (
             <div
               key={
@@ -51,7 +61,8 @@ const ProudMembers = ({ membersData }) => {
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${logo.sizes ? logo.sizes.medium : ''})`,
+                backgroundImage: `url(${logo.url})`,
+                width: `${100 / logos.length}%`,
               }}></div>
           ))}
         </div>
