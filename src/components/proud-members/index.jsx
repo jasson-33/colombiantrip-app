@@ -4,17 +4,9 @@ import styles from './proud-members.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
-const ProudMembers = () => {
+const ProudMembers = ({ membersData }) => {
   const { Bigola } = useContext(ColombianContext);
-
-  const members = [
-    '/images/b2b/9.png',
-    '/images/b2b/5.png',
-    '/images/b2b/3.jpeg',
-    '/images/b2b/7.jpeg',
-    '/images/b2b/6.png',
-    '/images/b2b/8.jpeg',
-  ];
+  const { title, text, logos } = membersData;
 
   useEffect(() => {
     AOS.init({});
@@ -27,34 +19,31 @@ const ProudMembers = () => {
           className={`${styles.titleProud} ${Bigola.className}`}
           data-aos="fade-up"
           data-aos-duration="900"
-          data-aos-delay="0">
-          Proud Members
-        </h2>
+          data-aos-delay="0"
+          dangerouslySetInnerHTML={{ __html: title }}></h2>
         <h3
           data-aos="fade-up"
           data-aos-duration="900"
           data-aos-delay="0"
-          className={styles.subtitleProudMembers}>
-          An independent affiliate of Gifted Travel Network — a Virtuoso®
-          Member.
-        </h3>
+          className={styles.subtitleProudMembers}
+          dangerouslySetInnerHTML={{ __html: text }}></h3>
       </div>
 
       <div className={`${styles.wrapperMembers}`}>
         <div
           className={`${styles.containerMembers} flex f-ac f-c`}
           style={{
-            width: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
+            width: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
           }}>
-          {members.map((member, i) => (
+          {logos.map((logo, i) => (
             <div
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${member})`,
-                width: `${100 / members.length}%`,
+                backgroundImage: `url(${logo})`,
+                width: `${100 / logos.length}%`,
               }}></div>
           ))}
         </div>
@@ -62,18 +51,18 @@ const ProudMembers = () => {
         <div
           className={`${styles.containerMembers} flex f-ac f-c`}
           style={{
-            width: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
-            left: `${members.length * 16 > 100 ? members.length * 16 : 100}vw`,
+            width: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
+            left: `${logos.length * 16 > 100 ? logos.length * 16 : 100}vw`,
           }}>
-          {members.map((member, i) => (
+          {logos.map((logo, i) => (
             <div
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${member})`,
-                width: `${100 / members.length}%`,
+                backgroundImage: `url(${logo})`,
+                width: `${100 / logos.length}%`,
               }}></div>
           ))}
         </div>

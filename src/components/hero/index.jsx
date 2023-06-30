@@ -10,7 +10,16 @@ const Hero = ({ contentHero, pageType }) => {
 
   console.log(expdata);
   console.log(contentHero);
-  const { img_banner, title, subtitle, type, links, withForm } = contentHero;
+  const {
+    img_banner,
+    title,
+    subtitle,
+    type,
+    links,
+    withForm,
+    form,
+    video_banner,
+  } = contentHero;
 
   useEffect(() => {
     AOS.init();
@@ -36,15 +45,19 @@ const Hero = ({ contentHero, pageType }) => {
               : '/images/home/2.jpg'
           })`,
         }}></div>
-      <video
-        className={styles.videoBanner}
-        autoPlay
-        loop
-        playsInline
-        muted
-        preload>
-        <source src="/images/general/video-1.mp4" />
-      </video>
+
+      {video_banner && video_banner.url !== '' && (
+        <video
+          className={styles.videoBanner}
+          autoPlay
+          loop
+          playsInline
+          muted
+          preload>
+          <source src={video_banner.url} />
+        </video>
+      )}
+
       <div className={`${styles.containerHero} container flex f-s f-ae`}>
         <div className={`${styles.contentHero}`}>
           {type === 'principal' ? (
@@ -113,15 +126,16 @@ const Hero = ({ contentHero, pageType }) => {
                   data-aos-duration="900"
                   data-aos-delay="0"
                   className={styles.heroForm}>
-                  <h3 className={`${styles.titleFormHero} ${Bigola.className}`}>
-                    Contact us
-                  </h3>
-                  <p className={styles.textHeroForm}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+                  {form.title !== '' && (
+                    <h3
+                      className={`${styles.titleFormHero} ${Bigola.className}`}
+                      dangerouslySetInnerHTML={{ __html: form.title }}></h3>
+                  )}
+                  {form.text !== '' && (
+                    <p
+                      className={styles.textHeroForm}
+                      dangerouslySetInnerHTML={{ __html: form.text }}></p>
+                  )}
                   <input
                     type="text"
                     name=""

@@ -21,7 +21,11 @@ const ImgBlockBlog = ({ getimgsBlock }) => {
                 ? styles.halfWidth
                 : styles.fullWidth
             } ${styles.currimgBlog}`}
-            style={{ backgroundImage: `url(${currimgBlog.img})` }}></div>
+            style={{
+              backgroundImage: `url(${
+                currimgBlog.img.sizes ? currimgBlog.img.sizes.medium_large : ''
+              })`,
+            }}></div>
         ))}
       </div>
     </section>

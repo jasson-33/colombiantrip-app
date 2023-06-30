@@ -1,5 +1,5 @@
 .proudSection {
-  padding-top: 30px;
+  padding-top: 10vh;
   overflow: hidden;
 }
 
@@ -64,6 +64,9 @@
 }
 
 @media only screen and (max-width: 520px) {
+  .proudSection {
+    padding-top: 5vh;
+  }
   .titleProud {
     font-size: 45px;
   }
