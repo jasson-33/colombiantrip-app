@@ -42,7 +42,7 @@ const ProudMembers = ({ membersData }) => {
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${logo})`,
+                backgroundImage: `url(${logo.url})`,
                 width: `${100 / logos.length}%`,
               }}></div>
           ))}
@@ -61,7 +61,7 @@ const ProudMembers = ({ membersData }) => {
               }
               className={`${styles.memberIcon} bg-ct`}
               style={{
-                backgroundImage: `url(${logo})`,
+                backgroundImage: `url(${logo.url})`,
                 width: `${100 / logos.length}%`,
               }}></div>
           ))}
