@@ -16,7 +16,6 @@ const Footer = ({ datafooter, changeLayout }) => {
     email,
     copiright,
     formtext,
-
   } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
@@ -189,212 +188,212 @@ const Footer = ({ datafooter, changeLayout }) => {
 
           {changeLayout && (
             <>
-            <div className={`container`}>
-            <h2
-              className={`${styles.titleProud} ${Bigola.className}`}
-              data-aos="fade-up"
-              data-aos-duration="900"
-              data-aos-delay="0"
-              dangerouslySetInnerHTML={{ __html: formtitle }}></h2>
-            <h3
-              data-aos="fade-up"
-              data-aos-duration="900"
-              data-aos-delay="0"
-              className={styles.subtitleProudMembers}
-              dangerouslySetInnerHTML={{ __html: formtext }}></h3>
-          </div>
-            <form className={`${styles.formFooterB} formB`}>
-              <div className={styles.inputsGroup}>
-                <p
-                  data-aos="fade-left"
+              <div className={'container'}>
+                <h2
+                  className={`${styles.titleProud} ${Bigola.className}`}
+                  data-aos="fade-up"
                   data-aos-duration="900"
                   data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Name*
-                </p>
-                <input
-                  data-aos="fade-left"
+                  dangerouslySetInnerHTML={{ __html: formtitle }}></h2>
+                <h3
+                  data-aos="fade-up"
                   data-aos-duration="900"
                   data-aos-delay="0"
-                  type="text"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                  placeholder="First Name"
-                />
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="text"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                  placeholder="Last Name"
-                />
+                  className={styles.subtitleProudMembers}
+                  dangerouslySetInnerHTML={{ __html: formtext }}></h3>
               </div>
-              <div className={`${styles.inputsGroup} ${styles.longInput}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Email*
-                </p>
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="text"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                />
-              </div>
-              <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Approximated Duration Days
-                </p>
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="number"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                />
-              </div>
-              <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Number of Travelers
-                </p>
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="number"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                />
-              </div>
-              <div
-                className={`${styles.inputsGroup} ${styles.shortGroup} ${styles.dateInput}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Approximated Start date
-                </p>
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="month"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                  placeholder="MM"
-                />
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="number"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                  placeholder="DD"
-                  max={31}
-                  min={1}
-                />
-                <input
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  type="number"
-                  name=""
-                  id=""
-                  className={`${styles.filedForm} ${styles.inputForm}`}
-                  placeholder="YYYY"
-                />
-              </div>
-              <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Your Travel Style
-                </p>
-                <select
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.selectInput}
-                  name=""
-                  id=""></select>
-              </div>
-              <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Accomodation
-                </p>
-                <select
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.selectInput}
-                  name=""
-                  id=""></select>
-              </div>
-              <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
-                <p
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.labelTextInputs}>
-                  Your Destination
-                </p>
-                <select
-                  data-aos="fade-left"
-                  data-aos-duration="900"
-                  data-aos-delay="0"
-                  className={styles.selectInput}
-                  name=""
-                  id=""></select>
-              </div>
-
-              <div className={styles.submitGroup}>
-                <button className={styles.innerSubmitGroup}>
-                  <div
-                    data-aos="fade-left"
-                    data-aos-duration="900"
-                    data-aos-delay="0"
-                    className={`${styles.arrowSubmit} bg-ct`}></div>
+              <form className={`${styles.formFooterB} formB`}>
+                <div className={styles.inputsGroup}>
                   <p
                     data-aos="fade-left"
                     data-aos-duration="900"
                     data-aos-delay="0"
-                    className={styles.submitText}>
-                    SUBMIT
+                    className={styles.labelTextInputs}>
+                    Name*
                   </p>
-                </button>
-              </div>
-            </form>
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="text"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                    placeholder="First Name"
+                  />
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="text"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                    placeholder="Last Name"
+                  />
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.longInput}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Email*
+                  </p>
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="text"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                  />
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Approximated Duration Days
+                  </p>
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="number"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                  />
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Number of Travelers
+                  </p>
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="number"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                  />
+                </div>
+                <div
+                  className={`${styles.inputsGroup} ${styles.shortGroup} ${styles.dateInput}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Approximated Start date
+                  </p>
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="month"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                    placeholder="MM"
+                  />
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="number"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                    placeholder="DD"
+                    max={31}
+                    min={1}
+                  />
+                  <input
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    type="number"
+                    name=""
+                    id=""
+                    className={`${styles.filedForm} ${styles.inputForm}`}
+                    placeholder="YYYY"
+                  />
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Your Travel Style
+                  </p>
+                  <select
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.selectInput}
+                    name=""
+                    id=""></select>
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Accomodation
+                  </p>
+                  <select
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.selectInput}
+                    name=""
+                    id=""></select>
+                </div>
+                <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
+                  <p
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.labelTextInputs}>
+                    Your Destination
+                  </p>
+                  <select
+                    data-aos="fade-left"
+                    data-aos-duration="900"
+                    data-aos-delay="0"
+                    className={styles.selectInput}
+                    name=""
+                    id=""></select>
+                </div>
+
+                <div className={styles.submitGroup}>
+                  <button className={styles.innerSubmitGroup}>
+                    <div
+                      data-aos="fade-left"
+                      data-aos-duration="900"
+                      data-aos-delay="0"
+                      className={`${styles.arrowSubmit} bg-ct`}></div>
+                    <p
+                      data-aos="fade-left"
+                      data-aos-duration="900"
+                      data-aos-delay="0"
+                      className={styles.submitText}>
+                      SUBMIT
+                    </p>
+                  </button>
+                </div>
+              </form>
             </>
           )}
         </div>
