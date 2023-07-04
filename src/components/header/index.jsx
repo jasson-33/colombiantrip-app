@@ -1,7 +1,7 @@
 import { ColombianContext } from '@/context/ColombianContext';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import styles from './header.module.css';
 import { useRouter } from 'next/navigation';
 
@@ -9,15 +9,37 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
   const [valueCities, setValueCities] = useState(currCategory);
   const [valueCat, setValueCat] = useState('0');
   const { Bigola } = useContext(ColombianContext);
+  const [isInHero, setIsInHero] = useState(true);
+  const header = useRef(null);
   const toggleMenu = () => {
     setAnimate(!animate);
   };
   const router = useRouter();
   console.log(categories);
   console.log(currCategory);
+  useEffect(() => {
+    const switchHeader = () => {
+      if (!header.current.classList.contains(styles.lightHeader)) {
+        if (window.scrollY >= 50) {
+          setIsInHero((prev) => (prev = false));
+        }
+      }
+      if (header.current.classList.contains(styles.lightHeader)) {
+        if (window.scrollY <= 50) {
+          setIsInHero((prev) => (prev = true));
+        }
+      }
+    };
+    window.addEventListener('scroll', switchHeader);
+    return () => {
+      window.removeEventListener('scroll', switchHeader);
+    };
+  }, []);
   // setValueCat(currCategory);
   return (
-    <header className={styles.siteHeader}>
+    <header
+      ref={header}
+      className={`${!isInHero ? styles.lightHeader : ''} ${styles.siteHeader}`}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>
         <div className={`${styles.logo} bg-ct`}>
           <Link
