@@ -30,14 +30,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0 5%;
+  gap: 0 10px;
   animation: translateMembers 15s infinite linear 0s forwards;
 }
 
 .containerMembers:last-of-type {
   position: absolute;
   top: 0;
-  left: 100%;
+  left: calc(100% + 10px);
   animation: translateMembersB 15s infinite linear 7.5s forwards;
 }
 
@@ -70,7 +70,7 @@
   .titleProud {
     font-size: 45px;
   }
-  .containerMembers {
+  /* .containerMembers {
     animation: none;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -82,7 +82,7 @@
   .containerMembers:last-of-type {
     animation: none;
     display: none;
-  }
+  } */
   .memberIcon {
     width: auto;
     height: 120px;

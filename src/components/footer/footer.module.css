@@ -107,6 +107,12 @@
 .textareaForm {
   height: 30vh;
   min-height: 300px;
+  resize: none;
+}
+
+.textAreaFormB{
+  min-height: 200px;
+  resize: none;
 }
 
 .siteFooter {

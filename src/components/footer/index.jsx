@@ -361,6 +361,26 @@ const Footer = ({ datafooter, changeLayout }) => {
                   id=""></select>
               </div>
 
+              <div className={`${styles.inputsGroup} ${styles.longInput}`}>
+                <p
+                  data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  className={styles.labelTextInputs}>
+                  Comments
+                </p>
+                <textarea data-aos="fade-left"
+                  data-aos-duration="900"
+                  data-aos-delay="0"
+                  type="text"
+                  name=""
+                  id=""
+                  className={`${styles.filedForm} ${styles.inputForm} ${styles.textAreaFormB}`}>
+
+
+                </textarea>
+              </div>
+
               <div className={styles.submitGroup}>
                 <button className={styles.innerSubmitGroup}>
                   <div
