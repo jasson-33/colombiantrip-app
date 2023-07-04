@@ -57,7 +57,9 @@ const Layout = ({ children }) => {
       {children}
       <Footer
         datafooter={dataFooter}
-        changeLayout={router.pathname === '/how-it-works'}
+        changeLayout={
+          router.pathname === '/how-it-works' || router.pathname === '/b2b'
+        }
       />
     </main>
   );
