@@ -39,7 +39,9 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
   return (
     <header
       ref={header}
-      className={`${!isInHero ? styles.lightHeader : ''} ${styles.siteHeader}`}>
+      className={`${!isInHero ? styles.lightHeader : ''} ${
+        animate ? styles.activeHeader : ''
+      } ${styles.siteHeader} siteHeader`}>
       <div className={`${styles.containerHeader} container flex f-sb f-ac`}>
         <div className={`${styles.logo} bg-ct`}>
           <Link

@@ -232,6 +232,10 @@ table {
   height: 40vh;
 }
 
+/* .transparent{
+  background-color: transparent !important;
+} */
+
 @media only screen and (max-width: 1300px) {
   .iconPhone {
     width: 35px;

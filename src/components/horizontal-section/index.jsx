@@ -106,6 +106,26 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             scrub: 1,
             invalidateOnRefresh: true,
             anticipatePin: 1,
+            onEnter: () => {
+              document
+                .querySelector('.siteHeader')
+                .classList.add('transparent');
+            },
+            onLeave: () => {
+              document
+                .querySelector('.siteHeader')
+                .classList.remove('transparent');
+            },
+            onEnterBack: () => {
+              document
+                .querySelector('.siteHeader')
+                .classList.add('transparent');
+            },
+            onLeaveBack: () => {
+              document
+                .querySelector('.siteHeader')
+                .classList.remove('transparent');
+            },
             // snap: 1 / (blocks.length - 1),
 
             end: () => `+=${window.innerWidth}`,

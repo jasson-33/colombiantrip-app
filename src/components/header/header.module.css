@@ -13,6 +13,10 @@
   padding: 15px 0;
 }
 
+.activeHeader, .activeHeader.lightHeader, .transparent{
+  background-color: transparent;
+}
+
 .containerHeader {
   width: 90%;
   max-width: 1600px;
