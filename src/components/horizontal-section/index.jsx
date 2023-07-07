@@ -128,7 +128,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
             },
             // snap: 1 / (blocks.length - 1),
 
-            end: () => `+=${window.innerWidth}`,
+            end: () => `+=${window.innerWidth * 3.5}`,
           },
         });
 
