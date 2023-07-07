@@ -123,7 +123,7 @@
   resize: none;
 }
 
-.textAreaFormB{
+.textAreaFormB {
   min-height: 200px;
   resize: none;
 }
@@ -196,8 +196,32 @@
   color: #fff;
 }
 
+.socialIcons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin: 50px 0;
+}
+
+.socialIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.fbIcon {
+  background-image: url(/images/general/fb.png);
+}
+.insIcon {
+  background-image: url(/images/general/ig.png);
+}
+.linkIcon {
+  background-image: url(/images/general/ins.png);
+}
+
 .paperplaneContainer {
-  margin-top: 80px;
+  margin-top: 0px;
   border-top: 1px solid rgba(255, 255, 255, 0.3);
   padding: 30px 0;
   text-align: center;

@@ -458,8 +458,28 @@ const Footer = ({ datafooter, changeLayout }) => {
           </div>
         </div>
 
+        <div className={styles.socialIcons}>
+          <a
+            href="htpps://facebook.com"
+            target="_blank"
+            rel="noreferer"
+            className={`bg-ct ${styles.socialIcon} ${styles.fbIcon}`}></a>
+          <a
+            href="htpps://facebook.com"
+            target="_blank"
+            rel="noreferer"
+            className={`bg-ct ${styles.socialIcon} ${styles.insIcon}`}></a>
+          <a
+            href="htpps://facebook.com"
+            target="_blank"
+            rel="noreferer"
+            className={`bg-ct ${styles.socialIcon} ${styles.linkIcon}`}></a>
+        </div>
+
         <div className={styles.paperplaneContainer}>
-          <p className={styles.designedText}>Designed by:</p>
+          <p className={styles.designedText}>
+            Proudly made and designed in Colombia by:
+          </p>
           <div className={`${styles.paperplaneLog} bg-ct`}>
             <a
               href="https://paperplane.com.co"
