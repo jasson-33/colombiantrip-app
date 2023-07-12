@@ -310,6 +310,10 @@
   padding: 20px 30px 15px;
   color: rgba(62, 62, 62, 0.7);
   outline: none;
+  background-image: url(/images/general/arrow-down-black.png);
+  background-size: 25px;
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
 }
 
 .submitGroup {
@@ -429,6 +433,7 @@
 
   .labelTextInputs {
     margin-left: 0;
+    font-size: 20px;
   }
 
   .inputsGroup {
@@ -437,6 +442,7 @@
 
   .shortGroup {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .formFooterB .dateInput .inputForm {
