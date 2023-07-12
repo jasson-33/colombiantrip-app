@@ -141,6 +141,7 @@ const Footer = ({ datafooter, changeLayout }) => {
       return false;
     }
 
+    /*
     const formData = new FormData();
     formData.append('first_name', firstname);
     formData.append('last_name', lastname);
@@ -154,11 +155,30 @@ const Footer = ({ datafooter, changeLayout }) => {
     formData.append('style_accomodation', accomodationtravel);
     formData.append('style_destination', destinationtravel);
     formData.append('message', message);
-    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    */
+
+    const formData = {
+      'last_name': lastname,
+      'first_name': firstname,
+      'email': email,
+      'duration': duration,
+      'number_travelers': numbertravelers,
+      'date_month': datemonth,
+      'date_day': dateday,
+      'date_year': dateyear,
+      'style_travel': styletravel,
+      'style_accomodation': accomodationtravel,
+      'style_destination': destinationtravel,
+      'message': message,
+    };
+
+    //const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const endpoint = '/api/send-form';
 
     const options = {
       method: 'POST',
-      body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
     };
 
     const response = await fetch(endpoint, options);
