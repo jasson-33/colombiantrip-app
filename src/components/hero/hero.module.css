@@ -235,22 +235,20 @@
   object-fit: cover;
 }
 
-@media only screen and (max-width: 1600px){
-  .postHero .bigTitleHero{
+@media only screen and (max-width: 1600px) {
+  .postHero .bigTitleHero {
     margin-bottom: 0;
     font-size: 75px;
   }
 
-  .containerHero{
+  .containerHero {
     padding-bottom: 50px;
   }
 
-  .bigTitleHero{
+  .bigTitleHero {
     font-size: 100px;
     margin-bottom: 0;
   }
-
-
 }
 
 @media only screen and (max-width: 1350px) {

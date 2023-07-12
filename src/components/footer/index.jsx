@@ -16,6 +16,10 @@ const Footer = ({ datafooter, changeLayout }) => {
     email,
     copiright,
     formtext,
+    social_networks,
+    styles_form,
+    accomodations_form,
+    destinations_form,
   } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
@@ -342,7 +346,15 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id=""></select>
+                    id="">
+                    {styles_form &&
+                      styles_form.length > 0 &&
+                      styles_form.map((item, i) => (
+                        <option key={`styles_${i}`} value={item}>
+                          {item}
+                        </option>
+                      ))}
+                  </select>
                 </div>
                 <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
                   <p
@@ -358,7 +370,15 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id=""></select>
+                    id="">
+                    {accomodations_form &&
+                      accomodations_form.length > 0 &&
+                      accomodations_form.map((item, i) => (
+                        <option key={`accomodation_${i}`} value={item}>
+                          {item}
+                        </option>
+                      ))}
+                  </select>
                 </div>
                 <div className={`${styles.inputsGroup} ${styles.shortGroup}`}>
                   <p
@@ -374,7 +394,15 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id=""></select>
+                    id="">
+                    {destinations_form &&
+                      destinations_form.length > 0 &&
+                      destinations_form.map((item, i) => (
+                        <option key={`destination_${i}`} value={item}>
+                          {item}
+                        </option>
+                      ))}
+                  </select>
                 </div>
 
                 <div className={`${styles.inputsGroup} ${styles.longInput}`}>
@@ -459,21 +487,18 @@ const Footer = ({ datafooter, changeLayout }) => {
         </div>
 
         <div className={styles.socialIcons}>
-          <a
-            href="htpps://facebook.com"
-            target="_blank"
-            rel="noreferer"
-            className={`bg-ct ${styles.socialIcon} ${styles.fbIcon}`}></a>
-          <a
-            href="htpps://facebook.com"
-            target="_blank"
-            rel="noreferer"
-            className={`bg-ct ${styles.socialIcon} ${styles.insIcon}`}></a>
-          <a
-            href="htpps://facebook.com"
-            target="_blank"
-            rel="noreferer"
-            className={`bg-ct ${styles.socialIcon} ${styles.linkIcon}`}></a>
+          {social_networks &&
+            social_networks.length > 0 &&
+            social_networks.map((item, i) => (
+              <a
+                key={`social_n_${i}`}
+                href={item.link}
+                target="_blank"
+                rel="noreferer"
+                className={`bg-ct ${styles.socialIcon} ${
+                  styles[item.type]
+                }`}></a>
+            ))}
         </div>
 
         <div className={styles.paperplaneContainer}>

@@ -179,8 +179,6 @@
   letter-spacing: 0.16em;
 }
 
-
-
 @media only screen and (max-width: 1350px) {
   .titleBlock {
     max-width: 60%;
@@ -213,33 +211,32 @@
   }
 }
 
-@media only screen and (min-width: 1200px) and (max-height: 700px){
-  .contentItemHorizontalWork{
+@media only screen and (min-width: 1200px) and (max-height: 700px) {
+  .contentItemHorizontalWork {
     padding-top: 10vh;
   }
 
-  .innerInfoWork{
+  .innerInfoWork {
     margin-top: 50px;
   }
 
-  .textWork{
+  .textWork {
     margin-bottom: 35px;
   }
 
-  .number{
+  .number {
     font-size: 110px;
   }
 
-  .infoItemHorizontal{
+  .infoItemHorizontal {
     width: 35%;
     padding: 25px;
     margin-top: 20px;
   }
 
-  .titleBlock{
+  .titleBlock {
     font-size: 70px;
   }
-
 }
 
 @media only screen and (max-width: 1024px) {

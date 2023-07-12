@@ -5,15 +5,16 @@
   width: 100%;
   z-index: 3;
   padding-top: 30px;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.lightHeader{
+.lightHeader {
   background-color: #fff;
   padding: 15px 0;
 }
 
-.activeHeader, .activeHeader.lightHeader{
+.activeHeader,
+.activeHeader.lightHeader {
   background-color: transparent;
 }
 
@@ -50,10 +51,10 @@
   margin: 0 10px;
   outline: none;
   cursor: pointer;
-  transition: color .5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
-.lightHeader .citiesSelect{
+.lightHeader .citiesSelect {
   color: #3e3e3e;
 }
 
