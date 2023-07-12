@@ -63,15 +63,19 @@ const Footer = ({ datafooter, changeLayout }) => {
       return false;
     }
 
-    const formData = new FormData();
-    formData.append('fname', name);
-    formData.append('femail', email);
-    formData.append('fmessage', message);
-    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer`;
+    const formData = {
+      'fname': name,
+      'femail': email,
+      'fmessage': message,
+    };
+
+    // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const endpoint = '/api/send-form';
 
     const options = {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     };
 
     const response = await fetch(endpoint, options);
@@ -156,24 +160,28 @@ const Footer = ({ datafooter, changeLayout }) => {
       return false;
     }
 
-    const formData = new FormData();
-    formData.append('first_name', firstname);
-    formData.append('last_name', lastname);
-    formData.append('email', email);
-    formData.append('duration', duration);
-    formData.append('number_travelers', numbertravelers);
-    formData.append('date_month', datemonth);
-    formData.append('date_day', dateday);
-    formData.append('date_year', dateyear);
-    formData.append('style_travel', styletravel);
-    formData.append('style_accomodation', accomodationtravel);
-    formData.append('style_destination', destinationtravel);
-    formData.append('message', message);
-    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const formData = {
+      'last_name': lastname,
+      'first_name': firstname,
+      email,
+      duration,
+      'number_travelers': numbertravelers,
+      'date_month': datemonth,
+      'date_day': dateday,
+      'date_year': dateyear,
+      'style_travel': styletravel,
+      'style_accomodation': accomodationtravel,
+      'style_destination': destinationtravel,
+      message,
+    };
+
+    // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const endpoint = '/api/send-form-full';
 
     const options = {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     };
 
     const response = await fetch(endpoint, options);
@@ -187,7 +195,6 @@ const Footer = ({ datafooter, changeLayout }) => {
       errorDiv.innerHTML = '';
     }, 3000);
 
-    // alert(result.status);
     console.log('Success:', result.status);
   };
 
