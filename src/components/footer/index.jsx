@@ -63,15 +63,19 @@ const Footer = ({ datafooter, changeLayout }) => {
       return false;
     }
 
-    const formData = new FormData();
-    formData.append('fname', name);
-    formData.append('femail', email);
-    formData.append('fmessage', message);
-    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer`;
+    const formData = {
+      'fname': name,
+      'femail': email,
+      'fmessage': message,
+    };
+
+    // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const endpoint = '/api/send-form';
 
     const options = {
       method: 'POST',
-      body: formData,
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData),
     };
 
     const response = await fetch(endpoint, options);
@@ -172,7 +176,7 @@ const Footer = ({ datafooter, changeLayout }) => {
     };
 
     // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
-    const endpoint = '/api/send-form';
+    const endpoint = '/api/send-form-full';
 
     const options = {
       method: 'POST',
