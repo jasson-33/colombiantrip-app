@@ -156,22 +156,6 @@ const Footer = ({ datafooter, changeLayout }) => {
       return false;
     }
 
-    /*
-    const formData = new FormData();
-    formData.append('first_name', firstname);
-    formData.append('last_name', lastname);
-    formData.append('email', email);
-    formData.append('duration', duration);
-    formData.append('number_travelers', numbertravelers);
-    formData.append('date_month', datemonth);
-    formData.append('date_day', dateday);
-    formData.append('date_year', dateyear);
-    formData.append('style_travel', styletravel);
-    formData.append('style_accomodation', accomodationtravel);
-    formData.append('style_destination', destinationtravel);
-    formData.append('message', message);
-    */
-
     const formData = {
       'last_name': lastname,
       'first_name': firstname,
@@ -207,7 +191,6 @@ const Footer = ({ datafooter, changeLayout }) => {
       errorDiv.innerHTML = '';
     }, 3000);
 
-    // alert(result.status);
     console.log('Success:', result.status);
   };
 
