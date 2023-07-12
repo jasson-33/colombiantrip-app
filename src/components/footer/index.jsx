@@ -27,6 +27,21 @@ const Footer = ({ datafooter, changeLayout }) => {
     AOS.init({});
   }, []);
 
+  const theMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
   const sendDataForm = async (event) => {
     event.preventDefault();
     const name = event.target.querySelector('#f_name').value;
@@ -423,16 +438,25 @@ const Footer = ({ datafooter, changeLayout }) => {
                     className={styles.labelTextInputs}>
                     Approximated Start date
                   </p>
-                  <input
+                  <select
+                    defaultValue="default"
                     data-aos="fade-left"
                     data-aos-duration="900"
                     data-aos-delay="0"
                     type="month"
                     name=""
                     id="start_date_month"
-                    className={`${styles.filedForm} ${styles.inputForm}`}
-                    placeholder="MM"
-                  />
+                    className={`${styles.filedForm} ${styles.inputForm} ${styles.selectMonth}`}
+                    placeholder="MM">
+                    <option value="default" selected disabled>
+                      MM
+                    </option>
+                    {theMonths.map((month, i) => (
+                      <option value={i} key={`${i}-${month}`}>
+                        {month}
+                      </option>
+                    ))}
+                  </select>
                   <input
                     data-aos="fade-left"
                     data-aos-duration="900"

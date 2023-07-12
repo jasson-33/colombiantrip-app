@@ -109,7 +109,16 @@
   outline: none !important;
 }
 
-.filedForm::placeholder {
+.selectMonth{
+  padding: 12.5x 30px 12.5px;
+  appearance: none;
+  background-image: url(/images/general/arrow-down-black.png);
+  background-size: 25px;
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+}
+
+.filedForm::placeholder, .selectMonth {
   font-weight: 400;
   font-size: 22px;
   line-height: 16px;
@@ -310,6 +319,10 @@
   padding: 20px 30px 15px;
   color: rgba(62, 62, 62, 0.7);
   outline: none;
+  background-image: url(/images/general/arrow-down-black.png);
+  background-size: 25px;
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
 }
 
 .submitGroup {
@@ -429,6 +442,7 @@
 
   .labelTextInputs {
     margin-left: 0;
+    font-size: 20px;
   }
 
   .inputsGroup {
@@ -437,6 +451,7 @@
 
   .shortGroup {
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .formFooterB .dateInput .inputForm {
@@ -447,7 +462,7 @@
     justify-content: space-between;
   }
 
-  .filedForm::placeholder {
+  .filedForm::placeholder, .selectMonth {
     font-size: 18px;
   }
 }
