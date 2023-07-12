@@ -347,6 +347,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                     className={styles.selectInput}
                     name=""
                     id="">
+                    <option key={'styles_def'} value="">
+                      Select Your Travel Style
+                    </option>
                     {styles_form &&
                       styles_form.length > 0 &&
                       styles_form.map((item, i) => (
@@ -371,6 +374,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                     className={styles.selectInput}
                     name=""
                     id="">
+                    <option key={'accomodation_def'} value="">
+                      Select Your Accomodation
+                    </option>
                     {accomodations_form &&
                       accomodations_form.length > 0 &&
                       accomodations_form.map((item, i) => (
@@ -395,6 +401,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                     className={styles.selectInput}
                     name=""
                     id="">
+                    <option key={'destination_def'} value="">
+                      Select Your Destination
+                    </option>
                     {destinations_form &&
                       destinations_form.length > 0 &&
                       destinations_form.map((item, i) => (
