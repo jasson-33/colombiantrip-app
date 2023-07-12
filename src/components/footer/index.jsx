@@ -159,8 +159,8 @@ const Footer = ({ datafooter, changeLayout }) => {
     const formData = {
       'last_name': lastname,
       'first_name': firstname,
-      'email': email,
-      'duration': duration,
+      email,
+      duration,
       'number_travelers': numbertravelers,
       'date_month': datemonth,
       'date_day': dateday,
@@ -168,15 +168,15 @@ const Footer = ({ datafooter, changeLayout }) => {
       'style_travel': styletravel,
       'style_accomodation': accomodationtravel,
       'style_destination': destinationtravel,
-      'message': message,
+      message,
     };
 
-    //const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
     const endpoint = '/api/send-form';
 
     const options = {
       method: 'POST',
-      headers: { "Content-Type": "application/json" },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
     };
 

@@ -1,5 +1,5 @@
 export default function handler(req, res) {
-    var FormData = require('form-data');
+    const FormData = require('form-data');
     const body = req.body;
     console.log('body: ', body);
 
