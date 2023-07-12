@@ -25,6 +25,10 @@
   position: relative;
 }
 
+.containerImageLatest img {
+  object-fit: cover;
+}
+
 .infoLatestPost {
   width: 73%;
   display: flex;
