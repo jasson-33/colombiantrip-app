@@ -109,7 +109,16 @@
   outline: none !important;
 }
 
-.filedForm::placeholder {
+.selectMonth{
+  padding: 12.5x 30px 12.5px;
+  appearance: none;
+  background-image: url(/images/general/arrow-down-black.png);
+  background-size: 25px;
+  background-position: 97% 50%;
+  background-repeat: no-repeat;
+}
+
+.filedForm::placeholder, .selectMonth {
   font-weight: 400;
   font-size: 22px;
   line-height: 16px;
@@ -453,7 +462,7 @@
     justify-content: space-between;
   }
 
-  .filedForm::placeholder {
+  .filedForm::placeholder, .selectMonth {
     font-size: 18px;
   }
 }
