@@ -74,6 +74,108 @@ const Footer = ({ datafooter, changeLayout }) => {
     console.log('Success:', result.status);
   };
 
+  const sendDataFormFull = async (event) => {
+    event.preventDefault();
+    const firstname = event.target.querySelector('#first_name_form').value;
+    const lastname = event.target.querySelector('#last_name_form').value;
+    const email = event.target.querySelector('#email_form').value;
+    const duration = event.target.querySelector('#duration_days').value;
+    const numbertravelers =
+      event.target.querySelector('#number_travelers').value;
+    const datemonth = event.target.querySelector('#start_date_month').value;
+    const dateday = event.target.querySelector('#start_date_day').value;
+    const dateyear = event.target.querySelector('#start_date_year').value;
+    const styletravel = event.target.querySelector('#travel_style').value;
+    const accomodationtravel =
+      event.target.querySelector('#accomodation_form').value;
+    const destinationtravel =
+      event.target.querySelector('#destination_form').value;
+    const message = event.target.querySelector('#comments_form').value;
+
+    if (!firstname) {
+      alert('Please enter your first name.');
+      return false;
+    }
+    if (!lastname) {
+      alert('Please enter your last name.');
+      return false;
+    }
+    if (!email) {
+      alert('Please enter your Email.');
+      return false;
+    }
+    if (!duration) {
+      alert('Please enter your estimated duration.');
+      return false;
+    }
+    if (!numbertravelers) {
+      alert('Please enter the estimated numer of travelers.');
+      return false;
+    }
+    if (!datemonth) {
+      alert('Please enter the month of travel.');
+      return false;
+    }
+    if (!dateday) {
+      alert('Please enter the day of travel.');
+      return false;
+    }
+    if (!dateyear) {
+      alert('Please enter the year of travel.');
+      return false;
+    }
+    if (!styletravel) {
+      alert('Please select your travel style.');
+      return false;
+    }
+    if (!accomodationtravel) {
+      alert('Please select the accomodation.');
+      return false;
+    }
+    if (!destinationtravel) {
+      alert('Please select the destination.');
+      return false;
+    }
+    if (!message) {
+      alert('Please enter a message.');
+      return false;
+    }
+
+    const formData = new FormData();
+    formData.append('first_name', firstname);
+    formData.append('last_name', lastname);
+    formData.append('email', email);
+    formData.append('duration', duration);
+    formData.append('number_travelers', numbertravelers);
+    formData.append('date_month', datemonth);
+    formData.append('date_day', dateday);
+    formData.append('date_year', dateyear);
+    formData.append('style_travel', styletravel);
+    formData.append('style_accomodation', accomodationtravel);
+    formData.append('style_destination', destinationtravel);
+    formData.append('message', message);
+    const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+
+    const options = {
+      method: 'POST',
+      body: formData,
+    };
+
+    const response = await fetch(endpoint, options);
+
+    const result = await response.json();
+
+    const errorDiv = event.target.querySelector('#messageForm');
+    errorDiv.innerHTML = result.status;
+    event.target.reset();
+    setTimeout(() => {
+      errorDiv.innerHTML = '';
+    }, 3000);
+
+    // alert(result.status);
+    console.log('Success:', result.status);
+  };
+
   if (!datafooter) {
     return <></>;
   }
@@ -206,7 +308,9 @@ const Footer = ({ datafooter, changeLayout }) => {
                   className={styles.subtitleProudMembers}
                   dangerouslySetInnerHTML={{ __html: formtext }}></h3>
               </div>
-              <form className={`${styles.formFooterB} formB`}>
+              <form
+                className={`${styles.formFooterB} formB`}
+                onSubmit={sendDataFormFull}>
                 <div className={styles.inputsGroup}>
                   <p
                     data-aos="fade-left"
@@ -221,7 +325,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="first_name_form"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="First Name"
                   />
@@ -231,7 +335,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="last_name_form"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="Last Name"
                   />
@@ -250,7 +354,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="email_form"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                   />
                 </div>
@@ -268,7 +372,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="number"
                     name=""
-                    id=""
+                    id="duration_days"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                   />
                 </div>
@@ -286,7 +390,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="number"
                     name=""
-                    id=""
+                    id="number_travelers"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                   />
                 </div>
@@ -305,7 +409,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="month"
                     name=""
-                    id=""
+                    id="start_date_month"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="MM"
                   />
@@ -315,7 +419,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="number"
                     name=""
-                    id=""
+                    id="start_date_day"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="DD"
                     max={31}
@@ -327,7 +431,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="number"
                     name=""
-                    id=""
+                    id="start_date_year"
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="YYYY"
                   />
@@ -346,7 +450,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id="">
+                    id="travel_style">
                     <option key={'styles_def'} value="">
                       Select Your Travel Style
                     </option>
@@ -373,7 +477,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id="">
+                    id="accomodation_form">
                     <option key={'accomodation_def'} value="">
                       Select Your Accomodation
                     </option>
@@ -400,7 +504,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     className={styles.selectInput}
                     name=""
-                    id="">
+                    id="destination_form">
                     <option key={'destination_def'} value="">
                       Select Your Destination
                     </option>
@@ -428,10 +532,10 @@ const Footer = ({ datafooter, changeLayout }) => {
                     data-aos-delay="0"
                     type="text"
                     name=""
-                    id=""
+                    id="comments_form"
                     className={`${styles.filedForm} ${styles.inputForm} ${styles.textAreaFormB}`}></textarea>
                 </div>
-
+                <p id="messageForm"></p>
                 <div className={styles.submitGroup}>
                   <button className={styles.innerSubmitGroup}>
                     <div
