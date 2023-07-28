@@ -54,7 +54,7 @@ const Hero = ({ contentHero, pageType }) => {
           playsInline
           muted
           preload>
-          <source src={video_banner.url} />
+          <source src={video_banner.url.replace('http:','https:')} />
         </video>
       )}
 
