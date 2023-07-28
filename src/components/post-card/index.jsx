@@ -23,7 +23,7 @@ const PostCard = ({ popularPost, pageType }) => {
         style={{ height: popularPost && popularPost.height }}>
         <Image
           fill
-          src={`${popularPost.img.sizes ? popularPost.img.sizes.medium : ''}`}
+          src={`${popularPost.img.sizes ? popularPost.img.sizes.large : ''}`}
           alt=""
         />
       </div>

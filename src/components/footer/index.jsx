@@ -4,6 +4,7 @@ import React, { useContext, useEffect } from 'react';
 import styles from './footer.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useRouter } from 'next/router';
 
 const Footer = ({ datafooter, changeLayout }) => {
   const {
@@ -23,9 +24,15 @@ const Footer = ({ datafooter, changeLayout }) => {
   } = datafooter;
   const { Bigola } = useContext(ColombianContext);
 
+  const router = useRouter();
+  const { pathname } = router;
+
   useEffect(() => {
-    AOS.init({});
+      AOS.init({});
   }, []);
+  useEffect(() => {
+      AOS.refresh();
+  }, [pathname]);
 
   const theMonths = [
     'January',

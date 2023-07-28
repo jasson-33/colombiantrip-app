@@ -11,6 +11,8 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
   const { Bigola } = useContext(ColombianContext);
   const [isInHero, setIsInHero] = useState(true);
   const header = useRef(null);
+  const categoriesSelect = useRef(null);
+  const citiesSelect = useRef(null);
   const toggleMenu = () => {
     setAnimate(!animate);
   };
@@ -35,6 +37,15 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
       window.removeEventListener('scroll', switchHeader);
     };
   }, []);
+
+  const resetSelects = (reset) => {
+    if (reset === 'cities') {
+      setValueCities(citiesSelect.current.options[0].value);
+      return;
+    }
+    setValueCat(categoriesSelect.current.options[0].value);
+
+  };
   // setValueCat(currCategory);
   return (
     <header
@@ -71,11 +82,13 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
               {categories.Cities && (
                 <select
                   value={valueCities}
+                  ref={citiesSelect}
                   onChange={(e) => {
                     setValueCities(e.target.value);
                     router.push(e.target.value);
+                    resetSelects('categories');
                   }}
-                  className={`${styles.citiesSelect} ${Bigola.className}`}>
+                  className={`${styles.citiesSelect} ${Bigola.className} citiesSelect`}>
                   <option value="/meet-colombia">Cities</option>
                   {categories.Cities.length > 0 &&
                     categories.Cities.map((category, i) => (
@@ -88,12 +101,14 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
               {categories.Categories && (
                 <select
                   value={valueCat}
+                  ref={categoriesSelect}
                   onChange={(e) => {
                     setValueCat(e.target.value);
                     router.push(e.target.value);
+                    resetSelects('cities');
                   }}
                   className={`${styles.citiesSelect} ${Bigola.className}`}>
-                  <option value="/meet-colombia">Categories</option>
+                  <option value="/meet-colombia" selected>Categories</option>
                   {categories.Categories.length > 0 &&
                     categories.Categories.map((category, i) => (
                       <option key={`categories${i}`} value={category.link}>
