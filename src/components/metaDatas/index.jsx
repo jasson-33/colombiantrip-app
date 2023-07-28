@@ -27,4 +27,5 @@ const Metas = ({ metadata }) => {
   );
 };
 
+
 export default Metas;
