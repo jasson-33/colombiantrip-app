@@ -28,10 +28,10 @@ const Footer = ({ datafooter, changeLayout }) => {
   const { pathname } = router;
 
   useEffect(() => {
-      AOS.init({});
+    AOS.init({});
   }, []);
   useEffect(() => {
-      AOS.refresh();
+    AOS.refresh();
   }, [pathname]);
 
   const theMonths = [

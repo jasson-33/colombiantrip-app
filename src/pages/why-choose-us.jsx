@@ -5,7 +5,7 @@ import Hero from '@/components/hero';
 import React from 'react';
 
 const WhyChoosUs = ({ data }) => {
-  const { metacontent, hero, descriptions } = data;
+  const { metacontent, hero, descriptions, grid } = data;
   /*
   const contentHero = {
     type: 'secondary',
@@ -41,7 +41,7 @@ const WhyChoosUs = ({ data }) => {
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       <AfterHero contentAfterHero={descriptions} />
-      <Grid />
+      <Grid contentGrid={grid} />
     </>
   );
 };

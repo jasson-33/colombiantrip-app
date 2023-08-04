@@ -44,7 +44,6 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
       return;
     }
     setValueCat(categoriesSelect.current.options[0].value);
-
   };
   // setValueCat(currCategory);
   return (
@@ -108,7 +107,9 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
                     resetSelects('cities');
                   }}
                   className={`${styles.citiesSelect} ${Bigola.className}`}>
-                  <option value="/meet-colombia" selected>Categories</option>
+                  <option value="/meet-colombia" selected>
+                    Categories
+                  </option>
                   {categories.Categories.length > 0 &&
                     categories.Categories.map((category, i) => (
                       <option key={`categories${i}`} value={category.link}>
