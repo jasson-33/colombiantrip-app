@@ -8,7 +8,7 @@ import LegalContent from '@/components/legalContent';
 import React from 'react';
 
 const termsconditions = ({ data }) => {
-  const { metacontent, hero } = data;
+  const { metacontent, hero, legalcontent } = data;
 
   return (
     <>

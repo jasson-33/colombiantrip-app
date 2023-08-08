@@ -1,3 +1,4 @@
+import { ColombianContext } from '@/context/ColombianContext';
 import styles from './legalContent.module.css';
 
 const LegalContent = ({ legalcontent }) => {
