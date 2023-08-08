@@ -25,6 +25,57 @@ const Hero = ({ contentHero, pageType }) => {
     AOS.init();
   }, []);
 
+  const sendDataFormHero = async (event) => {
+    event.preventDefault();
+    const name = event.target.querySelector('#f_name_h').value;
+    const email = event.target.querySelector('#f_email_h').value;
+    const message = event.target.querySelector('#f_message_h').value;
+
+    if (!name) {
+      alert('Please enter your name.');
+      return false;
+    }
+
+    if (!email) {
+      alert('Please enter your Email.');
+      return false;
+    }
+
+    if (!message) {
+      alert('Please enter your Message.');
+      return false;
+    }
+
+    const formDataHero = {
+      'fname': name,
+      'femail': email,
+      'fmessage': message,
+    };
+
+    // const endpoint = `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/contact-footer-full`;
+    const endpoint = '/api/send-form-hero';
+
+    const options = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formDataHero),
+    };
+
+    const response = await fetch(endpoint, options);
+
+    const result = await response.json();
+
+    const errorDiv = event.target.querySelector('#messageForm_h');
+    errorDiv.innerHTML = result.status;
+    event.target.reset();
+    setTimeout(() => {
+      errorDiv.innerHTML = '';
+    }, 3000);
+
+    // alert(result.status);
+    console.log('Success:', result.status);
+  };
+
   return (
     <div
       className={`${styles.hero} bg-cv ${
@@ -125,6 +176,7 @@ const Hero = ({ contentHero, pageType }) => {
                   data-aos="fade-up"
                   data-aos-duration="900"
                   data-aos-delay="0"
+                  onSubmit={sendDataFormHero}
                   className={styles.heroForm}>
                   {form.title !== '' && (
                     <h3
@@ -139,22 +191,23 @@ const Hero = ({ contentHero, pageType }) => {
                   <input
                     type="text"
                     name=""
-                    id=""
+                    id="f_name_h"
                     className={`${styles.inputHeroForm}`}
                     placeholder="Full name"
                   />
                   <input
                     type="email"
                     name=""
-                    id=""
+                    id="f_email_h"
                     className={`${styles.inputHeroForm}`}
                     placeholder="Email address"
                   />
                   <textarea
                     name=""
-                    id=""
+                    id="f_message_h"
                     placeholder="Message"
                     className={`${styles.inputHeroForm} ${styles.messageHero}`}></textarea>
+                  <p id="messageForm_h"></p>
                   <button className={styles.submitHeroForm}>
                     <div className={`${styles.arrowForm} bg-ct`}></div>
                     <p className={styles.sendText}>SEND</p>
