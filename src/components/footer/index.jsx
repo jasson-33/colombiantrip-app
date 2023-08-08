@@ -94,7 +94,7 @@ const Footer = ({ datafooter, changeLayout }) => {
     event.target.reset();
     setTimeout(() => {
       errorDiv.innerHTML = '';
-    }, 3000);
+    }, 5000);
 
     // alert(result.status);
     console.log('Success:', result.status);
@@ -200,7 +200,7 @@ const Footer = ({ datafooter, changeLayout }) => {
     event.target.reset();
     setTimeout(() => {
       errorDiv.innerHTML = '';
-    }, 3000);
+    }, 5000);
 
     console.log('Success:', result.status);
   };
