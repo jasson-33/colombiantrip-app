@@ -1,10 +1,11 @@
+import Metas from '@/components/metaDatas';
 import Hero from '@/components/hero';
 import AllPosts from '@/components/all-posts';
 import React from 'react';
 
 const CategorySingle = ({ data }) => {
   console.log(data);
-  const { hero, currpage, maxpages, posts, datacat } = data;
+  const { hero, currpage, maxpages, posts, datacat, metacontent } = data;
 
   const allCategory = {
     curr_page: currpage,
@@ -15,6 +16,7 @@ const CategorySingle = ({ data }) => {
 
   return (
     <>
+      <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       <AllPosts allCategoryPost={allCategory} pageType={'catPageStyle'} />
     </>
