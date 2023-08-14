@@ -193,7 +193,7 @@ const Hero = ({ contentHero, pageType }) => {
                     name=""
                     id="f_name_h"
                     className={`${styles.inputHeroForm}`}
-                    placeholder="Full name"
+                    placeholder="Name"
                   />
                   <input
                     type="email"

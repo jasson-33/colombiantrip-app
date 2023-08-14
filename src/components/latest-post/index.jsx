@@ -18,7 +18,7 @@ const LatestPost = ({ latestPosts }) => {
           <Link
             href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.href}`}></Link>
           <div className={styles.containerImageLatest}>
-            <Image alt="" src={data.img.sizes.thumbnail} fill />
+            <Image alt="" src={data.img.sizes?data.img.sizes.thumbnail:''} fill />
           </div>
           <div className={styles.infoLatestPost}>
             <p className={`${styles.dateLatest} ${Bigola.className}`}>

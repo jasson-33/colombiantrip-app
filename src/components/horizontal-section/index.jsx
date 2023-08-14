@@ -358,7 +358,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                                 <p
                                   className={styles.textBtn}
                                   style={{ color: block.colorText }}>
-                                  YOUR TRIP
+                                  DESIGN MY TRIP
                                 </p>
                               </div>
                             </div>
