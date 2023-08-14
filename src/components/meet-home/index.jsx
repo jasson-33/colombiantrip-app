@@ -36,7 +36,8 @@ const MeetHome = ({ blogdata }) => {
 
         <div className={styles.blogsContainer}>
           {blogs.map((blog, i) => (
-            <div
+            <Link
+              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${blog.url}`}
               data-aos="fade-up"
               data-aos-duration="900"
               data-aos-delay="0"
@@ -60,12 +61,11 @@ const MeetHome = ({ blogdata }) => {
               </h2>
               <p className={styles.summaryCardBlog}>{blog.summary}</p>
 
-              <Link
-                href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${blog.url}`}
+              <div
                 className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
                 <span className={`bg-ct ${styles.arrowRight}`}></span> Read More
-              </Link>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
         <Link

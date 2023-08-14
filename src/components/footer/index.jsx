@@ -279,7 +279,7 @@ const Footer = ({ datafooter, changeLayout }) => {
                     name=""
                     id="f_name"
                     className={`${styles.filedForm} ${styles.inputForm}`}
-                    placeholder="Full Name"
+                    placeholder="Name"
                   />
                   <input
                     data-aos="fade-left"
