@@ -291,30 +291,23 @@ const Footer = ({ datafooter, changeLayout }) => {
                     className={`${styles.filedForm} ${styles.inputForm}`}
                     placeholder="Email Address"
                   />
-                  <textarea
+                  <div
+                    className={styles.lastInputsForm}
                     data-aos="fade-left"
                     data-aos-duration="900"
-                    data-aos-delay="0"
-                    name=""
-                    id="f_message"
-                    className={`${styles.filedForm} ${styles.textareaForm}`}
-                    placeholder="Message"></textarea>
-                  <p id="messageForm"></p>
-                  <div className={styles.submitGroup}>
-                    <button className={styles.innerSubmitGroup}>
-                      <div
-                        data-aos="fade-left"
-                        data-aos-duration="900"
-                        data-aos-delay="0"
-                        className={`${styles.arrowSubmit} bg-ct`}></div>
-                      <p
-                        data-aos="fade-left"
-                        data-aos-duration="900"
-                        data-aos-delay="0"
-                        className={styles.submitText}>
-                        SUBMIT
-                      </p>
-                    </button>
+                    data-aos-delay="0">
+                    <textarea
+                      name=""
+                      id="f_message"
+                      className={`${styles.filedForm} ${styles.textareaForm}`}
+                      placeholder="Message"></textarea>
+                    <p id="messageForm"></p>
+                    <div className={styles.submitGroup}>
+                      <button className={styles.innerSubmitGroup}>
+                        <div className={`${styles.arrowSubmit} bg-ct`}></div>
+                        <p className={styles.submitText}>SUBMIT</p>
+                      </button>
+                    </div>
                   </div>
                 </form>
               </div>

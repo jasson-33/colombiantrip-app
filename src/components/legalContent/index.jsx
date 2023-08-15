@@ -1,12 +1,10 @@
-import { ColombianContext } from '@/context/ColombianContext';
-import React, { useContext } from 'react';
-// import styles from './legalContent.module.css';
+import React from 'react';
+import styles from './legalContent.module.css';
 
 const LegalContent = ({ legalcontent }) => {
-  const { Bigola } = useContext(ColombianContext);
   return (
     <div
-      className={`${Bigola.className}`}
+      className={` ${styles.containerLegacy} containerLegacy`}
       dangerouslySetInnerHTML={{ __html: legalcontent }}
     />
   );
