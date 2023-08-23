@@ -59,7 +59,7 @@
   border-bottom: 2px solid #00000000;
   top: -15px;
   right: -15px;
-  transition: all 0.5s ease-in-out 0.5s , top 0.5s ease-in-out 0s,
+  transition: all 0.5s ease-in-out 0.5s, top 0.5s ease-in-out 0s,
     border-top 0.5s ease-in-out 0s, border-bottom 0.15s ease-in-out 0s;
 }
 
@@ -70,7 +70,7 @@
   border-top: 2px solid #00000000;
   bottom: -15px;
   left: -15px;
-  transition: all 0.5s ease-in-out 0.5s , bottom 0.5s ease-in-out 0s,
+  transition: all 0.5s ease-in-out 0.5s, bottom 0.5s ease-in-out 0s,
     border-bottom 0.5s ease-in-out 0s, border-top 0.15s ease-in-out 0s;
 }
 

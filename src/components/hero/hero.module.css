@@ -73,7 +73,7 @@
   position: relative;
 }
 
-.ctaLabelHero:after{
+.ctaLabelHero:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -84,20 +84,18 @@
   border-color: #d23250 transparent transparent transparent;
   border-radius: 50%;
   opacity: 0;
-  transition: all .25s linear, opacity 0s linear .25s;
+  transition: all 0.25s linear, opacity 0s linear 0.25s;
 }
 
-.ctaHero:hover .ctaLabelHero:after{
+.ctaHero:hover .ctaLabelHero:after {
   width: 100%;
   opacity: 1;
-  transition: all .25s linear, opacity 0s linear .0s;
+  transition: all 0.25s linear, opacity 0s linear 0s;
 }
 
-.ctaHero:hover .iconCtaHero{
+.ctaHero:hover .iconCtaHero {
   transform: scale(1.1);
 }
-
-
 
 .ctaHero a {
   color: #fff;
@@ -117,7 +115,7 @@
   border-radius: 50%;
   background-size: 80%;
   transform: scale(1);
-  transition: all .25s linear;
+  transition: all 0.25s linear;
 }
 
 .bigTitleHero {

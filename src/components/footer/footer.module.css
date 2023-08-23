@@ -363,8 +363,7 @@
   position: relative;
 }
 
-
-.submitText:after{
+.submitText:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -375,13 +374,13 @@
   border-color: #d23250 transparent transparent transparent;
   border-radius: 50%;
   opacity: 0;
-  transition: all .25s linear, opacity 0s linear .25s;
+  transition: all 0.25s linear, opacity 0s linear 0.25s;
 }
 
-.innerSubmitGroup:hover .submitText:after{
+.innerSubmitGroup:hover .submitText:after {
   width: 100%;
   opacity: 1;
-  transition: all .25s linear, opacity 0s linear .0s;
+  transition: all 0.25s linear, opacity 0s linear 0s;
 }
 
 @media only screen and (max-width: 1350px) {
@@ -507,13 +506,13 @@
     line-height: 20px;
   }
 
-  .titleProud{
+  .titleProud {
     font-size: 80px;
   }
 }
 
-@media only screen and (max-width: 520px){
-  .titleProud{
+@media only screen and (max-width: 520px) {
+  .titleProud {
     font-size: 40px;
   }
 }

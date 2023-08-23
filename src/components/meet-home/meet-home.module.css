@@ -33,7 +33,6 @@
   width: 100%;
   display: block;
   background: #ffffff;
-  
 }
 
 .atroposBlogCard {
@@ -41,14 +40,13 @@
   height: 100%;
 }
 
-
 .atroposBlogCard > span > span > span {
   padding-bottom: 100px;
   transition: all 0.5s ease-in-out;
   box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);
 }
 
-.cardBlog:hover > span > span > span  {
+.cardBlog:hover > span > span > span {
   box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.425);
 }
 
@@ -158,8 +156,7 @@
   /* -webkit-text-fill-color: #3e3e3ee0; */
 }
 
-
-.innerTextCtaBtn:after{
+.innerTextCtaBtn:after {
   content: '';
   position: absolute;
   bottom: -10px;
@@ -170,15 +167,14 @@
   border-color: #d23250 transparent transparent transparent;
   border-radius: 50%;
   opacity: 0;
-  transition: all .25s linear, opacity 0s linear .25s;
+  transition: all 0.25s linear, opacity 0s linear 0.25s;
 }
 
-.allArticles:hover .innerTextCtaBtn:after{
+.allArticles:hover .innerTextCtaBtn:after {
   width: 100%;
   opacity: 1;
-  transition: all .25s linear, opacity 0s linear .0s;
+  transition: all 0.25s linear, opacity 0s linear 0s;
 }
-
 
 @media only screen and (max-width: 1350px) {
   .meetHomeTitle {

@@ -27,7 +27,9 @@ const ExperienceDetail = ({ contentExp }) => {
             data-aos-delay="0"
             key={id + i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
-            style={{ width: `calc(${width} - 20px)` }}>
+            style={{
+              width: width === '100%' ? width : `calc(${width} - 20px)`,
+            }}>
             <Atropos className={styles.atroposExperience} {...atroposProps}>
               <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>
                 <div

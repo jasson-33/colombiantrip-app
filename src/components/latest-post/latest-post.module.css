@@ -29,13 +29,13 @@
 .containerImageLatest img {
   object-fit: cover;
   transform: scale(1.2);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.lastPost:hover img{
+.lastPost:hover img {
   transform: scale(1);
 }
- 
+
 .infoLatestPost {
   width: 73%;
   display: flex;
@@ -45,7 +45,7 @@
   overflow: hidden;
 }
 
-.infoLatestPost:after{
+.infoLatestPost:after {
   content: '';
   position: absolute;
   top: 0;
@@ -56,18 +56,17 @@
   width: 20%;
 }
 
-.lastPost:hover .infoLatestPost:after{
-  animation: shine 1.25s ease ;
+.lastPost:hover .infoLatestPost:after {
+  animation: shine 1.25s ease;
 }
 
 @keyframes shine {
-  0%{
+  0% {
     left: -40%;
   }
-  100%{
+  100% {
     left: 140%;
   }
-
 }
 
 .dateLatest {

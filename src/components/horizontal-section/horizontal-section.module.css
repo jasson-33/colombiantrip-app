@@ -243,10 +243,9 @@
     font-size: 70px;
   }
 
-  .wrapperSubtitle{
+  .wrapperSubtitle {
     align-self: start;
   }
-
 }
 
 @media only screen and (max-width: 1024px) {
