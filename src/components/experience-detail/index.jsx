@@ -21,7 +21,7 @@ const ExperienceDetail = ({ contentExp }) => {
             data-aos-delay="0"
             key={id + i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
-            style={{ width: `calc(${width} - 20px)` }}>
+            style={{ width: width==='100%'?width:`calc(${width} - 20px)` }}>
             <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>
               <div
                 className={`bg-cv ${styles.imgCardExperience}`}
