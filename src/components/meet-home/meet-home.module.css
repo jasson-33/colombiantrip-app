@@ -30,11 +30,41 @@
 }
 
 .cardBlog {
-  width: calc(33.33333% - 50px);
+  width: 100%;
+  display: block;
   background: #ffffff;
-  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);
+  
+}
+
+.atroposBlogCard {
+  width: 100%;
+  height: 100%;
+}
+
+
+.atroposBlogCard > span > span > span {
   padding-bottom: 100px;
-  position: relative;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.1);
+}
+
+.cardBlog:hover > span > span > span  {
+  box-shadow: 0px 4px 28px rgba(0, 0, 0, 0.425);
+}
+
+.cardBlog img {
+  filter: grayscale(0.5);
+  transform: scale(1.2);
+  transition: all 0.5s ease-in;
+}
+
+.imgCardBog {
+  overflow: hidden;
+}
+
+.cardBlog:hover img {
+  transform: scale(1);
+  filter: grayscale(0);
 }
 
 .imgCardBog {
@@ -43,6 +73,12 @@
   position: relative;
 }
 
+/* .cardBlog:hover .dateCardBlog,
+.cardBlog:hover .titleCardBlog,
+.cardBlog:hover .summaryCardBlog {
+  text-shadow: -1px -1px 5px #0000007a;
+} */
+
 .dateCardBlog {
   font-weight: 400;
   font-size: 20px;
@@ -50,6 +86,8 @@
   color: #3e3e3e;
   margin: 20px auto;
   width: 90%;
+  text-shadow: 0 0 2px #00000022;
+  transition: all 0.25s linear;
 }
 
 .titleCardBlog {
@@ -59,6 +97,8 @@
   color: #3e3e3e;
   margin: 0px auto 20px;
   width: 90%;
+  text-shadow: 0 0 2px #00000022;
+  transition: all 0.25s linear;
 }
 
 .summaryCardBlog {
@@ -107,6 +147,39 @@
   width: 100%;
 }
 
+.innerTextCtaBtn {
+  position: relative;
+  /* overflow: hidden; */
+  /* background: linear-gradient(90deg, #3e3e3e, #fff, #3e3e3e); */
+  /* background-repeat: no-repeat;
+  background-size: 80%; */
+  /* animation: shine 3s linear infinite; */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: #3e3e3ee0; */
+}
+
+
+.innerTextCtaBtn:after{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 7px;
+  width: 0%;
+  border: solid 2px #d23250;
+  border-color: #d23250 transparent transparent transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all .25s linear, opacity 0s linear .25s;
+}
+
+.allArticles:hover .innerTextCtaBtn:after{
+  width: 100%;
+  opacity: 1;
+  transition: all .25s linear, opacity 0s linear .0s;
+}
+
+
 @media only screen and (max-width: 1350px) {
   .meetHomeTitle {
     font-size: 80px;
@@ -123,7 +196,7 @@
   }
 
   .cardBlog {
-    width: calc(33.33333% - 30px);
+    width: 100%;
   }
 
   .dateCardBlog {
@@ -164,7 +237,7 @@
   }
 
   .cardBlog {
-    width: calc(33.3333% - 15px);
+    width: 100%;
   }
 
   .dateCardBlog {

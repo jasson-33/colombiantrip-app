@@ -143,7 +143,9 @@ const Hero = ({ contentHero, pageType }) => {
                       <Link
                         href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.link}`}>
                         <div className={`${styles.iconCtaHero} bg-ct`}></div>
-                        {data.label}
+                        <span className={styles.ctaLabelHero}>
+                          {data.label}
+                        </span>
                       </Link>
                     </div>
                   ))}

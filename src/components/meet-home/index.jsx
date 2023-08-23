@@ -5,16 +5,20 @@ import React, { useContext, useEffect } from 'react';
 import styles from './meet-home.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Atropos from 'atropos/react';
+import 'atropos/css';
 
 const MeetHome = ({ blogdata }) => {
   const { title, subtitle, blogs } = blogdata;
   const { Bigola, Gotham_Bold } = useContext(ColombianContext);
 
-  console.log(blogdata);
-
   useEffect(() => {
     AOS.init({});
   }, []);
+
+  const atroposProps = {
+    shadow: false,
+  };
 
   return (
     <section className={`siteSection ${styles.meetSection}`}>
@@ -44,27 +48,38 @@ const MeetHome = ({ blogdata }) => {
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
-              className={styles.cardBlog}>
-              <div className={`bg-cv ${styles.imgCardBog}`}>
-                <Image
-                  src={blog.img.sizes ? blog.img.sizes.large : ''}
-                  fill
-                  alt="img-blog"
-                  style={{ objectFit: 'cover' }}
-                />
-              </div>
-              <p className={`${Bigola.className} ${styles.dateCardBlog}`}>
-                {blog.date}
-              </p>
-              <h2 className={`${styles.titleCardBlog} ${Bigola.className}`}>
-                {blog.title}
-              </h2>
-              <p className={styles.summaryCardBlog}>{blog.summary}</p>
-
-              <div
-                className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
-                <span className={`bg-ct ${styles.arrowRight}`}></span> Read More
-              </div>
+              className={`${styles.cardBlog} `}>
+              <Atropos className={styles.atroposBlogCard} {...atroposProps}>
+                <div className={`bg-cv ${styles.imgCardBog}`}>
+                  <Image
+                    src={blog.img.sizes ? blog.img.sizes.large : ''}
+                    fill
+                    alt="img-blog"
+                    style={{ objectFit: 'cover' }}
+                  />
+                </div>
+                <p
+                  data-atropos-offset="-2.5"
+                  className={`${Bigola.className} ${styles.dateCardBlog}`}>
+                  {blog.date}
+                </p>
+                <h2
+                  data-atropos-offset="-5"
+                  className={`${styles.titleCardBlog} ${Bigola.className}`}>
+                  {blog.title}
+                </h2>
+                <p
+                  data-atropos-offset="-7.5"
+                  className={styles.summaryCardBlog}>
+                  {blog.summary}
+                </p>
+                <div
+                  data-atropos-offset="7.5"
+                  className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
+                  <span className={`bg-ct ${styles.arrowRight}`}></span> Read
+                  More
+                </div>
+              </Atropos>
             </Link>
           ))}
         </div>
@@ -76,7 +91,7 @@ const MeetHome = ({ blogdata }) => {
           className={`${styles.allArticles} ${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
           <span
             className={`bg-ct ${styles.arrowRight} ${Gotham_Bold.className}`}></span>
-          VIEW ALL ARTICLES
+          <span className={styles.innerTextCtaBtn}>VIEW ALL ARTICLES</span>
         </Link>
       </div>
     </section>

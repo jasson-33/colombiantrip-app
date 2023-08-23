@@ -4,9 +4,15 @@ import React, { useContext, useEffect } from 'react';
 import styles from './experience-detail.module.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Atropos from 'atropos/react';
+import 'atropos/css';
 
 const ExperienceDetail = ({ contentExp }) => {
   const { Bigola } = useContext(ColombianContext);
+
+  const atroposProps = {
+    shadow: false,
+  };
   useEffect(() => {
     AOS.init({});
   }, []);
@@ -22,19 +28,22 @@ const ExperienceDetail = ({ contentExp }) => {
             key={id + i}
             className={`${styles.cardExperience} ${styles[`experience-${i}`]}`}
             style={{ width: `calc(${width} - 20px)` }}>
-            <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>
-              <div
-                className={`bg-cv ${styles.imgCardExperience}`}
-                style={{
-                  backgroundImage: `url(${
-                    img.sizes ? img.sizes.medium_large : ''
-                  })`,
-                }}></div>
-              <h2
-                className={`${styles.titleCard} ${Bigola.className}`}
-                dangerouslySetInnerHTML={{ __html: title }}
-              />
-            </Link>
+            <Atropos className={styles.atroposExperience} {...atroposProps}>
+              <Link href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`}>
+                <div
+                  className={`bg-cv ${styles.imgCardExperience}`}
+                  style={{
+                    backgroundImage: `url(${
+                      img.sizes ? img.sizes.medium_large : ''
+                    })`,
+                  }}></div>
+                <h2
+                  data-atropos-offset="2.5"
+                  className={`${styles.titleCard} ${Bigola.className}`}
+                  dangerouslySetInnerHTML={{ __html: title }}
+                />
+              </Link>
+            </Atropos>
           </div>
         ))}
       </div>

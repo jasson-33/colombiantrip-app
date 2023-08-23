@@ -14,7 +14,7 @@
   text-align: center;
   font-weight: 400;
   font-size: 95px;
-  line-height: 82px;
+  line-height: 0.9;
   color: #3e3e3e;
   margin-bottom: 30px;
 }
@@ -360,6 +360,28 @@
   letter-spacing: 0.16em;
   color: #3e3e3e;
   font-weight: bold;
+  position: relative;
+}
+
+
+.submitText:after{
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 7px;
+  width: 0%;
+  border: solid 2px #d23250;
+  border-color: #d23250 transparent transparent transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all .25s linear, opacity 0s linear .25s;
+}
+
+.innerSubmitGroup:hover .submitText:after{
+  width: 100%;
+  opacity: 1;
+  transition: all .25s linear, opacity 0s linear .0s;
 }
 
 @media only screen and (max-width: 1350px) {
@@ -483,5 +505,15 @@
   }
   .infoRegister {
     line-height: 20px;
+  }
+
+  .titleProud{
+    font-size: 80px;
+  }
+}
+
+@media only screen and (max-width: 520px){
+  .titleProud{
+    font-size: 40px;
   }
 }
