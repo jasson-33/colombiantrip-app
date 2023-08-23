@@ -37,6 +37,62 @@
   letter-spacing: 0.16em;
   color: #3e3e3e;
   width: auto;
+  position: relative;
+}
+
+.viewAll.titlePostType:before,
+.viewAll.titlePostType:after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  border-color: #000;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.5s ease-in-out;
+}
+
+.viewAll.titlePostType:before {
+  border-right: 2px solid #000;
+  border-top: 2px solid #000;
+  border-left: 2px solid #00000000;
+  border-bottom: 2px solid #00000000;
+  top: -15px;
+  right: -15px;
+  transition: all 0.5s ease-in-out 0.5s , top 0.5s ease-in-out 0s,
+    border-top 0.5s ease-in-out 0s, border-bottom 0.15s ease-in-out 0s;
+}
+
+.viewAll.titlePostType:after {
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #00000000;
+  border-top: 2px solid #00000000;
+  bottom: -15px;
+  left: -15px;
+  transition: all 0.5s ease-in-out 0.5s , bottom 0.5s ease-in-out 0s,
+    border-bottom 0.5s ease-in-out 0s, border-top 0.15s ease-in-out 0s;
+}
+
+.viewAll.titlePostType:hover:before {
+  top: 100%;
+  border-bottom: 2px solid #000000;
+  border-top: 1px solid #00000000;
+  transition: all 0.5s ease-in-out, top 0.5s ease-in-out 0.5s,
+    border-top 0.15s ease-in-out 0.5s, border-bottom 0.5s ease-in-out 0.5s;
+}
+
+.viewAll.titlePostType:hover:after {
+  bottom: 100%;
+  border-bottom: 2px solid #00000000;
+  border-top: 1px solid #000000;
+  transition: all 0.5s ease-in-out, bottom 0.5s ease-in-out 0.5s,
+    border-bottom 0.15s ease-in-out 0.5s, border-top 0.5s ease-in-out 0.5s;
+}
+.viewAll.titlePostType:hover:before,
+.viewAll.titlePostType:hover:after {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .containerPopularLatestPost {
