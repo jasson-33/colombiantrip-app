@@ -23,7 +23,8 @@ const Menu = ({ animate, setAnimate, mainmenu }) => {
     }, 500);
   };
 
-  const menuArr = mainmenu;
+  const menuArr = mainmenu.menu;
+  const bgMenuImg = mainmenu.bgMenu;
 
   if (!mainmenu) {
     return <></>;
@@ -34,7 +35,13 @@ const Menu = ({ animate, setAnimate, mainmenu }) => {
       className={`${styles.siteMenu} ${
         show ? styles.active : ''
       } flex f-c f-ac`}>
-      <div className={`${styles.leftMenu} bg-cv`}></div>
+      <div
+        className={`${styles.leftMenu} bg-cv`}
+        style={{
+          backgroundImage: `${
+            bgMenuImg.sizes ? `url(${bgMenuImg.sizes.thumbnail})` : ''
+          }`,
+        }}></div>
       <div className={styles.rightMenu}>
         <div className={`${styles.halfFace} bg-ct`}></div>
         <ul className={`${styles.ulMenu} ${Gotham.className}`}>
