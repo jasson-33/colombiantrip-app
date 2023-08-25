@@ -7,11 +7,11 @@ import React from 'react';
 
 const DetailPost = ({ data }) => {
   console.log(data);
-  const { metacontent, hero, blocks } = data;
+  const { metacontent, hero, blocks, dateformat, autor } = data;
 
   const blogAfterHero = {
-    autor: 'Andrew Smith',
-    date: 'December 20, 2022',
+    autor,
+    date: dateformat,
     subtitle:
       'Once tagged as one of the most dangerous cities in the world, Medellín has transformed and become a popular destination. Heres’ why you should visit Medellín.',
   };
