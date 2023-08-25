@@ -17,9 +17,11 @@ const BlogArterfHero = ({ blogAfterHero }) => {
           </p>
           <p className={styles.contDateBlog}>{blogAfterHero.date}</p>
         </div>
+        {/*
         <div className={`${styles.innerContSubtitle} ${Gotham_Bold.className}`}>
           {blogAfterHero.subtitle}
         </div>
+        */}
       </div>
     </section>
   );
