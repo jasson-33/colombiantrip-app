@@ -23,7 +23,14 @@ const Metas = ({ metadata }) => {
         />
         <meta property="og:description" content={metadata.description} />
         <meta property="og:site_name" content={metadata.sitename} />
-        <link rel="icon" href="/favicon.png" />
+        <link
+          rel="icon"
+          href={
+            metadata.favicon.sizes
+              ? metadata.favicon.sizes['super-small']
+              : '/favicon.png'
+          }
+        />
       </Head>
       <div
         id="custom-scripts"
