@@ -25,13 +25,8 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  
   if (!children.props.data) {
-    return (
-      <main className={`siteMain ${Gotham.className}`}>
-        {children}
-      </main>
-    );
+    return <main className={`siteMain ${Gotham.className}`}>{children}</main>;
   }
 
   const dataMenu = children.props.data.mainmenu
