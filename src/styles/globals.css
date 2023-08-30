@@ -264,6 +264,89 @@ table {
   text-transform: uppercase;
 }
 
+.custom404Section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container404 {
+  text-align: center;
+}
+
+.title404 {
+  color: #3e3e3e;
+  font-family: 'Bigola';
+  font-size: 300px;
+  font-style: normal;
+  font-weight: 400;
+  text-shadow: 0 0 5px #3e3e3e55;
+}
+
+.title404 > div > span span{
+  display: inline-block;
+}
+
+.pageNotFoundText {
+  color: #3e3e3e;
+  font-family: 'Gotham Book';
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 325;
+  margin-bottom: 100px;
+}
+
+.ctaHero {
+  margin-right: 50px;
+}
+
+.ctaLabelHero {
+  position: relative;
+  color: #3e3e3e;
+  text-shadow: 1px 2px 6px rgba(0, 0, 0, 0.7);
+  font-family: 'Gotham Book';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 3.2px;
+  margin-left: 20px;
+}
+
+.ctaLabelHero:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 7px;
+  width: 0%;
+  border: solid 2px #d23250;
+  border-color: #d23250 transparent transparent transparent;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.25s linear, opacity 0s linear 0.25s;
+}
+
+.iconCtaHero {
+  width: 40px;
+  height: 40px;
+  background-image: url(/images/general/arrow-white-cta.png);
+  background-color: #d23250;
+  border-radius: 50%;
+  background-size: 80%;
+  transform: scale(1);
+  transition: all 0.25s linear;
+}
+
+.returnHome {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto;
+  align-items: center;
+}
+
 /* .transparent{
   background-color: transparent !important;
 } */
@@ -273,9 +356,26 @@ table {
     width: 35px;
     height: 35px;
   }
+
+  .title404{
+    font-size: 250px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .container {
     width: 95%;
+  }
+
+  .title404{
+    font-size: 200px;
+  }
+  .iconCtaHero{
+    width: 30px;
+    height: 30px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .title404{
+    font-size: 150px;
   }
 }
