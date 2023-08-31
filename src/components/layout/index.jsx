@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  console.log(children.props)
 
   if (!children.props.data) {
     return <main className={`siteMain ${Gotham.className}`}>{children}</main>;
