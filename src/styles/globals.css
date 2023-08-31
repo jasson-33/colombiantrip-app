@@ -285,7 +285,7 @@ table {
   text-shadow: 0 0 5px #3e3e3e55;
 }
 
-.title404 > div > span span{
+.title404 > div > span span {
   display: inline-block;
 }
 
@@ -357,7 +357,7 @@ table {
     height: 35px;
   }
 
-  .title404{
+  .title404 {
     font-size: 250px;
   }
 }
@@ -366,16 +366,16 @@ table {
     width: 95%;
   }
 
-  .title404{
+  .title404 {
     font-size: 200px;
   }
-  .iconCtaHero{
+  .iconCtaHero {
     width: 30px;
     height: 30px;
   }
 }
 @media only screen and (max-width: 520px) {
-  .title404{
+  .title404 {
     font-size: 150px;
   }
 }
