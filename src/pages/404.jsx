@@ -6,12 +6,9 @@ import { useEffect, useState } from 'react';
 function PageNotFound() {
   const [footerData, setFooterData] = useState();
   const getFooterData = async () => {
-    const responserFooter = await fetch(
-      `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/getintouch`
-    );
-
+    const responserFooter = await fetch('/api/footer');
     const dataFooter = await responserFooter.json();
-    setFooterData(dataFooter.footerData);
+    setFooterData(dataFooter.footerdata);
   };
   useEffect(() => {
     getFooterData();
@@ -25,7 +22,7 @@ function PageNotFound() {
           <p className="pageNotFoundText">Page not found</p>
           <Link
             className="returnHome"
-            href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}`}>
+            href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}/`}>
             <div className="iconCtaHero bg-ct"></div>
             <span className="ctaLabelHero">HOME</span>
           </Link>
