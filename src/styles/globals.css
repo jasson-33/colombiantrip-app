@@ -265,7 +265,7 @@ table {
 }
 
 .custom404Section {
-  height: 100vh;
+  padding: 20vh 0 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -279,7 +279,7 @@ table {
 .title404 {
   color: #3e3e3e;
   font-family: 'Bigola';
-  font-size: 300px;
+  font-size: 250px;
   font-style: normal;
   font-weight: 400;
   text-shadow: 0 0 5px #3e3e3e55;
@@ -358,7 +358,7 @@ table {
   }
 
   .title404 {
-    font-size: 250px;
+    font-size: 200px;
   }
 }
 @media only screen and (max-width: 768px) {
@@ -367,7 +367,7 @@ table {
   }
 
   .title404 {
-    font-size: 200px;
+    font-size: 150px;
   }
   .iconCtaHero {
     width: 30px;
@@ -376,6 +376,6 @@ table {
 }
 @media only screen and (max-width: 520px) {
   .title404 {
-    font-size: 150px;
+    font-size: 125px;
   }
 }
