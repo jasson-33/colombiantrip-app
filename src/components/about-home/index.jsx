@@ -24,6 +24,16 @@ const AboutHome = ({ aboutHome }) => {
   }, [screenWidth]);
   useEffect(() => {
     AOS.init({});
+
+    window.addEventListener('resize', () => {
+      AOS.refresh();
+    });
+
+    return () => {
+      window.removeEventListener('resize', () => {
+        AOS.refresh();
+      });
+    };
   }, []);
   return (
     <section className={`siteSection ${styles.aboutHome}`}>
