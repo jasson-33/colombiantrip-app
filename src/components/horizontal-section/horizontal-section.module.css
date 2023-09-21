@@ -120,7 +120,7 @@
   font-style: normal;
   font-weight: 700;
   font-size: 175px;
-  line-height: 126px;
+  line-height: 1.1;
   color: rgba(255, 255, 255, 0.5);
   margin-right: 20px;
 }
@@ -211,12 +211,12 @@
   }
 }
 
-@media only screen and (min-width: 1250px) and (max-height: 750px) {
+@media only screen and (min-width: 1050px) and (max-height: 750px) {
   .contentItemHorizontalWork {
-    padding-top: 10vh;
-    flex-direction: row;
+    padding-top: 70px;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: flex-end;
     padding-bottom: 0;
   }
 
@@ -225,22 +225,26 @@
   }
 
   .textWork {
-    margin-bottom: 35px;
+    margin-bottom: 30px;
+  }
+
+  .subtitleBlock {
+    font-size: 22px;
   }
 
   .number {
-    font-size: 110px;
+    font-size: 100px;
   }
 
   .infoItemHorizontal {
-    width: 35%;
+    width: 50%;
     padding: 25px;
     margin-top: 20px;
     align-self: end;
   }
 
   .titleBlock {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   .wrapperSubtitle {
