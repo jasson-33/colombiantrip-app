@@ -4,6 +4,7 @@ import AboutHome from '@/components/about-home';
 import ImgText from '@/components/img-text';
 import HorizontalSection from '@/components/horizontal-section';
 import MeetHome from '@/components/meet-home';
+import ProudMembers from '@/components/proud-members';
 
 function Home({ data }) {
   console.log(data);
@@ -14,6 +15,7 @@ function Home({ data }) {
     about,
     blockimages,
     horizontal_blocks,
+    members,
     blogsection,
   } = data;
 
@@ -32,6 +34,7 @@ function Home({ data }) {
         horizontalType={'home'}
         horizontalData={horizontal_blocks}
       />
+      <ProudMembers membersData={members} />
       <MeetHome blogdata={blogsection} />
     </>
   );
