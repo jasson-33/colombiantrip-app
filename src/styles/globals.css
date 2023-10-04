@@ -131,9 +131,14 @@ a {
   color: #000;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   line-height: 1;
   color: #000;
+  overflow-x: hidden;
 }
 ol,
 ul {
@@ -211,7 +216,7 @@ table {
 .siteMain {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .siteSection {

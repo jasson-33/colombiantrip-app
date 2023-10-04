@@ -18,6 +18,19 @@
   line-height: 1.3;
 }
 
+.descTextBlog h3 {
+  font-size: 23px;
+  margin: 5px 0;
+}
+
+.descTextBlog a {
+  text-decoration: underline;
+}
+
+.descTextBlog b {
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 768px) {
   .innerContText {
     width: 80%;

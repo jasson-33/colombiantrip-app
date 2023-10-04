@@ -1,5 +1,7 @@
 .afterHero {
   padding: 30px 0 150px;
+  position: relative;
+  overflow: hidden;
 }
 
 .paddingSection.afterHero {
@@ -24,6 +26,10 @@
 .wrap.containerAfterHero {
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+.bookingAfterHero .containerAfterHero.wrap {
+  justify-content: space-between;
 }
 
 .secondLayout .containerAfterHero {
@@ -65,6 +71,11 @@
   position: relative;
 }
 
+.bookingAfterHero .ulAfterHero {
+  padding-left: 0;
+  width: 50%;
+}
+
 .secondLayout .ulAfterHero {
   display: flex;
   justify-content: center;
@@ -95,13 +106,75 @@
 
 .itemUlAfterHero {
   font-size: 25px;
-  line-height: 28px;
+  line-height: 1.4;
   margin-bottom: 70px;
   color: #3e3e3e;
 }
 
 .boldText {
   font-weight: 700;
+}
+
+.palm {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 35vw;
+  aspect-ratio: 1/1;
+  background-image: url(/images/instant-booking/palm.svg);
+  opacity: 0.4;
+}
+.palmB {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 35vw;
+  aspect-ratio: 1/1;
+  background-image: url(/images/instant-booking/palmB.svg);
+  opacity: 0.4;
+}
+.flower {
+  position: absolute;
+  bottom: -15%;
+  left: 30%;
+  transform: translateX(-50%);
+  width: 60vw;
+  aspect-ratio: 1/1;
+  background-image: url(/images/instant-booking/flower.svg);
+  opacity: 0.4;
+}
+
+.imagesAfterHeroBooking {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row-reverse;
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.columnImages {
+  width: calc(50% - 10px);
+}
+
+.imageBookingDetail {
+  width: 100%;
+  aspect-ratio: 2.5/4;
+  background-color: #000;
+  margin-bottom: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.firstColumn {
+  margin-top: 20%;
+}
+
+.secondColumn {
+  margin-top: -20%;
 }
 
 @media only screen and (max-width: 1350px) {
@@ -132,6 +205,11 @@
   .titleAfterHero {
     font-size: 65px;
     max-width: 320px;
+  }
+
+  .flower {
+    left: 40%;
+    bottom: -10%;
   }
 
   /* .ulAfterHero {
@@ -184,6 +262,26 @@
   .wrapperTitleAfterHero .titleAfterHero {
     width: 100%;
   }
+
+  .bookingAfterHero .ulAfterHero {
+    width: 100%;
+  }
+
+  .imagesAfterHeroBooking {
+    width: 100%;
+    margin-top: 20%;
+  }
+
+  .palm{
+    top: 40%;
+  }
+
+  .flower{
+    left: 60%;
+    bottom: -5%;
+    width: 75vw;
+  }
+  
 }
 @media only screen and (max-width: 520px) {
   .afterHero {
@@ -212,7 +310,7 @@
   }
 
   .itemUlAfterHero {
-    font-size: 20px;
+    font-size: 15px;
     margin-bottom: 25px;
   }
 

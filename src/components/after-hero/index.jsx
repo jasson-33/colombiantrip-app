@@ -9,11 +9,14 @@ const AfterHero = ({ contentAfterHero }) => {
   useEffect(() => {
     AOS.init();
   }, []);
+  console.log(contentAfterHero);
   return (
     <section
       className={`siteSection ${styles.afterHero} ${
-        contentAfterHero.secondLayout ? styles.secondLayout : ''
-      } ${contentAfterHero.needPadding ? styles.paddingSection : ''}`}>
+        contentAfterHero.bookinLayout ? styles.bookingAfterHero : ''
+      } ${contentAfterHero.secondLayout ? styles.secondLayout : ''} ${
+        contentAfterHero.needPadding ? styles.paddingSection : ''
+      }`}>
       {contentAfterHero.img && contentAfterHero.img.sizes && (
         <div
           data-aos="fade-up"
@@ -24,6 +27,16 @@ const AfterHero = ({ contentAfterHero }) => {
           style={{
             backgroundImage: `url(${contentAfterHero.img.sizes.medium_large})`,
           }}></div>
+      )}
+
+      {contentAfterHero.bookinLayout && (
+        <div className={`${styles.palm} bg-ct`}></div>
+      )}
+      {contentAfterHero.bookinLayout && (
+        <div className={`${styles.palmB} bg-ct`}></div>
+      )}
+      {contentAfterHero.bookinLayout && (
+        <div className={`${styles.flower} bg-ct`}></div>
       )}
 
       <div
@@ -76,6 +89,37 @@ const AfterHero = ({ contentAfterHero }) => {
               dangerouslySetInnerHTML={{ __html: info.text }}></li>
           ))}
         </ul>
+
+        {contentAfterHero.bookinLayout &&
+          contentAfterHero.imagesBooking &&
+          contentAfterHero.imagesBooking.length > 0 && (
+            <div className={styles.imagesAfterHeroBooking}>
+              <div className={`${styles.secondColumn} ${styles.columnImages}`}>
+                {contentAfterHero.imagesBooking.map(function (img, i) {
+                  if (i % 2 !== 0) {
+                    return (
+                      <div
+                        key={i}
+                        style={{ backgroundImage: `url(${img})` }}
+                        className={styles.imageBookingDetail}></div>
+                    );
+                  }
+                })}
+              </div>
+              <div className={`${styles.firstColumn} ${styles.columnImages}`}>
+                {contentAfterHero.imagesBooking.map(function (img, i) {
+                  if (i % 2 === 0) {
+                    return (
+                      <div
+                        key={i}
+                        style={{ backgroundImage: `url(${img})` }}
+                        className={styles.imageBookingDetail}></div>
+                    );
+                  }
+                })}
+              </div>
+            </div>
+          )}
       </div>
     </section>
   );
