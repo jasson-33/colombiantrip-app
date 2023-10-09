@@ -2,8 +2,7 @@ import AfterHero from '@/components/after-hero';
 import ExperienceDetail from '@/components/experience-detail';
 import Hero from '@/components/hero';
 
-const InstantBooking = ({data}) => {
-
+const InstantBooking = ({ data }) => {
   const { hero, content, experiences } = data;
 
   return (

@@ -272,16 +272,15 @@
     margin-top: 20%;
   }
 
-  .palm{
+  .palm {
     top: 40%;
   }
 
-  .flower{
+  .flower {
     left: 60%;
     bottom: -5%;
     width: 75vw;
   }
-  
 }
 @media only screen and (max-width: 520px) {
   .afterHero {

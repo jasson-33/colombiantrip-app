@@ -513,21 +513,21 @@
     height: 50vh;
   }
 
-  .instanBookingHero{
+  .instanBookingHero {
     height: auto;
     padding: 20vh 0 15px;
   }
 
-  .instanBookingHero .bigTitleHero{
+  .instanBookingHero .bigTitleHero {
     font-size: 50px;
   }
 
-  .instanBookingHero .heroParagraph{
+  .instanBookingHero .heroParagraph {
     font-size: 14px;
     line-height: 1.1;
   }
 
-  .instanBookingHero .bookingButtons{
+  .instanBookingHero .bookingButtons {
     width: 95%;
     display: flex;
     flex-wrap: wrap;
@@ -535,7 +535,7 @@
     gap: 10px;
   }
 
-  .bookingButton{
+  .bookingButton {
     max-width: 100%;
     width: 100%;
     margin-bottom: 0px;

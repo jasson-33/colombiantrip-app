@@ -23,7 +23,6 @@ const Hero = ({ contentHero, pageType }) => {
     template,
   } = contentHero;
 
-
   useEffect(() => {
     AOS.init();
   }, []);
@@ -179,7 +178,8 @@ const Hero = ({ contentHero, pageType }) => {
                     dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
                   />
                 )}
-                {paragraphText && paragraphText.length > 0 &&
+                {paragraphText &&
+                  paragraphText.length > 0 &&
                   paragraphText.map((paragraph) => (
                     <p
                       data-aos="fade-up"
