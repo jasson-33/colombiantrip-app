@@ -1,12 +1,14 @@
 import AfterHero from '@/components/after-hero';
 import ExperienceDetail from '@/components/experience-detail';
 import Hero from '@/components/hero';
+import Metas from '@/components/metaDatas';
 
 const InstantBooking = ({ data }) => {
-  const { hero, content, experiences } = data;
+  const { metacontent, hero, content, experiences } = data;
 
   return (
     <>
+      <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
       <AfterHero contentAfterHero={content} />
       <ExperienceDetail contentExp={experiences} />
