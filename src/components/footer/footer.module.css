@@ -141,6 +141,8 @@
 .siteFooter {
   background-color: #000000;
   padding-top: 100px;
+  position: relative;
+  z-index: 2;
 }
 
 .headerFooter {

@@ -41,6 +41,7 @@
   min-width: 200px;
   font-weight: 700;
   color: #d23250;
+  text-align: center;
 }
 
 .bookNow {
@@ -68,12 +69,11 @@
   }
 }
 @media only screen and (max-width: 768px) {
-}
-@media only screen and (max-width: 520px) {
   .textStickyBooking {
     display: none;
   }
-
+}
+@media only screen and (max-width: 520px) {
   .stickyBooking {
     margin-top: 0;
     margin-bottom: 0;
