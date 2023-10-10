@@ -79,11 +79,11 @@
     margin-bottom: 0;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 20px;
+    padding: 10px 20px;
+    top: calc(100% - 58px);
   }
 
   .bookingButtons {
-    flex-wrap: wrap;
     gap: 10px;
   }
   .bookingButton {
