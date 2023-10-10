@@ -12,6 +12,8 @@ const ExperienceDetail = ({ contentExp }) => {
 
   const atroposProps = {
     shadow: false,
+    rotateYMax: 5,
+    rotateXMax: 5,
   };
   useEffect(() => {
     AOS.init({});
@@ -40,7 +42,7 @@ const ExperienceDetail = ({ contentExp }) => {
                     })`,
                   }}></div>
                 <h2
-                  data-atropos-offset="2.5"
+                  data-atropos-offset="0.255"
                   className={`${styles.titleCard} ${Bigola.className}`}
                   dangerouslySetInnerHTML={{ __html: title }}
                 />
