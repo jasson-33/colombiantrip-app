@@ -48,25 +48,24 @@
   }
 }
 @media only screen and (max-width: 768px) {
-  .container{
+  .container {
     width: 95%;
   }
 
-  .titleBlock{
+  .titleBlock {
     width: 100%;
   }
 
-  .paragraphText{
+  .paragraphText {
     max-width: 100%;
   }
 }
 @media only screen and (max-width: 520px) {
-
-  .titleBlock{
+  .titleBlock {
     font-size: 35px;
   }
 
-  .paragraphText{
+  .paragraphText {
     font-size: 14px;
   }
 }
