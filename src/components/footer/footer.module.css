@@ -9,6 +9,7 @@
   background-image: url(/images/footer/15.jpg);
   background-position: bottom center;
   position: relative;
+  overflow: hidden;
 }
 .titleProud {
   text-align: center;
