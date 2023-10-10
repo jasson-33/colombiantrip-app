@@ -6,7 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const Hero = ({ contentHero, pageType }) => {
-  const { Bigola, expdata } = useContext(ColombianContext);
+  const { Bigola } = useContext(ColombianContext);
 
   // console.log(expdata);
   // console.log(contentHero);
@@ -21,6 +21,10 @@ const Hero = ({ contentHero, pageType }) => {
     video_banner,
     paragraphText,
     template,
+    haqlabel,
+    haqlink,
+    bnlabel,
+    bnlink,
   } = contentHero;
 
   useEffect(() => {
@@ -178,35 +182,39 @@ const Hero = ({ contentHero, pageType }) => {
                     dangerouslySetInnerHTML={{ __html: contentHero.subtitle }}
                   />
                 )}
-                {paragraphText &&
-                  paragraphText.length > 0 &&
-                  paragraphText.map((paragraph) => (
-                    <p
-                      data-aos="fade-up"
-                      data-aos-duration="900"
-                      data-aos-delay="200"
-                      key={paragraph}
-                      className={styles.heroParagraph}
-                      dangerouslySetInnerHTML={{ __html: paragraph }}
-                    />
-                  ))}
-                {template === 'instant-booking' && (
-                  <div
-                    className={styles.bookingButtons}
+                {paragraphText && paragraphText !== '' && (
+                  <p
                     data-aos="fade-up"
                     data-aos-duration="900"
-                    data-aos-delay="300"
-                    data-aos-offset="-100">
-                    <button
-                      className={`${styles.bookingButton} ${styles.question}`}>
-                      Have a question
-                    </button>
-                    <button
-                      className={`${styles.bookingButton} ${styles.bookNow}`}>
-                      Book now
-                    </button>
-                  </div>
+                    data-aos-delay="200"
+                    className={styles.heroParagraph}
+                    dangerouslySetInnerHTML={{ __html: paragraphText }}
+                  />
                 )}
+                {(haqlabel || bnlabel) &&
+                  (haqlabel !== '' || bnlabel !== '') && (
+                    <div
+                      className={styles.bookingButtons}
+                      data-aos="fade-up"
+                      data-aos-duration="900"
+                      data-aos-delay="300"
+                      data-aos-offset="-100">
+                      {haqlabel !== '' && haqlink !== '' && (
+                        <Link
+                          className={`${styles.bookingButton} ${styles.question}`}
+                          href={haqlink}
+                          dangerouslySetInnerHTML={{ __html: haqlabel }}
+                        />
+                      )}
+                      {bnlabel !== '' && bnlink !== '' && (
+                        <Link
+                          className={`${styles.bookingButton} ${styles.bookNow}`}
+                          href={bnlink}
+                          dangerouslySetInnerHTML={{ __html: bnlabel }}
+                        />
+                      )}
+                    </div>
+                  )}
                 {withForm && (
                   <form
                     data-aos="fade-up"

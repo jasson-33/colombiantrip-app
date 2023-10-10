@@ -30,13 +30,37 @@ const AfterHero = ({ contentAfterHero }) => {
       )}
 
       {contentAfterHero.bookinLayout && (
-        <div className={`${styles.palm} bg-ct`}></div>
+        <div
+          className={`${styles.palm} bg-ct`}
+          style={{
+            backgroundImage: `url(${
+              contentAfterHero.bg_flower_1
+                ? contentAfterHero.bg_flower_1.sizes.medium
+                : ''
+            })`,
+          }}></div>
       )}
       {contentAfterHero.bookinLayout && (
-        <div className={`${styles.palmB} bg-ct`}></div>
+        <div
+          className={`${styles.palmB} bg-ct`}
+          style={{
+            backgroundImage: `url(${
+              contentAfterHero.bg_flower_2
+                ? contentAfterHero.bg_flower_2.sizes.medium
+                : ''
+            })`,
+          }}></div>
       )}
       {contentAfterHero.bookinLayout && (
-        <div className={`${styles.flower} bg-ct`}></div>
+        <div
+          className={`${styles.flower} bg-ct`}
+          style={{
+            backgroundImage: `url(${
+              contentAfterHero.bg_flower_3
+                ? contentAfterHero.bg_flower_3.sizes.medium
+                : ''
+            })`,
+          }}></div>
       )}
 
       <div
@@ -100,7 +124,11 @@ const AfterHero = ({ contentAfterHero }) => {
                     return (
                       <div
                         key={i}
-                        style={{ backgroundImage: `url(${img})` }}
+                        style={{
+                          backgroundImage: `url(${
+                            img.sizes ? img.sizes.medium : ''
+                          })`,
+                        }}
                         className={styles.imageBookingDetail}></div>
                     );
                   }
@@ -112,7 +140,11 @@ const AfterHero = ({ contentAfterHero }) => {
                     return (
                       <div
                         key={i}
-                        style={{ backgroundImage: `url(${img})` }}
+                        style={{
+                          backgroundImage: `url(${
+                            img.sizes ? img.sizes.medium : ''
+                          })`,
+                        }}
                         className={styles.imageBookingDetail}></div>
                     );
                   }

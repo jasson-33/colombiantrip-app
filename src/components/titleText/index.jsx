@@ -14,13 +14,12 @@ const TitleText = ({ content }) => {
             {title}
           </h2>
         )}
-        {paragraphs &&
-          paragraphs.length > 0 &&
-          paragraphs.map((paragraph, i) => (
-            <p key={i} className={`${styles.paragraphText}`}>
-              {paragraph}
-            </p>
-          ))}
+        {paragraphs && paragraphs !== '' && (
+          <p
+            className={`${styles.paragraphText}`}
+            dangerouslySetInnerHTML={{ __html: paragraphs }}
+          />
+        )}
       </div>
     </section>
   );
