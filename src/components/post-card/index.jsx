@@ -4,7 +4,7 @@ import Link from 'next/link';
 import React, { useContext } from 'react';
 import styles from './post-card.module.css';
 
-const PostCard = ({ popularPost, pageType }) => {
+const PostCard = ({ popularPost, pageType, large }) => {
   const { Bigola } = useContext(ColombianContext);
   console.log(popularPost);
   return (
@@ -17,13 +17,25 @@ const PostCard = ({ popularPost, pageType }) => {
         gridArea: popularPost && popularPost.gridArea,
       }}>
       <Link
-        href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${popularPost.href}`}></Link>
+        href={
+          popularPost.typeurl === 'host'
+            ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${popularPost.href}`
+            : popularPost.href
+        }
+        target={popularPost.target}
+      />
       <div
         className={`${styles.containerImg}`}
         style={{ height: popularPost && popularPost.height }}>
         <Image
           fill
-          src={`${popularPost.img.sizes ? popularPost.img.sizes.large : ''}`}
+          src={`${
+            popularPost.img.sizes
+              ? large
+                ? popularPost.img.url
+                : popularPost.img.sizes.large
+              : ''
+          }`}
           alt=""
         />
       </div>
@@ -34,7 +46,7 @@ const PostCard = ({ popularPost, pageType }) => {
           backgroundColor: popularPost && popularPost.bgColor,
         }}>
         <p className={`${styles.datePost} ${Bigola.className}`}>
-          {popularPost.date}
+          {popularPost.hide_date ? '' : popularPost.date}
         </p>
         <h2 className={`${styles.titlePost} ${Bigola.className}`}>
           {popularPost.title}

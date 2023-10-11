@@ -80,7 +80,7 @@ const AllPosts = ({
                 styles.containerByType
               } ${categoryPosts.layout === 'B' && styles.containerLayoutB}`}>
               <div className={`${styles.containerPrincipalPost} `}>
-                <PostCard popularPost={categoryPosts.posts[0]} />
+                <PostCard popularPost={categoryPosts.posts[0]} large={true} />
               </div>
               <div className={styles.otherPostContainer}>
                 {categoryPosts.posts[1] && (
