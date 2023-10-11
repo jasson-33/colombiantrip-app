@@ -129,6 +129,8 @@
 
 .instanBookingHero .bigTitleHero {
   margin-bottom: 30px;
+  line-height: 1;
+  font-size: 90px;
 }
 
 .heroForm {
