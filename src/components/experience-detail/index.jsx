@@ -38,7 +38,11 @@ const ExperienceDetail = ({ contentExp }) => {
                   className={`bg-cv ${styles.imgCardExperience}`}
                   style={{
                     backgroundImage: `url(${
-                      img.sizes ? img.sizes.medium_large : ''
+                      img.sizes
+                        ? width === '100%'
+                          ? img.url
+                          : img.sizes.large
+                        : ''
                     })`,
                   }}></div>
                 <h2
