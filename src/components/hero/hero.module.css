@@ -296,11 +296,52 @@
   min-width: 200px;
   font-weight: 700;
   color: #d23250;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bookingButton span {
+  text-align: center;
+  z-index: 1;
+  position: relative;
+  transition: all 0.25s linear;
+}
+
+.bookingButton:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  transition: all 0.25s linear;
+}
+
+.question:before {
+  background-color: #d23250;
+}
+
+.bookingButton:hover:before {
+  left: 0;
+}
+
+.question:hover span {
+  color: #fff;
 }
 
 .bookNow {
   background-color: #d23250;
   color: #fff;
+}
+
+.bookNow:before {
+  background-color: #fff;
+}
+
+.bookNow:hover span {
+  color: #d23250;
 }
 
 @media only screen and (max-width: 1600px) {
