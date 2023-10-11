@@ -16,7 +16,13 @@ const LatestPost = ({ latestPosts }) => {
       {latestPosts.map((data, i) => (
         <div key={i} className={styles.lastPost}>
           <Link
-            href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.href}`}></Link>
+            href={
+              data.typeurl === 'host'
+                ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${data.href}`
+                : data.href
+            }
+            target={data.target}
+          />
           <div className={styles.containerImageLatest}>
             <Image
               alt=""
@@ -26,7 +32,7 @@ const LatestPost = ({ latestPosts }) => {
           </div>
           <div className={styles.infoLatestPost}>
             <p className={`${styles.dateLatest} ${Bigola.className}`}>
-              {data.date}
+              {data.hide_date ? '' : data.date}
             </p>
             <h2 className={`${styles.titleLatestPost} ${Bigola.className}`}>
               {data.title}

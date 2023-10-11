@@ -41,10 +41,15 @@ const MeetHome = ({ blogdata }) => {
         <div className={styles.blogsContainer}>
           {blogs.map((blog, i) => (
             <Link
-              href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${blog.url}`}
+              href={
+                blog.typeurl === 'host'
+                  ? `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${blog.url}`
+                  : blog.url
+              }
               data-aos="fade-up"
               data-aos-duration="900"
               data-aos-delay="0"
+              target={blog.target}
               key={
                 typeof window !== 'undefined' ? window.crypto.randomUUID() : i
               }
@@ -61,7 +66,7 @@ const MeetHome = ({ blogdata }) => {
                 <p
                   data-atropos-offset="-2.5"
                   className={`${Bigola.className} ${styles.dateCardBlog}`}>
-                  {blog.date}
+                  {blog.hide_date ? '' : blog.date}
                 </p>
                 <h2
                   data-atropos-offset="-5"
