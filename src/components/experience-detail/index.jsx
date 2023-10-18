@@ -12,8 +12,8 @@ const ExperienceDetail = ({ contentExp }) => {
 
   const atroposProps = {
     shadow: false,
-    rotateYMax: 5,
-    rotateXMax: 5,
+    rotateYMax: 1.5,
+    rotateXMax: 1.5,
   };
   useEffect(() => {
     AOS.init({});

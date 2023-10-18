@@ -18,6 +18,8 @@ const MeetHome = ({ blogdata }) => {
 
   const atroposProps = {
     shadow: false,
+    rotateYMax: 1.5,
+    rotateXMax: 1.5,
   };
 
   return (
