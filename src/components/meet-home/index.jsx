@@ -66,22 +66,22 @@ const MeetHome = ({ blogdata }) => {
                   />
                 </div>
                 <p
-                  data-atropos-offset="-2.5"
+                  data-atropos-offset="-.5"
                   className={`${Bigola.className} ${styles.dateCardBlog}`}>
                   {blog.hide_date ? '' : blog.date}
                 </p>
                 <h2
-                  data-atropos-offset="-5"
+                  data-atropos-offset="-1.5"
                   className={`${styles.titleCardBlog} ${Bigola.className}`}>
                   {blog.title}
                 </h2>
                 <p
-                  data-atropos-offset="-7.5"
+                  data-atropos-offset="-2.5"
                   className={styles.summaryCardBlog}>
                   {blog.summary}
                 </p>
                 <div
-                  data-atropos-offset="7.5"
+                  data-atropos-offset="1.5"
                   className={`${styles.readMoreAnchor} ${Gotham_Bold.className}`}>
                   <span className={`bg-ct ${styles.arrowRight}`}></span> Read
                   More
