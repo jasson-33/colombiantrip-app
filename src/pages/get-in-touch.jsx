@@ -1,6 +1,7 @@
 import Metas from '@/components/metaDatas';
 import Hero from '@/components/hero';
 import React from 'react';
+import Calendar from '@/components/calendar';
 
 const GetInTouch = ({ data }) => {
   const { metacontent, hero } = data;
@@ -10,6 +11,7 @@ const GetInTouch = ({ data }) => {
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
+      <Calendar />
     </>
   );
 };
