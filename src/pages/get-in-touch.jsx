@@ -4,14 +4,14 @@ import React from 'react';
 import Calendar from '@/components/calendar';
 
 const GetInTouch = ({ data }) => {
-  const { metacontent, hero } = data;
+  const { metacontent, hero, iframe_content } = data;
   console.log(data);
 
   return (
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
-      <Calendar />
+      <Calendar contentgetintouch={iframe_content} />
     </>
   );
 };

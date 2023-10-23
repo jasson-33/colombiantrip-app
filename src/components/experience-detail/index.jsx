@@ -44,7 +44,9 @@ const ExperienceDetail = ({ contentExp }) => {
                         : `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`
                       : `${process.env.NEXT_PUBLIC_CURR_DOMAIN}${id}`
                   }
-                  passHref={external_link !== null && external_link !== undefined}
+                  passHref={
+                    external_link !== null && external_link !== undefined
+                  }
                   target={target}>
                   <div
                     className={`bg-cv ${styles.imgCardExperience}`}

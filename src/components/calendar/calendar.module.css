@@ -22,13 +22,12 @@
 
 .calendarIframe {
   width: 100%;
-  height: 90vh;
+  height: var(--heightdesk);
   display: block;
   margin: 5vh auto 0;
 }
 
 @media only screen and (max-width: 1350px) {
-
   .calendarTitle {
     max-width: 55%;
     font-size: 50px;
@@ -40,11 +39,10 @@
   }
 
   .calendarIframe {
-    height: 90vh;
+    height: var(--heightdesk);
   }
 }
 @media only screen and (max-width: 1024px) {
-
   .calendarTitle {
     max-width: 60%;
     font-size: 50px;
@@ -56,14 +54,19 @@
   }
 
   .calendarIframe {
-    height: 90vh;
+    height: var(--heightdesk);
   }
 }
 @media only screen and (max-width: 728px) {
-
   .calendarTitle {
     max-width: 90%;
     font-size: 45px;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .calendarIframe {
+    height: var(--heightmob);
   }
 }
 @media only screen and (max-width: 520px) {
@@ -82,6 +85,6 @@
   }
 
   .calendarIframe {
-    height: 100vh;
+    height: var(--heightmob);
   }
 }
