@@ -202,7 +202,8 @@ const Hero = ({ contentHero, pageType }) => {
                       {haqlabel !== '' && haqlink !== '' && (
                         <Link
                           className={`${styles.bookingButton} ${styles.question}`}
-                          href={haqlink}>
+                          href={haqlink}
+                          target='_blank'>
                           <span
                             dangerouslySetInnerHTML={{
                               __html: haqlabel,
@@ -212,7 +213,8 @@ const Hero = ({ contentHero, pageType }) => {
                       {bnlabel !== '' && bnlink !== '' && (
                         <Link
                           className={`${styles.bookingButton} ${styles.bookNow}`}
-                          href={bnlink}>
+                          href={bnlink}
+                          target='_blank'>
                           <span
                             dangerouslySetInnerHTML={{
                               __html: bnlabel,
