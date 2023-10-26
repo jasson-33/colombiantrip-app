@@ -15,6 +15,8 @@ const InstanBookingDetail = ({ data }) => {
   const { metacontent, hero, content, imgSection, contentTitleText, isotope } =
     data;
 
+  console.log(data);
+
   return (
     <>
       <Metas metadata={metacontent} />
@@ -29,6 +31,7 @@ const InstanBookingDetail = ({ data }) => {
             <Link
               className={`${styles.bookingButton} ${styles.question}`}
               href={hero.haqlink}
+              target={hero.haqtarget}
               dangerouslySetInnerHTML={{ __html: hero.haqlabel }}
             />
           )}
@@ -36,6 +39,7 @@ const InstanBookingDetail = ({ data }) => {
             <Link
               className={`${styles.bookingButton} ${styles.bookNow}`}
               href={hero.bnlink}
+              target={hero.bntarget}
               dangerouslySetInnerHTML={{ __html: hero.bnlabel }}
             />
           )}

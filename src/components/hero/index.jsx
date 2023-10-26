@@ -23,8 +23,10 @@ const Hero = ({ contentHero, pageType }) => {
     template,
     haqlabel,
     haqlink,
+    haqtarget,
     bnlabel,
     bnlink,
+    bntarget,
   } = contentHero;
 
   useEffect(() => {
@@ -203,7 +205,7 @@ const Hero = ({ contentHero, pageType }) => {
                         <Link
                           className={`${styles.bookingButton} ${styles.question}`}
                           href={haqlink}
-                          target="_blank">
+                          target={haqtarget}>
                           <span
                             dangerouslySetInnerHTML={{
                               __html: haqlabel,
@@ -214,7 +216,7 @@ const Hero = ({ contentHero, pageType }) => {
                         <Link
                           className={`${styles.bookingButton} ${styles.bookNow}`}
                           href={bnlink}
-                          target="_blank">
+                          target={bntarget}>
                           <span
                             dangerouslySetInnerHTML={{
                               __html: bnlabel,
