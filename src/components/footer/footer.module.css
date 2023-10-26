@@ -518,4 +518,16 @@
   .titleProud {
     font-size: 40px;
   }
+
+  .divisorPoint {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin: -2.5px -5.5px 0 0;
+  }
+
+  .itemFooterNav {
+    width: 50%;
+    font-size: 14px;
+  }
 }
