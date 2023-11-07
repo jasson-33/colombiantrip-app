@@ -12,11 +12,11 @@ const AfterHero = ({ contentAfterHero }) => {
   console.log(contentAfterHero);
   return (
     <section
-      className={`siteSection ${styles.afterHero} ${
-        contentAfterHero.bookinLayout ? styles.bookingAfterHero : ''
-      } ${contentAfterHero.secondLayout ? styles.secondLayout : ''} ${
-        contentAfterHero.needPadding ? styles.paddingSection : ''
-      }`}>
+      className={`siteSection ${
+        contentAfterHero.infoItems.length > 0 ? styles.afterHero : ''
+      } ${contentAfterHero.bookinLayout ? styles.bookingAfterHero : ''} ${
+        contentAfterHero.secondLayout ? styles.secondLayout : ''
+      } ${contentAfterHero.needPadding ? styles.paddingSection : ''}`}>
       {contentAfterHero.img && contentAfterHero.img.sizes && (
         <div
           data-aos="fade-up"
@@ -63,96 +63,103 @@ const AfterHero = ({ contentAfterHero }) => {
           }}></div>
       )}
 
-      <div
-        className={`container flex f-js f-as ${styles.containerAfterHero} ${
-          contentAfterHero.blockTitle && styles.wrap
-        }`}>
-        {contentAfterHero.blockTitle && (
-          <div className={styles.wrapperTitleAfterHero}>
+      {((contentAfterHero.infoItems.length &&
+        contentAfterHero.infoItems.length > 0) ||
+        (contentAfterHero.blockTitle &&
+          contentAfterHero.blockTitle.length > 0) ||
+        (contentAfterHero.title && contentAfterHero.title.length > 0)) && (
+        <div
+          className={`container flex f-js f-as ${styles.containerAfterHero} ${
+            contentAfterHero.blockTitle && styles.wrap
+          }`}>
+          {contentAfterHero.blockTitle && (
+            <div className={styles.wrapperTitleAfterHero}>
+              <h2
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-offset="0"
+                data-aos-delay="0"
+                className={`${
+                  contentAfterHero.blockTitle.negative
+                    ? styles.negativeMargin
+                    : ''
+                } ${styles.titleAfterHero} ${Bigola.className}`}
+                dangerouslySetInnerHTML={{
+                  __html: contentAfterHero.blockTitle.text,
+                }}
+              />
+            </div>
+          )}
+          {!contentAfterHero.blockTitle && (
             <h2
               data-aos="fade-up"
               data-aos-duration="900"
               data-aos-offset="0"
               data-aos-delay="0"
               className={`${
-                contentAfterHero.blockTitle.negative
-                  ? styles.negativeMargin
-                  : ''
+                contentAfterHero.title.negative ? styles.negativeMargin : ''
               } ${styles.titleAfterHero} ${Bigola.className}`}
               dangerouslySetInnerHTML={{
-                __html: contentAfterHero.blockTitle.text,
-              }}
-            />
-          </div>
-        )}
-        {!contentAfterHero.blockTitle && (
-          <h2
-            data-aos="fade-up"
-            data-aos-duration="900"
-            data-aos-offset="0"
-            data-aos-delay="0"
-            className={`${
-              contentAfterHero.title.negative ? styles.negativeMargin : ''
-            } ${styles.titleAfterHero} ${Bigola.className}`}
-            dangerouslySetInnerHTML={{
-              __html: contentAfterHero.title.text,
-            }}></h2>
-        )}
-
-        <ul className={styles.ulAfterHero}>
-          {contentAfterHero.infoItems.map((info, i) => (
-            <li
-              data-aos="fade-up"
-              data-aos-duration="900"
-              data-aos-offset="0"
-              data-aos-delay="0"
-              key={i}
-              className={`${info.bold ? Gotham_Bold.className : ''} ${
-                styles.itemUlAfterHero
-              }`}
-              dangerouslySetInnerHTML={{ __html: info.text }}></li>
-          ))}
-        </ul>
-
-        {contentAfterHero.bookinLayout &&
-          contentAfterHero.imagesBooking &&
-          contentAfterHero.imagesBooking.length > 0 && (
-            <div className={styles.imagesAfterHeroBooking}>
-              <div className={`${styles.secondColumn} ${styles.columnImages}`}>
-                {contentAfterHero.imagesBooking.map(function (img, i) {
-                  if (i % 2 !== 0) {
-                    return (
-                      <div
-                        key={i}
-                        style={{
-                          backgroundImage: `url(${
-                            img.sizes ? img.sizes.medium : ''
-                          })`,
-                        }}
-                        className={styles.imageBookingDetail}></div>
-                    );
-                  }
-                })}
-              </div>
-              <div className={`${styles.firstColumn} ${styles.columnImages}`}>
-                {contentAfterHero.imagesBooking.map(function (img, i) {
-                  if (i % 2 === 0) {
-                    return (
-                      <div
-                        key={i}
-                        style={{
-                          backgroundImage: `url(${
-                            img.sizes ? img.sizes.medium : ''
-                          })`,
-                        }}
-                        className={styles.imageBookingDetail}></div>
-                    );
-                  }
-                })}
-              </div>
-            </div>
+                __html: contentAfterHero.title.text,
+              }}></h2>
           )}
-      </div>
+
+          <ul className={styles.ulAfterHero}>
+            {contentAfterHero.infoItems.map((info, i) => (
+              <li
+                data-aos="fade-up"
+                data-aos-duration="900"
+                data-aos-offset="0"
+                data-aos-delay="0"
+                key={i}
+                className={`${info.bold ? Gotham_Bold.className : ''} ${
+                  styles.itemUlAfterHero
+                }`}
+                dangerouslySetInnerHTML={{ __html: info.text }}></li>
+            ))}
+          </ul>
+
+          {contentAfterHero.bookinLayout &&
+            contentAfterHero.imagesBooking &&
+            contentAfterHero.imagesBooking.length > 0 && (
+              <div className={styles.imagesAfterHeroBooking}>
+                <div
+                  className={`${styles.secondColumn} ${styles.columnImages}`}>
+                  {contentAfterHero.imagesBooking.map(function (img, i) {
+                    if (i % 2 !== 0) {
+                      return (
+                        <div
+                          key={i}
+                          style={{
+                            backgroundImage: `url(${
+                              img.sizes ? img.sizes.medium : ''
+                            })`,
+                          }}
+                          className={styles.imageBookingDetail}></div>
+                      );
+                    }
+                  })}
+                </div>
+                <div className={`${styles.firstColumn} ${styles.columnImages}`}>
+                  {contentAfterHero.imagesBooking.map(function (img, i) {
+                    if (i % 2 === 0) {
+                      return (
+                        <div
+                          key={i}
+                          style={{
+                            backgroundImage: `url(${
+                              img.sizes ? img.sizes.medium : ''
+                            })`,
+                          }}
+                          className={styles.imageBookingDetail}></div>
+                      );
+                    }
+                  })}
+                </div>
+              </div>
+            )}
+        </div>
+      )}
     </section>
   );
 };

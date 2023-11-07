@@ -2,15 +2,17 @@ import Metas from '@/components/metaDatas';
 import Hero from '@/components/hero';
 import React from 'react';
 import Calendar from '@/components/calendar';
+import AfterHero from '@/components/after-hero';
 
 const GetInTouch = ({ data }) => {
-  const { metacontent, hero, iframe_content } = data;
+  const { metacontent, hero, iframe_content, content } = data;
   console.log(data);
 
   return (
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
+      <AfterHero contentAfterHero={content} />
       <Calendar contentgetintouch={iframe_content} />
     </>
   );
