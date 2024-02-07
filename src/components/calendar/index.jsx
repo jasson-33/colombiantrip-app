@@ -6,7 +6,6 @@ const Calendar = ({ contentgetintouch }) => {
   const { Bigola } = useContext(ColombianContext);
   const { title, text, iframe_url, height_desk, height_mob } =
     contentgetintouch;
-  console.log(Bigola);
   return (
     <section className={styles.calendarSection}>
       <div className={`container ${styles.calendarContainer}`}>

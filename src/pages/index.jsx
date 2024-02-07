@@ -7,8 +7,6 @@ import MeetHome from '@/components/meet-home';
 import ProudMembers from '@/components/proud-members';
 
 function Home({ data }) {
-  console.log(data);
-
   const {
     metacontent,
     hero,

@@ -6,7 +6,6 @@ import TextBlog from '@/components/blog-text-block';
 import React from 'react';
 
 const DetailPost = ({ data }) => {
-  console.log(data);
   const {
     metacontent,
     hero,

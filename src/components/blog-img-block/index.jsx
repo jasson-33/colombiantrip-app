@@ -2,9 +2,6 @@ import React from 'react';
 import styles from './blog-img-block.module.css';
 
 const ImgBlockBlog = ({ getimgsBlock }) => {
-  console.log(getimgsBlock);
-  console.log(getimgsBlock.imagesBlock.length);
-
   return (
     <section className="siteSection">
       <div

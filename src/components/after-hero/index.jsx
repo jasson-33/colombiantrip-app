@@ -9,7 +9,6 @@ const AfterHero = ({ contentAfterHero }) => {
   useEffect(() => {
     AOS.init();
   }, []);
-  console.log(contentAfterHero);
   return (
     <section
       className={`siteSection ${

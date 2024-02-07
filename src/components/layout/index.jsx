@@ -25,8 +25,6 @@ const Layout = ({ children }) => {
     }
   }, [animate]);
 
-  console.log(children.props);
-
   if (!children.props.data) {
     return <main className={`siteMain ${Gotham.className}`}>{children}</main>;
   }
@@ -40,7 +38,6 @@ const Layout = ({ children }) => {
   const the_categories = children.props.data.categoriesfilter
     ? children.props.data.categoriesfilter
     : false;
-  console.log(children);
   const currCategory = router.query ? router.query.id : '/meet-colombia';
 
   return (

@@ -4,7 +4,6 @@ import { ColombianContext } from '@/context/ColombianContext';
 
 const TitleText = ({ content }) => {
   const { Bigola } = useContext(ColombianContext);
-  console.log(content);
   const { title, paragraphs } = content;
   return (
     <section className={`${styles.titleTextBlock} `}>

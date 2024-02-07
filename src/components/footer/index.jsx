@@ -95,9 +95,6 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
     setTimeout(() => {
       errorDiv.innerHTML = '';
     }, 5000);
-
-    // alert(result.status);
-    console.log('Success:', result.status);
   };
 
   const sendDataFormFull = async (event) => {
@@ -201,8 +198,6 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
     setTimeout(() => {
       errorDiv.innerHTML = '';
     }, 5000);
-
-    console.log('Success:', result.status);
   };
 
   if (!datafooter) {

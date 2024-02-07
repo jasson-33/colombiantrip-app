@@ -8,8 +8,6 @@ import 'aos/dist/aos.css';
 const Hero = ({ contentHero, pageType }) => {
   const { Bigola } = useContext(ColombianContext);
 
-  // console.log(expdata);
-  // console.log(contentHero);
   const {
     img_banner,
     title,
@@ -79,9 +77,6 @@ const Hero = ({ contentHero, pageType }) => {
     setTimeout(() => {
       errorDiv.innerHTML = '';
     }, 5000);
-
-    // alert(result.status);
-    // console.log('Success:', result.status);
   };
 
   return (

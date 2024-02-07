@@ -7,7 +7,6 @@ import Team from '@/components/team';
 import React from 'react';
 
 const About = ({ data }) => {
-  console.log(data);
   const { metacontent, hero, content, image_section, img_text, team } = data;
   return (
     <>

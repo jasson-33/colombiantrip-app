@@ -7,8 +7,6 @@ import InfoRecomendations from '@/components/info-recomendations';
 import React from 'react';
 
 const DetailExperience = ({ data }) => {
-  console.log(data);
-
   const { metacontent, hero, blocks, dropdown, information } = data;
 
   return (

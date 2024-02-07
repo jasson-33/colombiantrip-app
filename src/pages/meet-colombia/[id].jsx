@@ -4,7 +4,6 @@ import AllPosts from '@/components/all-posts';
 import React from 'react';
 
 const CategorySingle = ({ data }) => {
-  console.log(data);
   const { hero, currpage, maxpages, posts, datacat, metacontent } = data;
 
   const allCategory = {

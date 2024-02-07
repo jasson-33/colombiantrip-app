@@ -6,7 +6,6 @@ import styles from './post-card.module.css';
 
 const PostCard = ({ popularPost, pageType, large }) => {
   const { Bigola } = useContext(ColombianContext);
-  console.log(popularPost);
   return (
     <div
       className={`${styles.postCard} ${

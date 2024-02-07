@@ -15,8 +15,6 @@ const InstanBookingDetail = ({ data }) => {
   const { metacontent, hero, content, imgSection, contentTitleText, isotope } =
     data;
 
-  console.log(data);
-
   return (
     <>
       <Metas metadata={metacontent} />

@@ -6,7 +6,6 @@ import AfterHero from '@/components/after-hero';
 
 const GetInTouch = ({ data }) => {
   const { metacontent, hero, iframe_content, content } = data;
-  console.log(data);
 
   return (
     <>

@@ -31,8 +31,6 @@ const Acordion = ({ dropdown }) => {
         maxHeight += parseInt(styles.marginBottom);
       }
 
-      console.log(stepsNodes);
-
       stepsContainer.style.height = `${maxHeight}px`;
       e.target.parentElement.parentElement.classList.add(styles.active);
     }

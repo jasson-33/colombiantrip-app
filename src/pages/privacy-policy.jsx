@@ -20,7 +20,6 @@ export async function getServerSideProps() {
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/privacy-data`
   );
   const data = await content.json();
-  console.log(data);
   return {
     props: { data },
   };

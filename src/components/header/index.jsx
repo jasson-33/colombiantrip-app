@@ -18,7 +18,6 @@ const Header = ({ animate, setAnimate, categories, currCategory }) => {
   };
   const router = useRouter();
   const { pathname } = router;
-  // console.log(pathname);
   useEffect(() => {
     const switchHeader = () => {
       if (!header.current.classList.contains(styles.lightHeader)) {
