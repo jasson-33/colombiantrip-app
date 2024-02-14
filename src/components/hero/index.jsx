@@ -71,12 +71,10 @@ const Hero = ({ contentHero, pageType }) => {
 
     const result = await response.json();
 
-    const errorDiv = event.target.querySelector('#messageForm_h');
-    errorDiv.innerHTML = result.status;
-    event.target.reset();
-    setTimeout(() => {
-      errorDiv.innerHTML = '';
-    }, 5000);
+    if (result.status) {
+      const redirectTo = 'b2b';
+      window.location.href = `/thank-you-${redirectTo}`;
+    }
   };
 
   return (

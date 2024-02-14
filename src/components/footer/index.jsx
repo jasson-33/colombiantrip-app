@@ -89,12 +89,13 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
 
     const result = await response.json();
 
-    const errorDiv = event.target.querySelector('#messageForm');
-    errorDiv.innerHTML = result.status;
-    event.target.reset();
-    setTimeout(() => {
-      errorDiv.innerHTML = '';
-    }, 5000);
+    if (result.status) {
+      let redirectTo = pathname.slice(1);
+      if (redirectTo === '') {
+        redirectTo = 'homepage';
+      }
+      window.location.href = `/thank-you-${redirectTo}`;
+    }
   };
 
   const sendDataFormFull = async (event) => {
@@ -192,12 +193,13 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
 
     const result = await response.json();
 
-    const errorDiv = event.target.querySelector('#messageForm');
-    errorDiv.innerHTML = result.status;
-    event.target.reset();
-    setTimeout(() => {
-      errorDiv.innerHTML = '';
-    }, 5000);
+    if (result.status) {
+      let redirectTo = pathname.slice(1);
+      if (redirectTo === '') {
+        redirectTo = 'homepage';
+      }
+      window.location.href = `/thank-you-${redirectTo}`;
+    }
   };
 
   if (!datafooter) {

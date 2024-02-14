@@ -8,6 +8,14 @@ const nextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/thank-you-:slug',
+        destination: '/thank-you/:slug',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

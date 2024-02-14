@@ -57,7 +57,9 @@ const Layout = ({ children }) => {
       <Footer
         datafooter={dataFooter}
         changeLayout={router.pathname === '/how-it-works'}
-        noforms={router.pathname === '/b2b'}
+        noforms={
+          router.pathname === '/b2b' || router.pathname.startsWith('/thank-you')
+        }
       />
     </main>
   );
