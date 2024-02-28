@@ -90,7 +90,7 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
     const result = await response.json();
 
     if (result.status) {
-      let redirectTo = pathname.slice(1);
+      let redirectTo = pathname.split('/')[1];
       if (redirectTo === '') {
         redirectTo = 'homepage';
       }
@@ -194,7 +194,7 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
     const result = await response.json();
 
     if (result.status) {
-      let redirectTo = pathname.slice(1);
+      let redirectTo = pathname.split('/')[1];
       if (redirectTo === '') {
         redirectTo = 'homepage';
       }

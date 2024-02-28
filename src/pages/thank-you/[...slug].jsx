@@ -45,6 +45,8 @@ export async function getServerSideProps(context) {
     'about',
     'instant-booking',
     'get-in-touch',
+    'meet-colombia',
+    'experiences',
   ]; // Allowed paths
   const { params } = context;
   const { slug } = params; // You can use slug to customize content if needed
