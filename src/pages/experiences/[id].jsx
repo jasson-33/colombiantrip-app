@@ -37,6 +37,11 @@ export async function getServerSideProps(context) {
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/experience-detail?dataexp=${context.params.id}`
   );
   const data = await datafetch.json();
+  if (data.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
   return {
     props: { data },
   };

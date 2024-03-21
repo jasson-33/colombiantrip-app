@@ -14,7 +14,9 @@ const InstanBookingDetail = ({ data }) => {
 
   const { metacontent, hero, content, imgSection, contentTitleText, isotope } =
     data;
-
+  if (!hero) {
+    return <></>;
+  }
   return (
     <>
       <Metas metadata={metacontent} />
@@ -60,7 +62,11 @@ export async function getServerSideProps(req) {
     `${process.env.NEXT_PUBLIC_ENDPOINT_CONTENT}colombian-app/v2/booking?databooking=${id}`
   );
   const data = await resData.json();
-
+  if (data.length === 0) {
+    return {
+      notFound: true,
+    };
+  }
   return { props: { data } };
 }
 
