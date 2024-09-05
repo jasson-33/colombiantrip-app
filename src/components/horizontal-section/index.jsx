@@ -335,7 +335,7 @@ const HorizontalSection = ({ horizontalType, horizontalData }) => {
                                 }}
                               />
                               <div className={styles.innerInfoWork}>
-                                <p
+                                <span
                                   className={styles.textWork}
                                   style={{ color: block.colorText }}
                                   dangerouslySetInnerHTML={{

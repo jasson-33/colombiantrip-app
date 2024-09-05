@@ -20,16 +20,17 @@ const ThankYouPage = ({ data }) => {
               __html: 'Thank you for getting in touch',
             }}
           />
-          <h3
+          <p
             data-aos="fade-up"
             data-aos-duration="900"
             data-aos-delay="0"
             className={`${styles.subtitleMeetHome}`}
             dangerouslySetInnerHTML={{
               __html:
-                'One of our Colombian Travel Counselors will be in touch with you shortly.',
-            }}
-          />
+                'After you press submit, a little buzzer goes off in our office, and the team can not resist to salsa for a hot minute. Then, we dive into curating your inaugural itinerary based on your shared details. We will be in touch within 24 hours. <br/>\
+            (If our reply isn’t in your inbox, please check your spam folder—email spam gremlins at work.) <br/>\
+            <sub>We are excited to turn your travel vision into a dream-trip reality.</sub>',
+            }}></p>
         </div>
       </section>
     </>
