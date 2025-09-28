@@ -8,7 +8,6 @@ import ConsciousTravel from '@/components/conscious-travel';
 import React from 'react';
 
 const consciousTravel = ({ data }) => {
-    console.log(data)
   const { metacontent, hero, consciousTravel
   } = data;
 
