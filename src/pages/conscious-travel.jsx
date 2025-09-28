@@ -8,13 +8,16 @@ import ConsciousTravel from '@/components/conscious-travel';
 import React from 'react';
 
 const consciousTravel = ({ data }) => {
-  const { metacontent, hero,  legalcontent } = data;
+    console.log(data)
+  const { metacontent, hero, consciousTravel
+  } = data;
 
   return (
     <>
       <Metas metadata={metacontent} />
       <Hero contentHero={hero} />
-      <ConsciousTravel consciousTravel={ legalcontent} />
+      <ConsciousTravel consciousTravel={ consciousTravel
+} />
     </>
   );
 };
