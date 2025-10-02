@@ -618,7 +618,7 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
             <Link
               href={`${process.env.NEXT_PUBLIC_CURR_DOMAIN}${privacylink}`}
               className={styles.copyrightText}>
-              Privacy Policy
+              Conscious Travel
             </Link>
             <p className={styles.copyrightText}>© {copiright}</p>
             <Link
@@ -645,14 +645,9 @@ const Footer = ({ datafooter, changeLayout, noforms }) => {
         </div>
 
         <div className={styles.paperplaneContainer}>
-          <p className={styles.designedText}>
-            Proudly made and designed in Colombia by:
-          </p>
+          
           <div className={`${styles.paperplaneLog} bg-ct`}>
-            <a
-              href="https://paperplane.com.co"
-              target="_blank"
-              rel="noreferrer"></a>
+            
           </div>
         </div>
       </footer>
